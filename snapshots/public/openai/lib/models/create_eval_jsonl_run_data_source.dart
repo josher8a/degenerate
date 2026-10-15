@@ -60,7 +60,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonl, W
 
 factory CreateEvalJsonlRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalJsonlRunDataSource(
   type: CreateEvalJsonlRunDataSourceType.fromJson(json['type'] as String),
-  source: OneOf2.parse(json['source'], fromA: (v) => EvalJsonlFileContentSource.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalJsonlFileIdSource.fromJson(v as Map<String, dynamic>),),
+  source: switch (json['source']) {
+  final Map<String, dynamic> m when m['type'] == 'file_content' => OneOf2<EvalJsonlFileContentSource, EvalJsonlFileIdSource>.a(EvalJsonlFileContentSource.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_id' => OneOf2<EvalJsonlFileContentSource, EvalJsonlFileIdSource>.b(EvalJsonlFileIdSource.fromJson(m)),
+  _ => OneOf2.parse(json['source'], fromA: (v) => EvalJsonlFileContentSource.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalJsonlFileIdSource.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 /// The type of data source. Always `jsonl`.

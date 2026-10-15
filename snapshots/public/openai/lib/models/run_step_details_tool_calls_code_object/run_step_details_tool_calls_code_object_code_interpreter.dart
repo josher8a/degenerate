@@ -6,7 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RunStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: json['input'] as String,
-  outputs: (json['outputs'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => RunStepDetailsToolCallsCodeOutputLogsObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsCodeOutputImageObject.fromJson(v as Map<String, dynamic>),)).toList(),
+  outputs: (json['outputs'] as List<dynamic>).map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'logs' => OneOf2<RunStepDetailsToolCallsCodeOutputLogsObject, RunStepDetailsToolCallsCodeOutputImageObject>.a(RunStepDetailsToolCallsCodeOutputLogsObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'image' => OneOf2<RunStepDetailsToolCallsCodeOutputLogsObject, RunStepDetailsToolCallsCodeOutputImageObject>.b(RunStepDetailsToolCallsCodeOutputImageObject.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => RunStepDetailsToolCallsCodeOutputLogsObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsCodeOutputImageObject.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 ); }
 
 /// The input to the Code Interpreter tool call.

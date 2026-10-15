@@ -4,7 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_moderation_request/create_moderation_request_input.dart';import 'package:pub_openai/models/create_moderation_request/create_moderation_request_model.dart';import 'package:pub_openai/models/create_moderation_request/variant3_image_url.dart';import 'package:pub_openai/models/create_moderation_request/variant3_text.dart';@immutable final class CreateModerationRequest {const CreateModerationRequest({required this.input, this.model, });
 
 factory CreateModerationRequest.fromJson(Map<String, dynamic> json) { return CreateModerationRequest(
-  input: OneOf3.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => Variant3ImageUrl.fromJson(v as Map<String, dynamic>), fromB: (v) => Variant3Text.fromJson(v as Map<String, dynamic>),)).toList(),),
+  input: OneOf3.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'image_url' => OneOf2<Variant3ImageUrl, Variant3Text>.a(Variant3ImageUrl.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf2<Variant3ImageUrl, Variant3Text>.b(Variant3Text.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => Variant3ImageUrl.fromJson(v as Map<String, dynamic>), fromB: (v) => Variant3Text.fromJson(v as Map<String, dynamic>),),
+}).toList(),),
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateModerationRequestModelVariant2.fromJson(v as String),) : null,
 ); }
 

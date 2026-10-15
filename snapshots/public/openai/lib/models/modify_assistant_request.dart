@@ -9,12 +9,22 @@ factory ModifyAssistantRequest.fromJson(Map<String, dynamic> json) { return Modi
   name: json['name'] as String?,
   description: json['description'] as String?,
   instructions: json['instructions'] as String?,
-  tools: json.containsKey('tools') ? (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList() : const [],
+  tools: json.containsKey('tools') ? (json['tools'] as List<dynamic>).map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'code_interpreter' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.a(AssistantToolsCode.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_search' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.b(AssistantToolsFileSearch.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'function' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.c(AssistantToolsFunction.fromJson(m)),
+  _ => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),),
+}).toList() : const [],
   toolResources: json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-  responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null,
+  responseFormat: json['response_format'] != null ? switch (json['response_format']) {
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.b(ResponseFormatText.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_object' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.c(ResponseFormatJsonObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_schema' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.d(ResponseFormatJsonSchema.fromJson(m)),
+  _ => OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),),
+} : null,
 ); }
 
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.

@@ -16,7 +16,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory RealtimeClientEventSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventSessionUpdate(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
-  session: OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),),
+  session: switch (json['session']) {
+  final Map<String, dynamic> m when m['type'] == 'realtime' => OneOf2<RealtimeSessionCreateRequestGa, RealtimeTranscriptionSessionCreateRequestGa>.a(RealtimeSessionCreateRequestGa.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'transcription' => OneOf2<RealtimeSessionCreateRequestGa, RealtimeTranscriptionSessionCreateRequestGa>.b(RealtimeTranscriptionSessionCreateRequestGa.fromJson(m)),
+  _ => OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 /// Optional client-generated ID used to identify this event. This is an arbitrary string that a client may assign. It will be passed back if there is an error with the event, but the corresponding `session.updated` event will not include it.

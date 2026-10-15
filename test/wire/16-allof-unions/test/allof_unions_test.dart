@@ -147,9 +147,49 @@ void main() {
       ...?extra,
     };
 
-    // Which variant `OneOfN.parse` picks for `update` vs `updateScope` is a
-    // separate, pre-existing issue (enums accept unknown values, so both
-    // variants decode and the first wins); it is not changed here.
+    for (final order in ['update first', 'updateScope first']) {
+      test('the action value picks the variant ($order)', () {
+        final actions = order == 'update first'
+            ? ['update', 'updateScope']
+            : ['updateScope', 'update'];
+        final items = _proposal('beneficiaries', [
+          for (final a in actions) op(a),
+        ]).beneficiaries!;
+        for (final (i, a) in actions.indexed) {
+          expect(
+            items[i].value,
+            a == 'update'
+                ? isA<BeneficiariesUpdate>()
+                : isA<BeneficiariesUpdateScope>(),
+            reason: a,
+          );
+        }
+      });
+    }
+
+    test('optional merged keys never flip the choice', () {
+      final items = _proposal('beneficiaries', [
+        op('updateScope', extra: {'proposalId': 'p', 'status': 'EXECUTED'}),
+        op('update', extra: {'proposalId': 'p'}),
+      ]).beneficiaries!;
+      expect(items[0].value, isA<BeneficiariesUpdateScope>());
+      expect(items[1].value, isA<BeneficiariesUpdate>());
+    });
+
+    test('the untracked source union picks the variant too', () {
+      final items = _proposal('actions', [
+        {'action': 'delete', 'id': 'x'},
+        {'action': 'create', 'name': 'n'},
+      ]).actions!;
+      expect(items[0].value, isA<TrackedActionDelete>());
+      expect(items[1].value, isA<TrackedActionCreate>());
+    });
+
+    test('an action value added later by the server still parses', () {
+      // Forward compatibility: an unknown value must not fail the payload.
+      final items = _proposal('beneficiaries', [op('archive')]).beneficiaries!;
+      expect(items.single.toJson(), op('archive'));
+    });
 
     test('canParse keeps the variant pin and ignores optional keys', () {
       expect(BeneficiariesUpdate.canParse(op('update')), isTrue);

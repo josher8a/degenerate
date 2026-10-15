@@ -32,13 +32,21 @@ final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'Action [0]',
     {'action': 'create', 'name': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => ActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => Delete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<ActionCreate, Delete>.a(ActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<ActionCreate, Delete>.b(Delete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => ActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => Delete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Action).toJson(),
   ),
   RoundtripFixture(
     'Action [1]',
     {'action': 'delete', 'id': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => ActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => Delete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<ActionCreate, Delete>.a(ActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<ActionCreate, Delete>.b(Delete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => ActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => Delete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Action).toJson(),
   ),
   RoundtripFixture(
@@ -50,7 +58,11 @@ final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'BeneficiaryOp [0]',
     {'action': 'update', 'beneficiaryId': 'string', 'body': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => Update.fromJson(v as Map<String, dynamic>), fromB: (v) => UpdateScope.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'update' => OneOf2<Update, UpdateScope>.a(Update.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'updateScope' => OneOf2<Update, UpdateScope>.b(UpdateScope.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => Update.fromJson(v as Map<String, dynamic>), fromB: (v) => UpdateScope.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as BeneficiaryOp).toJson(),
   ),
   RoundtripFixture(
@@ -92,13 +104,21 @@ final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'TrackedAction [0]',
     {'action': 'create', 'name': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as TrackedAction).toJson(),
   ),
   RoundtripFixture(
     'TrackedAction [1]',
     {'action': 'delete', 'id': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as TrackedAction).toJson(),
   ),
   RoundtripFixture(
@@ -182,13 +202,21 @@ final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'Actions [0]',
     {'action': 'create', 'name': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Actions).toJson(),
   ),
   RoundtripFixture(
     'Actions [1]',
     {'action': 'delete', 'id': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Actions).toJson(),
   ),
   RoundtripFixture(
@@ -200,13 +228,21 @@ final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'Aliased [0]',
     {'action': 'create', 'name': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Aliased).toJson(),
   ),
   RoundtripFixture(
     'Aliased [1]',
     {'action': 'delete', 'id': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Aliased).toJson(),
   ),
   RoundtripFixture(
@@ -224,7 +260,11 @@ final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'Beneficiaries [0]',
     {'action': 'update', 'beneficiaryId': 'string', 'body': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => BeneficiariesUpdate.fromJson(v as Map<String, dynamic>), fromB: (v) => BeneficiariesUpdateScope.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'update' => OneOf2<BeneficiariesUpdate, BeneficiariesUpdateScope>.a(BeneficiariesUpdate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'updateScope' => OneOf2<BeneficiariesUpdate, BeneficiariesUpdateScope>.b(BeneficiariesUpdateScope.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => BeneficiariesUpdate.fromJson(v as Map<String, dynamic>), fromB: (v) => BeneficiariesUpdateScope.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Beneficiaries).toJson(),
   ),
   RoundtripFixture(
@@ -254,13 +294,21 @@ final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'Team [0]',
     {'action': 'invite', 'email': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => Invite.fromJson(v as Map<String, dynamic>), fromB: (v) => Remove.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'invite' => OneOf2<Invite, Remove>.a(Invite.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'remove' => OneOf2<Invite, Remove>.b(Remove.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => Invite.fromJson(v as Map<String, dynamic>), fromB: (v) => Remove.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Team).toJson(),
   ),
   RoundtripFixture(
     'Team [1]',
     {'action': 'remove', 'memberId': 'string'},
-    (json) => OneOf2.parse(json, fromA: (v) => Invite.fromJson(v as Map<String, dynamic>), fromB: (v) => Remove.fromJson(v as Map<String, dynamic>),),
+    (json) => switch (json) {
+  final Map<String, dynamic> m when m['action'] == 'invite' => OneOf2<Invite, Remove>.a(Invite.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'remove' => OneOf2<Invite, Remove>.b(Remove.fromJson(m)),
+  _ => OneOf2.parse(json, fromA: (v) => Invite.fromJson(v as Map<String, dynamic>), fromB: (v) => Remove.fromJson(v as Map<String, dynamic>),),
+},
     (value) => (value! as Team).toJson(),
   ),
   RoundtripFixture(

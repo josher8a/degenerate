@@ -5,7 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory MessageDeltaContentTextObjectText.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextObjectText(
   value: json['value'] as String?,
-  annotations: (json['annotations'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageDeltaContentTextAnnotationsFilePathObject.fromJson(v as Map<String, dynamic>),)).toList(),
+  annotations: (json['annotations'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'file_citation' => OneOf2<MessageDeltaContentTextAnnotationsFileCitationObject, MessageDeltaContentTextAnnotationsFilePathObject>.a(MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_path' => OneOf2<MessageDeltaContentTextAnnotationsFileCitationObject, MessageDeltaContentTextAnnotationsFilePathObject>.b(MessageDeltaContentTextAnnotationsFilePathObject.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageDeltaContentTextAnnotationsFilePathObject.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 ); }
 
 /// The data that makes up the text.

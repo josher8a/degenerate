@@ -35,7 +35,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(e, fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+}).toList();
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -58,7 +63,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -106,7 +116,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -129,7 +144,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -154,7 +174,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -202,7 +227,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -225,7 +255,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -250,7 +285,12 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );

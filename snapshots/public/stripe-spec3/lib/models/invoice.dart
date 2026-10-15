@@ -443,7 +443,12 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   customerTaxExempt: json['customer_tax_exempt'] != null ? InvoiceCustomerTaxExempt.fromJson(json['customer_tax_exempt'] as String) : null,
   customerTaxIds: (json['customer_tax_ids'] as List<dynamic>?)?.map((e) => InvoicesResourceInvoiceTaxId.fromJson(e as Map<String, dynamic>)).toList(),
   defaultPaymentMethod: json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
-  defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
+  defaultSource: json['default_source'] != null ? switch (json['default_source']) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<String, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<String, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<String, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+} : null,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>).map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>),)).toList(),

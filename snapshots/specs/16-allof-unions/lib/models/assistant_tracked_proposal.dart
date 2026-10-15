@@ -4,11 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/actions.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/aliased.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/beneficiaries.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/beneficiaries_update.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/beneficiaries_update_scope.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/control.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/invite.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/kinds.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/mapped_kinds.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/remove.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/singles_create.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/team.dart';import 'package:spec_16_allof_unions/models/tracked_action/tracked_action_create.dart';import 'package:spec_16_allof_unions/models/tracked_action/tracked_action_delete.dart';@immutable final class AssistantTrackedProposal {const AssistantTrackedProposal({this.actions, this.singles, this.aliased, this.beneficiaries, this.team, this.kinds, this.mappedKinds, this.control, });
 
 factory AssistantTrackedProposal.fromJson(Map<String, dynamic> json) { return AssistantTrackedProposal(
-  actions: (json['actions'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),)).toList(),
+  actions: (json['actions'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+}).toList(),
   singles: (json['singles'] as List<dynamic>?)?.map((e) => SinglesCreate.fromJson(e as Map<String, dynamic>)).toList(),
-  aliased: (json['aliased'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),)).toList(),
-  beneficiaries: (json['beneficiaries'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => BeneficiariesUpdate.fromJson(v as Map<String, dynamic>), fromB: (v) => BeneficiariesUpdateScope.fromJson(v as Map<String, dynamic>),)).toList(),
-  team: (json['team'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => Invite.fromJson(v as Map<String, dynamic>), fromB: (v) => Remove.fromJson(v as Map<String, dynamic>),)).toList(),
+  aliased: (json['aliased'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['action'] == 'create' => OneOf2<TrackedActionCreate, TrackedActionDelete>.a(TrackedActionCreate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'delete' => OneOf2<TrackedActionCreate, TrackedActionDelete>.b(TrackedActionDelete.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => TrackedActionCreate.fromJson(v as Map<String, dynamic>), fromB: (v) => TrackedActionDelete.fromJson(v as Map<String, dynamic>),),
+}).toList(),
+  beneficiaries: (json['beneficiaries'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['action'] == 'update' => OneOf2<BeneficiariesUpdate, BeneficiariesUpdateScope>.a(BeneficiariesUpdate.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'updateScope' => OneOf2<BeneficiariesUpdate, BeneficiariesUpdateScope>.b(BeneficiariesUpdateScope.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => BeneficiariesUpdate.fromJson(v as Map<String, dynamic>), fromB: (v) => BeneficiariesUpdateScope.fromJson(v as Map<String, dynamic>),),
+}).toList(),
+  team: (json['team'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['action'] == 'invite' => OneOf2<Invite, Remove>.a(Invite.fromJson(m)),
+  final Map<String, dynamic> m when m['action'] == 'remove' => OneOf2<Invite, Remove>.b(Remove.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => Invite.fromJson(v as Map<String, dynamic>), fromB: (v) => Remove.fromJson(v as Map<String, dynamic>),),
+}).toList(),
   kinds: (json['kinds'] as List<dynamic>?)?.map((e) => Kinds.fromJson(e as Map<String, dynamic>)).toList(),
   mappedKinds: (json['mappedKinds'] as List<dynamic>?)?.map((e) => MappedKinds.fromJson(e as Map<String, dynamic>)).toList(),
   control: (json['control'] as List<dynamic>?)?.map((e) => Control.fromJson(e as Map<String, dynamic>)).toList(),

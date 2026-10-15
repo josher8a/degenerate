@@ -4,7 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/smart_union_nested_inner_bird.dart';import 'package:pub_speakeasy/models/smart_union_nested_inner_cat.dart';import 'package:pub_speakeasy/models/smart_union_nested_inner_dog.dart';import 'package:pub_speakeasy/models/smart_union_nested_outer_a/smart_union_nested_outer_a_data.dart';@immutable final class SmartUnionNestedOuterA {const SmartUnionNestedOuterA({required this.data});
 
 factory SmartUnionNestedOuterA.fromJson(Map<String, dynamic> json) { return SmartUnionNestedOuterA(
-  data: OneOf3.parse(json['data'], fromA: (v) => SmartUnionNestedInnerCat.fromJson(v as Map<String, dynamic>), fromB: (v) => SmartUnionNestedInnerDog.fromJson(v as Map<String, dynamic>), fromC: (v) => SmartUnionNestedInnerBird.fromJson(v as Map<String, dynamic>),),
+  data: switch (json['data']) {
+  final Map<String, dynamic> m when m['kind'] == 'cat' => OneOf3<SmartUnionNestedInnerCat, SmartUnionNestedInnerDog, SmartUnionNestedInnerBird>.a(SmartUnionNestedInnerCat.fromJson(m)),
+  final Map<String, dynamic> m when m['kind'] == 'dog' => OneOf3<SmartUnionNestedInnerCat, SmartUnionNestedInnerDog, SmartUnionNestedInnerBird>.b(SmartUnionNestedInnerDog.fromJson(m)),
+  final Map<String, dynamic> m when m['kind'] == 'bird' => OneOf3<SmartUnionNestedInnerCat, SmartUnionNestedInnerDog, SmartUnionNestedInnerBird>.c(SmartUnionNestedInnerBird.fromJson(m)),
+  _ => OneOf3.parse(json['data'], fromA: (v) => SmartUnionNestedInnerCat.fromJson(v as Map<String, dynamic>), fromB: (v) => SmartUnionNestedInnerDog.fromJson(v as Map<String, dynamic>), fromC: (v) => SmartUnionNestedInnerBird.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 final SmartUnionNestedOuterAData data;

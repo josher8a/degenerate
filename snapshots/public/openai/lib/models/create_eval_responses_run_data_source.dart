@@ -60,10 +60,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 factory CreateEvalResponsesRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSource(
   type: CreateEvalResponsesRunDataSourceType.fromJson(json['type'] as String),
-  inputMessages: json['input_messages'] != null ? OneOf2.parse(json['input_messages'], fromA: (v) => InputMessagesTemplate.fromJson(v as Map<String, dynamic>), fromB: (v) => InputMessagesItemReference.fromJson(v as Map<String, dynamic>),) : null,
+  inputMessages: json['input_messages'] != null ? switch (json['input_messages']) {
+  final Map<String, dynamic> m when m['type'] == 'template' => OneOf2<InputMessagesTemplate, InputMessagesItemReference>.a(InputMessagesTemplate.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'item_reference' => OneOf2<InputMessagesTemplate, InputMessagesItemReference>.b(InputMessagesItemReference.fromJson(m)),
+  _ => OneOf2.parse(json['input_messages'], fromA: (v) => InputMessagesTemplate.fromJson(v as Map<String, dynamic>), fromB: (v) => InputMessagesItemReference.fromJson(v as Map<String, dynamic>),),
+} : null,
   samplingParams: json['sampling_params'] != null ? CreateEvalResponsesRunDataSourceSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
   model: json['model'] as String?,
-  source: OneOf3.parse(json['source'], fromA: (v) => EvalJsonlFileContentSource.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalJsonlFileIdSource.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalResponsesSource.fromJson(v as Map<String, dynamic>),),
+  source: switch (json['source']) {
+  final Map<String, dynamic> m when m['type'] == 'file_content' => OneOf3<EvalJsonlFileContentSource, EvalJsonlFileIdSource, EvalResponsesSource>.a(EvalJsonlFileContentSource.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_id' => OneOf3<EvalJsonlFileContentSource, EvalJsonlFileIdSource, EvalResponsesSource>.b(EvalJsonlFileIdSource.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'responses' => OneOf3<EvalJsonlFileContentSource, EvalJsonlFileIdSource, EvalResponsesSource>.c(EvalResponsesSource.fromJson(m)),
+  _ => OneOf3.parse(json['source'], fromA: (v) => EvalJsonlFileContentSource.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalJsonlFileIdSource.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalResponsesSource.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 /// The type of run data source. Always `responses`.

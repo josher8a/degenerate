@@ -6,7 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory CreateEvalRunRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRunRequest(
   name: json['name'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  dataSource: OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
+  dataSource: switch (json['data_source']) {
+  final Map<String, dynamic> m when m['type'] == 'jsonl' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.a(CreateEvalJsonlRunDataSource.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'completions' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.b(CreateEvalCompletionsRunDataSource.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'responses' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.c(CreateEvalResponsesRunDataSource.fromJson(m)),
+  _ => OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 /// The name of the run.
