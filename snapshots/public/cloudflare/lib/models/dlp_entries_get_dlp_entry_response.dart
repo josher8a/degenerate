@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEntriesGetDlpEntryResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles.dart';@immutable final class DlpEntriesGetDlpEntryResponse {const DlpEntriesGetDlpEntryResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles/dlp_entry_with_shared_profiles_custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles/dlp_entry_with_shared_profiles_document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles/dlp_entry_with_shared_profiles_exact_data_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles/dlp_entry_with_shared_profiles_integration_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles/dlp_entry_with_shared_profiles_predefined_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles/dlp_entry_with_shared_profiles_word_list_entry.dart';@immutable final class DlpEntriesGetDlpEntryResponse {const DlpEntriesGetDlpEntryResponse({this.result});
 
 factory DlpEntriesGetDlpEntryResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesGetDlpEntryResponse(
-  result: json['result'] != null ? DlpEntryWithSharedProfiles.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? OneOf6.parse(json['result'], fromA: (v) => DlpEntryWithSharedProfilesCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpEntryWithSharedProfilesPredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => DlpEntryWithSharedProfilesIntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DlpEntryWithSharedProfilesExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DlpEntryWithSharedProfilesDocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => DlpEntryWithSharedProfilesWordListEntry.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 final DlpEntryWithSharedProfiles? result;

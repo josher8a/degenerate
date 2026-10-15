@@ -1,27 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsDnsRecordBatchPatch
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordBatchPatch {const DnsRecordsDnsRecordBatchPatch({required this.id});
-
-factory DnsRecordsDnsRecordBatchPatch.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchPatch(
-  id: DnsRecordsIdentifier.fromJson(json['id'] as String),
-); }
-
-final DnsRecordsIdentifier id;
-
-Map<String, dynamic> toJson() { return {
-  'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DnsRecordsDnsRecordBatchPatch copyWith({DnsRecordsIdentifier? id}) { return DnsRecordsDnsRecordBatchPatch(
-  id: id ?? this.id,
-); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-      other is DnsRecordsDnsRecordBatchPatch &&
-          id == other.id;
-
-@override int get hashCode => id.hashCode;
-
-@override String toString() => 'DnsRecordsDnsRecordBatchPatch(id: $id)';
-
- }
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch/dns_records_dns_record_batch_patch_dns_records_dns_record_with_data.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch/dns_records_dns_record_batch_patch_dns_records_dns_record_without_data.dart';/// Variants:
+/// - `.a` → [DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutData]
+/// - `.b` → [DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithData]
+typedef DnsRecordsDnsRecordBatchPatch = OneOf2<DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutData,DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithData>;

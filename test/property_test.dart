@@ -1717,14 +1717,15 @@ String _randomPrimitiveType(Random rng) {
 Map<String, dynamic> _randomObject(
   Random rng,
   List<String> existingTypes,
-  int depth,
-) {
+  int depth, {
+  String fieldPrefix = '',
+}) {
   final fieldCount = 1 + rng.nextInt(6);
   final properties = <String, dynamic>{};
   final required = <String>[];
 
   for (var i = 0; i < fieldCount; i++) {
-    final name = _randomFieldName(rng, i);
+    final name = '$fieldPrefix${_randomFieldName(rng, i)}';
     if (rng.nextBool() && existingTypes.isNotEmpty) {
       final ref = existingTypes[rng.nextInt(existingTypes.length)];
       properties[name] = {r'$ref': '#/components/schemas/$ref'};
@@ -1788,16 +1789,27 @@ Map<String, dynamic> _randomUnion(Random rng, List<String> existingTypes) {
   return {rng.nextBool() ? 'oneOf' : 'anyOf': variants};
 }
 
+/// Numbers each random allOf extension so its field names are its own.
+var _extensionCount = 0;
+
 Map<String, dynamic> _randomAllOf(
   Random rng,
   List<String> existingTypes,
   int depth,
 ) {
   final ref = existingTypes[rng.nextInt(existingTypes.length)];
+  // The extension adds its own fields. Redeclaring an inherited one with a
+  // different type is a spec error once the base is a union (generation
+  // fails, see allof_union_test.dart), and field names here repeat by index.
   return {
     'allOf': [
       {r'$ref': '#/components/schemas/$ref'},
-      _randomObject(rng, existingTypes, depth + 1),
+      _randomObject(
+        rng,
+        existingTypes,
+        depth + 1,
+        fieldPrefix: 'ext${_extensionCount++}_',
+      ),
     ],
   };
 }

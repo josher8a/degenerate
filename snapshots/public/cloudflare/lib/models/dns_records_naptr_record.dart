@@ -1,60 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsNaptrRecord
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_naptr_record/dns_records_naptr_record_data.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-sealed class DnsRecordsNaptrRecordType {const DnsRecordsNaptrRecordType();
-
-factory DnsRecordsNaptrRecordType.fromJson(String json) { return switch (json) {
-  'NAPTR' => naptr,
-  _ => DnsRecordsNaptrRecordType$Unknown(json),
-}; }
-
-static const DnsRecordsNaptrRecordType naptr = DnsRecordsNaptrRecordType$naptr._();
-
-static const List<DnsRecordsNaptrRecordType> values = [naptr];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'NAPTR' => 'naptr',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsRecordsNaptrRecordType$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() naptr, required W Function(String value) $unknown, }) { return switch (this) {
-      DnsRecordsNaptrRecordType$naptr() => naptr(),
-      DnsRecordsNaptrRecordType$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? naptr, W Function(String value)? $unknown, }) { return switch (this) {
-      DnsRecordsNaptrRecordType$naptr() => naptr != null ? naptr() : orElse(value),
-      DnsRecordsNaptrRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'DnsRecordsNaptrRecordType($value)';
-
- }
-@immutable final class DnsRecordsNaptrRecordType$naptr extends DnsRecordsNaptrRecordType {const DnsRecordsNaptrRecordType$naptr._();
-
-@override String get value => 'NAPTR';
-
-@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsNaptrRecordType$naptr;
-
-@override int get hashCode => 'NAPTR'.hashCode;
-
- }
-@immutable final class DnsRecordsNaptrRecordType$Unknown extends DnsRecordsNaptrRecordType {const DnsRecordsNaptrRecordType$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsNaptrRecordType$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
-@immutable final class DnsRecordsNaptrRecord {const DnsRecordsNaptrRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_naptr_record/dns_records_naptr_record_data.dart';import 'package:pub_cloudflare/models/dns_records_naptr_record/dns_records_naptr_record_type.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';@immutable final class DnsRecordsNaptrRecord {const DnsRecordsNaptrRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsNaptrRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsNaptrRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

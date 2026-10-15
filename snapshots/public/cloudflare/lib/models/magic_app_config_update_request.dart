@@ -1,21 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MagicAppConfigUpdateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_account_app_id.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_managed_app_id.dart';/// Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
-extension type const MagicAppBreakout(bool value) {
-factory MagicAppBreakout.fromJson(bool json) => MagicAppBreakout(json);
-
-bool toJson() => value;
-
-}
-/// Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)
-extension type const MagicAppPriority(int value) {
-factory MagicAppPriority.fromJson(num json) => MagicAppPriority(json.toInt());
-
-num toJson() => value;
-
-}
-@immutable final class MagicAppConfigUpdateRequest {const MagicAppConfigUpdateRequest({this.accountAppId, this.breakout, this.managedAppId, this.preferredWans, this.priority, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_account_app_id.dart';import 'package:pub_cloudflare/models/magic_app_breakout.dart';import 'package:pub_cloudflare/models/magic_app_priority.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_managed_app_id.dart';@immutable final class MagicAppConfigUpdateRequest {const MagicAppConfigUpdateRequest({this.accountAppId, this.breakout, this.managedAppId, this.preferredWans, this.priority, });
 
 factory MagicAppConfigUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicAppConfigUpdateRequest(
   accountAppId: json['account_app_id'] != null ? MagicAccountAppId.fromJson(json['account_app_id'] as String) : null,

@@ -202,6 +202,7 @@ const _roundtripSpecs = {
   '08-schema-json-schema-2020-12',
   '12-unions',
   '14-constraints',
+  '16-allof-unions',
   'extension-types',
 };
 

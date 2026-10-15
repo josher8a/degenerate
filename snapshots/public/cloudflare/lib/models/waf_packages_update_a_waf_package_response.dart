@@ -1,27 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WafPackagesUpdateAWafPackageResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_anomaly_package.dart';@immutable final class WafPackagesUpdateAWafPackageResponse {const WafPackagesUpdateAWafPackageResponse({this.result});
-
-factory WafPackagesUpdateAWafPackageResponse.fromJson(Map<String, dynamic> json) { return WafPackagesUpdateAWafPackageResponse(
-  result: json['result'] != null ? FirewallAnomalyPackage.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
-
-final FirewallAnomalyPackage? result;
-
-Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-WafPackagesUpdateAWafPackageResponse copyWith({FirewallAnomalyPackage? Function()? result}) { return WafPackagesUpdateAWafPackageResponse(
-  result: result != null ? result() : this.result,
-); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-      other is WafPackagesUpdateAWafPackageResponse &&
-          result == other.result;
-
-@override int get hashCode => result.hashCode;
-
-@override String toString() => 'WafPackagesUpdateAWafPackageResponse(result: $result)';
-
- }
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_package_response_single/firewall_package_response_single_variant2.dart';import 'package:pub_cloudflare/models/waf_packages_update_a_waf_package_response/waf_packages_update_a_waf_package_response_response_single22.dart';/// Variants:
+/// - `.a` → [WafPackagesUpdateAWafPackageResponseResponseSingle22]
+/// - `.b` → [FirewallPackageResponseSingleVariant2]
+typedef WafPackagesUpdateAWafPackageResponse = OneOf2<WafPackagesUpdateAWafPackageResponseResponseSingle22,FirewallPackageResponseSingleVariant2>;

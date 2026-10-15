@@ -165,7 +165,16 @@ final class Generator {
   Future<Map<String, String>> generate() async {
     final (doc, isStdin) = await _parseSpec();
     final inlinedDoc = _inlineRefs(doc, isStdin);
-    var (irTypes, irApis, irMapper) = _lowerToIr(inlinedDoc);
+    final List<IrType> irTypes0;
+    final List<IrApi> irApis0;
+    final IrMapper irMapper;
+    try {
+      (irTypes0, irApis0, irMapper) = _lowerToIr(inlinedDoc);
+    } on AllOfCompositionException catch (e) {
+      throw GeneratorException(e.message);
+    }
+    var irTypes = irTypes0;
+    var irApis = irApis0;
 
     final typePaths = <String, List<String>>{};
     if (config.dedupeInlineTypes) {
@@ -693,6 +702,7 @@ final class Generator {
       reserved: reserved,
       paths: irMapper.namePaths,
       registry: registry,
+      derived: irMapper.derivedNames,
     );
     String rename(String s) => resolution.finalNames[s] ?? s;
 
