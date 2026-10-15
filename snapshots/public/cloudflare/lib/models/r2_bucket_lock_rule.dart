@@ -4,7 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket_lock_rule/r2_bucket_lock_rule_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_age_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_date_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_indefinite_condition.dart';@immutable final class R2BucketLockRule {const R2BucketLockRule({required this.condition, required this.enabled, required this.id, this.prefix, });
 
 factory R2BucketLockRule.fromJson(Map<String, dynamic> json) { return R2BucketLockRule(
-  condition: OneOf3.parse(json['condition'], fromA: (v) => R2LockRuleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LockRuleDateCondition.fromJson(v as Map<String, dynamic>), fromC: (v) => R2LockRuleIndefiniteCondition.fromJson(v as Map<String, dynamic>),),
+  condition: switch (json['condition']) {
+  final Map<String, dynamic> m when m['type'] == 'Age' => OneOf3<R2LockRuleAgeCondition, R2LockRuleDateCondition, R2LockRuleIndefiniteCondition>.a(R2LockRuleAgeCondition.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'Date' => OneOf3<R2LockRuleAgeCondition, R2LockRuleDateCondition, R2LockRuleIndefiniteCondition>.b(R2LockRuleDateCondition.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'Indefinite' => OneOf3<R2LockRuleAgeCondition, R2LockRuleDateCondition, R2LockRuleIndefiniteCondition>.c(R2LockRuleIndefiniteCondition.fromJson(m)),
+  _ => OneOf3.parse(json['condition'], fromA: (v) => R2LockRuleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LockRuleDateCondition.fromJson(v as Map<String, dynamic>), fromC: (v) => R2LockRuleIndefiniteCondition.fromJson(v as Map<String, dynamic>),),
+},
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   prefix: json['prefix'] as String?,

@@ -5,7 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class ExternalAccounts {const ExternalAccounts({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory ExternalAccounts.fromJson(Map<String, dynamic> json) { return ExternalAccounts(
-  data: (json['data'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),)).toList(),
+  data: (json['data'] as List<dynamic>).map((e) => switch (e) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+}).toList(),
   hasMore: json['has_more'] as bool,
   object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,

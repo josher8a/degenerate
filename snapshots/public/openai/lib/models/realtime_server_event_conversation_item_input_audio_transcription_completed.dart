@@ -21,7 +21,11 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionCompleted.from
   contentIndex: (json['content_index'] as num).toInt(),
   transcript: json['transcript'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList(),
-  usage: OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),),
+  usage: switch (json['usage']) {
+  final Map<String, dynamic> m when m['type'] == 'tokens' => OneOf2<TranscriptTextUsageTokens, TranscriptTextUsageDuration>.a(TranscriptTextUsageTokens.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'duration' => OneOf2<TranscriptTextUsageTokens, TranscriptTextUsageDuration>.b(TranscriptTextUsageDuration.fromJson(m)),
+  _ => OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 /// The unique ID of the server event.

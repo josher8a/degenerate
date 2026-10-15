@@ -6,7 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: json['input'] as String?,
-  outputs: (json['outputs'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsCodeOutputImageObject.fromJson(v as Map<String, dynamic>),)).toList(),
+  outputs: (json['outputs'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'logs' => OneOf2<RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>.a(RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'image' => OneOf2<RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>.b(RunStepDeltaStepDetailsToolCallsCodeOutputImageObject.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsCodeOutputImageObject.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 ); }
 
 /// The input to the Code Interpreter tool call.

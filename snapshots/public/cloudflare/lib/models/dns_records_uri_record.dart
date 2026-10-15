@@ -1,60 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsUriRecord
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_priority.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';import 'package:pub_cloudflare/models/dns_records_uri_record/dns_records_uri_record_data.dart';/// Record type.
-sealed class DnsRecordsUriRecordType {const DnsRecordsUriRecordType();
-
-factory DnsRecordsUriRecordType.fromJson(String json) { return switch (json) {
-  'URI' => uri,
-  _ => DnsRecordsUriRecordType$Unknown(json),
-}; }
-
-static const DnsRecordsUriRecordType uri = DnsRecordsUriRecordType$uri._();
-
-static const List<DnsRecordsUriRecordType> values = [uri];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'URI' => 'uri',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsRecordsUriRecordType$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() uri, required W Function(String value) $unknown, }) { return switch (this) {
-      DnsRecordsUriRecordType$uri() => uri(),
-      DnsRecordsUriRecordType$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? uri, W Function(String value)? $unknown, }) { return switch (this) {
-      DnsRecordsUriRecordType$uri() => uri != null ? uri() : orElse(value),
-      DnsRecordsUriRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'DnsRecordsUriRecordType($value)';
-
- }
-@immutable final class DnsRecordsUriRecordType$uri extends DnsRecordsUriRecordType {const DnsRecordsUriRecordType$uri._();
-
-@override String get value => 'URI';
-
-@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsUriRecordType$uri;
-
-@override int get hashCode => 'URI'.hashCode;
-
- }
-@immutable final class DnsRecordsUriRecordType$Unknown extends DnsRecordsUriRecordType {const DnsRecordsUriRecordType$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsUriRecordType$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
-@immutable final class DnsRecordsUriRecord {const DnsRecordsUriRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.priority, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_priority.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';import 'package:pub_cloudflare/models/dns_records_uri_record/dns_records_uri_record_data.dart';import 'package:pub_cloudflare/models/dns_records_uri_record/dns_records_uri_record_type.dart';@immutable final class DnsRecordsUriRecord {const DnsRecordsUriRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.priority, this.type, });
 
 factory DnsRecordsUriRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsUriRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

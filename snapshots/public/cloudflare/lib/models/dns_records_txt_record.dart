@@ -1,60 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsTxtRecord
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-sealed class DnsRecordsTxtRecordType {const DnsRecordsTxtRecordType();
-
-factory DnsRecordsTxtRecordType.fromJson(String json) { return switch (json) {
-  'TXT' => txt,
-  _ => DnsRecordsTxtRecordType$Unknown(json),
-}; }
-
-static const DnsRecordsTxtRecordType txt = DnsRecordsTxtRecordType$txt._();
-
-static const List<DnsRecordsTxtRecordType> values = [txt];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'TXT' => 'txt',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsRecordsTxtRecordType$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() txt, required W Function(String value) $unknown, }) { return switch (this) {
-      DnsRecordsTxtRecordType$txt() => txt(),
-      DnsRecordsTxtRecordType$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? txt, W Function(String value)? $unknown, }) { return switch (this) {
-      DnsRecordsTxtRecordType$txt() => txt != null ? txt() : orElse(value),
-      DnsRecordsTxtRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'DnsRecordsTxtRecordType($value)';
-
- }
-@immutable final class DnsRecordsTxtRecordType$txt extends DnsRecordsTxtRecordType {const DnsRecordsTxtRecordType$txt._();
-
-@override String get value => 'TXT';
-
-@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsTxtRecordType$txt;
-
-@override int get hashCode => 'TXT'.hashCode;
-
- }
-@immutable final class DnsRecordsTxtRecordType$Unknown extends DnsRecordsTxtRecordType {const DnsRecordsTxtRecordType$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsTxtRecordType$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
-@immutable final class DnsRecordsTxtRecord {const DnsRecordsTxtRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';import 'package:pub_cloudflare/models/dns_records_txt_record/dns_records_txt_record_type.dart';@immutable final class DnsRecordsTxtRecord {const DnsRecordsTxtRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });
 
 factory DnsRecordsTxtRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsTxtRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

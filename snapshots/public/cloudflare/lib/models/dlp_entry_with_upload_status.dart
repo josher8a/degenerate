@@ -1,27 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEntryWithUploadStatus
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpEntryWithUploadStatus {const DlpEntryWithUploadStatus({this.uploadStatus});
-
-factory DlpEntryWithUploadStatus.fromJson(Map<String, dynamic> json) { return DlpEntryWithUploadStatus(
-  uploadStatus: json['upload_status'] != null ? DlpDatasetUploadStatus.fromJson(json['upload_status'] as String) : null,
-); }
-
-final DlpDatasetUploadStatus? uploadStatus;
-
-Map<String, dynamic> toJson() { return {
-  if (uploadStatus != null) 'upload_status': uploadStatus?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'upload_status'}.contains(key)); } 
-DlpEntryWithUploadStatus copyWith({DlpDatasetUploadStatus? Function()? uploadStatus}) { return DlpEntryWithUploadStatus(
-  uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
-); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-      other is DlpEntryWithUploadStatus &&
-          uploadStatus == other.uploadStatus;
-
-@override int get hashCode => uploadStatus.hashCode;
-
-@override String toString() => 'DlpEntryWithUploadStatus(uploadStatus: $uploadStatus)';
-
- }
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_exact_data_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_integration_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_predefined_entry.dart';import 'package:pub_cloudflare/models/dlp_entry_with_upload_status/dlp_entry_with_upload_status_word_list_entry.dart';/// Variants:
+/// - `.a` → [DlpEntryWithUploadStatusCustomEntry]
+/// - `.b` → [DlpEntryWithUploadStatusPredefinedEntry]
+/// - `.c` → [DlpEntryWithUploadStatusIntegrationEntry]
+/// - `.d` → [DlpEntryWithUploadStatusExactDataEntry]
+/// - `.e` → [DlpEntryWithUploadStatusDocumentFingerprintEntry]
+/// - `.f` → [DlpEntryWithUploadStatusWordListEntry]
+typedef DlpEntryWithUploadStatus = OneOf6<DlpEntryWithUploadStatusCustomEntry,DlpEntryWithUploadStatusPredefinedEntry,DlpEntryWithUploadStatusIntegrationEntry,DlpEntryWithUploadStatusExactDataEntry,DlpEntryWithUploadStatusDocumentFingerprintEntry,DlpEntryWithUploadStatusWordListEntry>;

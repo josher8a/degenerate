@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafPackagesUpdateAWafPackageResponse (inline: ResponseSingle22)
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_messages2.dart';import 'package:pub_cloudflare/models/response_single30/response_single30_result.dart';@immutable final class WafPackagesUpdateAWafPackageResponseResponseSingle22 {const WafPackagesUpdateAWafPackageResponseResponseSingle22({required this.errors, required this.messages, required this.result, required this.success, });
+
+factory WafPackagesUpdateAWafPackageResponseResponseSingle22.fromJson(Map<String, dynamic> json) { return WafPackagesUpdateAWafPackageResponseResponseSingle22(
+  errors: (json['errors'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},),
+  success: json['success'] as bool,
+); }
+
+final List<FirewallMessages2> errors;
+
+final List<FirewallMessages2> messages;
+
+final ResponseSingle30Result result;
+
+/// Defines whether the API call was successful.
+/// 
+/// Example: `true`
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+WafPackagesUpdateAWafPackageResponseResponseSingle22 copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, ResponseSingle30Result? result, bool? success, }) { return WafPackagesUpdateAWafPackageResponseResponseSingle22(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is WafPackagesUpdateAWafPackageResponseResponseSingle22 &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+
+@override String toString() => 'WafPackagesUpdateAWafPackageResponseResponseSingle22(errors: $errors, messages: $messages, result: $result, success: $success)';
+
+ }

@@ -16,7 +16,9 @@ library;
 
 import 'dart:io' show stderr;
 
-import 'package:degenerate/src/dart_names.dart' show segmentsOf;
+import 'package:degenerate/src/dart_names.dart'
+    show segmentsOf, toPascalCase;
+import 'package:degenerate/src/emitter/emit_utils.dart' show safeTypeName;
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming/structural_dedup.dart';
 import 'package:degenerate/src/naming/suffix_resolver.dart';
@@ -73,12 +75,19 @@ NameResolution resolveNames({
   required Map<String, List<String>> paths,
   required Map<String, IrType> registry,
   bool dedupe = true,
+  Set<String> derived = const {},
 }) {
   List<String> pathOf(String n) => segmentsOf(n, paths);
   String leafOf(String n) => pathOf(n).last;
 
+  // A group holding any non-derived type keeps that type's name, so derived
+  // duplicates collapse onto it instead of renaming it.
   String pickSurvivor(List<String> group) {
     final sorted = [...group]..sort((a, b) {
+      final byDerived = (derived.contains(a) ? 1 : 0).compareTo(
+        derived.contains(b) ? 1 : 0,
+      );
+      if (byDerived != 0) return byDerived;
       final byLen = pathOf(a).length.compareTo(pathOf(b).length);
       return byLen != 0 ? byLen : a.compareTo(b);
     });
@@ -104,6 +113,10 @@ NameResolution resolveNames({
     reserved: reserved,
     paths: paths,
     forbidden: kForbiddenShortNames,
+    derived: derived,
+    derivedMayNotTake: derived.isEmpty
+        ? null
+        : _wrapperNameGuard(registry, derived),
   );
 
   final finalNames = <String, String>{};
@@ -127,6 +140,63 @@ NameResolution resolveNames({
     survivors: survivors,
     survivorPaths: survivorPaths,
   );
+}
+
+/// Rejects names the union emitters may synthesize for their variant
+/// classes: `<Union><Variant>`, where `<Variant>` is a variant's type name
+/// (sealed unions) or discriminator value (discriminated unions). Those
+/// classes are not in the registry, so the suffix resolver cannot see them.
+///
+/// Only derived names are checked, against unions that are not derived, so
+/// an existing union's variant class is never the one renamed. (A derived
+/// union's own variant classes are new; the emitters de-collide those.)
+/// Deliberately broad: any known type or primitive
+/// name counts as a variant, since a false positive only costs the derived
+/// type a longer name.
+bool Function(String, Map<String, String>) _wrapperNameGuard(
+  Map<String, IrType> registry,
+  Set<String> derived,
+) {
+  final unions = <String, Set<String>>{};
+  for (final MapEntry(:key, :value) in registry.entries) {
+    if (derived.contains(key)) continue;
+    switch (value) {
+      case IrDiscriminatedUnion(:final mapping):
+        unions[key] = {
+          for (final k in mapping.keys) toPascalCase(k),
+          for (final v in mapping.values) ?v.emittableName,
+          for (final v in mapping.values)
+            if (v is IrTypeRef) v.name,
+        };
+      case IrUntaggedUnion(:final variants) || IrAnyOf(:final variants):
+        // As the sealed-union emitter names its subclasses.
+        unions[key] = {
+          for (final v in variants)
+            toPascalCase(safeTypeName(irTypeName(v))),
+        };
+      default:
+        break;
+    }
+  }
+  final primitives = {
+    for (final k in PrimitiveKind.values) toPascalCase(k.dartName),
+  };
+  return (candidate, resolved) {
+    for (final MapEntry(key: union, value: variants) in unions.entries) {
+      final unionName = resolved[union] ?? union;
+      if (candidate.length <= unionName.length ||
+          !candidate.startsWith(unionName)) {
+        continue;
+      }
+      final rest = candidate.substring(unionName.length);
+      if (primitives.contains(rest) ||
+          registry.containsKey(rest) ||
+          variants.any((v) => v == rest || resolved[v] == rest)) {
+        return true;
+      }
+    }
+    return false;
+  };
 }
 
 (Map<String, String>, List<String>) _mergeInlineTypes({

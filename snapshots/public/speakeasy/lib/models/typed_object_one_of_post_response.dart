@@ -4,7 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/typed_object1.dart';import 'package:pub_speakeasy/models/typed_object2.dart';import 'package:pub_speakeasy/models/typed_object3.dart';import 'package:pub_speakeasy/models/typed_object_one_of.dart';@immutable final class TypedObjectOneOfPostResponse {const TypedObjectOneOfPostResponse({required this.json});
 
 factory TypedObjectOneOfPostResponse.fromJson(Map<String, dynamic> json) { return TypedObjectOneOfPostResponse(
-  json: OneOf3.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>), fromC: (v) => TypedObject3.fromJson(v as Map<String, dynamic>),),
+  json: switch (json['json']) {
+  final Map<String, dynamic> m when m['type'] == 'obj1' => OneOf3<TypedObject1, TypedObject2, TypedObject3>.a(TypedObject1.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'obj2' => OneOf3<TypedObject1, TypedObject2, TypedObject3>.b(TypedObject2.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'obj3' => OneOf3<TypedObject1, TypedObject2, TypedObject3>.c(TypedObject3.fromJson(m)),
+  _ => OneOf3.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>), fromC: (v) => TypedObject3.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 final TypedObjectOneOf json;

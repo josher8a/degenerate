@@ -146,6 +146,12 @@ final class OperationLowerer {
   /// Cached PascalCase of [_currentOperationId] to avoid recomputing.
   late String? _currentOpPascal;
 
+  /// JSON pointer of the operation being lowered, for error messages.
+  String _currentOpPointer = '#';
+
+  static String _escapePointer(String segment) =>
+      segment.replaceAll('~', '~0').replaceAll('/', '~1');
+
   /// Lower a single operation.
   ///
   /// `pathParameters` are parameters defined at the path-item level that
@@ -159,6 +165,7 @@ final class OperationLowerer {
     final operationId = op['operationId'] as String? ?? '${method}_$path';
     _currentOperationId = operationId;
     _currentOpPascal = toPascalCase(operationId);
+    _currentOpPointer = '#/paths/${_escapePointer(path)}/$method';
     _usedParamNames.clear();
     final dartMethod = sanitizeFieldName(operationMethodName(operationId));
     final httpMethod = _parseHttpMethod(method);
@@ -414,6 +421,9 @@ final class OperationLowerer {
       final irSchema = irMapper.lowerUntypedInlineSchema(
         rawSchema,
         nameHint: bodyNameHint,
+        pointer:
+            '$_currentOpPointer/requestBody/content/'
+            '${_escapePointer(mediaType)}/schema',
       );
       // encoding is a map of property names to encoding objects, not a string.
       // Ignore it for now - it's only relevant for multipart form
@@ -469,7 +479,13 @@ final class OperationLowerer {
 
         // schema may be null for streaming-only media types — use itemSchema.
         final irSchema = rawSchema != null
-            ? irMapper.lowerUntypedInlineSchema(rawSchema, nameHint: nameHint)
+            ? irMapper.lowerUntypedInlineSchema(
+                rawSchema,
+                nameHint: nameHint,
+                pointer:
+                    '$_currentOpPointer/responses/$statusCode/content/'
+                    '${_escapePointer(mediaType)}/schema',
+              )
             : irItemSchema!;
         irContent[mediaType] = IrMediaType(irSchema, itemSchema: irItemSchema);
       }

@@ -13,7 +13,12 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
   customerAccount: json['customer_account'] as String?,
-  defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
+  defaultSource: json['default_source'] != null ? switch (json['default_source']) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<String, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<String, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<String, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+} : null,
   delinquent: json['delinquent'] as bool?,
   description: json['description'] as String?,
   discount: json['discount'] != null ? Discount.fromJson(json['discount'] as Map<String, dynamic>) : null,

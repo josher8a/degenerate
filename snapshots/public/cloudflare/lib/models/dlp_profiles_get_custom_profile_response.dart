@@ -4,7 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_profile.dart';import 'package:pub_cloudflare/models/dlp_profile.dart';import 'package:pub_cloudflare/models/integration_profile.dart';import 'package:pub_cloudflare/models/predefined_profile.dart';@immutable final class DlpProfilesGetCustomProfileResponse {const DlpProfilesGetCustomProfileResponse({this.result});
 
 factory DlpProfilesGetCustomProfileResponse.fromJson(Map<String, dynamic> json) { return DlpProfilesGetCustomProfileResponse(
-  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null,
+  result: json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+} : null,
 ); }
 
 final DlpProfile? result;
