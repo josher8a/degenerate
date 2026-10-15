@@ -17,7 +17,7 @@ final base = <String, dynamic>{
   'Tracking': {
     'type': 'object',
     'properties': {
-      'proposalId': {'type': 'string'},
+      'orderId': {'type': 'string'},
     },
   },
   'Action': {
@@ -76,10 +76,10 @@ void main() {
     });
 
     IrType fieldItems(String field) {
-      final proposal =
-          mapper.typeRegistry['AssistantTrackedProposal']! as IrObject;
+      final order =
+          mapper.typeRegistry['StoreOrder']! as IrObject;
       final list =
-          proposal.fields.singleWhere((f) => f.originalName == field).type
+          order.fields.singleWhere((f) => f.originalName == field).type
               as IrList;
       return list.items;
     }
@@ -96,14 +96,14 @@ void main() {
     test(r'case A: $ref union + $ref object keeps the union, adds the '
         'object fields to every variant', () {
       final union = fieldItems('actions') as IrUntaggedUnion;
-      expect(union.name, 'AssistantTrackedProposalActions');
+      expect(union.name, 'StoreOrderActions');
       final variants = union.variants.map(object).toList();
       expect(variants.map((v) => v.name), [
-        'AssistantTrackedProposalActionsCreate',
-        'AssistantTrackedProposalActionsDelete',
+        'StoreOrderActionsCreate',
+        'StoreOrderActionsDelete',
       ]);
-      expect(wireNames(variants[0]), {'action', 'name', 'proposalId', 'status'});
-      expect(wireNames(variants[1]), {'action', 'id', 'proposalId', 'status'});
+      expect(wireNames(variants[0]), {'action', 'name', 'orderId', 'status'});
+      expect(wireNames(variants[1]), {'action', 'id', 'orderId', 'status'});
       expect(variants[0].requiredFields, unorderedEquals(['action', 'name']));
       expect(variants[1].requiredFields, unorderedEquals(['action', 'id']));
     });
@@ -111,11 +111,11 @@ void main() {
     test('merged fields keep their constraints', () {
       final union = fieldItems('actions') as IrUntaggedUnion;
       final create = object(union.variants.first);
-      final proposalId = create.fields.singleWhere(
-        (f) => f.originalName == 'proposalId',
+      final orderId = create.fields.singleWhere(
+        (f) => f.originalName == 'orderId',
       );
       expect(
-        (proposalId.type as IrPrimitive).constraints.maxLength,
+        (orderId.type as IrPrimitive).constraints.maxLength,
         200,
       );
     });
@@ -123,7 +123,7 @@ void main() {
     test('the source union and its variants are not mutated', () {
       final action = mapper.typeRegistry['Action']! as IrUntaggedUnion;
       for (final v in action.variants.map(object)) {
-        expect(wireNames(v), isNot(contains('proposalId')));
+        expect(wireNames(v), isNot(contains('orderId')));
         expect(v.name, startsWith('Action'));
       }
     });
@@ -135,14 +135,14 @@ void main() {
         'TrackedActionDelete',
       ]);
       for (final v in union.variants.map(object)) {
-        expect(wireNames(v), containsAll(['proposalId', 'status']));
+        expect(wireNames(v), containsAll(['orderId', 'status']));
       }
     });
 
     test('one-variant oneOf collapses to a single merged class', () {
       final single = object(fieldItems('singles'));
-      expect(single.name, 'AssistantTrackedProposalSinglesCreate');
-      expect(wireNames(single), {'action', 'amount', 'proposalId', 'status'});
+      expect(single.name, 'StoreOrderSinglesCreate');
+      expect(wireNames(single), {'action', 'amount', 'orderId', 'status'});
     });
 
     test(r'$ref -> $ref -> union is followed', () {
@@ -150,8 +150,8 @@ void main() {
       expect(
         union.variants.map((v) => wireNames(object(v))),
         [
-          {'action', 'name', 'proposalId', 'status'},
-          {'action', 'id', 'proposalId', 'status'},
+          {'action', 'name', 'orderId', 'status'},
+          {'action', 'id', 'orderId', 'status'},
         ],
       );
     });
@@ -160,44 +160,44 @@ void main() {
       final union = fieldItems('team') as IrUntaggedUnion;
       final variants = union.variants.map(object).toList();
       expect(variants.map((v) => v.name), [
-        'AssistantTrackedProposalTeamInvite',
-        'AssistantTrackedProposalTeamRemove',
+        'StoreOrderTeamInvite',
+        'StoreOrderTeamRemove',
       ]);
-      expect(wireNames(variants[0]), {'action', 'email', 'proposalId', 'status'});
+      expect(wireNames(variants[0]), {'action', 'email', 'orderId', 'status'});
       expect(
         wireNames(variants[1]),
-        {'action', 'memberId', 'proposalId', 'status'},
+        {'action', 'memberId', 'orderId', 'status'},
       );
     });
 
     test('discriminated anyOf keeps discriminator parsing', () {
       final union = fieldItems('kinds') as IrDiscriminatedUnion;
       expect(union.discriminatorProperty, 'kind');
-      expect(union.mapping.keys, ['BUSINESS', 'INDIVIDUAL']);
-      final business = object(union.mapping['BUSINESS']!);
-      expect(business.name, 'AssistantTrackedProposalKindsBusiness');
+      expect(union.mapping.keys, ['CAT', 'DOG']);
+      final cat = object(union.mapping['CAT']!);
+      expect(cat.name, 'StoreOrderKindsCat');
       expect(
-        wireNames(business),
-        {'kind', 'legalName', 'proposalId', 'status'},
+        wireNames(cat),
+        {'kind', 'huntingSkill', 'orderId', 'status'},
       );
       // The discriminator field is a plain String, as for the source variants.
-      final kind = business.fields.singleWhere((f) => f.originalName == 'kind');
+      final kind = cat.fields.singleWhere((f) => f.originalName == 'kind');
       expect(kind.type, isA<IrPrimitive>());
     });
 
     test('an explicit discriminator mapping is kept', () {
       final union = fieldItems('mappedKinds') as IrDiscriminatedUnion;
-      expect(union.mapping.keys, ['BUSINESS', 'INDIVIDUAL']);
+      expect(union.mapping.keys, ['CAT', 'DOG']);
       expect(
-        wireNames(object(union.mapping['INDIVIDUAL']!)),
-        {'kind', 'firstName', 'proposalId', 'status'},
+        wireNames(object(union.mapping['DOG']!)),
+        {'kind', 'breed', 'orderId', 'status'},
       );
     });
 
-    test('case C: request body keeps the union and adds proposalId', () {
+    test('case C: request body keeps the union and adds orderId', () {
       final op = apis
           .expand((a) => a.operations)
-          .singleWhere((o) => o.operationId == 'createBeneficiary');
+          .singleWhere((o) => o.operationId == 'createPet');
       final body = op.requestBody!.content['application/json']!.schema;
       final union = switch (body) {
         IrDiscriminatedUnion() => body,
@@ -205,27 +205,27 @@ void main() {
           mapper.typeRegistry[name]! as IrDiscriminatedUnion,
         _ => throw StateError('unexpected body $body'),
       };
-      expect(union.name, 'CreateBeneficiaryRequest');
-      expect(union.mapping.keys, ['BUSINESS', 'INDIVIDUAL']);
+      expect(union.name, 'CreatePetRequest');
+      expect(union.mapping.keys, ['CAT', 'DOG']);
       expect(
-        wireNames(object(union.mapping['BUSINESS']!)),
-        {'kind', 'legalName', 'proposalId'},
+        wireNames(object(union.mapping['CAT']!)),
+        {'kind', 'huntingSkill', 'orderId'},
       );
     });
 
     test('case D: plain-object allOf is still one merged class', () {
       final control = object(fieldItems('control'));
-      expect(control.name, 'AssistantTrackedProposalControl');
+      expect(control.name, 'StoreOrderControl');
       expect(
         wireNames(control),
-        {'name', 'action', 'proposalId', 'status'},
+        {'name', 'action', 'orderId', 'status'},
       );
     });
   });
 
   group('adding tracking renames nothing', () {
     // The spec before the tracking change: every `allOf[U, Tracking]` was
-    // just `U`, and the createBeneficiary body was a plain `$ref: Kind`.
+    // just `U`, and the createPet body was a plain `$ref: Kind`.
     dynamic plain(dynamic y) => y is YamlMap
         ? {for (final e in y.entries) e.key.toString(): plain(e.value)}
         : y is YamlList
@@ -244,11 +244,11 @@ void main() {
         }
         final tracking =
             second is Map && second[r'$ref'] == '#/components/schemas/Tracking';
-        final proposalIdOnly =
+        final orderIdOnly =
             second is Map &&
             (second['properties'] as Map?)?.keys.toList().toString() ==
-                '[proposalId]';
-        if (tracking || proposalIdOnly) return untrack(first);
+                '[orderId]';
+        if (tracking || orderIdOnly) return untrack(first);
       }
       return {for (final e in node.entries) e.key: untrack(e.value)};
     }
@@ -301,12 +301,12 @@ void main() {
       final after = await generate(tracked);
 
       const usesMergedTypes = {
-        'models/assistant_tracked_proposal.dart',
+        'models/store_order.dart',
         'models/tracked_action.dart',
         // Case B: the inline union's variants become the merged classes.
-        'models/assistant_tracked_proposal/team.dart',
-        'models/assistant_tracked_proposal/invite.dart',
-        'models/assistant_tracked_proposal/remove.dart',
+        'models/store_order/team.dart',
+        'models/store_order/invite.dart',
+        'models/store_order/remove.dart',
         'apis/default_api.dart',
         'api.dart',
         'roundtrip_fixtures.dart',
@@ -580,26 +580,26 @@ void main() {
 
     test('never take the name of a discriminated variant class', () {
       const union = IrDiscriminatedUnion('Kind', 'kind', {
-        'BUSINESS': IrTypeRef('Business'),
+        'CAT': IrTypeRef('Cat'),
       });
-      const business = IrObject('Business', []);
-      const merged = IrObject('TrackedKindBusiness', [
+      const cat = IrObject('Cat', []);
+      const merged = IrObject('TrackedKindCat', [
         IrField('id', 'id', IrPrimitive(PrimitiveKind.string)),
       ]);
       final resolution = resolveNames(
-        allNames: {'Kind', 'Business', 'TrackedKindBusiness'},
-        reserved: {'Kind', 'Business'},
+        allNames: {'Kind', 'Cat', 'TrackedKindCat'},
+        reserved: {'Kind', 'Cat'},
         paths: {
-          'TrackedKindBusiness': ['Tracked', 'Kind', 'Business'],
+          'TrackedKindCat': ['Tracked', 'Kind', 'Cat'],
         },
         registry: {
           'Kind': union,
-          'Business': business,
-          'TrackedKindBusiness': merged,
+          'Cat': cat,
+          'TrackedKindCat': merged,
         },
-        derived: {'TrackedKindBusiness'},
+        derived: {'TrackedKindCat'},
       );
-      expect(resolution.finalNames['TrackedKindBusiness'], isNot('KindBusiness'));
+      expect(resolution.finalNames['TrackedKindCat'], isNot('KindCat'));
     });
   });
 
@@ -769,7 +769,7 @@ void main() {
             {
               'anyOf': [
                 {
-                  'required': ['proposalId'],
+                  'required': ['orderId'],
                 },
                 {
                   'required': ['name'],
@@ -796,7 +796,7 @@ void main() {
             {r'$ref': '#/components/schemas/Kind'},
             {
               'properties': {
-                'proposalId': {'type': 'string'},
+                'orderId': {'type': 'string'},
               },
             },
           ],

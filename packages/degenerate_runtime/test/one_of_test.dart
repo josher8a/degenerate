@@ -156,17 +156,17 @@ void main() {
     });
 
     test('falls through when a variant throws an Error (not Exception)', () {
-      // _Business.fromJson discriminates by casting a non-null field that is
-      // absent on an _Individual payload, throwing a TypeError (an Error, not
+      // _Bird.fromJson discriminates by casting a non-null field that is
+      // absent on a _Fish payload, throwing a TypeError (an Error, not
       // an Exception). parse() must still fall through to the matching variant.
-      final individualJson = {'kind': 'INDIVIDUAL', 'firstName': 'Jane'};
-      final v = OneOf2.parse<_Business, _Individual>(
-        individualJson,
-        fromA: _Business.fromJson,
-        fromB: _Individual.fromJson,
+      final fishJson = {'kind': 'FISH', 'finType': 'dorsal'};
+      final v = OneOf2.parse<_Bird, _Fish>(
+        fishJson,
+        fromA: _Bird.fromJson,
+        fromB: _Fish.fromJson,
       );
-      expect(v.value, isA<_Individual>());
-      expect((v.value! as _Individual).firstName, 'Jane');
+      expect(v.value, isA<_Fish>());
+      expect((v.value! as _Fish).finType, 'dorsal');
     });
 
     test('parse throws ArgumentError listing all variants when none match', () {
@@ -310,26 +310,26 @@ class _Dog {
   final String name;
 }
 
-class _Business {
-  _Business(this.legalName);
+class _Bird {
+  _Bird(this.wingspan);
 
-  // Casts a field that is absent on an _Individual payload, throwing a
+  // Casts a field that is absent on a _Fish payload, throwing a
   // TypeError (Error, not Exception) — mirrors a real discriminated variant.
-  factory _Business.fromJson(Object? json) {
+  factory _Bird.fromJson(Object? json) {
     final map = json! as Map<String, dynamic>;
-    return _Business(map['legalName'] as String);
+    return _Bird(map['wingspan'] as String);
   }
 
-  final String legalName;
+  final String wingspan;
 }
 
-class _Individual {
-  _Individual(this.firstName);
+class _Fish {
+  _Fish(this.finType);
 
-  factory _Individual.fromJson(Object? json) {
+  factory _Fish.fromJson(Object? json) {
     final map = json! as Map<String, dynamic>;
-    return _Individual(map['firstName'] as String);
+    return _Fish(map['finType'] as String);
   }
 
-  final String firstName;
+  final String finType;
 }

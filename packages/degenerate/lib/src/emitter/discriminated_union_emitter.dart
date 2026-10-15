@@ -33,7 +33,7 @@ final class DiscriminatedUnionEmitter {
   /// Whether we need to emit a synthetic enum for the discriminator values.
   bool get _needsSyntheticDiscEnum => _discTypeName == _syntheticDiscEnumName;
 
-  /// Name for the auto-generated discriminator enum (e.g. `BeneficiaryKind`).
+  /// Name for the auto-generated discriminator enum (e.g. `PetKind`).
   /// Appends `Disc` when the natural name collides with a variant class name
   /// OR an existing registered type. The registry check also keeps
   /// [_needsSyntheticDiscEnum] honest: when the spec defines the shared disc
@@ -231,7 +231,7 @@ final class DiscriminatedUnionEmitter {
     return ctx.typeRegistry.containsKey(name) ? '$name\$Variant' : name;
   }
 
-  /// Named-constructor name for a variant (e.g. `INDIVIDUAL` → `individual`).
+  /// Named-constructor name for a variant (e.g. `DOG` → `dog`).
   String _variantCtorName(String discValue) {
     final camel = toCamelCase(discValue);
     return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
@@ -757,10 +757,10 @@ final class DiscriminatedUnionEmitter {
   ///
   /// Produces the same pattern as regular enum emission:
   /// ```dart
-  /// sealed class BeneficiaryKind {
-  ///   const BeneficiaryKind();
-  ///   factory BeneficiaryKind.fromJson(String json) => switch (json) { ... };
-  ///   static const BeneficiaryKind business = BeneficiaryKind$business._();
+  /// sealed class PetKind {
+  ///   const PetKind();
+  ///   factory PetKind.fromJson(String json) => switch (json) { ... };
+  ///   static const PetKind cat = PetKind$cat._();
   ///   String get value;
   ///   String toJson() => value;
   /// }
