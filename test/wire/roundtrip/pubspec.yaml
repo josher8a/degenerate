@@ -15,6 +15,8 @@ dependencies:
     path: ../../../snapshots/specs/12-unions
   spec_14_constraints:
     path: ../../../snapshots/specs/14-constraints
+  spec_16_allof_unions:
+    path: ../../../snapshots/specs/16-allof-unions
   spec_extension_types:
     path: ../../../snapshots/specs/extension-types
 

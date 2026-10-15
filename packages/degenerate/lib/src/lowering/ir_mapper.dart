@@ -2,9 +2,13 @@ import 'dart:convert';
 
 import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/lowering/allof_distributor.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/normalizer/allof_flattener.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
+
+export 'package:degenerate/src/lowering/allof_distributor.dart'
+    show AllOfCompositionException;
 
 /// Maps normalized OpenAPI schemas to IR types.
 ///
@@ -68,6 +72,47 @@ final class IrMapper {
   }
 
   final AllOfFlattener _flattener = AllOfFlattener();
+
+  /// Rewrites an `allOf` over a union into a union of merged variants.
+  late final AllOfDistributor _distributor = AllOfDistributor(
+    rawSchemas: () => _rawSchemas,
+    expandAllOf: _expandNestedAllOf,
+    dartRefName: _dartRefName,
+    warn: (w) {
+      if (!_warnings.contains(w)) _warnings.add(w);
+    },
+  );
+
+  /// Names of the types created by distributing an `allOf` over a union
+  /// (the merged union, its variants and their inline types). Name
+  /// resolution gives every other type its name first, so adding such an
+  /// `allOf` to a spec never renames an existing type.
+  Set<String> get derivedNames => _derivedNames;
+  final Set<String> _derivedNames = {};
+
+  /// Depth of distributed unions being lowered; see [derivedNames].
+  int _distributing = 0;
+
+  /// JSON pointer of the schema being lowered, for error messages.
+  String _pointer = '#';
+
+  /// Runs [body] with [_pointer] set to [pointer].
+  T _at<T>(String pointer, T Function() body) {
+    final saved = _pointer;
+    _pointer = pointer;
+    try {
+      return body();
+    } finally {
+      _pointer = saved;
+    }
+  }
+
+  /// [_pointer] extended by [segments], escaped per RFC 6901.
+  String _childPointer(List<Object> segments) => [
+    _pointer,
+    for (final s in segments)
+      '$s'.replaceAll('~', '~0').replaceAll('/', '~1'),
+  ].join('/');
 
   /// Maps original OpenAPI schema name → Dart type name (after renaming).
   final Map<String, String> _nameMapping;
@@ -139,11 +184,15 @@ final class IrMapper {
     _recordPath(dartName, [dartName]);
     final discProp = _discriminatorProperties[name];
     var irType = schema is Map<String, dynamic>
-        ? _lowerSchemaImpl(
-            dartName,
-            schema,
-            discriminatorProperty: discProp,
-            namePath: [dartName],
+        ? _at(
+            '#/components/schemas/'
+            '${name.replaceAll('~', '~0').replaceAll('/', '~1')}',
+            () => _lowerSchemaImpl(
+              dartName,
+              schema,
+              discriminatorProperty: discProp,
+              namePath: [dartName],
+            ),
           )
         : _lowerBooleanSchema(schema as bool, nameHint: dartName);
     if (irType is IrPrimitive) {
@@ -180,7 +229,19 @@ final class IrMapper {
     String? nameHint,
     List<String>? namePath,
     String? discriminatorProperty,
+    String? pointer,
   }) {
+    if (pointer != null) {
+      return _at(
+        pointer,
+        () => lowerInlineSchema(
+          schema,
+          nameHint: nameHint,
+          namePath: namePath,
+          discriminatorProperty: discriminatorProperty,
+        ),
+      );
+    }
     // Check if the schema will produce a named type (needs a unique name).
     final needsName = _looksLikeObject(schema) || _looksLikeNamedType(schema);
     // Prefer: explicit nameHint > schema title > 'InlineObject' fallback.
@@ -231,9 +292,15 @@ final class IrMapper {
   }
 
   /// Lower an untyped inline schema (may be a Map, bool, or other).
-  IrType lowerUntypedInlineSchema(dynamic schema, {String? nameHint}) {
+  ///
+  /// [pointer] locates [schema] in the document for error messages.
+  IrType lowerUntypedInlineSchema(
+    dynamic schema, {
+    String? nameHint,
+    String? pointer,
+  }) {
     if (schema is Map<String, dynamic>) {
-      return lowerInlineSchema(schema, nameHint: nameHint);
+      return lowerInlineSchema(schema, nameHint: nameHint, pointer: pointer);
     }
     if (schema is bool) {
       return _lowerBooleanSchema(schema, nameHint: nameHint);
@@ -340,6 +407,36 @@ final class IrMapper {
       final rawRefName = schema['_resolvedRef'] as String;
       final refName = _dartRefName(rawRefName);
       return IrTypeRef(refName, description: description, isNullable: nullable);
+    }
+
+    // allOf over a union → union of merged variants. Must run before the
+    // flattener, which can only keep one side.
+    final distributed = _distributor.distribute(schema, pointer: _pointer);
+    if (distributed != null) {
+      // No variant survived: only the object members are left, generated
+      // as the type the allOf always produced.
+      if (distributed.containsKey('allOf')) {
+        return _lowerSchemaImpl(
+          name,
+          distributed,
+          discriminatorProperty: discriminatorProperty,
+          isInline: isInline,
+          namePath: namePath,
+        );
+      }
+      final unionName = name ?? _uniqueTypeName('InlineUnion');
+      _derivedNames.add(unionName);
+      _distributing++;
+      try {
+        return _lowerSchemaImpl(
+          unionName,
+          distributed,
+          isInline: isInline,
+          namePath: namePath,
+        );
+      } finally {
+        _distributing--;
+      }
     }
 
     // Resolve $ref entries inside allOf so the flattener can merge properties.
@@ -740,6 +837,7 @@ final class IrMapper {
         itemsSchema,
         nameHint: itemNameHint,
         namePath: namePath,
+        pointer: _childPointer(['items']),
       );
     } else {
       itemsType = const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
@@ -837,6 +935,7 @@ final class IrMapper {
           addProps,
           nameHint: valueHint,
           namePath: [...objectPath, 'Value'],
+          pointer: _childPointer(['additionalProperties']),
         );
       } else {
         // additionalProperties: true → Map<String, dynamic>
@@ -920,6 +1019,7 @@ final class IrMapper {
         fieldSchema,
         nameHint: fieldNameHint,
         namePath: fieldPath,
+        pointer: _childPointer(['properties', fieldOriginalName]),
       );
     }
 
@@ -965,7 +1065,8 @@ final class IrMapper {
 
     final explicitMapping = discriminator['mapping'] as Map<String, dynamic>?;
     // A discriminated union may be declared with `oneOf` or `anyOf`.
-    final oneOf = (schema['oneOf'] ?? schema['anyOf']) as List;
+    final oneOfKey = schema.containsKey('oneOf') ? 'oneOf' : 'anyOf';
+    final oneOf = schema[oneOfKey] as List;
 
     // Collect oneOf ref names for cross-referencing when mapping values
     // don't match any known schema (some specs have mismatched mapping refs).
@@ -1054,10 +1155,14 @@ final class IrMapper {
         // Derive the mapping key from the discriminator enum value if
         // available — BEFORE lowering, so an explicit-mapping collision
         // doesn't register an orphan type.
-        final enumKey = _discriminatorEnumValue(
-          variant['properties'] as Map<String, dynamic>?,
-          propertyName,
-        );
+        // A variant merged from an allOf carries the key its source
+        // union's explicit mapping gave it.
+        final enumKey =
+            variant[AllOfMarkers.discriminatorValue] as String? ??
+            _discriminatorEnumValue(
+              variant['properties'] as Map<String, dynamic>?,
+              propertyName,
+            );
         if (enumKey != null && explicitKeys.contains(enumKey)) continue;
         final lowered = lowerInlineSchema(
           variant,
@@ -1066,6 +1171,7 @@ final class IrMapper {
           // Emit the discriminator field as a plain String, matching the
           // sealed base's `String get <disc>` and ref-variant payloads.
           discriminatorProperty: propertyName,
+          pointer: _variantPointer(schema, oneOfKey, i),
         );
         final key =
             enumKey ?? (lowered is IrObject ? lowered.name : hint);
@@ -1151,6 +1257,7 @@ final class IrMapper {
             variant,
             nameHint: hint,
             namePath: _variantPath(unionName, unionPath, hint),
+            pointer: _variantPointer(schema, schemaKey, i),
           ),
         );
       }
@@ -1363,9 +1470,27 @@ final class IrMapper {
   /// `<Parent>VariantN` fallback. Shared by the oneOf/anyOf/discriminated
   /// lowerers so their variant names are derived identically.
   String _variantHint(String parentName, Map<String, dynamic> variant, int i) =>
+      _distributedVariantHint(parentName, variant) ??
       (variant['title'] as String?) ??
       _singleEnumHint(parentName, variant) ??
       '${parentName}Variant${i + 1}';
+
+  /// `<Parent><Suffix>` for a variant merged from an `allOf` (see
+  /// [AllOfDistributor]), or null for any other variant.
+  String? _distributedVariantHint(
+    String parentName,
+    Map<String, dynamic> variant,
+  ) => switch (variant[AllOfMarkers.variantSuffix]) {
+    final String suffix => '$parentName$suffix',
+    _ => null,
+  };
+
+  /// Pointer of variant [i] of [union]'s [keyword] list. Variants merged
+  /// from an `allOf` have no location of their own, so they report the
+  /// `allOf`'s.
+  String _variantPointer(Map<String, dynamic> union, String keyword, int i) =>
+      union[AllOfMarkers.sourcePointer] as String? ??
+      _childPointer([keyword, i]);
 
   /// The discriminator value from [props] for [propertyName] (e.g. a variant
   /// with `role: {enum: ['system']}` → `'system'`), or null when absent. The
@@ -1399,8 +1524,11 @@ final class IrMapper {
     return null;
   }
 
-  String _uniqueTypeName(String rawName) =>
-      uniqueTypeName(rawName, _usedNames);
+  String _uniqueTypeName(String rawName) {
+    final name = uniqueTypeName(rawName, _usedNames);
+    if (_distributing > 0) _derivedNames.add(name);
+    return name;
+  }
 
   bool _isNullable(Map<String, dynamic> schema) {
     // OpenAPI 3.1 uses `nullable: true` or type array including 'null'.

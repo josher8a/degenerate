@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Negative fixtures: 10 canParse, 1 validate.
+// Negative fixtures: 22 canParse, 2 validate.
 import 'package:spec_08_schema_json_schema_2020_12/spec_08_schema_json_schema_2020_12.dart';
 
 /// A fixture asserting `canParse` returns false.
@@ -82,6 +82,78 @@ final List<CanParseFixture> canParseFixtures = [
     <String, dynamic>{'kind': 'dynamic', 'width': 1.5, 'height': 'not_a_number'},
     Rectangle.canParse,
   ),
+  const CanParseFixture(
+    'ShapeCircle',
+    "missing required field 'kind'",
+    <String, dynamic>{'radius': 1.5, 'id': 'string'},
+    ShapeCircle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeCircle',
+    "missing required field 'radius'",
+    <String, dynamic>{'kind': 'dynamic', 'id': 'string'},
+    ShapeCircle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeCircle',
+    "wrong type for 'radius'",
+    <String, dynamic>{'kind': 'dynamic', 'radius': 'not_a_number', 'id': 'string'},
+    ShapeCircle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeCircle',
+    "missing required field 'id'",
+    <String, dynamic>{'kind': 'dynamic', 'radius': 1.5},
+    ShapeCircle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeCircle',
+    "wrong type for 'id'",
+    <String, dynamic>{'kind': 'dynamic', 'radius': 1.5, 'id': 123},
+    ShapeCircle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeRectangle',
+    "missing required field 'kind'",
+    <String, dynamic>{'width': 1.5, 'height': 1.5, 'id': 'string'},
+    ShapeRectangle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeRectangle',
+    "missing required field 'width'",
+    <String, dynamic>{'kind': 'dynamic', 'height': 1.5, 'id': 'string'},
+    ShapeRectangle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeRectangle',
+    "wrong type for 'width'",
+    <String, dynamic>{'kind': 'dynamic', 'width': 'not_a_number', 'height': 1.5, 'id': 'string'},
+    ShapeRectangle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeRectangle',
+    "missing required field 'height'",
+    <String, dynamic>{'kind': 'dynamic', 'width': 1.5, 'id': 'string'},
+    ShapeRectangle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeRectangle',
+    "wrong type for 'height'",
+    <String, dynamic>{'kind': 'dynamic', 'width': 1.5, 'height': 'not_a_number', 'id': 'string'},
+    ShapeRectangle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeRectangle',
+    "missing required field 'id'",
+    <String, dynamic>{'kind': 'dynamic', 'width': 1.5, 'height': 1.5},
+    ShapeRectangle.canParse,
+  ),
+  const CanParseFixture(
+    'ShapeRectangle',
+    "wrong type for 'id'",
+    <String, dynamic>{'kind': 'dynamic', 'width': 1.5, 'height': 1.5, 'id': 123},
+    ShapeRectangle.canParse,
+  ),
 ];
 
 final List<ValidateFixture> validateFixtures = [
@@ -91,5 +163,12 @@ final List<ValidateFixture> validateFixtures = [
     <String, dynamic>{'kind': 'dynamic', 'radius': 0},
     (json) => Circle.fromJson(json! as Map<String, dynamic>),
     (value) => (value! as Circle).validate(),
+  ),
+  ValidateFixture(
+    'ShapeCircle',
+    'radius: at exclusive minimum',
+    <String, dynamic>{'kind': 'dynamic', 'radius': 0, 'id': 'string'},
+    (json) => ShapeCircle.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as ShapeCircle).validate(),
   ),
 ];

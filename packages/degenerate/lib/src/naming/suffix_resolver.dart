@@ -8,6 +8,10 @@
 ///
 /// Top-level `components/schemas` names are *reserved*: they keep their names
 /// and no inline type may shorten onto one.
+///
+/// *Derived* names (see `IrMapper.derivedNames`) are resolved last, and
+/// invisibly to everything else: every other type gets exactly the name it
+/// would get if the derived types did not exist.
 library;
 
 import 'package:degenerate/src/dart_names.dart' show segmentsOf;
@@ -18,6 +22,9 @@ import 'package:degenerate/src/dart_names.dart' show segmentsOf;
 /// - [reserved]: names that must be preserved verbatim (top-level schemas).
 /// - [paths]: name → ordered PascalCase segments. Missing entries fall back to
 ///   a single segment equal to the name (no shortening).
+/// - [derived]: names resolved after, and without influencing, all others.
+/// - [derivedMayNotTake]: rejects a candidate name for a derived type, given
+///   the final names chosen so far (e.g. a name an emitter synthesizes).
 ///
 /// Returns a total map old name → final name. Reserved names map to
 /// themselves. The result is guaranteed collision-free.
@@ -26,19 +33,31 @@ Map<String, String> resolveSuffixNames({
   required Set<String> reserved,
   required Map<String, List<String>> paths,
   Set<String> forbidden = const {},
+  Set<String> derived = const {},
+  bool Function(String candidate, Map<String, String> resolved)?
+  derivedMayNotTake,
 }) {
   List<String> segsOf(String n) => segmentsOf(n, paths);
 
   // Build an inverted index: suffix key → count of types sharing that suffix.
   // This replaces the O(n²) inner scan with O(1) lookups per candidate.
-  final suffixCounts = <String, int>{};
-  for (final n in allNames) {
-    final segs = segsOf(n);
-    for (var k = 1; k <= segs.length; k++) {
-      final key = segs.sublist(segs.length - k).join('\x00');
-      suffixCounts[key] = (suffixCounts[key] ?? 0) + 1;
+  Map<String, int> suffixCountsOf(Iterable<String> names) {
+    final counts = <String, int>{};
+    for (final n in names) {
+      final segs = segsOf(n);
+      for (var k = 1; k <= segs.length; k++) {
+        final key = segs.sublist(segs.length - k).join('\x00');
+        counts[key] = (counts[key] ?? 0) + 1;
+      }
     }
+    return counts;
   }
+
+  bool isDerived(String n) => derived.contains(n) && !reserved.contains(n);
+  final allCounts = suffixCountsOf(allNames);
+  final originalCounts = derived.isEmpty
+      ? allCounts
+      : suffixCountsOf(allNames.where((n) => !isDerived(n)));
 
   final result = <String, String>{};
   // `taken` blocks a short name from being claimed. Seed it with reserved
@@ -51,13 +70,21 @@ Map<String, String> resolveSuffixNames({
 
   // Resolve inline types shortest-path-first (then alphabetically) so that
   // shallower types win the shorter names and the outcome is deterministic.
+  // Derived types go last, counted against everything already named.
   final inline = [for (final n in allNames) if (!reserved.contains(n)) n]
     ..sort((a, b) {
+      final byDerived = (isDerived(a) ? 1 : 0).compareTo(isDerived(b) ? 1 : 0);
+      if (byDerived != 0) return byDerived;
       final byLen = segsOf(a).length.compareTo(segsOf(b).length);
       return byLen != 0 ? byLen : a.compareTo(b);
     });
 
   for (final name in inline) {
+    final derivedName = isDerived(name);
+    final suffixCounts = derivedName ? allCounts : originalCounts;
+    bool available(String cand) =>
+        !taken.contains(cand) &&
+        !(derivedName && (derivedMayNotTake?.call(cand, result) ?? false));
     final segs = segsOf(name);
     String? chosen;
     for (var k = 1; k <= segs.length; k++) {
@@ -71,7 +98,7 @@ Map<String, String> resolveSuffixNames({
       // like `0` (from a property literally named "0") is only valid once a
       // preceding segment makes the join start with a letter/underscore.
       if (!_isValidTypeName(cand)) continue;
-      if (!taken.contains(cand)) {
+      if (available(cand)) {
         chosen = cand;
         break;
       }
@@ -81,7 +108,7 @@ Map<String, String> resolveSuffixNames({
     var finalName = base;
     // Paranoia: guarantee global uniqueness even if a join collided.
     var n = 1;
-    while (taken.contains(finalName)) {
+    while (!available(finalName)) {
       finalName = '$base\$$n';
       n++;
     }

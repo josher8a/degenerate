@@ -7,6 +7,7 @@ import 'package:spec_08_schema_json_schema_2020_12/negative_fixtures.dart'
     as schema;
 import 'package:spec_12_unions/negative_fixtures.dart' as unions;
 import 'package:spec_14_constraints/negative_fixtures.dart' as constraints;
+import 'package:spec_16_allof_unions/negative_fixtures.dart' as allof;
 import 'package:spec_extension_types/negative_fixtures.dart' as exttypes;
 import 'package:test/test.dart';
 
@@ -25,6 +26,10 @@ void main() {
   ]);
   _runCanParse('constraints', [
     for (final f in constraints.canParseFixtures)
+      (f.schemaName, f.label, f.sample, f.canParse),
+  ]);
+  _runCanParse('allof-unions', [
+    for (final f in allof.canParseFixtures)
       (f.schemaName, f.label, f.sample, f.canParse),
   ]);
   _runCanParse('extension-types', [

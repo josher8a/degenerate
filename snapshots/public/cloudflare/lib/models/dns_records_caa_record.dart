@@ -1,60 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsRecordsCaaRecord
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_caa_record/dns_records_caa_record_data.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-sealed class DnsRecordsCaaRecordType {const DnsRecordsCaaRecordType();
-
-factory DnsRecordsCaaRecordType.fromJson(String json) { return switch (json) {
-  'CAA' => caa,
-  _ => DnsRecordsCaaRecordType$Unknown(json),
-}; }
-
-static const DnsRecordsCaaRecordType caa = DnsRecordsCaaRecordType$caa._();
-
-static const List<DnsRecordsCaaRecordType> values = [caa];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'CAA' => 'caa',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsRecordsCaaRecordType$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() caa, required W Function(String value) $unknown, }) { return switch (this) {
-      DnsRecordsCaaRecordType$caa() => caa(),
-      DnsRecordsCaaRecordType$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? caa, W Function(String value)? $unknown, }) { return switch (this) {
-      DnsRecordsCaaRecordType$caa() => caa != null ? caa() : orElse(value),
-      DnsRecordsCaaRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'DnsRecordsCaaRecordType($value)';
-
- }
-@immutable final class DnsRecordsCaaRecordType$caa extends DnsRecordsCaaRecordType {const DnsRecordsCaaRecordType$caa._();
-
-@override String get value => 'CAA';
-
-@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsCaaRecordType$caa;
-
-@override int get hashCode => 'CAA'.hashCode;
-
- }
-@immutable final class DnsRecordsCaaRecordType$Unknown extends DnsRecordsCaaRecordType {const DnsRecordsCaaRecordType$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsCaaRecordType$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
-@immutable final class DnsRecordsCaaRecord {const DnsRecordsCaaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_caa_record/dns_records_caa_record_data.dart';import 'package:pub_cloudflare/models/dns_records_caa_record/dns_records_caa_record_type.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';@immutable final class DnsRecordsCaaRecord {const DnsRecordsCaaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsCaaRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsCaaRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

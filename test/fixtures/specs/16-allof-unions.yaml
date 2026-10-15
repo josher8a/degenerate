@@ -1,0 +1,245 @@
+openapi: 3.1.0
+info:
+  title: allOf distributing over unions
+  version: 1.0.0
+  description: |
+    `allOf[U, O1..On]` with `U = oneOf/anyOf[V1..Vk]` is generated as
+    `oneOf/anyOf[allOf[V1, O1..On], ..., allOf[Vk, O1..On]]`. The source
+    unions (`Action`, `Kind`, ...) must keep generating unchanged, since they
+    are also used untracked.
+paths:
+  /proposals/{proposalId}:
+    get:
+      operationId: getProposal
+      parameters:
+        - name: proposalId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The tracked proposal.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssistantTrackedProposal'
+  /beneficiaries:
+    post:
+      operationId: createBeneficiary
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              # Case C: $ref discriminated anyOf + inline object.
+              allOf:
+                - $ref: '#/components/schemas/Kind'
+                - type: object
+                  properties:
+                    proposalId:
+                      type: string
+                      maxLength: 200
+      responses:
+        '201':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kind'
+  /actions:
+    post:
+      operationId: submitAction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            # Untracked use of the source union: must not change.
+            schema:
+              $ref: '#/components/schemas/Action'
+      responses:
+        '204':
+          description: Accepted.
+components:
+  schemas:
+    Tracking:
+      type: object
+      properties:
+        proposalId:
+          type: string
+          maxLength: 200
+        status:
+          type: string
+          enum: [PROPOSED, EXECUTED, REJECTED]
+    Action:
+      oneOf:
+        - type: object
+          properties:
+            action:
+              type: string
+              enum: [create]
+            name:
+              type: string
+          required: [action, name]
+        - type: object
+          properties:
+            action:
+              type: string
+              enum: [delete]
+            id:
+              type: string
+          required: [action, id]
+    ActionAlias:
+      $ref: '#/components/schemas/Action'
+    Single:
+      oneOf:
+        - type: object
+          properties:
+            action:
+              type: string
+              enum: [create]
+            amount:
+              type: string
+          required: [action, amount]
+    BeneficiaryOp:
+      # The only distinguishing key is the `action` value.
+      oneOf:
+        - type: object
+          properties:
+            action:
+              type: string
+              enum: [update]
+            beneficiaryId:
+              type: string
+            body:
+              type: string
+          required: [action, beneficiaryId, body]
+        - type: object
+          properties:
+            action:
+              type: string
+              enum: [updateScope]
+            beneficiaryId:
+              type: string
+            body:
+              type: string
+          required: [action, beneficiaryId, body]
+    Kind:
+      anyOf:
+        - $ref: '#/components/schemas/Business'
+        - $ref: '#/components/schemas/Individual'
+      discriminator:
+        propertyName: kind
+    MappedKind:
+      oneOf:
+        - $ref: '#/components/schemas/Business'
+        - $ref: '#/components/schemas/Individual'
+      discriminator:
+        propertyName: kind
+        mapping:
+          BUSINESS: '#/components/schemas/Business'
+          INDIVIDUAL: '#/components/schemas/Individual'
+    Business:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum: [BUSINESS]
+        legalName:
+          type: string
+      required: [kind, legalName]
+    Individual:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum: [INDIVIDUAL]
+        firstName:
+          type: string
+      required: [kind, firstName]
+    TrackedAction:
+      # Named component: $ref union + $ref object.
+      allOf:
+        - $ref: '#/components/schemas/Action'
+        - $ref: '#/components/schemas/Tracking'
+    AssistantTrackedProposal:
+      type: object
+      properties:
+        actions:
+          # Case A: $ref union + $ref object.
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/Action'
+              - $ref: '#/components/schemas/Tracking'
+        singles:
+          # Case A with a one-variant oneOf.
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/Single'
+              - $ref: '#/components/schemas/Tracking'
+        aliased:
+          # $ref -> $ref -> union.
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/ActionAlias'
+              - $ref: '#/components/schemas/Tracking'
+        beneficiaries:
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/BeneficiaryOp'
+              - $ref: '#/components/schemas/Tracking'
+        team:
+          # Case B: inline union + $ref object.
+          type: array
+          items:
+            allOf:
+              - oneOf:
+                  - type: object
+                    properties:
+                      action:
+                        type: string
+                        enum: [invite]
+                      email:
+                        type: string
+                    required: [action, email]
+                  - type: object
+                    properties:
+                      action:
+                        type: string
+                        enum: [remove]
+                      memberId:
+                        type: string
+                    required: [action, memberId]
+              - $ref: '#/components/schemas/Tracking'
+        kinds:
+          # Discriminated anyOf + $ref object, in a response.
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/Kind'
+              - $ref: '#/components/schemas/Tracking'
+        mappedKinds:
+          # Discriminated oneOf with an explicit mapping + $ref object.
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/MappedKind'
+              - $ref: '#/components/schemas/Tracking'
+        control:
+          # Case D: plain objects only. Merged into one class, as before.
+          type: array
+          items:
+            allOf:
+              - type: object
+                properties:
+                  name:
+                    type: string
+                  action:
+                    type: string
+                    enum: [rename]
+                required: [name, action]
+              - $ref: '#/components/schemas/Tracking'

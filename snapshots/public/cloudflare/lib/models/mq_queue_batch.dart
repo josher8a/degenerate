@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MqQueueBatch
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_queue_message.dart';import 'package:pub_cloudflare/models/mq_queue_message_json.dart';import 'package:pub_cloudflare/models/mq_queue_message_text.dart';@immutable final class MqQueueBatch {const MqQueueBatch({this.delaySeconds, this.messages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_queue_message.dart';import 'package:pub_cloudflare/models/mq_queue_message/mq_queue_message_mq_queue_message_json.dart';import 'package:pub_cloudflare/models/mq_queue_message/mq_queue_message_mq_queue_message_text.dart';@immutable final class MqQueueBatch {const MqQueueBatch({this.delaySeconds, this.messages, });
 
 factory MqQueueBatch.fromJson(Map<String, dynamic> json) { return MqQueueBatch(
   delaySeconds: json['delay_seconds'] != null ? (json['delay_seconds'] as num).toDouble() : null,
-  messages: (json['messages'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MqQueueMessageText.fromJson(v as Map<String, dynamic>), fromB: (v) => MqQueueMessageJson.fromJson(v as Map<String, dynamic>),)).toList(),
+  messages: (json['messages'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MqQueueMessageMqQueueMessageText.fromJson(v as Map<String, dynamic>), fromB: (v) => MqQueueMessageMqQueueMessageJson.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
 
 /// The number of seconds to wait for attempting to deliver this batch to consumers

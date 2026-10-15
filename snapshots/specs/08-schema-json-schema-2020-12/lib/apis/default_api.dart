@@ -10,21 +10,21 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `POST /shapes`
-Future<ApiResult<Shape, Never>> createShape({required Shape? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Shape, Never>> createShape({required Shape body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/shapes',
   headers: headers,
-  body: jsonEncode(body),
+  body: jsonEncode(body.toJson()),
   options: options,
 );
 
 return execute(
   request,
   onSuccess: (response) {
-    return Shape.fromJson(jsonDecode(response.body) as dynamic);
+    return Shape.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

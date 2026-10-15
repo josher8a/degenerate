@@ -2,25 +2,25 @@
 // Source: #/components/schemas/RealtimekitVideoConfig (inline: Watermark)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_video_config/watermark_size.dart';/// Position of the watermark
-sealed class WatermarkPosition {const WatermarkPosition();
+sealed class Position {const Position();
 
-factory WatermarkPosition.fromJson(String json) { return switch (json) {
+factory Position.fromJson(String json) { return switch (json) {
   'left top' => leftTop,
   'right top' => rightTop,
   'left bottom' => leftBottom,
   'right bottom' => rightBottom,
-  _ => WatermarkPosition$Unknown(json),
+  _ => Position$Unknown(json),
 }; }
 
-static const WatermarkPosition leftTop = WatermarkPosition$leftTop._();
+static const Position leftTop = Position$leftTop._();
 
-static const WatermarkPosition rightTop = WatermarkPosition$rightTop._();
+static const Position rightTop = Position$rightTop._();
 
-static const WatermarkPosition leftBottom = WatermarkPosition$leftBottom._();
+static const Position leftBottom = Position$leftBottom._();
 
-static const WatermarkPosition rightBottom = WatermarkPosition$rightBottom._();
+static const Position rightBottom = Position$rightBottom._();
 
-static const List<WatermarkPosition> values = [leftTop, rightTop, leftBottom, rightBottom];
+static const List<Position> values = [leftTop, rightTop, leftBottom, rightBottom];
 
 String get value;
 String toJson() { return value; } 
@@ -33,83 +33,83 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WatermarkPosition$Unknown; } 
+bool get isUnknown { return this is Position$Unknown; } 
 /// Exhaustive match on the enum value.
 W when<W>({required W Function() leftTop, required W Function() rightTop, required W Function() leftBottom, required W Function() rightBottom, required W Function(String value) $unknown, }) { return switch (this) {
-      WatermarkPosition$leftTop() => leftTop(),
-      WatermarkPosition$rightTop() => rightTop(),
-      WatermarkPosition$leftBottom() => leftBottom(),
-      WatermarkPosition$rightBottom() => rightBottom(),
-      WatermarkPosition$Unknown(:final value) => $unknown(value),
+      Position$leftTop() => leftTop(),
+      Position$rightTop() => rightTop(),
+      Position$leftBottom() => leftBottom(),
+      Position$rightBottom() => rightBottom(),
+      Position$Unknown(:final value) => $unknown(value),
     }; } 
 /// Partial match with a required fallback for unhandled variants.
 W maybeWhen<W>({required W Function(String value) orElse, W Function()? leftTop, W Function()? rightTop, W Function()? leftBottom, W Function()? rightBottom, W Function(String value)? $unknown, }) { return switch (this) {
-      WatermarkPosition$leftTop() => leftTop != null ? leftTop() : orElse(value),
-      WatermarkPosition$rightTop() => rightTop != null ? rightTop() : orElse(value),
-      WatermarkPosition$leftBottom() => leftBottom != null ? leftBottom() : orElse(value),
-      WatermarkPosition$rightBottom() => rightBottom != null ? rightBottom() : orElse(value),
-      WatermarkPosition$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+      Position$leftTop() => leftTop != null ? leftTop() : orElse(value),
+      Position$rightTop() => rightTop != null ? rightTop() : orElse(value),
+      Position$leftBottom() => leftBottom != null ? leftBottom() : orElse(value),
+      Position$rightBottom() => rightBottom != null ? rightBottom() : orElse(value),
+      Position$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
     }; } 
-@override String toString() => 'WatermarkPosition($value)';
+@override String toString() => 'Position($value)';
 
  }
-@immutable final class WatermarkPosition$leftTop extends WatermarkPosition {const WatermarkPosition$leftTop._();
+@immutable final class Position$leftTop extends Position {const Position$leftTop._();
 
 @override String get value => 'left top';
 
-@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$leftTop;
+@override bool operator ==(Object other) => identical(this, other) || other is Position$leftTop;
 
 @override int get hashCode => 'left top'.hashCode;
 
  }
-@immutable final class WatermarkPosition$rightTop extends WatermarkPosition {const WatermarkPosition$rightTop._();
+@immutable final class Position$rightTop extends Position {const Position$rightTop._();
 
 @override String get value => 'right top';
 
-@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$rightTop;
+@override bool operator ==(Object other) => identical(this, other) || other is Position$rightTop;
 
 @override int get hashCode => 'right top'.hashCode;
 
  }
-@immutable final class WatermarkPosition$leftBottom extends WatermarkPosition {const WatermarkPosition$leftBottom._();
+@immutable final class Position$leftBottom extends Position {const Position$leftBottom._();
 
 @override String get value => 'left bottom';
 
-@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$leftBottom;
+@override bool operator ==(Object other) => identical(this, other) || other is Position$leftBottom;
 
 @override int get hashCode => 'left bottom'.hashCode;
 
  }
-@immutable final class WatermarkPosition$rightBottom extends WatermarkPosition {const WatermarkPosition$rightBottom._();
+@immutable final class Position$rightBottom extends Position {const Position$rightBottom._();
 
 @override String get value => 'right bottom';
 
-@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$rightBottom;
+@override bool operator ==(Object other) => identical(this, other) || other is Position$rightBottom;
 
 @override int get hashCode => 'right bottom'.hashCode;
 
  }
-@immutable final class WatermarkPosition$Unknown extends WatermarkPosition {const WatermarkPosition$Unknown(this.value);
+@immutable final class Position$Unknown extends Position {const Position$Unknown(this.value);
 
 @override final String value;
 
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WatermarkPosition$Unknown && other.value == value;
+    other is Position$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
 
  }
 /// Watermark to be added to the recording
-@immutable final class Watermark {const Watermark({this.position = WatermarkPosition.leftTop, this.size, this.url, });
+@immutable final class Watermark {const Watermark({this.position = Position.leftTop, this.size, this.url, });
 
 factory Watermark.fromJson(Map<String, dynamic> json) { return Watermark(
-  position: json.containsKey('position') ? WatermarkPosition.fromJson(json['position'] as String) : WatermarkPosition.leftTop,
+  position: json.containsKey('position') ? Position.fromJson(json['position'] as String) : Position.leftTop,
   size: json['size'] != null ? WatermarkSize.fromJson(json['size'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
 /// Position of the watermark
-final WatermarkPosition position;
+final Position position;
 
 /// Size of the watermark
 final WatermarkSize? size;
@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'position', 'size', 'url'}.contains(key)); } 
-Watermark copyWith({WatermarkPosition Function()? position, WatermarkSize? Function()? size, Uri? Function()? url, }) { return Watermark(
+Watermark copyWith({Position Function()? position, WatermarkSize? Function()? size, Uri? Function()? url, }) { return Watermark(
   position: position != null ? position() : this.position,
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,
