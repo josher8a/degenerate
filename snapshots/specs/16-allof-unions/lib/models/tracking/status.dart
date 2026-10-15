@@ -4,73 +4,73 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Status {const Status();
 
 factory Status.fromJson(String json) { return switch (json) {
-  'PROPOSED' => proposed,
-  'EXECUTED' => executed,
-  'REJECTED' => rejected,
+  'PLACED' => placed,
+  'APPROVED' => approved,
+  'DELIVERED' => delivered,
   _ => Status$Unknown(json),
 }; }
 
-static const Status proposed = Status$proposed._();
+static const Status placed = Status$placed._();
 
-static const Status executed = Status$executed._();
+static const Status approved = Status$approved._();
 
-static const Status rejected = Status$rejected._();
+static const Status delivered = Status$delivered._();
 
-static const List<Status> values = [proposed, executed, rejected];
+static const List<Status> values = [placed, approved, delivered];
 
 String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
-  'PROPOSED' => 'proposed',
-  'EXECUTED' => 'executed',
-  'REJECTED' => 'rejected',
+  'PLACED' => 'placed',
+  'APPROVED' => 'approved',
+  'DELIVERED' => 'delivered',
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Status$Unknown; } 
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() proposed, required W Function() executed, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
-      Status$proposed() => proposed(),
-      Status$executed() => executed(),
-      Status$rejected() => rejected(),
+W when<W>({required W Function() placed, required W Function() approved, required W Function() delivered, required W Function(String value) $unknown, }) { return switch (this) {
+      Status$placed() => placed(),
+      Status$approved() => approved(),
+      Status$delivered() => delivered(),
       Status$Unknown(:final value) => $unknown(value),
     }; } 
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? proposed, W Function()? executed, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
-      Status$proposed() => proposed != null ? proposed() : orElse(value),
-      Status$executed() => executed != null ? executed() : orElse(value),
-      Status$rejected() => rejected != null ? rejected() : orElse(value),
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? placed, W Function()? approved, W Function()? delivered, W Function(String value)? $unknown, }) { return switch (this) {
+      Status$placed() => placed != null ? placed() : orElse(value),
+      Status$approved() => approved != null ? approved() : orElse(value),
+      Status$delivered() => delivered != null ? delivered() : orElse(value),
       Status$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
     }; } 
 @override String toString() => 'Status($value)';
 
  }
-@immutable final class Status$proposed extends Status {const Status$proposed._();
+@immutable final class Status$placed extends Status {const Status$placed._();
 
-@override String get value => 'PROPOSED';
+@override String get value => 'PLACED';
 
-@override bool operator ==(Object other) => identical(this, other) || other is Status$proposed;
+@override bool operator ==(Object other) => identical(this, other) || other is Status$placed;
 
-@override int get hashCode => 'PROPOSED'.hashCode;
-
- }
-@immutable final class Status$executed extends Status {const Status$executed._();
-
-@override String get value => 'EXECUTED';
-
-@override bool operator ==(Object other) => identical(this, other) || other is Status$executed;
-
-@override int get hashCode => 'EXECUTED'.hashCode;
+@override int get hashCode => 'PLACED'.hashCode;
 
  }
-@immutable final class Status$rejected extends Status {const Status$rejected._();
+@immutable final class Status$approved extends Status {const Status$approved._();
 
-@override String get value => 'REJECTED';
+@override String get value => 'APPROVED';
 
-@override bool operator ==(Object other) => identical(this, other) || other is Status$rejected;
+@override bool operator ==(Object other) => identical(this, other) || other is Status$approved;
 
-@override int get hashCode => 'REJECTED'.hashCode;
+@override int get hashCode => 'APPROVED'.hashCode;
+
+ }
+@immutable final class Status$delivered extends Status {const Status$delivered._();
+
+@override String get value => 'DELIVERED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$delivered;
+
+@override int get hashCode => 'DELIVERED'.hashCode;
 
  }
 @immutable final class Status$Unknown extends Status {const Status$Unknown(this.value);

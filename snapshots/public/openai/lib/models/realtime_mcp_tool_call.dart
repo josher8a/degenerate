@@ -13,7 +13,12 @@ factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) { return Realtim
   arguments: json['arguments'] as String,
   approvalRequestId: json['approval_request_id'] as String?,
   output: json['output'] as String?,
-  error: json['error'] != null ? OneOf3.parse(json['error'], fromA: (v) => RealtimeMcpProtocolError.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeMcpToolExecutionError.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeMcphttpError.fromJson(v as Map<String, dynamic>),) : null,
+  error: json['error'] != null ? switch (json['error']) {
+  final Map<String, dynamic> m when m['type'] == 'protocol_error' => OneOf3<RealtimeMcpProtocolError, RealtimeMcpToolExecutionError, RealtimeMcphttpError>.a(RealtimeMcpProtocolError.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'tool_execution_error' => OneOf3<RealtimeMcpProtocolError, RealtimeMcpToolExecutionError, RealtimeMcphttpError>.b(RealtimeMcpToolExecutionError.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'http_error' => OneOf3<RealtimeMcpProtocolError, RealtimeMcpToolExecutionError, RealtimeMcphttpError>.c(RealtimeMcphttpError.fromJson(m)),
+  _ => OneOf3.parse(json['error'], fromA: (v) => RealtimeMcpProtocolError.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeMcpToolExecutionError.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeMcphttpError.fromJson(v as Map<String, dynamic>),),
+} : null,
 ); }
 
 /// The type of the item. Always `mcp_call`.

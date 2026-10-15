@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Source: #/components/schemas/AssistantTrackedProposal (inline: Team > Remove)
+// Source: #/components/schemas/StoreOrder (inline: Team > Remove)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_16_allof_unions/models/tracking/status.dart';sealed class RemoveAction {const RemoveAction();
 
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? remove, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Remove {const Remove({required this.action, required this.memberId, this.proposalId, this.status, });
+@immutable final class Remove {const Remove({required this.action, required this.memberId, this.orderId, this.status, });
 
 factory Remove.fromJson(Map<String, dynamic> json) { return Remove(
   action: RemoveAction.fromJson(json['action'] as String),
   memberId: json['memberId'] as String,
-  proposalId: json['proposalId'] as String?,
+  orderId: json['orderId'] as String?,
   status: json['status'] != null ? Status.fromJson(json['status'] as String) : null,
 ); }
 
@@ -66,40 +66,40 @@ final RemoveAction action;
 
 final String memberId;
 
-final String? proposalId;
+final String? orderId;
 
 final Status? status;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'memberId': memberId,
-  'proposalId': ?proposalId,
+  'orderId': ?orderId,
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'remove' &&
       json.containsKey('memberId') && json['memberId'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final proposalId$ = proposalId;
-if (proposalId$ != null) {
-  if (proposalId$.runes.length > 200) { errors.add('proposalId: length must be <= 200'); }
+final orderId$ = orderId;
+if (orderId$ != null) {
+  if (orderId$.runes.length > 200) { errors.add('orderId: length must be <= 200'); }
 }
 return errors; } 
-Remove copyWith({RemoveAction? action, String? memberId, String? Function()? proposalId, Status? Function()? status, }) { return Remove(
+Remove copyWith({RemoveAction? action, String? memberId, String? Function()? orderId, Status? Function()? status, }) { return Remove(
   action: action ?? this.action,
   memberId: memberId ?? this.memberId,
-  proposalId: proposalId != null ? proposalId() : this.proposalId,
+  orderId: orderId != null ? orderId() : this.orderId,
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Remove &&
           action == other.action &&
           memberId == other.memberId &&
-          proposalId == other.proposalId &&
+          orderId == other.orderId &&
           status == other.status;
 
-@override int get hashCode => Object.hash(action, memberId, proposalId, status);
+@override int get hashCode => Object.hash(action, memberId, orderId, status);
 
-@override String toString() => 'Remove(action: $action, memberId: $memberId, proposalId: $proposalId, status: $status)';
+@override String toString() => 'Remove(action: $action, memberId: $memberId, orderId: $orderId, status: $status)';
 
  }

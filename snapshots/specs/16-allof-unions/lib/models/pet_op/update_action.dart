@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Source: #/components/schemas/BeneficiaryOp (inline: Update > Action)
+// Source: #/components/schemas/PetOp (inline: Update > Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UpdateAction {const UpdateAction();
 

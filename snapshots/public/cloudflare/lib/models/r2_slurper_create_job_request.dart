@@ -5,7 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory R2SlurperCreateJobRequest.fromJson(Map<String, dynamic> json) { return R2SlurperCreateJobRequest(
   overwrite: json.containsKey('overwrite') ? json['overwrite'] as bool : true,
-  source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => R2SlurperS3SourceSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => R2SlurperGcsSourceSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => R2SlurperR2SourceSchema.fromJson(v as Map<String, dynamic>),) : null,
+  source: json['source'] != null ? switch (json['source']) {
+  final Map<String, dynamic> m when m['vendor'] == 's3' => OneOf3<R2SlurperS3SourceSchema, R2SlurperGcsSourceSchema, R2SlurperR2SourceSchema>.a(R2SlurperS3SourceSchema.fromJson(m)),
+  final Map<String, dynamic> m when m['vendor'] == 'gcs' => OneOf3<R2SlurperS3SourceSchema, R2SlurperGcsSourceSchema, R2SlurperR2SourceSchema>.b(R2SlurperGcsSourceSchema.fromJson(m)),
+  final Map<String, dynamic> m when m['vendor'] == 'r2' => OneOf3<R2SlurperS3SourceSchema, R2SlurperGcsSourceSchema, R2SlurperR2SourceSchema>.c(R2SlurperR2SourceSchema.fromJson(m)),
+  _ => OneOf3.parse(json['source'], fromA: (v) => R2SlurperS3SourceSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => R2SlurperGcsSourceSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => R2SlurperR2SourceSchema.fromJson(v as Map<String, dynamic>),),
+} : null,
   target: json['target'] != null ? R2SlurperR2TargetSchema.fromJson(json['target'] as Map<String, dynamic>) : null,
 ); }
 

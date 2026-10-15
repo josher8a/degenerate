@@ -6,8 +6,20 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory CreateEvalRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRequest(
   name: json['name'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  dataSourceConfig: OneOf3.parse(json['data_source_config'], fromA: (v) => CreateEvalCustomDataSourceConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalLogsDataSourceConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalStoredCompletionsDataSourceConfig.fromJson(v as Map<String, dynamic>),),
-  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => CreateEvalLabelModelGrader.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
+  dataSourceConfig: switch (json['data_source_config']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CreateEvalCustomDataSourceConfig, CreateEvalLogsDataSourceConfig, CreateEvalStoredCompletionsDataSourceConfig>.a(CreateEvalCustomDataSourceConfig.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'logs' => OneOf3<CreateEvalCustomDataSourceConfig, CreateEvalLogsDataSourceConfig, CreateEvalStoredCompletionsDataSourceConfig>.b(CreateEvalLogsDataSourceConfig.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'stored_completions' => OneOf3<CreateEvalCustomDataSourceConfig, CreateEvalLogsDataSourceConfig, CreateEvalStoredCompletionsDataSourceConfig>.c(CreateEvalStoredCompletionsDataSourceConfig.fromJson(m)),
+  _ => OneOf3.parse(json['data_source_config'], fromA: (v) => CreateEvalCustomDataSourceConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalLogsDataSourceConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalStoredCompletionsDataSourceConfig.fromJson(v as Map<String, dynamic>),),
+},
+  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'label_model' => OneOf5<CreateEvalLabelModelGrader, GraderStringCheck, EvalGraderTextSimilarity, EvalGraderPython, EvalGraderScoreModel>.a(CreateEvalLabelModelGrader.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'string_check' => OneOf5<CreateEvalLabelModelGrader, GraderStringCheck, EvalGraderTextSimilarity, EvalGraderPython, EvalGraderScoreModel>.b(GraderStringCheck.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'text_similarity' => OneOf5<CreateEvalLabelModelGrader, GraderStringCheck, EvalGraderTextSimilarity, EvalGraderPython, EvalGraderScoreModel>.c(EvalGraderTextSimilarity.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'python' => OneOf5<CreateEvalLabelModelGrader, GraderStringCheck, EvalGraderTextSimilarity, EvalGraderPython, EvalGraderScoreModel>.d(EvalGraderPython.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'score_model' => OneOf5<CreateEvalLabelModelGrader, GraderStringCheck, EvalGraderTextSimilarity, EvalGraderPython, EvalGraderScoreModel>.e(EvalGraderScoreModel.fromJson(m)),
+  _ => OneOf5.parse(e, fromA: (v) => CreateEvalLabelModelGrader.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 ); }
 
 /// The name of the evaluation.

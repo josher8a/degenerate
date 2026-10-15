@@ -386,7 +386,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -421,7 +425,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -483,7 +491,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -508,7 +520,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<DeletedBankAccount, DeletedCard>.a(DeletedBankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<DeletedBankAccount, DeletedCard>.b(DeletedCard.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -689,7 +705,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -724,7 +744,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -786,7 +810,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -811,7 +839,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<DeletedBankAccount, DeletedCard>.a(DeletedBankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<DeletedBankAccount, DeletedCard>.b(DeletedCard.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5842,7 +5874,13 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'account' => OneOf4<Account, BankAccount, Card, Source>.a(Account.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<Account, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<Account, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<Account, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5893,7 +5931,12 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf3<Card, BankAccount, Source>.a(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf3<Card, BankAccount, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf3<Card, BankAccount, Source>.c(Source.fromJson(m)),
+  _ => OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5920,7 +5963,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => switch (v) {
+  final Map<String, dynamic> m when m['object'] == 'account' => OneOf4<Account, BankAccount, Card, Source>.a(Account.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<Account, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<Account, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<Account, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+}, fromB: (v) => switch (v) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<DeletedBankAccount, DeletedCard>.a(DeletedBankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<DeletedBankAccount, DeletedCard>.b(DeletedCard.fromJson(m)),
+  _ => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),
+},);
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -5990,7 +6043,13 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'account' => OneOf4<Account, BankAccount, Card, Source>.a(Account.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<Account, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<Account, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<Account, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6041,7 +6100,12 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf3<Card, BankAccount, Source>.a(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf3<Card, BankAccount, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf3<Card, BankAccount, Source>.c(Source.fromJson(m)),
+  _ => OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6068,7 +6132,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => switch (v) {
+  final Map<String, dynamic> m when m['object'] == 'account' => OneOf4<Account, BankAccount, Card, Source>.a(Account.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<Account, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<Account, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<Account, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+}, fromB: (v) => switch (v) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<DeletedBankAccount, DeletedCard>.a(DeletedBankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<DeletedBankAccount, DeletedCard>.b(DeletedCard.fromJson(m)),
+  _ => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),
+},);
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6472,7 +6546,13 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'account' => OneOf4<Account, BankAccount, Card, Source>.a(Account.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<Account, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<Account, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<Account, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6505,7 +6585,13 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'account' => OneOf4<Account, BankAccount, Card, Source>.a(Account.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<Account, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<Account, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<Account, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6556,7 +6642,12 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf3<Card, BankAccount, Source>.a(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf3<Card, BankAccount, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf3<Card, BankAccount, Source>.c(Source.fromJson(m)),
+  _ => OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -6583,7 +6674,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => switch (v) {
+  final Map<String, dynamic> m when m['object'] == 'account' => OneOf4<Account, BankAccount, Card, Source>.a(Account.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<Account, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<Account, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<Account, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+}, fromB: (v) => switch (v) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<DeletedBankAccount, DeletedCard>.a(DeletedBankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<DeletedBankAccount, DeletedCard>.b(DeletedCard.fromJson(m)),
+  _ => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),
+},);
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
@@ -7764,7 +7865,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return switch (jsonDecode(response.body)) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf2<BankAccount, Card>.a(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf2<BankAccount, Card>.b(Card.fromJson(m)),
+  _ => OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),),
+};
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );

@@ -246,7 +246,12 @@ factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   customerAccount: json['customer_account'] as String?,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
   defaultPaymentMethod: json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
-  defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
+  defaultSource: json['default_source'] != null ? switch (json['default_source']) {
+  final Map<String, dynamic> m when m['object'] == 'bank_account' => OneOf4<String, BankAccount, Card, Source>.b(BankAccount.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'card' => OneOf4<String, BankAccount, Card, Source>.c(Card.fromJson(m)),
+  final Map<String, dynamic> m when m['object'] == 'source' => OneOf4<String, BankAccount, Card, Source>.d(Source.fromJson(m)),
+  _ => OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),),
+} : null,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList(),

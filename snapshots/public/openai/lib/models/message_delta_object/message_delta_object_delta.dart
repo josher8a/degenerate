@@ -6,7 +6,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory MessageDeltaObjectDelta.fromJson(Map<String, dynamic> json) { return MessageDeltaObjectDelta(
   role: json['role'] != null ? CreateMessageRequestRole.fromJson(json['role'] as String) : null,
-  content: (json['content'] as List<dynamic>?)?.map((e) => OneOf4.parse(e, fromA: (v) => MessageDeltaContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageDeltaContentTextObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageDeltaContentRefusalObject.fromJson(v as Map<String, dynamic>), fromD: (v) => MessageDeltaContentImageUrlObject.fromJson(v as Map<String, dynamic>),)).toList(),
+  content: (json['content'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'image_file' => OneOf4<MessageDeltaContentImageFileObject, MessageDeltaContentTextObject, MessageDeltaContentRefusalObject, MessageDeltaContentImageUrlObject>.a(MessageDeltaContentImageFileObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf4<MessageDeltaContentImageFileObject, MessageDeltaContentTextObject, MessageDeltaContentRefusalObject, MessageDeltaContentImageUrlObject>.b(MessageDeltaContentTextObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'refusal' => OneOf4<MessageDeltaContentImageFileObject, MessageDeltaContentTextObject, MessageDeltaContentRefusalObject, MessageDeltaContentImageUrlObject>.c(MessageDeltaContentRefusalObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'image_url' => OneOf4<MessageDeltaContentImageFileObject, MessageDeltaContentTextObject, MessageDeltaContentRefusalObject, MessageDeltaContentImageUrlObject>.d(MessageDeltaContentImageUrlObject.fromJson(m)),
+  _ => OneOf4.parse(e, fromA: (v) => MessageDeltaContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageDeltaContentTextObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageDeltaContentRefusalObject.fromJson(v as Map<String, dynamic>), fromD: (v) => MessageDeltaContentImageUrlObject.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 ); }
 
 /// The entity that produced the message. One of `user` or `assistant`.

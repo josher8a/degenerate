@@ -4,7 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bool_allocation.dart';import 'package:pub_cloudflare/models/entitlement/allocation.dart';import 'package:pub_cloudflare/models/feature.dart';import 'package:pub_cloudflare/models/max_count_allocation.dart';import 'package:pub_cloudflare/models/null_allocation.dart';@immutable final class Entitlement {const Entitlement({required this.allocation, required this.feature, });
 
 factory Entitlement.fromJson(Map<String, dynamic> json) { return Entitlement(
-  allocation: OneOf3.parse(json['allocation'], fromA: (v) => MaxCountAllocation.fromJson(v as Map<String, dynamic>), fromB: (v) => BoolAllocation.fromJson(v as Map<String, dynamic>), fromC: (v) => NullAllocation.fromJson(v as Map<String, dynamic>),),
+  allocation: switch (json['allocation']) {
+  final Map<String, dynamic> m when m['type'] == 'max_count' => OneOf3<MaxCountAllocation, BoolAllocation, NullAllocation>.a(MaxCountAllocation.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'bool' => OneOf3<MaxCountAllocation, BoolAllocation, NullAllocation>.b(BoolAllocation.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == '' => OneOf3<MaxCountAllocation, BoolAllocation, NullAllocation>.c(NullAllocation.fromJson(m)),
+  _ => OneOf3.parse(json['allocation'], fromA: (v) => MaxCountAllocation.fromJson(v as Map<String, dynamic>), fromB: (v) => BoolAllocation.fromJson(v as Map<String, dynamic>), fromC: (v) => NullAllocation.fromJson(v as Map<String, dynamic>),),
+},
   feature: Feature.fromJson(json['feature'] as Map<String, dynamic>),
 ); }
 

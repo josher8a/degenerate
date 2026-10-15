@@ -590,9 +590,76 @@ String buildOneOfParseCode(
       ? ''
       : ' greedy: const {${greedyIndices.join(', ')}},';
 
-  final call = 'OneOf$n.parse($accessor, ${args.join(', ')},$greedyArg)';
+  var call = 'OneOf$n.parse($accessor, ${args.join(', ')},$greedyArg)';
+
+  // Variants told apart by a single-value enum dispatch on it first.
+  // `OneOfN.parse` alone cannot: generated enums accept unknown values, so
+  // `Update.fromJson` also decodes `{action: updateScope}`, both variants
+  // cover the same keys, and the first one wins. Values no variant pins
+  // (one added by the server later) still go to `OneOfN.parse`.
+  final dispatch = _pinDispatch(variants, ctx);
+  if (dispatch != null) {
+    final unionType = 'OneOf$n<${variants.map(irTypeName).join(', ')}>';
+    final key = dartStringLiteral(dispatch.property);
+    final arms = [
+      for (final (index, literal, type) in dispatch.arms)
+        '  final Map<String, dynamic> m when m[$key] == $literal => '
+        '$unionType.${_oneOfLetters[index].toLowerCase()}($type.fromJson(m)),',
+    ];
+    call = 'switch ($accessor) {\n${arms.join('\n')}\n  _ => $call,\n}';
+  }
+
   if (!isOptional) return call;
   return '$accessor != null ? $call : null';
+}
+
+/// The property that every object variant of a union pins to its own
+/// single-value enum, with each variant's (index, value literal, type name),
+/// or null when no property separates them all.
+///
+/// Requires at least two object variants and distinct values: a pin shared
+/// by two variants (Stripe's `Customer`/`DeletedCustomer`) decides nothing.
+({String property, List<(int, String, String)> arms})? _pinDispatch(
+  List<IrType> variants,
+  EmitContext ctx,
+) {
+  final pins = <int, Map<String, String>>{};
+  for (final (i, variant) in variants.indexed) {
+    final model = variant.resolveRef(ctx.typeRegistry);
+    if (model is! IrObject) continue;
+    if (variant.isNullable) return null;
+    pins[i] = {
+      for (final f in model.fields)
+        if (f.isRequired && !f.type.isNullable)
+          f.originalName: ?_singleValueLiteral(ctx.resolve(f.type)),
+    };
+  }
+  if (pins.length < 2) return null;
+  for (final property in pins.values.first.keys) {
+    final values = [for (final p in pins.values) p[property]];
+    if (values.contains(null) || values.toSet().length != values.length) {
+      continue;
+    }
+    return (
+      property: property,
+      arms: [
+        for (final MapEntry(key: i, value: p) in pins.entries)
+          (i, p[property]!, irTypeName(variants[i])),
+      ],
+    );
+  }
+  return null;
+}
+
+/// The Dart literal of [type]'s only value, when it is a one-value enum.
+String? _singleValueLiteral(IrType type) {
+  if (type is! IrEnum || type.values.length != 1 || type.isNullable) {
+    return null;
+  }
+  final value = type.values.single;
+  return type.valueKind == PrimitiveKind.string
+      ? dartStringLiteral(value)
+      : value;
 }
 
 /// Whether a OneOf variant accepts (and round-trips) any payload: free-form

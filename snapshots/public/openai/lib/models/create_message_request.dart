@@ -5,7 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return CreateMessageRequest(
   role: CreateMessageRequestRole.fromJson(json['role'] as String),
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => MessageContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageContentImageUrlObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageRequestContentTextObject.fromJson(v as Map<String, dynamic>),)).toList(),),
+  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'image_file' => OneOf3<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>.a(MessageContentImageFileObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'image_url' => OneOf3<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>.b(MessageContentImageUrlObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf3<MessageContentImageFileObject, MessageContentImageUrlObject, MessageRequestContentTextObject>.c(MessageRequestContentTextObject.fromJson(m)),
+  _ => OneOf3.parse(e, fromA: (v) => MessageContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageContentImageUrlObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageRequestContentTextObject.fromJson(v as Map<String, dynamic>),),
+}).toList(),),
   attachments: (json['attachments'] as List<dynamic>?)?.map((e) => Attachments.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }

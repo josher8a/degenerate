@@ -6,7 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory NullableOneOfRefInObject.fromJson(Map<String, dynamic> json) { return NullableOneOfRefInObject(
   oneOfOne: TypedObject1.fromJson(json['OneOfOne'] as Map<String, dynamic>),
   nullableOneOfOne: OneOf2.parse(json['NullableOneOfOne'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => v, greedy: const {1},),
-  nullableOneOfTwo: OneOf3.parse(json['NullableOneOfTwo'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>), fromC: (v) => v, greedy: const {2},),
+  nullableOneOfTwo: switch (json['NullableOneOfTwo']) {
+  final Map<String, dynamic> m when m['type'] == 'obj1' => OneOf3<TypedObject1, TypedObject2, dynamic>.a(TypedObject1.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'obj2' => OneOf3<TypedObject1, TypedObject2, dynamic>.b(TypedObject2.fromJson(m)),
+  _ => OneOf3.parse(json['NullableOneOfTwo'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>), fromC: (v) => v, greedy: const {2},),
+},
 ); }
 
 final TypedObject1 oneOfOne;

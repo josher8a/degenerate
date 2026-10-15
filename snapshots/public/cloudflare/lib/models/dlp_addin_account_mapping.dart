@@ -5,7 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory DlpAddinAccountMapping.fromJson(Map<String, dynamic> json) { return DlpAddinAccountMapping(
   addinIdentifierToken: json['addin_identifier_token'] as String,
-  authRequirements: OneOf2.parse(json['auth_requirements'], fromA: (v) => Org.fromJson(v as Map<String, dynamic>), fromB: (v) => NoAuth.fromJson(v as Map<String, dynamic>),),
+  authRequirements: switch (json['auth_requirements']) {
+  final Map<String, dynamic> m when m['type'] == 'Org' => OneOf2<Org, NoAuth>.a(Org.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'NoAuth' => OneOf2<Org, NoAuth>.b(NoAuth.fromJson(m)),
+  _ => OneOf2.parse(json['auth_requirements'], fromA: (v) => Org.fromJson(v as Map<String, dynamic>), fromB: (v) => NoAuth.fromJson(v as Map<String, dynamic>),),
+},
 ); }
 
 final String addinIdentifierToken;

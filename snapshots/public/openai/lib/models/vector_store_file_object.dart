@@ -65,7 +65,11 @@ factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return Vecto
   vectorStoreId: json['vector_store_id'] as String,
   status: VectorStoreFileBatchObjectStatus.fromJson(json['status'] as String),
   lastError: json['last_error'] != null ? VectorStoreFileObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
-  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),) : null,
+  chunkingStrategy: json['chunking_strategy'] != null ? switch (json['chunking_strategy']) {
+  final Map<String, dynamic> m when m['type'] == 'static' => OneOf2<StaticChunkingStrategyResponseParam, OtherChunkingStrategyResponseParam>.a(StaticChunkingStrategyResponseParam.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'other' => OneOf2<StaticChunkingStrategyResponseParam, OtherChunkingStrategyResponseParam>.b(OtherChunkingStrategyResponseParam.fromJson(m)),
+  _ => OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),),
+} : null,
   attributes: json['attributes'] as Map<String, dynamic>?,
 ); }
 
