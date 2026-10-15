@@ -9,7 +9,12 @@ factory CreateEvalCompletionsRunDataSourceSamplingParams.fromJson(Map<String, dy
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  responseFormat: json['response_format'] != null ? OneOf3.parse(json['response_format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
+  responseFormat: json['response_format'] != null ? switch (json['response_format']) {
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf3<ResponseFormatText, ResponseFormatJsonSchema, ResponseFormatJsonObject>.a(ResponseFormatText.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_schema' => OneOf3<ResponseFormatText, ResponseFormatJsonSchema, ResponseFormatJsonObject>.b(ResponseFormatJsonSchema.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_object' => OneOf3<ResponseFormatText, ResponseFormatJsonSchema, ResponseFormatJsonObject>.c(ResponseFormatJsonObject.fromJson(m)),
+  _ => OneOf3.parse(json['response_format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),),
+} : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => ChatCompletionTool.fromJson(e as Map<String, dynamic>)).toList(),
 );}
 

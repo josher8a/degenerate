@@ -5,7 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory Attachments.fromJson(Map<String, dynamic> json) {return Attachments(
   fileId: json['file_id'] as String?,
-  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearchTypeOnly.fromJson(v as Map<String, dynamic>),)).toList(),
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'code_interpreter' => OneOf2<AssistantToolsCode, AssistantToolsFileSearchTypeOnly>.a(AssistantToolsCode.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_search' => OneOf2<AssistantToolsCode, AssistantToolsFileSearchTypeOnly>.b(AssistantToolsFileSearchTypeOnly.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearchTypeOnly.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 );}
 
 /// The ID of the file to attach to the message.

@@ -10,7 +10,11 @@ factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) {re
   voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice']) : null,
   outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsTools.fromJson(e as Map<String, dynamic>)).toList(),
-  toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
+  toolChoice: json['tool_choice'] != null ? switch (json['tool_choice']) {
+  final Map<String, dynamic> m when m['type'] == 'function' => OneOf3<ToolChoiceMode, ToolChoiceFunction, ToolChoiceMcp>.b(ToolChoiceFunction.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'mcp' => OneOf3<ToolChoiceMode, ToolChoiceFunction, ToolChoiceMcp>.c(ToolChoiceMcp.fromJson(m)),
+  _ => OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),),
+} : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
   conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationVariant2.fromJson(v as String),) : null,

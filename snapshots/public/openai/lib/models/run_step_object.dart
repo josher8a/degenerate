@@ -248,7 +248,11 @@ factory RunStepObject.fromJson(Map<String, dynamic> json) {return RunStepObject(
   runId: json['run_id'] as String,
   type: RunStepObjectType.fromJson(json['type'] as String),
   status: RunStepObjectStatus.fromJson(json['status'] as String),
-  stepDetails: OneOf2.parse(json['step_details'], fromA: (v) => RunStepDetailsMessageCreationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsObject.fromJson(v as Map<String, dynamic>),),
+  stepDetails: switch (json['step_details']) {
+  final Map<String, dynamic> m when m['type'] == 'message_creation' => OneOf2<RunStepDetailsMessageCreationObject, RunStepDetailsToolCallsObject>.a(RunStepDetailsMessageCreationObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'tool_calls' => OneOf2<RunStepDetailsMessageCreationObject, RunStepDetailsToolCallsObject>.b(RunStepDetailsToolCallsObject.fromJson(m)),
+  _ => OneOf2.parse(json['step_details'], fromA: (v) => RunStepDetailsMessageCreationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsObject.fromJson(v as Map<String, dynamic>),),
+},
   lastError: json['last_error'] != null ? RunStepObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
   expiredAt: json['expired_at'] != null ? (json['expired_at'] as num).toInt() : null,
   cancelledAt: json['cancelled_at'] != null ? (json['cancelled_at'] as num).toInt() : null,

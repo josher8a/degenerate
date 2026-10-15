@@ -13,7 +13,12 @@ factory RealtimeMcpToolCall.fromJson(Map<String, dynamic> json) {return Realtime
   arguments: json['arguments'] as String,
   approvalRequestId: json.containsKey('approval_request_id') ? Omittable(json['approval_request_id'] as String?) : const Omittable.absent(),
   output: json.containsKey('output') ? Omittable(json['output'] as String?) : const Omittable.absent(),
-  error: json.containsKey('error') ? Omittable(json['error'] != null ? OneOf3.parse(json['error'], fromA: (v) => RealtimeMcpProtocolError.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeMcpToolExecutionError.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeMcphttpError.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  error: json.containsKey('error') ? Omittable(json['error'] != null ? switch (json['error']) {
+  final Map<String, dynamic> m when m['type'] == 'protocol_error' => OneOf3<RealtimeMcpProtocolError, RealtimeMcpToolExecutionError, RealtimeMcphttpError>.a(RealtimeMcpProtocolError.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'tool_execution_error' => OneOf3<RealtimeMcpProtocolError, RealtimeMcpToolExecutionError, RealtimeMcphttpError>.b(RealtimeMcpToolExecutionError.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'http_error' => OneOf3<RealtimeMcpProtocolError, RealtimeMcpToolExecutionError, RealtimeMcphttpError>.c(RealtimeMcphttpError.fromJson(m)),
+  _ => OneOf3.parse(json['error'], fromA: (v) => RealtimeMcpProtocolError.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeMcpToolExecutionError.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeMcphttpError.fromJson(v as Map<String, dynamic>),),
+} : null) : const Omittable.absent(),
 );}
 
 /// The type of the item. Always `mcp_call`.

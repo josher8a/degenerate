@@ -5,7 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class DeleteObjectsTransition {const DeleteObjectsTransition({this.condition});
 
 factory DeleteObjectsTransition.fromJson(Map<String, dynamic> json) {return DeleteObjectsTransition(
-  condition: json['condition'] != null ? OneOf2.parse(json['condition'], fromA: (v) => R2LifecycleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LifecycleDateCondition.fromJson(v as Map<String, dynamic>),) : null,
+  condition: json['condition'] != null ? switch (json['condition']) {
+  final Map<String, dynamic> m when m['type'] == 'Age' => OneOf2<R2LifecycleAgeCondition, R2LifecycleDateCondition>.a(R2LifecycleAgeCondition.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'Date' => OneOf2<R2LifecycleAgeCondition, R2LifecycleDateCondition>.b(R2LifecycleDateCondition.fromJson(m)),
+  _ => OneOf2.parse(json['condition'], fromA: (v) => R2LifecycleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LifecycleDateCondition.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 final R2LifecycleStorageTransitionCondition? condition;

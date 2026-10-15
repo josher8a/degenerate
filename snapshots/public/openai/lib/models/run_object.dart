@@ -247,7 +247,12 @@ factory RunObject.fromJson(Map<String, dynamic> json) {return RunObject(
   incompleteDetails: json['incomplete_details'] != null ? RunObjectIncompleteDetails.fromJson(json['incomplete_details'] as Map<String, dynamic>) : null,
   model: json['model'] as String,
   instructions: json['instructions'] as String,
-  tools: (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'code_interpreter' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.a(AssistantToolsCode.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_search' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.b(AssistantToolsFileSearch.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'function' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.c(AssistantToolsFunction.fromJson(m)),
+  _ => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),),
+}).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   usage: json['usage'] != null ? RunCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -257,7 +262,12 @@ factory RunObject.fromJson(Map<String, dynamic> json) {return RunObject(
   truncationStrategy: json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null,
   toolChoice: json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null,
   parallelToolCalls: ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool),
-  responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null,
+  responseFormat: json['response_format'] != null ? switch (json['response_format']) {
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.b(ResponseFormatText.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_object' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.c(ResponseFormatJsonObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_schema' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.d(ResponseFormatJsonSchema.fromJson(m)),
+  _ => OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 /// The identifier, which can be referenced in API endpoints.

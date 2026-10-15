@@ -181,7 +181,11 @@ factory ExampleResource.fromJson(Map<String, dynamic> json) {return ExampleResou
   enumNumber: json['enumNumber'] != null ? EnumNumber.fromJson((json['enumNumber'] as num).toInt()) : null,
   updatedAt: json['updatedAt'] != null ? DateTime.parse(json['updatedAt'] as String) : null,
   chocolates: (json['chocolates'] as List<dynamic>).map((e) => Chocolates.fromJson(e as Map<String, dynamic>)).toList(),
-  vehicle: OneOf2.parse(json['vehicle'], fromA: (v) => ExampleBoat.fromJson(v as Map<String, dynamic>), fromB: (v) => ExampleCar.fromJson(v as Map<String, dynamic>),),
+  vehicle: switch (json['vehicle']) {
+  final Map<String, dynamic> m when m['type'] == 'boat' => OneOf2<ExampleBoat, ExampleCar>.a(ExampleBoat.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'car' => OneOf2<ExampleBoat, ExampleCar>.b(ExampleCar.fromJson(m)),
+  _ => OneOf2.parse(json['vehicle'], fromA: (v) => ExampleBoat.fromJson(v as Map<String, dynamic>), fromB: (v) => ExampleCar.fromJson(v as Map<String, dynamic>),),
+},
 );}
 
 final String id;

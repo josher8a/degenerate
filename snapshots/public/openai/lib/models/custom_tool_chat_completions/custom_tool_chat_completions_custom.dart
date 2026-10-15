@@ -8,7 +8,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory CustomToolChatCompletionsCustom.fromJson(Map<String, dynamic> json) {return CustomToolChatCompletionsCustom(
   name: json['name'] as String,
   description: json['description'] as String?,
-  format: json['format'] != null ? OneOf2.parse(json['format'], fromA: (v) => TextFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => GrammarFormat.fromJson(v as Map<String, dynamic>),) : null,
+  format: json['format'] != null ? switch (json['format']) {
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf2<TextFormat, GrammarFormat>.a(TextFormat.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'grammar' => OneOf2<TextFormat, GrammarFormat>.b(GrammarFormat.fromJson(m)),
+  _ => OneOf2.parse(json['format'], fromA: (v) => TextFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => GrammarFormat.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 /// The name of the custom tool, used to identify it in tool calls.

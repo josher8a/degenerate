@@ -62,7 +62,11 @@ factory Assistant.fromJson(Map<String, dynamic> json) {return Assistant(
   name: json['name'] as String?,
   refusal: json.containsKey('refusal') ? Omittable(json['refusal'] as String?) : const Omittable.absent(),
   role: AssistantRole.fromJson(json['role'] as String),
-  toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ToolCallsFunction.fromJson(v as Map<String, dynamic>), fromB: (v) => ToolCallsCustom.fromJson(v as Map<String, dynamic>),)).toList(),
+  toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'function' => OneOf2<ToolCallsFunction, ToolCallsCustom>.a(ToolCallsFunction.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf2<ToolCallsFunction, ToolCallsCustom>.b(ToolCallsCustom.fromJson(m)),
+  _ => OneOf2.parse(e, fromA: (v) => ToolCallsFunction.fromJson(v as Map<String, dynamic>), fromB: (v) => ToolCallsCustom.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 );}
 
 final AssistantAudioVariant1? audio;

@@ -6,7 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory NullableOneOfRefInObject.fromJson(Map<String, dynamic> json) {return NullableOneOfRefInObject(
   oneOfOne: TypedObject1.fromJson(json['OneOfOne'] as Map<String, dynamic>),
   nullableOneOfOne: TypedObject1.fromJson(json['NullableOneOfOne'] as Map<String, dynamic>),
-  nullableOneOfTwo: json['NullableOneOfTwo'] != null ? OneOf2.parse(json['NullableOneOfTwo'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>),) : null,
+  nullableOneOfTwo: json['NullableOneOfTwo'] != null ? switch (json['NullableOneOfTwo']) {
+  final Map<String, dynamic> m when m['type'] == 'obj1' => OneOf2<TypedObject1, TypedObject2>.a(TypedObject1.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'obj2' => OneOf2<TypedObject1, TypedObject2>.b(TypedObject2.fromJson(m)),
+  _ => OneOf2.parse(json['NullableOneOfTwo'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 final TypedObject1 oneOfOne;

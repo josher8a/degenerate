@@ -6,7 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) {return RunStepDeltaStepDetailsToolCallsObject(
   type: RunStepDeltaStepDetailsToolCallsObjectType.fromJson(json['type'] as String),
-  toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(v as Map<String, dynamic>), fromC: (v) => RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(v as Map<String, dynamic>),)).toList(),
+  toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'code_interpreter' => OneOf3<RunStepDeltaStepDetailsToolCallsCodeObject, RunStepDeltaStepDetailsToolCallsFileSearchObject, RunStepDeltaStepDetailsToolCallsFunctionObject>.a(RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_search' => OneOf3<RunStepDeltaStepDetailsToolCallsCodeObject, RunStepDeltaStepDetailsToolCallsFileSearchObject, RunStepDeltaStepDetailsToolCallsFunctionObject>.b(RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'function' => OneOf3<RunStepDeltaStepDetailsToolCallsCodeObject, RunStepDeltaStepDetailsToolCallsFileSearchObject, RunStepDeltaStepDetailsToolCallsFunctionObject>.c(RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(m)),
+  _ => OneOf3.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(v as Map<String, dynamic>), fromC: (v) => RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 );}
 
 /// Always `tool_calls`.

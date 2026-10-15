@@ -70,7 +70,12 @@ factory EvalRun.fromJson(Map<String, dynamic> json) {return EvalRun(
   resultCounts: ResultCounts.fromJson(json['result_counts'] as Map<String, dynamic>),
   perModelUsage: (json['per_model_usage'] as List<dynamic>).map((e) => PerModelUsage.fromJson(e as Map<String, dynamic>)).toList(),
   perTestingCriteriaResults: (json['per_testing_criteria_results'] as List<dynamic>).map((e) => PerTestingCriteriaResults.fromJson(e as Map<String, dynamic>)).toList(),
-  dataSource: OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
+  dataSource: switch (json['data_source']) {
+  final Map<String, dynamic> m when m['type'] == 'jsonl' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.a(CreateEvalJsonlRunDataSource.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'completions' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.b(CreateEvalCompletionsRunDataSource.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'responses' => OneOf3<CreateEvalJsonlRunDataSource, CreateEvalCompletionsRunDataSource, CreateEvalResponsesRunDataSource>.c(CreateEvalResponsesRunDataSource.fromJson(m)),
+  _ => OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
+},
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   error: ErrorModel2.fromJson(json['error'] as Map<String, dynamic>),
 );}

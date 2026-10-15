@@ -8,7 +8,12 @@ factory CreateThreadAndRunRequest.fromJson(Map<String, dynamic> json) {return Cr
   thread: json['thread'] != null ? CreateThreadRequest.fromJson(json['thread'] as Map<String, dynamic>) : null,
   model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateThreadAndRunRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
   instructions: json.containsKey('instructions') ? Omittable(json['instructions'] as String?) : const Omittable.absent(),
-  tools: json.containsKey('tools') ? Omittable((json['tools'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  tools: json.containsKey('tools') ? Omittable((json['tools'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'code_interpreter' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.a(AssistantToolsCode.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'file_search' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.b(AssistantToolsFileSearch.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'function' => OneOf3<AssistantToolsCode, AssistantToolsFileSearch, AssistantToolsFunction>.c(AssistantToolsFunction.fromJson(m)),
+  _ => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),),
+}).toList()) : const Omittable.absent(),
   toolResources: json.containsKey('tool_resources') ? Omittable(json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -19,7 +24,12 @@ factory CreateThreadAndRunRequest.fromJson(Map<String, dynamic> json) {return Cr
   truncationStrategy: json.containsKey('truncation_strategy') ? Omittable(json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   toolChoice: json.containsKey('tool_choice') ? Omittable(json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   parallelToolCalls: json['parallel_tool_calls'] != null ? ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool) : null,
-  responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? switch (json['response_format']) {
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.b(ResponseFormatText.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_object' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.c(ResponseFormatJsonObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_schema' => OneOf4<ResponseFormatOptionVariant1, ResponseFormatText, ResponseFormatJsonObject, ResponseFormatJsonSchema>.d(ResponseFormatJsonSchema.fromJson(m)),
+  _ => OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),),
+} : null) : const Omittable.absent(),
 );}
 
 /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.

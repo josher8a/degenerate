@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Source: #/components/schemas/AssistantTrackedProposal (inline: Team > Invite)
+// Source: #/components/schemas/StoreOrder (inline: Team > Invite)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_16_allof_unions/models/tracking/status.dart';sealed class InviteAction {const InviteAction();
 
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invite, 
 @override int get hashCode => value.hashCode;
 
 }
-@immutable final class Invite {const Invite({required this.action, required this.email, this.proposalId, this.status, });
+@immutable final class Invite {const Invite({required this.action, required this.email, this.orderId, this.status, });
 
 factory Invite.fromJson(Map<String, dynamic> json) {return Invite(
   action: InviteAction.fromJson(json['action'] as String),
   email: json['email'] as String,
-  proposalId: json['proposalId'] as String?,
+  orderId: json['orderId'] as String?,
   status: json['status'] != null ? Status.fromJson(json['status'] as String) : null,
 );}
 
@@ -66,40 +66,40 @@ final InviteAction action;
 
 final String email;
 
-final String? proposalId;
+final String? orderId;
 
 final Status? status;
 
 Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'email': email,
-  'proposalId': ?proposalId,
+  'orderId': ?orderId,
   if (status != null) 'status': status?.toJson(),
 };}
 static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] == 'invite' &&
       json.containsKey('email') && json['email'] is String;}
 /// Constraint violations for this value (empty when valid).
 List<String> validate() {final errors = <String>[];
-final proposalId$ = proposalId;
-if (proposalId$ != null) {
-  if (proposalId$.runes.length > 200) { errors.add('proposalId: length must be <= 200'); }
+final orderId$ = orderId;
+if (orderId$ != null) {
+  if (orderId$.runes.length > 200) { errors.add('orderId: length must be <= 200'); }
 }
 return errors;}
-Invite copyWith({InviteAction? action, String? email, String? Function()? proposalId, Status? Function()? status, }) {return Invite(
+Invite copyWith({InviteAction? action, String? email, String? Function()? orderId, Status? Function()? status, }) {return Invite(
   action: action ?? this.action,
   email: email ?? this.email,
-  proposalId: proposalId != null ? proposalId() : this.proposalId,
+  orderId: orderId != null ? orderId() : this.orderId,
   status: status != null ? status() : this.status,
 );}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Invite &&
           action == other.action &&
           email == other.email &&
-          proposalId == other.proposalId &&
+          orderId == other.orderId &&
           status == other.status;
 
-@override int get hashCode => Object.hash(action, email, proposalId, status);
+@override int get hashCode => Object.hash(action, email, orderId, status);
 
-@override String toString() => 'Invite(action: $action, email: $email, proposalId: $proposalId, status: $status)';
+@override String toString() => 'Invite(action: $action, email: $email, orderId: $orderId, status: $status)';
 
 }

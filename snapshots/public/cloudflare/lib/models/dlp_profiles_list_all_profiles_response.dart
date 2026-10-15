@@ -7,7 +7,12 @@ factory DlpProfilesListAllProfilesResponse.fromJson(Map<String, dynamic> json) {
   errors: (json['errors'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.a(CustomProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.b(PredefinedProfile.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf3<CustomProfile, PredefinedProfile, IntegrationProfile>.c(IntegrationProfile.fromJson(m)),
+  _ => OneOf3.parse(e, fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),),
+}).toList(),
 );}
 
 final List<DlpMessages2> errors;

@@ -4322,26 +4322,26 @@ void main() {
       // `${UnionName}${PascalCase(discProp)}` — the same name the synthetic
       // enum would use. The getter must reuse the spec enum; emitting the
       // synthetic one would declare the class twice.
-      const kindEnum = IrEnum('BeneficiaryKind', ['individual', 'business']);
-      const individual = IrObject('Individual', [
-        IrField('kind', SpecString('kind'), IrTypeRef('BeneficiaryKind'),
+      const kindEnum = IrEnum('PetKind', ['dog', 'cat']);
+      const dog = IrObject('Dog', [
+        IrField('kind', SpecString('kind'), IrTypeRef('PetKind'),
             isRequired: true),
       ], requiredFields: ['kind']);
-      const business = IrObject('Business', [
-        IrField('kind', SpecString('kind'), IrTypeRef('BeneficiaryKind'),
+      const cat = IrObject('Cat', [
+        IrField('kind', SpecString('kind'), IrTypeRef('PetKind'),
             isRequired: true),
       ], requiredFields: ['kind']);
-      final union = IrDiscriminatedUnion('Beneficiary', SpecString('kind'), {
-        SpecString('individual'): IrTypeRef('Individual'),
-        SpecString('business'): IrTypeRef('Business'),
+      final union = IrDiscriminatedUnion('Pet', SpecString('kind'), {
+        SpecString('dog'): IrTypeRef('Dog'),
+        SpecString('cat'): IrTypeRef('Cat'),
       });
       final registry = <String, IrType>{
-        'BeneficiaryKind': kindEnum,
-        'Individual': individual,
-        'Business': business,
+        'PetKind': kindEnum,
+        'Dog': dog,
+        'Cat': cat,
       };
       final meta = analyzeDiscriminatedUnions(
-        [union, individual, business],
+        [union, dog, cat],
         registry,
       );
       final ctx = EmitContext(registry, unionMetadata: meta);
@@ -4349,9 +4349,9 @@ void main() {
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
       // The union library must not re-declare the enum (EnumEmitter owns it).
-      expect(source, isNot(contains('class BeneficiaryKind')));
+      expect(source, isNot(contains('class PetKind')));
       // The discriminator getter is typed as the spec enum.
-      expect(source, contains('BeneficiaryKind get kind'));
+      expect(source, contains('PetKind get kind'));
     });
   });
 

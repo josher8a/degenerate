@@ -5,7 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class RunStepDeltaObjectDelta {const RunStepDeltaObjectDelta({this.stepDetails});
 
 factory RunStepDeltaObjectDelta.fromJson(Map<String, dynamic> json) {return RunStepDeltaObjectDelta(
-  stepDetails: json['step_details'] != null ? OneOf2.parse(json['step_details'], fromA: (v) => RunStepDeltaStepDetailsMessageCreationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsObject.fromJson(v as Map<String, dynamic>),) : null,
+  stepDetails: json['step_details'] != null ? switch (json['step_details']) {
+  final Map<String, dynamic> m when m['type'] == 'message_creation' => OneOf2<RunStepDeltaStepDetailsMessageCreationObject, RunStepDeltaStepDetailsToolCallsObject>.a(RunStepDeltaStepDetailsMessageCreationObject.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'tool_calls' => OneOf2<RunStepDeltaStepDetailsMessageCreationObject, RunStepDeltaStepDetailsToolCallsObject>.b(RunStepDeltaStepDetailsToolCallsObject.fromJson(m)),
+  _ => OneOf2.parse(json['step_details'], fromA: (v) => RunStepDeltaStepDetailsMessageCreationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsObject.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 /// The details of the run step.

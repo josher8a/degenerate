@@ -60,7 +60,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? multi, W
 factory GraderMulti.fromJson(Map<String, dynamic> json) {return GraderMulti(
   type: GraderMultiType.fromJson(json['type'] as String),
   name: json['name'] as String,
-  graders: OneOf5.parse(json['graders'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>),),
+  graders: switch (json['graders']) {
+  final Map<String, dynamic> m when m['type'] == 'string_check' => OneOf5<GraderStringCheck, GraderTextSimilarity, GraderPython, GraderScoreModel, GraderLabelModel>.a(GraderStringCheck.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'text_similarity' => OneOf5<GraderStringCheck, GraderTextSimilarity, GraderPython, GraderScoreModel, GraderLabelModel>.b(GraderTextSimilarity.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'python' => OneOf5<GraderStringCheck, GraderTextSimilarity, GraderPython, GraderScoreModel, GraderLabelModel>.c(GraderPython.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'score_model' => OneOf5<GraderStringCheck, GraderTextSimilarity, GraderPython, GraderScoreModel, GraderLabelModel>.d(GraderScoreModel.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'label_model' => OneOf5<GraderStringCheck, GraderTextSimilarity, GraderPython, GraderScoreModel, GraderLabelModel>.e(GraderLabelModel.fromJson(m)),
+  _ => OneOf5.parse(json['graders'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>),),
+},
   calculateOutput: json['calculate_output'] as String,
 );}
 

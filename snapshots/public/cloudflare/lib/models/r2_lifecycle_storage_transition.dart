@@ -56,7 +56,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? infreque
 @immutable final class R2LifecycleStorageTransition {const R2LifecycleStorageTransition({required this.condition, required this.storageClass, });
 
 factory R2LifecycleStorageTransition.fromJson(Map<String, dynamic> json) {return R2LifecycleStorageTransition(
-  condition: OneOf2.parse(json['condition'], fromA: (v) => R2LifecycleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LifecycleDateCondition.fromJson(v as Map<String, dynamic>),),
+  condition: switch (json['condition']) {
+  final Map<String, dynamic> m when m['type'] == 'Age' => OneOf2<R2LifecycleAgeCondition, R2LifecycleDateCondition>.a(R2LifecycleAgeCondition.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'Date' => OneOf2<R2LifecycleAgeCondition, R2LifecycleDateCondition>.b(R2LifecycleDateCondition.fromJson(m)),
+  _ => OneOf2.parse(json['condition'], fromA: (v) => R2LifecycleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LifecycleDateCondition.fromJson(v as Map<String, dynamic>),),
+},
   storageClass: StorageClass.fromJson(json['storageClass'] as String),
 );}
 

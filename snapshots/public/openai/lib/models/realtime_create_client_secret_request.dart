@@ -9,7 +9,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RealtimeCreateClientSecretRequest.fromJson(Map<String, dynamic> json) {return RealtimeCreateClientSecretRequest(
   expiresAfter: json['expires_after'] != null ? RealtimeCreateClientSecretRequestExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-  session: json['session'] != null ? OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),) : null,
+  session: json['session'] != null ? switch (json['session']) {
+  final Map<String, dynamic> m when m['type'] == 'realtime' => OneOf2<RealtimeSessionCreateRequestGa, RealtimeTranscriptionSessionCreateRequestGa>.a(RealtimeSessionCreateRequestGa.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'transcription' => OneOf2<RealtimeSessionCreateRequestGa, RealtimeTranscriptionSessionCreateRequestGa>.b(RealtimeTranscriptionSessionCreateRequestGa.fromJson(m)),
+  _ => OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 /// Configuration for the client secret expiration. Expiration refers to the time after which

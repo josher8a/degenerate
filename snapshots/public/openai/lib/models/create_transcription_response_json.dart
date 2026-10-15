@@ -7,7 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory CreateTranscriptionResponseJson.fromJson(Map<String, dynamic> json) {return CreateTranscriptionResponseJson(
   text: json['text'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => CreateTranscriptionResponseJsonLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
-  usage: json['usage'] != null ? OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),) : null,
+  usage: json['usage'] != null ? switch (json['usage']) {
+  final Map<String, dynamic> m when m['type'] == 'tokens' => OneOf2<TranscriptTextUsageTokens, TranscriptTextUsageDuration>.a(TranscriptTextUsageTokens.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'duration' => OneOf2<TranscriptTextUsageTokens, TranscriptTextUsageDuration>.b(TranscriptTextUsageDuration.fromJson(m)),
+  _ => OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 /// The transcribed text.

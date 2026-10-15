@@ -27,7 +27,15 @@ return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf6.parse(e, fromA: (v) => DlpEntryWithUploadStatusCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpEntryWithUploadStatusPredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => DlpEntryWithUploadStatusIntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DlpEntryWithUploadStatusExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DlpEntryWithUploadStatusDocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => DlpEntryWithUploadStatusWordListEntry.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => switch (e) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.a(DlpEntryWithUploadStatusCustomEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.b(DlpEntryWithUploadStatusPredefinedEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.c(DlpEntryWithUploadStatusIntegrationEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'exact_data' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.d(DlpEntryWithUploadStatusExactDataEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'document_fingerprint' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.e(DlpEntryWithUploadStatusDocumentFingerprintEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'word_list' => OneOf6<DlpEntryWithUploadStatusCustomEntry, DlpEntryWithUploadStatusPredefinedEntry, DlpEntryWithUploadStatusIntegrationEntry, DlpEntryWithUploadStatusExactDataEntry, DlpEntryWithUploadStatusDocumentFingerprintEntry, DlpEntryWithUploadStatusWordListEntry>.f(DlpEntryWithUploadStatusWordListEntry.fromJson(m)),
+  _ => OneOf6.parse(e, fromA: (v) => DlpEntryWithUploadStatusCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpEntryWithUploadStatusPredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => DlpEntryWithUploadStatusIntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DlpEntryWithUploadStatusExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DlpEntryWithUploadStatusDocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => DlpEntryWithUploadStatusWordListEntry.fromJson(v as Map<String, dynamic>),),
+}).toList();
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -75,7 +83,15 @@ return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf6.parse(json['result'], fromA: (v) => DlpEntryWithSharedProfilesCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpEntryWithSharedProfilesPredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => DlpEntryWithSharedProfilesIntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DlpEntryWithSharedProfilesExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DlpEntryWithSharedProfilesDocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => DlpEntryWithSharedProfilesWordListEntry.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf6<DlpEntryWithSharedProfilesCustomEntry, DlpEntryWithSharedProfilesPredefinedEntry, DlpEntryWithSharedProfilesIntegrationEntry, DlpEntryWithSharedProfilesExactDataEntry, DlpEntryWithSharedProfilesDocumentFingerprintEntry, DlpEntryWithSharedProfilesWordListEntry>.a(DlpEntryWithSharedProfilesCustomEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf6<DlpEntryWithSharedProfilesCustomEntry, DlpEntryWithSharedProfilesPredefinedEntry, DlpEntryWithSharedProfilesIntegrationEntry, DlpEntryWithSharedProfilesExactDataEntry, DlpEntryWithSharedProfilesDocumentFingerprintEntry, DlpEntryWithSharedProfilesWordListEntry>.b(DlpEntryWithSharedProfilesPredefinedEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf6<DlpEntryWithSharedProfilesCustomEntry, DlpEntryWithSharedProfilesPredefinedEntry, DlpEntryWithSharedProfilesIntegrationEntry, DlpEntryWithSharedProfilesExactDataEntry, DlpEntryWithSharedProfilesDocumentFingerprintEntry, DlpEntryWithSharedProfilesWordListEntry>.c(DlpEntryWithSharedProfilesIntegrationEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'exact_data' => OneOf6<DlpEntryWithSharedProfilesCustomEntry, DlpEntryWithSharedProfilesPredefinedEntry, DlpEntryWithSharedProfilesIntegrationEntry, DlpEntryWithSharedProfilesExactDataEntry, DlpEntryWithSharedProfilesDocumentFingerprintEntry, DlpEntryWithSharedProfilesWordListEntry>.d(DlpEntryWithSharedProfilesExactDataEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'document_fingerprint' => OneOf6<DlpEntryWithSharedProfilesCustomEntry, DlpEntryWithSharedProfilesPredefinedEntry, DlpEntryWithSharedProfilesIntegrationEntry, DlpEntryWithSharedProfilesExactDataEntry, DlpEntryWithSharedProfilesDocumentFingerprintEntry, DlpEntryWithSharedProfilesWordListEntry>.e(DlpEntryWithSharedProfilesDocumentFingerprintEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'word_list' => OneOf6<DlpEntryWithSharedProfilesCustomEntry, DlpEntryWithSharedProfilesPredefinedEntry, DlpEntryWithSharedProfilesIntegrationEntry, DlpEntryWithSharedProfilesExactDataEntry, DlpEntryWithSharedProfilesDocumentFingerprintEntry, DlpEntryWithSharedProfilesWordListEntry>.f(DlpEntryWithSharedProfilesWordListEntry.fromJson(m)),
+  _ => OneOf6.parse(json['result'], fromA: (v) => DlpEntryWithSharedProfilesCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpEntryWithSharedProfilesPredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => DlpEntryWithSharedProfilesIntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DlpEntryWithSharedProfilesExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DlpEntryWithSharedProfilesDocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => DlpEntryWithSharedProfilesWordListEntry.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
@@ -100,7 +116,15 @@ return await execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf6.parse(json['result'], fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? switch (json['result']) {
+  final Map<String, dynamic> m when m['type'] == 'custom' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.a(CustomEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'predefined' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.b(PredefinedEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'integration' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.c(IntegrationEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'exact_data' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.d(ExactDataEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'document_fingerprint' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.e(DocumentFingerprintEntry.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'word_list' => OneOf6<CustomEntry, PredefinedEntry, IntegrationEntry, ExactDataEntry, DocumentFingerprintEntry, WordListEntry>.f(WordListEntry.fromJson(m)),
+  _ => OneOf6.parse(json['result'], fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),),
+} : null;
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );

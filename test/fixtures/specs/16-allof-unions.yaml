@@ -8,25 +8,25 @@ info:
     unions (`Action`, `Kind`, ...) must keep generating unchanged, since they
     are also used untracked.
 paths:
-  /proposals/{proposalId}:
+  /orders/{orderId}:
     get:
-      operationId: getProposal
+      operationId: getOrder
       parameters:
-        - name: proposalId
+        - name: orderId
           in: path
           required: true
           schema:
             type: string
       responses:
         '200':
-          description: The tracked proposal.
+          description: The tracked order.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AssistantTrackedProposal'
-  /beneficiaries:
+                $ref: '#/components/schemas/StoreOrder'
+  /pets:
     post:
-      operationId: createBeneficiary
+      operationId: createPet
       requestBody:
         required: true
         content:
@@ -37,7 +37,7 @@ paths:
                 - $ref: '#/components/schemas/Kind'
                 - type: object
                   properties:
-                    proposalId:
+                    orderId:
                       type: string
                       maxLength: 200
       responses:
@@ -65,12 +65,12 @@ components:
     Tracking:
       type: object
       properties:
-        proposalId:
+        orderId:
           type: string
           maxLength: 200
         status:
           type: string
-          enum: [PROPOSED, EXECUTED, REJECTED]
+          enum: [PLACED, APPROVED, DELIVERED]
     Action:
       oneOf:
         - type: object
@@ -101,7 +101,7 @@ components:
             amount:
               type: string
           required: [action, amount]
-    BeneficiaryOp:
+    PetOp:
       # The only distinguishing key is the `action` value.
       oneOf:
         - type: object
@@ -109,60 +109,60 @@ components:
             action:
               type: string
               enum: [update]
-            beneficiaryId:
+            petId:
               type: string
             body:
               type: string
-          required: [action, beneficiaryId, body]
+          required: [action, petId, body]
         - type: object
           properties:
             action:
               type: string
-              enum: [updateScope]
-            beneficiaryId:
+              enum: [updateTags]
+            petId:
               type: string
             body:
               type: string
-          required: [action, beneficiaryId, body]
+          required: [action, petId, body]
     Kind:
       anyOf:
-        - $ref: '#/components/schemas/Business'
-        - $ref: '#/components/schemas/Individual'
+        - $ref: '#/components/schemas/Cat'
+        - $ref: '#/components/schemas/Dog'
       discriminator:
         propertyName: kind
     MappedKind:
       oneOf:
-        - $ref: '#/components/schemas/Business'
-        - $ref: '#/components/schemas/Individual'
+        - $ref: '#/components/schemas/Cat'
+        - $ref: '#/components/schemas/Dog'
       discriminator:
         propertyName: kind
         mapping:
-          BUSINESS: '#/components/schemas/Business'
-          INDIVIDUAL: '#/components/schemas/Individual'
-    Business:
+          CAT: '#/components/schemas/Cat'
+          DOG: '#/components/schemas/Dog'
+    Cat:
       type: object
       properties:
         kind:
           type: string
-          enum: [BUSINESS]
-        legalName:
+          enum: [CAT]
+        huntingSkill:
           type: string
-      required: [kind, legalName]
-    Individual:
+      required: [kind, huntingSkill]
+    Dog:
       type: object
       properties:
         kind:
           type: string
-          enum: [INDIVIDUAL]
-        firstName:
+          enum: [DOG]
+        breed:
           type: string
-      required: [kind, firstName]
+      required: [kind, breed]
     TrackedAction:
       # Named component: $ref union + $ref object.
       allOf:
         - $ref: '#/components/schemas/Action'
         - $ref: '#/components/schemas/Tracking'
-    AssistantTrackedProposal:
+    StoreOrder:
       type: object
       properties:
         actions:
@@ -186,11 +186,11 @@ components:
             allOf:
               - $ref: '#/components/schemas/ActionAlias'
               - $ref: '#/components/schemas/Tracking'
-        beneficiaries:
+        pets:
           type: array
           items:
             allOf:
-              - $ref: '#/components/schemas/BeneficiaryOp'
+              - $ref: '#/components/schemas/PetOp'
               - $ref: '#/components/schemas/Tracking'
         team:
           # Case B: inline union + $ref object.

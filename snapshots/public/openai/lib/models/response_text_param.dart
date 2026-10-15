@@ -9,7 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class ResponseTextParam {const ResponseTextParam({this.format, this.verbosity = const Omittable.absent(), });
 
 factory ResponseTextParam.fromJson(Map<String, dynamic> json) {return ResponseTextParam(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
+  format: json['format'] != null ? switch (json['format']) {
+  final Map<String, dynamic> m when m['type'] == 'text' => OneOf3<ResponseFormatText, TextResponseFormatJsonSchema, ResponseFormatJsonObject>.a(ResponseFormatText.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_schema' => OneOf3<ResponseFormatText, TextResponseFormatJsonSchema, ResponseFormatJsonObject>.b(TextResponseFormatJsonSchema.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'json_object' => OneOf3<ResponseFormatText, TextResponseFormatJsonSchema, ResponseFormatJsonObject>.c(ResponseFormatJsonObject.fromJson(m)),
+  _ => OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),),
+} : null,
   verbosity: json.containsKey('verbosity') ? Omittable(json['verbosity'] != null ? Verbosity.fromJson(json['verbosity'] as String) : null) : const Omittable.absent(),
 );}
 

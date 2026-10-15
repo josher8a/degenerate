@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import '../apis/defa
 ///
 /// ```dart
 /// final sdk = Spec16AllofUnionsApi(ApiConfig(client: myClient));
-/// sdk.$default.getProposal();
+/// sdk.$default.getOrder();
 /// ```
 final class Spec16AllofUnionsApi {Spec16AllofUnionsApi(this._config);
 

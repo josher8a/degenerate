@@ -4,7 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/typed_object1.dart';import 'package:pub_speakeasy/models/typed_object2.dart';import 'package:pub_speakeasy/models/typed_object_nullable_one_of.dart';@immutable final class TypedObjectNullableOneOfPostResponse {const TypedObjectNullableOneOfPostResponse({required this.json});
 
 factory TypedObjectNullableOneOfPostResponse.fromJson(Map<String, dynamic> json) {return TypedObjectNullableOneOfPostResponse(
-  json: json['json'] != null ? OneOf2.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>),) : null,
+  json: json['json'] != null ? switch (json['json']) {
+  final Map<String, dynamic> m when m['type'] == 'obj1' => OneOf2<TypedObject1, TypedObject2>.a(TypedObject1.fromJson(m)),
+  final Map<String, dynamic> m when m['type'] == 'obj2' => OneOf2<TypedObject1, TypedObject2>.b(TypedObject2.fromJson(m)),
+  _ => OneOf2.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>),),
+} : null,
 );}
 
 final TypedObjectNullableOneOf? json;
