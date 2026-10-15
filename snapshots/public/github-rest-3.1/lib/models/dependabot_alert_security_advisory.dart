@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   'withdrawn_at': withdrawnAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
-      json.containsKey('cve_id') && json['cve_id'] is String &&
+      json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('vulnerabilities') &&
@@ -94,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('references') &&
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (summary.runes.length > 1024) { errors.add('summary: length must be <= 1024'); }

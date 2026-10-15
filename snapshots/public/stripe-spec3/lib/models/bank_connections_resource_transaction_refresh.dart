@@ -2,12 +2,12 @@
 // Source: #/components/schemas/BankConnectionsResourceTransactionRefresh
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh/bank_connections_resource_balance_refresh_status.dart';/// 
-@immutable final class BankConnectionsResourceTransactionRefresh {const BankConnectionsResourceTransactionRefresh({required this.id, required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt, });
+@immutable final class BankConnectionsResourceTransactionRefresh {const BankConnectionsResourceTransactionRefresh({required this.id, required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt = const Omittable.absent(), });
 
 factory BankConnectionsResourceTransactionRefresh.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceTransactionRefresh(
   id: json['id'] as String,
   lastAttemptedAt: (json['last_attempted_at'] as num).toInt(),
-  nextRefreshAvailableAt: json['next_refresh_available_at'] != null ? (json['next_refresh_available_at'] as num).toInt() : null,
+  nextRefreshAvailableAt: json.containsKey('next_refresh_available_at') ? Omittable(json['next_refresh_available_at'] != null ? (json['next_refresh_available_at'] as num).toInt() : null) : const Omittable.absent(),
   status: BankConnectionsResourceBalanceRefreshStatus.fromJson(json['status'] as String),
 ); }
 
@@ -18,7 +18,7 @@ final String id;
 final int lastAttemptedAt;
 
 /// Time at which the next transaction refresh can be initiated. This value will be `null` when `status` is `pending`. Measured in seconds since the Unix epoch.
-final int? nextRefreshAvailableAt;
+final Omittable<int?> nextRefreshAvailableAt;
 
 /// The status of the last refresh attempt.
 final BankConnectionsResourceBalanceRefreshStatus status;
@@ -26,7 +26,7 @@ final BankConnectionsResourceBalanceRefreshStatus status;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'last_attempted_at': lastAttemptedAt,
-  'next_refresh_available_at': ?nextRefreshAvailableAt,
+  if (nextRefreshAvailableAt.isPresent) 'next_refresh_available_at': nextRefreshAvailableAt.value,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
@@ -36,10 +36,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
 List<String> validate() { final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
-BankConnectionsResourceTransactionRefresh copyWith({String? id, int? lastAttemptedAt, int? Function()? nextRefreshAvailableAt, BankConnectionsResourceBalanceRefreshStatus? status, }) { return BankConnectionsResourceTransactionRefresh(
+BankConnectionsResourceTransactionRefresh copyWith({String? id, int? lastAttemptedAt, Omittable<int?>? nextRefreshAvailableAt, BankConnectionsResourceBalanceRefreshStatus? status, }) { return BankConnectionsResourceTransactionRefresh(
   id: id ?? this.id,
   lastAttemptedAt: lastAttemptedAt ?? this.lastAttemptedAt,
-  nextRefreshAvailableAt: nextRefreshAvailableAt != null ? nextRefreshAvailableAt() : this.nextRefreshAvailableAt,
+  nextRefreshAvailableAt: nextRefreshAvailableAt ?? this.nextRefreshAvailableAt,
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Negative fixtures: 4 canParse, 0 validate.
+// Negative fixtures: 6 canParse, 0 validate.
 import 'package:spec_05_components_and_references/spec_05_components_and_references.dart';
 
 /// A fixture asserting `canParse` returns false.
@@ -25,25 +25,37 @@ final List<CanParseFixture> canParseFixtures = [
   const CanParseFixture(
     'User',
     "missing required field 'id'",
-    <String, dynamic>{'email': 'string'},
+    <String, dynamic>{'email': 'string', 'nickname': 'string'},
     User.canParse,
   ),
   const CanParseFixture(
     'User',
     "wrong type for 'id'",
-    <String, dynamic>{'id': 123, 'email': 'string'},
+    <String, dynamic>{'id': 123, 'email': 'string', 'nickname': 'string'},
     User.canParse,
   ),
   const CanParseFixture(
     'User',
     "missing required field 'email'",
-    <String, dynamic>{'id': 'string'},
+    <String, dynamic>{'id': 'string', 'nickname': 'string'},
     User.canParse,
   ),
   const CanParseFixture(
     'User',
     "wrong type for 'email'",
-    <String, dynamic>{'id': 'string', 'email': 123},
+    <String, dynamic>{'id': 'string', 'email': 123, 'nickname': 'string'},
+    User.canParse,
+  ),
+  const CanParseFixture(
+    'User',
+    "missing required field 'nickname'",
+    <String, dynamic>{'id': 'string', 'email': 'string'},
+    User.canParse,
+  ),
+  const CanParseFixture(
+    'User',
+    "wrong type for 'nickname'",
+    <String, dynamic>{'id': 'string', 'email': 'string', 'nickname': 123},
     User.canParse,
   ),
 ];

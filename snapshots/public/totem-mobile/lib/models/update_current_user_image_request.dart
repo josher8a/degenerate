@@ -3,6 +3,7 @@
 
 import 'dart:convert';
 import 'dart:typed_data';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 @immutable
@@ -35,10 +36,10 @@ final class UpdateCurrentUserImageRequest {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is UpdateCurrentUserImageRequest &&
-          profileImage == other.profileImage;
+          listEquals(profileImage, other.profileImage);
 
   @override
-  int get hashCode => profileImage.hashCode;
+  int get hashCode => Object.hashAll(profileImage);
 
   @override
   String toString() =>

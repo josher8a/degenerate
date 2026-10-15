@@ -16,7 +16,7 @@ final String? sourceId;
 final Map<String,String> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
-  if (image != null) 'image': base64Encode(image!),
+  if (image != null) 'image': switch (image) { final bytes? => base64Encode(bytes), _ => null },
   'source_id': ?sourceId,
   ...additionalProperties,
 }; } 
@@ -28,11 +28,11 @@ SimpleEnqueueRequestBase copyWith({Uint8List? Function()? image, String? Functio
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleEnqueueRequestBase &&
-          image == other.image &&
+          listEquals(image, other.image) &&
           sourceId == other.sourceId &&
           mapEquals(additionalProperties, other.additionalProperties);
 
-@override int get hashCode => Object.hash(image, sourceId, Object.hashAll(additionalProperties.entries));
+@override int get hashCode => Object.hash(Object.hashAll(image ?? const []), sourceId, Object.hashAll(additionalProperties.entries));
 
 @override String toString() => 'SimpleEnqueueRequestBase(image: $image, sourceId: $sourceId, additionalProperties: $additionalProperties)';
 

@@ -2,57 +2,57 @@
 // Source: #/components/schemas/BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_lines_common_proration_details.dart';/// 
-@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent({required this.proration, required this.subscriptionItem, this.invoiceItem, this.prorationDetails, this.subscription, });
+@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent({required this.proration, required this.subscriptionItem, this.invoiceItem = const Omittable.absent(), this.prorationDetails = const Omittable.absent(), this.subscription = const Omittable.absent(), });
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent(
-  invoiceItem: json['invoice_item'] as String?,
+  invoiceItem: json.containsKey('invoice_item') ? Omittable(json['invoice_item'] as String?) : const Omittable.absent(),
   proration: json['proration'] as bool,
-  prorationDetails: json['proration_details'] != null ? BillingBillResourceInvoicingLinesCommonProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null,
-  subscription: json['subscription'] as String?,
+  prorationDetails: json.containsKey('proration_details') ? Omittable(json['proration_details'] != null ? BillingBillResourceInvoicingLinesCommonProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] as String?) : const Omittable.absent(),
   subscriptionItem: json['subscription_item'] as String,
 ); }
 
 /// The invoice item that generated this line item
-final String? invoiceItem;
+final Omittable<String?> invoiceItem;
 
 /// Whether this is a proration
 final bool proration;
 
 /// Additional details for proration line items
-final BillingBillResourceInvoicingLinesCommonProrationDetails? prorationDetails;
+final Omittable<BillingBillResourceInvoicingLinesCommonProrationDetails?> prorationDetails;
 
 /// The subscription that the subscription item belongs to
-final String? subscription;
+final Omittable<String?> subscription;
 
 /// The subscription item that generated this line item
 final String subscriptionItem;
 
 Map<String, dynamic> toJson() { return {
-  'invoice_item': ?invoiceItem,
+  if (invoiceItem.isPresent) 'invoice_item': invoiceItem.value,
   'proration': proration,
-  if (prorationDetails != null) 'proration_details': prorationDetails?.toJson(),
-  'subscription': ?subscription,
+  if (prorationDetails.isPresent) 'proration_details': prorationDetails.value?.toJson(),
+  if (subscription.isPresent) 'subscription': subscription.value,
   'subscription_item': subscriptionItem,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('proration') && json['proration'] is bool &&
       json.containsKey('subscription_item') && json['subscription_item'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final invoiceItem$ = invoiceItem;
+final invoiceItem$ = invoiceItem.value;
 if (invoiceItem$ != null) {
   if (invoiceItem$.runes.length > 5000) { errors.add('invoiceItem: length must be <= 5000'); }
 }
-final subscription$ = subscription;
+final subscription$ = subscription.value;
 if (subscription$ != null) {
   if (subscription$.runes.length > 5000) { errors.add('subscription: length must be <= 5000'); }
 }
 if (subscriptionItem.runes.length > 5000) { errors.add('subscriptionItem: length must be <= 5000'); }
 return errors; } 
-BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent copyWith({String? Function()? invoiceItem, bool? proration, BillingBillResourceInvoicingLinesCommonProrationDetails? Function()? prorationDetails, String? Function()? subscription, String? subscriptionItem, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent(
-  invoiceItem: invoiceItem != null ? invoiceItem() : this.invoiceItem,
+BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent copyWith({Omittable<String?>? invoiceItem, bool? proration, Omittable<BillingBillResourceInvoicingLinesCommonProrationDetails?>? prorationDetails, Omittable<String?>? subscription, String? subscriptionItem, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent(
+  invoiceItem: invoiceItem ?? this.invoiceItem,
   proration: proration ?? this.proration,
-  prorationDetails: prorationDetails != null ? prorationDetails() : this.prorationDetails,
-  subscription: subscription != null ? subscription() : this.subscription,
+  prorationDetails: prorationDetails ?? this.prorationDetails,
+  subscription: subscription ?? this.subscription,
   subscriptionItem: subscriptionItem ?? this.subscriptionItem,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

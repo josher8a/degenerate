@@ -819,7 +819,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-@immutable final class WebhookCheckSuiteCompletedCheckSuiteApp {const WebhookCheckSuiteCompletedCheckSuiteApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.clientId, this.permissions, this.slug, });
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteApp {const WebhookCheckSuiteCompletedCheckSuiteApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.clientId = const Omittable.absent(), this.permissions, this.slug, });
 
 factory WebhookCheckSuiteCompletedCheckSuiteApp.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompletedCheckSuiteApp(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
@@ -828,7 +828,7 @@ factory WebhookCheckSuiteCompletedCheckSuiteApp.fromJson(Map<String, dynamic> js
   externalUrl: json['external_url'] != null ? Uri.parse(json['external_url'] as String) : null,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
-  clientId: json['client_id'] as String?,
+  clientId: json.containsKey('client_id') ? Omittable(json['client_id'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   owner: json['owner'] != null ? PackageOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
@@ -852,7 +852,7 @@ final Uri htmlUrl;
 final int? id;
 
 /// The client ID of the GitHub app
-final String? clientId;
+final Omittable<String?> clientId;
 
 /// The name of the GitHub app
 final String name;
@@ -876,7 +876,7 @@ Map<String, dynamic> toJson() { return {
   'external_url': externalUrl?.toString(),
   'html_url': htmlUrl.toString(),
   'id': id,
-  'client_id': ?clientId,
+  if (clientId.isPresent) 'client_id': clientId.value,
   'name': name,
   'node_id': nodeId,
   'owner': owner?.toJson(),
@@ -884,23 +884,23 @@ Map<String, dynamic> toJson() { return {
   'slug': ?slug,
   'updated_at': updatedAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('external_url') && json['external_url'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('external_url') && (json['external_url'] == null || json['external_url'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('id') && (json['id'] == null || json['id'] is num) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookCheckSuiteCompletedCheckSuiteApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookCheckSuiteCompletedCheckSuiteAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? Function()? clientId, String? name, String? nodeId, PackageOwner? Function()? owner, WebhookCheckSuiteCompletedCheckSuiteAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookCheckSuiteCompletedCheckSuiteApp(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
+WebhookCheckSuiteCompletedCheckSuiteApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookCheckSuiteCompletedCheckSuiteAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, Omittable<String?>? clientId, String? name, String? nodeId, PackageOwner? Function()? owner, WebhookCheckSuiteCompletedCheckSuiteAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookCheckSuiteCompletedCheckSuiteApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,
   externalUrl: externalUrl != null ? externalUrl() : this.externalUrl,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   id: id != null ? id() : this.id,
-  clientId: clientId != null ? clientId() : this.clientId,
+  clientId: clientId ?? this.clientId,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   owner: owner != null ? owner() : this.owner,

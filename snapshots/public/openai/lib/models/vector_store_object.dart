@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
  }
 /// A vector store is a collection of processed files can be used by the `file_search` tool.
-@immutable final class VectorStoreObject {const VectorStoreObject({required this.id, required this.object, required this.createdAt, required this.name, required this.usageBytes, required this.fileCounts, required this.status, required this.lastActiveAt, required this.metadata, this.expiresAfter, this.expiresAt, });
+@immutable final class VectorStoreObject {const VectorStoreObject({required this.id, required this.object, required this.createdAt, required this.name, required this.usageBytes, required this.fileCounts, required this.status, required this.lastActiveAt, required this.metadata, this.expiresAfter, this.expiresAt = const Omittable.absent(), });
 
 factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorStoreObject(
   id: json['id'] as String,
@@ -149,7 +149,7 @@ factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorSto
   fileCounts: FileCounts.fromJson(json['file_counts'] as Map<String, dynamic>),
   status: VectorStoreObjectStatus.fromJson(json['status'] as String),
   expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   lastActiveAt: json['last_active_at'] != null ? (json['last_active_at'] as num).toInt() : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
@@ -177,7 +177,7 @@ final VectorStoreObjectStatus status;
 final VectorStoreExpirationAfter? expiresAfter;
 
 /// The Unix timestamp (in seconds) for when the vector store will expire.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// The Unix timestamp (in seconds) for when the vector store was last active.
 final int? lastActiveAt;
@@ -200,7 +200,7 @@ Map<String, dynamic> toJson() { return {
   'file_counts': fileCounts.toJson(),
   'status': status.toJson(),
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
-  'expires_at': ?expiresAt,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'last_active_at': lastActiveAt,
   'metadata': metadata,
 }; } 
@@ -211,9 +211,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('usage_bytes') && json['usage_bytes'] is num &&
       json.containsKey('file_counts') &&
       json.containsKey('status') &&
-      json.containsKey('last_active_at') && json['last_active_at'] is num &&
+      json.containsKey('last_active_at') && (json['last_active_at'] == null || json['last_active_at'] is num) &&
       json.containsKey('metadata'); } 
-VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? createdAt, String? name, int? usageBytes, FileCounts? fileCounts, VectorStoreObjectStatus? status, VectorStoreExpirationAfter? Function()? expiresAfter, int? Function()? expiresAt, int? Function()? lastActiveAt, Map<String, String>? Function()? metadata, }) { return VectorStoreObject(
+VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? createdAt, String? name, int? usageBytes, FileCounts? fileCounts, VectorStoreObjectStatus? status, VectorStoreExpirationAfter? Function()? expiresAfter, Omittable<int?>? expiresAt, int? Function()? lastActiveAt, Map<String, String>? Function()? metadata, }) { return VectorStoreObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -222,7 +222,7 @@ VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? cr
   fileCounts: fileCounts ?? this.fileCounts,
   status: status ?? this.status,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  expiresAt: expiresAt ?? this.expiresAt,
   lastActiveAt: lastActiveAt != null ? lastActiveAt() : this.lastActiveAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

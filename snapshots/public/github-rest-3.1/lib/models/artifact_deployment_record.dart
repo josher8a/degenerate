@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ArtifactDeploymentRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record/runtime_risks.dart';/// Artifact Metadata Deployment Record
-@immutable final class ArtifactDeploymentRecord {const ArtifactDeploymentRecord({this.id, this.digest, this.logicalEnvironment, this.physicalEnvironment, this.cluster, this.deploymentName, this.tags, this.runtimeRisks, this.createdAt, this.updatedAt, this.attestationId, });
+@immutable final class ArtifactDeploymentRecord {const ArtifactDeploymentRecord({this.id, this.digest, this.logicalEnvironment, this.physicalEnvironment, this.cluster, this.deploymentName, this.tags, this.runtimeRisks, this.createdAt, this.updatedAt, this.attestationId = const Omittable.absent(), });
 
 factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) { return ArtifactDeploymentRecord(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
@@ -15,7 +15,7 @@ factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) { return Ar
   runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => RuntimeRisks.fromJson(e as String)).toList(),
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
-  attestationId: json['attestation_id'] != null ? (json['attestation_id'] as num).toInt() : null,
+  attestationId: json.containsKey('attestation_id') ? Omittable(json['attestation_id'] != null ? (json['attestation_id'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 final int? id;
@@ -40,7 +40,7 @@ final String? createdAt;
 final String? updatedAt;
 
 /// The ID of the provenance attestation associated with the deployment record.
-final int? attestationId;
+final Omittable<int?> attestationId;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (runtimeRisks != null) 'runtime_risks': runtimeRisks?.map((e) => e.toJson()).toList(),
   'created_at': ?createdAt,
   'updated_at': ?updatedAt,
-  'attestation_id': ?attestationId,
+  if (attestationId.isPresent) 'attestation_id': attestationId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'digest', 'logical_environment', 'physical_environment', 'cluster', 'deployment_name', 'tags', 'runtime_risks', 'created_at', 'updated_at', 'attestation_id'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
@@ -64,7 +64,7 @@ if (runtimeRisks$ != null) {
   if (runtimeRisks$.toSet().length != runtimeRisks$.length) { errors.add('runtimeRisks: items must be unique'); }
 }
 return errors; } 
-ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? digest, String? Function()? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? Function()? deploymentName, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, String? Function()? createdAt, String? Function()? updatedAt, int? Function()? attestationId, }) { return ArtifactDeploymentRecord(
+ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? digest, String? Function()? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? Function()? deploymentName, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, String? Function()? createdAt, String? Function()? updatedAt, Omittable<int?>? attestationId, }) { return ArtifactDeploymentRecord(
   id: id != null ? id() : this.id,
   digest: digest != null ? digest() : this.digest,
   logicalEnvironment: logicalEnvironment != null ? logicalEnvironment() : this.logicalEnvironment,
@@ -75,7 +75,7 @@ ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? dige
   runtimeRisks: runtimeRisks != null ? runtimeRisks() : this.runtimeRisks,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  attestationId: attestationId != null ? attestationId() : this.attestationId,
+  attestationId: attestationId ?? this.attestationId,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ArtifactDeploymentRecord &&

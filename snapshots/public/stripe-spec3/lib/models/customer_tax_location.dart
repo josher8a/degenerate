@@ -100,12 +100,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingA
 
  }
 /// 
-@immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state, });
+@immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state = const Omittable.absent(), });
 
 factory CustomerTaxLocation.fromJson(Map<String, dynamic> json) { return CustomerTaxLocation(
   country: json['country'] as String,
   source: CustomerTaxLocationSource.fromJson(json['source'] as String),
-  state: json['state'] as String?,
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
 ); }
 
 /// The identified tax country of the customer.
@@ -115,27 +115,27 @@ final String country;
 final CustomerTaxLocationSource source;
 
 /// The identified tax state, county, province, or region of the customer.
-final String? state;
+final Omittable<String?> state;
 
 Map<String, dynamic> toJson() { return {
   'country': country,
   'source': source.toJson(),
-  'state': ?state,
+  if (state.isPresent) 'state': state.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
       json.containsKey('source'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (country.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
-final state$ = state;
+final state$ = state.value;
 if (state$ != null) {
   if (state$.runes.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
 return errors; } 
-CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source, String? Function()? state, }) { return CustomerTaxLocation(
+CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source, Omittable<String?>? state, }) { return CustomerTaxLocation(
   country: country ?? this.country,
   source: source ?? this.source,
-  state: state != null ? state() : this.state,
+  state: state ?? this.state,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerTaxLocation &&

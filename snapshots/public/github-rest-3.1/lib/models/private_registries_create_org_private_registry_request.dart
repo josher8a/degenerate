@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PrivateRegistriesCreateOrgPrivateRegistryRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';import 'package:pub_github_rest_3_1/models/org_private_registry_configuration/registry_type.dart';@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequest {const PrivateRegistriesCreateOrgPrivateRegistryRequest({required this.registryType, required this.url, required this.encryptedValue, required this.keyId, required this.visibility, this.username, this.replacesBase = false, this.selectedRepositoryIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';import 'package:pub_github_rest_3_1/models/org_private_registry_configuration/registry_type.dart';@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequest {const PrivateRegistriesCreateOrgPrivateRegistryRequest({required this.registryType, required this.url, required this.encryptedValue, required this.keyId, required this.visibility, this.username = const Omittable.absent(), this.replacesBase = false, this.selectedRepositoryIds, });
 
 factory PrivateRegistriesCreateOrgPrivateRegistryRequest.fromJson(Map<String, dynamic> json) { return PrivateRegistriesCreateOrgPrivateRegistryRequest(
   registryType: RegistryType.fromJson(json['registry_type'] as String),
   url: Uri.parse(json['url'] as String),
-  username: json['username'] as String?,
+  username: json.containsKey('username') ? Omittable(json['username'] as String?) : const Omittable.absent(),
   replacesBase: json.containsKey('replaces_base') ? json['replaces_base'] as bool : false,
   encryptedValue: json['encrypted_value'] as String,
   keyId: json['key_id'] as String,
@@ -21,7 +21,7 @@ final RegistryType registryType;
 final Uri url;
 
 /// The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.
-final String? username;
+final Omittable<String?> username;
 
 /// Whether this private registry should replace the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When set to `true`, Dependabot will only use this registry and will not fall back to the public registry. When set to `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
 final bool replacesBase;
@@ -41,7 +41,7 @@ final List<int>? selectedRepositoryIds;
 Map<String, dynamic> toJson() { return {
   'registry_type': registryType.toJson(),
   'url': url.toString(),
-  'username': ?username,
+  if (username.isPresent) 'username': username.value,
   'replaces_base': replacesBase,
   'encrypted_value': encryptedValue,
   'key_id': keyId,
@@ -57,10 +57,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('regis
 List<String> validate() { final errors = <String>[];
 if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue)) { errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$'); }
 return errors; } 
-PrivateRegistriesCreateOrgPrivateRegistryRequest copyWith({RegistryType? registryType, Uri? url, String? Function()? username, bool Function()? replacesBase, String? encryptedValue, String? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<int>? Function()? selectedRepositoryIds, }) { return PrivateRegistriesCreateOrgPrivateRegistryRequest(
+PrivateRegistriesCreateOrgPrivateRegistryRequest copyWith({RegistryType? registryType, Uri? url, Omittable<String?>? username, bool Function()? replacesBase, String? encryptedValue, String? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<int>? Function()? selectedRepositoryIds, }) { return PrivateRegistriesCreateOrgPrivateRegistryRequest(
   registryType: registryType ?? this.registryType,
   url: url ?? this.url,
-  username: username != null ? username() : this.username,
+  username: username ?? this.username,
   replacesBase: replacesBase != null ? replacesBase() : this.replacesBase,
   encryptedValue: encryptedValue ?? this.encryptedValue,
   keyId: keyId ?? this.keyId,

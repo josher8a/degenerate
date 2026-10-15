@@ -19,9 +19,9 @@ PostBinDbPostRequest copyWith({Uint8List? file}) { return PostBinDbPostRequest(
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBinDbPostRequest &&
-          file == other.file;
+          listEquals(file, other.file);
 
-@override int get hashCode => file.hashCode;
+@override int get hashCode => Object.hashAll(file);
 
 @override String toString() => 'PostBinDbPostRequest(file: $file)';
 

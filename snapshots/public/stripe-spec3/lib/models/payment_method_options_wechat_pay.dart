@@ -85,19 +85,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
  }
 /// 
-@immutable final class PaymentMethodOptionsWechatPay {const PaymentMethodOptionsWechatPay({this.appId, this.client, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsWechatPay {const PaymentMethodOptionsWechatPay({this.appId = const Omittable.absent(), this.client = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentMethodOptionsWechatPay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsWechatPay(
-  appId: json['app_id'] as String?,
-  client: json['client'] != null ? PaymentMethodOptionsWechatPayClient.fromJson(json['client'] as String) : null,
+  appId: json.containsKey('app_id') ? Omittable(json['app_id'] as String?) : const Omittable.absent(),
+  client: json.containsKey('client') ? Omittable(json['client'] != null ? PaymentMethodOptionsWechatPayClient.fromJson(json['client'] as String) : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// The app ID registered with WeChat Pay. Only required when client is ios or android.
-final String? appId;
+final Omittable<String?> appId;
 
 /// The client type that the end customer will pay from
-final PaymentMethodOptionsWechatPayClient? client;
+final Omittable<PaymentMethodOptionsWechatPayClient?> client;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -109,21 +109,21 @@ final PaymentMethodOptionsWechatPayClient? client;
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
-  'app_id': ?appId,
-  if (client != null) 'client': client?.toJson(),
+  if (appId.isPresent) 'app_id': appId.value,
+  if (client.isPresent) 'client': client.value?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final appId$ = appId;
+final appId$ = appId.value;
 if (appId$ != null) {
   if (appId$.runes.length > 5000) { errors.add('appId: length must be <= 5000'); }
 }
 return errors; } 
-PaymentMethodOptionsWechatPay copyWith({String? Function()? appId, PaymentMethodOptionsWechatPayClient? Function()? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsWechatPay(
-  appId: appId != null ? appId() : this.appId,
-  client: client != null ? client() : this.client,
+PaymentMethodOptionsWechatPay copyWith({Omittable<String?>? appId, Omittable<PaymentMethodOptionsWechatPayClient?>? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsWechatPay(
+  appId: appId ?? this.appId,
+  client: client ?? this.client,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

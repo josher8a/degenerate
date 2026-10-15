@@ -58,13 +58,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? schedule
 /// receive a `sigma.scheduled_query_run.created` webhook each time the query
 /// runs. The webhook contains a `ScheduledQueryRun` object, which you can use to
 /// retrieve the query results.
-@immutable final class ScheduledQueryRun {const ScheduledQueryRun({required this.created, required this.dataLoadTime, required this.id, required this.livemode, required this.object, required this.resultAvailableUntil, required this.sql, required this.status, required this.title, this.error, this.file, });
+@immutable final class ScheduledQueryRun {const ScheduledQueryRun({required this.created, required this.dataLoadTime, required this.id, required this.livemode, required this.object, required this.resultAvailableUntil, required this.sql, required this.status, required this.title, this.error, this.file = const Omittable.absent(), });
 
 factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return ScheduledQueryRun(
   created: (json['created'] as num).toInt(),
   dataLoadTime: (json['data_load_time'] as num).toInt(),
   error: json['error'] != null ? SigmaScheduledQueryRunError.fromJson(json['error'] as Map<String, dynamic>) : null,
-  file: json['file'] != null ? File.fromJson(json['file'] as Map<String, dynamic>) : null,
+  file: json.containsKey('file') ? Omittable(json['file'] != null ? File.fromJson(json['file'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ScheduledQueryRunObject.fromJson(json['object'] as String),
@@ -83,7 +83,7 @@ final int dataLoadTime;
 final SigmaScheduledQueryRunError? error;
 
 /// The file object representing the results of the query.
-final File? file;
+final Omittable<File?> file;
 
 /// Unique identifier for the object.
 final String id;
@@ -110,7 +110,7 @@ Map<String, dynamic> toJson() { return {
   'created': created,
   'data_load_time': dataLoadTime,
   if (error != null) 'error': error?.toJson(),
-  if (file != null) 'file': file?.toJson(),
+  if (file.isPresent) 'file': file.value?.toJson(),
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
@@ -135,11 +135,11 @@ if (sql.runes.length > 100000) { errors.add('sql: length must be <= 100000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 if (title.runes.length > 5000) { errors.add('title: length must be <= 5000'); }
 return errors; } 
-ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, File? Function()? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
+ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, Omittable<File?>? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
   created: created ?? this.created,
   dataLoadTime: dataLoadTime ?? this.dataLoadTime,
   error: error != null ? error() : this.error,
-  file: file != null ? file() : this.file,
+  file: file ?? this.file,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,

@@ -2,58 +2,58 @@
 // Source: #/components/schemas/IssuingPersonalizationDesignCarrierText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class IssuingPersonalizationDesignCarrierText {const IssuingPersonalizationDesignCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
+@immutable final class IssuingPersonalizationDesignCarrierText {const IssuingPersonalizationDesignCarrierText({this.footerBody = const Omittable.absent(), this.footerTitle = const Omittable.absent(), this.headerBody = const Omittable.absent(), this.headerTitle = const Omittable.absent(), });
 
 factory IssuingPersonalizationDesignCarrierText.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesignCarrierText(
-  footerBody: json['footer_body'] as String?,
-  footerTitle: json['footer_title'] as String?,
-  headerBody: json['header_body'] as String?,
-  headerTitle: json['header_title'] as String?,
+  footerBody: json.containsKey('footer_body') ? Omittable(json['footer_body'] as String?) : const Omittable.absent(),
+  footerTitle: json.containsKey('footer_title') ? Omittable(json['footer_title'] as String?) : const Omittable.absent(),
+  headerBody: json.containsKey('header_body') ? Omittable(json['header_body'] as String?) : const Omittable.absent(),
+  headerTitle: json.containsKey('header_title') ? Omittable(json['header_title'] as String?) : const Omittable.absent(),
 ); }
 
 /// The footer body text of the carrier letter.
-final String? footerBody;
+final Omittable<String?> footerBody;
 
 /// The footer title text of the carrier letter.
-final String? footerTitle;
+final Omittable<String?> footerTitle;
 
 /// The header body text of the carrier letter.
-final String? headerBody;
+final Omittable<String?> headerBody;
 
 /// The header title text of the carrier letter.
-final String? headerTitle;
+final Omittable<String?> headerTitle;
 
 Map<String, dynamic> toJson() { return {
-  'footer_body': ?footerBody,
-  'footer_title': ?footerTitle,
-  'header_body': ?headerBody,
-  'header_title': ?headerTitle,
+  if (footerBody.isPresent) 'footer_body': footerBody.value,
+  if (footerTitle.isPresent) 'footer_title': footerTitle.value,
+  if (headerBody.isPresent) 'header_body': headerBody.value,
+  if (headerTitle.isPresent) 'header_title': headerTitle.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'footer_body', 'footer_title', 'header_body', 'header_title'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final footerBody$ = footerBody;
+final footerBody$ = footerBody.value;
 if (footerBody$ != null) {
   if (footerBody$.runes.length > 5000) { errors.add('footerBody: length must be <= 5000'); }
 }
-final footerTitle$ = footerTitle;
+final footerTitle$ = footerTitle.value;
 if (footerTitle$ != null) {
   if (footerTitle$.runes.length > 5000) { errors.add('footerTitle: length must be <= 5000'); }
 }
-final headerBody$ = headerBody;
+final headerBody$ = headerBody.value;
 if (headerBody$ != null) {
   if (headerBody$.runes.length > 5000) { errors.add('headerBody: length must be <= 5000'); }
 }
-final headerTitle$ = headerTitle;
+final headerTitle$ = headerTitle.value;
 if (headerTitle$ != null) {
   if (headerTitle$.runes.length > 5000) { errors.add('headerTitle: length must be <= 5000'); }
 }
 return errors; } 
-IssuingPersonalizationDesignCarrierText copyWith({String? Function()? footerBody, String? Function()? footerTitle, String? Function()? headerBody, String? Function()? headerTitle, }) { return IssuingPersonalizationDesignCarrierText(
-  footerBody: footerBody != null ? footerBody() : this.footerBody,
-  footerTitle: footerTitle != null ? footerTitle() : this.footerTitle,
-  headerBody: headerBody != null ? headerBody() : this.headerBody,
-  headerTitle: headerTitle != null ? headerTitle() : this.headerTitle,
+IssuingPersonalizationDesignCarrierText copyWith({Omittable<String?>? footerBody, Omittable<String?>? footerTitle, Omittable<String?>? headerBody, Omittable<String?>? headerTitle, }) { return IssuingPersonalizationDesignCarrierText(
+  footerBody: footerBody ?? this.footerBody,
+  footerTitle: footerTitle ?? this.footerTitle,
+  headerBody: headerBody ?? this.headerBody,
+  headerTitle: headerTitle ?? this.headerTitle,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingPersonalizationDesignCarrierText &&

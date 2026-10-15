@@ -139,25 +139,25 @@ factory CreateWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `10016` variant.
-factory CreateWorkerResponse400Errors.$10016({required String message}) { return CreateWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid(code: '10016', message: message)); }
+factory CreateWorkerResponse400Errors.$10016({required String message}) { return CreateWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid(code: WorkersErrorWorkerNameInvalidCode.fromJson(10016), message: message)); }
 
 /// Build the `10021` variant.
-factory CreateWorkerResponse400Errors.$10021({required String message}) { return CreateWorkerResponse400Errors10021(WorkersErrorWorkerInvalid(code: '10021', message: message)); }
+factory CreateWorkerResponse400Errors.$10021({required String message}) { return CreateWorkerResponse400Errors10021(WorkersErrorWorkerInvalid(code: WorkersErrorWorkerInvalidCode.fromJson(10021), message: message)); }
 
 /// Build the `100102` variant.
-factory CreateWorkerResponse400Errors.$100102({required String message}) { return CreateWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit(code: '100102', message: message)); }
+factory CreateWorkerResponse400Errors.$100102({required String message}) { return CreateWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit(code: WorkersErrorWorkerTagLengthLimitCode.fromJson(100102), message: message)); }
 
 /// Build the `100132` variant.
-factory CreateWorkerResponse400Errors.$100132({required String message}) { return CreateWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit(code: '100132', message: message)); }
+factory CreateWorkerResponse400Errors.$100132({required String message}) { return CreateWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit(code: WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson(100132), message: message)); }
 
 /// Build the `100134` variant.
-factory CreateWorkerResponse400Errors.$100134({required String message}) { return CreateWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid(code: '100134', message: message)); }
+factory CreateWorkerResponse400Errors.$100134({required String message}) { return CreateWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid(code: WorkersErrorWorkerTagInvalidCode.fromJson(100134), message: message)); }
 
 /// Build the `100308` variant.
-factory CreateWorkerResponse400Errors.$100308({required String message}) { return CreateWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid(code: '100308', message: message)); }
+factory CreateWorkerResponse400Errors.$100308({required String message}) { return CreateWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid(code: WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson(100308), message: message)); }
 
 /// Build the `100315` variant.
-factory CreateWorkerResponse400Errors.$100315({required String message}) { return CreateWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit(code: '100315', message: message)); }
+factory CreateWorkerResponse400Errors.$100315({required String message}) { return CreateWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit(code: WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson(100315), message: message)); }
 
 /// The discriminator value identifying this variant.
 CreateWorkerResponse400ErrorsCode get code;

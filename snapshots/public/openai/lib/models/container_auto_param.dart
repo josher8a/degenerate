@@ -54,12 +54,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? containe
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit, this.networkPolicy, this.skills, });
+@immutable final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, this.skills, });
 
 factory ContainerAutoParam.fromJson(Map<String, dynamic> json) { return ContainerAutoParam(
   type: ContainerAutoParamType.fromJson(json['type'] as String),
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  memoryLimit: json['memory_limit'] != null ? ContainerMemoryLimit.fromJson(json['memory_limit'] as String) : null,
+  memoryLimit: json.containsKey('memory_limit') ? Omittable(json['memory_limit'] != null ? ContainerMemoryLimit.fromJson(json['memory_limit'] as String) : null) : const Omittable.absent(),
   networkPolicy: json['network_policy'] != null ? AutoCodeInterpreterToolParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
   skills: (json['skills'] as List<dynamic>?)?.map((e) => Skills.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -70,7 +70,7 @@ final ContainerAutoParamType type;
 /// An optional list of uploaded files to make available to your code.
 final List<String>? fileIds;
 
-final ContainerMemoryLimit? memoryLimit;
+final Omittable<ContainerMemoryLimit?> memoryLimit;
 
 /// Network access policy for the container.
 final AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy;
@@ -81,7 +81,7 @@ final List<Skills>? skills;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'file_ids': ?fileIds,
-  if (memoryLimit != null) 'memory_limit': memoryLimit?.toJson(),
+  if (memoryLimit.isPresent) 'memory_limit': memoryLimit.value?.toJson(),
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
 }; } 
@@ -97,10 +97,10 @@ if (skills$ != null) {
   if (skills$.length > 200) { errors.add('skills: must have <= 200 items'); }
 }
 return errors; } 
-ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return ContainerAutoParam(
+ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String>? Function()? fileIds, Omittable<ContainerMemoryLimit?>? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return ContainerAutoParam(
   type: type ?? this.type,
   fileIds: fileIds != null ? fileIds() : this.fileIds,
-  memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,
+  memoryLimit: memoryLimit ?? this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
   skills: skills != null ? skills() : this.skills,
 ); } 

@@ -69,11 +69,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CacheRulesTieredCacheResponseValueResult {const CacheRulesTieredCacheResponseValueResult({required this.id, required this.value, this.modifiedOn, });
+@immutable final class CacheRulesTieredCacheResponseValueResult {const CacheRulesTieredCacheResponseValueResult({required this.id, required this.value, this.modifiedOn = const Omittable.absent(), });
 
 factory CacheRulesTieredCacheResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesTieredCacheResponseValueResult(
   id: CacheRulesTieredCacheId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: CacheRulesTieredCacheValue.fromJson(json['value'] as String),
 ); }
 
@@ -85,20 +85,20 @@ final CacheRulesTieredCacheId id;
 /// Last time this setting was modified.
 /// 
 /// Example: `'2014-01-01T05:20:00.12345Z'`
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 final CacheRulesTieredCacheValue value;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-CacheRulesTieredCacheResponseValueResult copyWith({CacheRulesTieredCacheId? id, DateTime? Function()? modifiedOn, CacheRulesTieredCacheValue? value, }) { return CacheRulesTieredCacheResponseValueResult(
+CacheRulesTieredCacheResponseValueResult copyWith({CacheRulesTieredCacheId? id, Omittable<DateTime?>? modifiedOn, CacheRulesTieredCacheValue? value, }) { return CacheRulesTieredCacheResponseValueResult(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

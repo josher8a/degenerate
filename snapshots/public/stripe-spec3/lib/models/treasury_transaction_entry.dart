@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
  }
 /// TransactionEntries represent individual units of money movements within a single [Transaction](https://api.stripe.com#transactions).
-@immutable final class TreasuryTransactionEntry {const TreasuryTransactionEntry({required this.balanceImpact, required this.created, required this.currency, required this.effectiveAt, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.transaction, required this.type, this.flow, this.flowDetails, });
+@immutable final class TreasuryTransactionEntry {const TreasuryTransactionEntry({required this.balanceImpact, required this.created, required this.currency, required this.effectiveAt, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.transaction, required this.type, this.flow = const Omittable.absent(), this.flowDetails = const Omittable.absent(), });
 
 factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return TreasuryTransactionEntry(
   balanceImpact: TreasuryTransactionsResourceBalanceImpact.fromJson(json['balance_impact'] as Map<String, dynamic>),
@@ -401,8 +401,8 @@ factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return Tr
   currency: json['currency'] as String,
   effectiveAt: (json['effective_at'] as num).toInt(),
   financialAccount: json['financial_account'] as String,
-  flow: json['flow'] as String?,
-  flowDetails: json['flow_details'] != null ? TreasuryTransactionsResourceFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>) : null,
+  flow: json.containsKey('flow') ? Omittable(json['flow'] as String?) : const Omittable.absent(),
+  flowDetails: json.containsKey('flow_details') ? Omittable(json['flow_details'] != null ? TreasuryTransactionsResourceFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   flowType: FlowType.fromJson(json['flow_type'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -426,10 +426,10 @@ final int effectiveAt;
 final String financialAccount;
 
 /// Token of the flow associated with the TransactionEntry.
-final String? flow;
+final Omittable<String?> flow;
 
 /// Details of the flow associated with the TransactionEntry.
-final TreasuryTransactionsResourceFlowDetails? flowDetails;
+final Omittable<TreasuryTransactionsResourceFlowDetails?> flowDetails;
 
 /// Type of the flow associated with the TransactionEntry.
 final FlowType flowType;
@@ -455,8 +455,8 @@ Map<String, dynamic> toJson() { return {
   'currency': currency,
   'effective_at': effectiveAt,
   'financial_account': financialAccount,
-  'flow': ?flow,
-  if (flowDetails != null) 'flow_details': flowDetails?.toJson(),
+  if (flow.isPresent) 'flow': flow.value,
+  if (flowDetails.isPresent) 'flow_details': flowDetails.value?.toJson(),
   'flow_type': flowType.toJson(),
   'id': id,
   'livemode': livemode,
@@ -478,20 +478,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (financialAccount.runes.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
-final flow$ = flow;
+final flow$ = flow.value;
 if (flow$ != null) {
   if (flow$.runes.length > 5000) { errors.add('flow: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
-TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryCreditReversalTransaction? transaction, TreasuryTransactionEntryType? type, }) { return TreasuryTransactionEntry(
+TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, Omittable<String?>? flow, Omittable<TreasuryTransactionsResourceFlowDetails?>? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryCreditReversalTransaction? transaction, TreasuryTransactionEntryType? type, }) { return TreasuryTransactionEntry(
   balanceImpact: balanceImpact ?? this.balanceImpact,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   effectiveAt: effectiveAt ?? this.effectiveAt,
   financialAccount: financialAccount ?? this.financialAccount,
-  flow: flow != null ? flow() : this.flow,
-  flowDetails: flowDetails != null ? flowDetails() : this.flowDetails,
+  flow: flow ?? this.flow,
+  flowDetails: flowDetails ?? this.flowDetails,
   flowType: flowType ?? this.flowType,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

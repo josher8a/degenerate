@@ -3,6 +3,7 @@
 
 import 'dart:convert';
 import 'dart:typed_data';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_unhinged/models/n3_incident.dart';
 import 'package:pub_unhinged/models/new/new0.dart';
@@ -322,7 +323,11 @@ final class New {
       'class': ?$class,
       if ($import != null) 'import': $import?.map((e) => e.toJson()).toList(),
       'return': $return,
-      if ($void != null) 'void': base64Encode($void!),
+      if ($void != null)
+        'void': switch ($void) {
+          final bytes? => base64Encode(bytes),
+          _ => null,
+        },
       'package': ?package,
     };
   }
@@ -342,9 +347,8 @@ final class New {
     final errors = <String>[];
     final package$ = package;
     if (package$ != null) {
-      if (!RegExp(
-        r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
-      ).hasMatch(package$)) {
+      if (!RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$')
+          .hasMatch(package$)) {
         errors.add(
           r'package: must match pattern ^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
         );
@@ -416,7 +420,7 @@ final class New {
           $class == other.$class &&
           listEquals($import, other.$import) &&
           $return == other.$return &&
-          $void == other.$void &&
+          listEquals($void, other.$void) &&
           package == other.package;
 
   @override
@@ -436,7 +440,7 @@ final class New {
     $class,
     Object.hashAll($import ?? const []),
     $return,
-    $void,
+    Object.hashAll($void ?? const []),
     package,
   );
 

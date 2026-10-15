@@ -10,7 +10,7 @@ factory RequestBodyPutMultipartDifferentFileNameRequest.fromJson(Map<String, dyn
 final Uint8List? differentFileName;
 
 Map<String, dynamic> toJson() { return {
-  if (differentFileName != null) 'differentFileName': base64Encode(differentFileName!),
+  if (differentFileName != null) 'differentFileName': switch (differentFileName) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'differentFileName'}.contains(key)); } 
 RequestBodyPutMultipartDifferentFileNameRequest copyWith({Uint8List? Function()? differentFileName}) { return RequestBodyPutMultipartDifferentFileNameRequest(
@@ -18,9 +18,9 @@ RequestBodyPutMultipartDifferentFileNameRequest copyWith({Uint8List? Function()?
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyPutMultipartDifferentFileNameRequest &&
-          differentFileName == other.differentFileName;
+          listEquals(differentFileName, other.differentFileName);
 
-@override int get hashCode => differentFileName.hashCode;
+@override int get hashCode => Object.hashAll(differentFileName ?? const []);
 
 @override String toString() => 'RequestBodyPutMultipartDifferentFileNameRequest(differentFileName: $differentFileName)';
 

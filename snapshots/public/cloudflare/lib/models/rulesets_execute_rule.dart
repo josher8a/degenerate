@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RulesetsExecuteRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_rule/rulesets_execute_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';@immutable final class RulesetsExecuteRule {const RulesetsExecuteRule({required this.lastUpdated, required this.version, this.action, this.actionParameters, this.categories, this.description, this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_rule/rulesets_execute_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';@immutable final class RulesetsExecuteRule {const RulesetsExecuteRule({required this.lastUpdated, required this.version, this.action = const Omittable.absent(), this.actionParameters, this.categories, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
 factory RulesetsExecuteRule.fromJson(Map<String, dynamic> json) { return RulesetsExecuteRule(
-  action: json['action'],
+  action: json.containsKey('action') ? Omittable(json['action']) : const Omittable.absent(),
   actionParameters: json['action_parameters'] != null ? RulesetsExecuteRuleActionParameters.fromJson(json['action_parameters'] as Map<String, dynamic>) : null,
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
-  description: json['description'],
+  description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
   exposedCredentialCheck: json['exposed_credential_check'] != null ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>) : null,
   expression: json['expression'] as String?,
@@ -19,14 +19,14 @@ factory RulesetsExecuteRule.fromJson(Map<String, dynamic> json) { return Ruleset
   version: json['version'] as String,
 ); }
 
-final dynamic action;
+final Omittable<dynamic> action;
 
 final RulesetsExecuteRuleActionParameters? actionParameters;
 
 final List<RulesetsRuleCategory>? categories;
 
 /// Example: `'Execute another ruleset.'`
-final dynamic description;
+final Omittable<dynamic> description;
 
 final RulesetsRuleEnabled? enabled;
 
@@ -59,10 +59,10 @@ final String? ref;
 final String version;
 
 Map<String, dynamic> toJson() { return {
-  'action': ?action,
+  if (action.isPresent) 'action': action.value,
   if (actionParameters != null) 'action_parameters': actionParameters?.toJson(),
   if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (exposedCredentialCheck != null) 'exposed_credential_check': exposedCredentialCheck?.toJson(),
   'expression': ?expression,
@@ -92,11 +92,11 @@ if (ref$ != null) {
 }
 if (!RegExp(r'^[0-9]+$').hasMatch(version)) { errors.add(r'version: must match pattern ^[0-9]+$'); }
 return errors; } 
-RulesetsExecuteRule copyWith({dynamic Function()? action, RulesetsExecuteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsExecuteRule(
-  action: action != null ? action() : this.action,
+RulesetsExecuteRule copyWith({Omittable<dynamic>? action, RulesetsExecuteRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsExecuteRule(
+  action: action ?? this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   categories: categories != null ? categories() : this.categories,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   exposedCredentialCheck: exposedCredentialCheck != null ? exposedCredentialCheck() : this.exposedCredentialCheck,
   expression: expression != null ? expression() : this.expression,

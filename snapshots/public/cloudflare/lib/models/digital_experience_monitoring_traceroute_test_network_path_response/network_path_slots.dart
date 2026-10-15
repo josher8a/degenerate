@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestNetworkPathResponse (inline: NetworkPath > Slots)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class NetworkPathSlots {const NetworkPathSlots({required this.clientToAppRttMs, required this.clientToCfEgressRttMs, required this.clientToCfIngressRttMs, required this.id, required this.timestamp, this.clientToIspRttMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class NetworkPathSlots {const NetworkPathSlots({required this.clientToAppRttMs, required this.clientToCfEgressRttMs, required this.clientToCfIngressRttMs, required this.id, required this.timestamp, this.clientToIspRttMs = const Omittable.absent(), });
 
 factory NetworkPathSlots.fromJson(Map<String, dynamic> json) { return NetworkPathSlots(
   clientToAppRttMs: json['clientToAppRttMs'] != null ? (json['clientToAppRttMs'] as num).toInt() : null,
   clientToCfEgressRttMs: json['clientToCfEgressRttMs'] != null ? (json['clientToCfEgressRttMs'] as num).toInt() : null,
   clientToCfIngressRttMs: json['clientToCfIngressRttMs'] != null ? (json['clientToCfIngressRttMs'] as num).toInt() : null,
-  clientToIspRttMs: json['clientToIspRttMs'] != null ? (json['clientToIspRttMs'] as num).toInt() : null,
+  clientToIspRttMs: json.containsKey('clientToIspRttMs') ? Omittable(json['clientToIspRttMs'] != null ? (json['clientToIspRttMs'] as num).toInt() : null) : const Omittable.absent(),
   id: DigitalExperienceMonitoringUuid.fromJson(json['id'] as String),
   timestamp: json['timestamp'] as String,
 ); }
@@ -22,7 +22,7 @@ final int? clientToCfEgressRttMs;
 final int? clientToCfIngressRttMs;
 
 /// Round trip time in ms of the client to ISP mile
-final int? clientToIspRttMs;
+final Omittable<int?> clientToIspRttMs;
 
 final DigitalExperienceMonitoringUuid id;
 
@@ -33,20 +33,20 @@ Map<String, dynamic> toJson() { return {
   'clientToAppRttMs': clientToAppRttMs,
   'clientToCfEgressRttMs': clientToCfEgressRttMs,
   'clientToCfIngressRttMs': clientToCfIngressRttMs,
-  'clientToIspRttMs': ?clientToIspRttMs,
+  if (clientToIspRttMs.isPresent) 'clientToIspRttMs': clientToIspRttMs.value,
   'id': id.toJson(),
   'timestamp': timestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientToAppRttMs') && json['clientToAppRttMs'] is num &&
-      json.containsKey('clientToCfEgressRttMs') && json['clientToCfEgressRttMs'] is num &&
-      json.containsKey('clientToCfIngressRttMs') && json['clientToCfIngressRttMs'] is num &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientToAppRttMs') && (json['clientToAppRttMs'] == null || json['clientToAppRttMs'] is num) &&
+      json.containsKey('clientToCfEgressRttMs') && (json['clientToCfEgressRttMs'] == null || json['clientToCfEgressRttMs'] is num) &&
+      json.containsKey('clientToCfIngressRttMs') && (json['clientToCfIngressRttMs'] == null || json['clientToCfIngressRttMs'] is num) &&
       json.containsKey('id') &&
       json.containsKey('timestamp') && json['timestamp'] is String; } 
-NetworkPathSlots copyWith({int? Function()? clientToAppRttMs, int? Function()? clientToCfEgressRttMs, int? Function()? clientToCfIngressRttMs, int? Function()? clientToIspRttMs, DigitalExperienceMonitoringUuid? id, String? timestamp, }) { return NetworkPathSlots(
+NetworkPathSlots copyWith({int? Function()? clientToAppRttMs, int? Function()? clientToCfEgressRttMs, int? Function()? clientToCfIngressRttMs, Omittable<int?>? clientToIspRttMs, DigitalExperienceMonitoringUuid? id, String? timestamp, }) { return NetworkPathSlots(
   clientToAppRttMs: clientToAppRttMs != null ? clientToAppRttMs() : this.clientToAppRttMs,
   clientToCfEgressRttMs: clientToCfEgressRttMs != null ? clientToCfEgressRttMs() : this.clientToCfEgressRttMs,
   clientToCfIngressRttMs: clientToCfIngressRttMs != null ? clientToCfIngressRttMs() : this.clientToCfIngressRttMs,
-  clientToIspRttMs: clientToIspRttMs != null ? clientToIspRttMs() : this.clientToIspRttMs,
+  clientToIspRttMs: clientToIspRttMs ?? this.clientToIspRttMs,
   id: id ?? this.id,
   timestamp: timestamp ?? this.timestamp,
 ); } 

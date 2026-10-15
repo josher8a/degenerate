@@ -82,10 +82,10 @@ factory FunctionAndCustomToolCallOutput.fromJson(Map<String, dynamic> json) { re
 factory FunctionAndCustomToolCallOutput.inputText({required String text}) { return FunctionAndCustomToolCallOutputInputText(InputTextContent(text: text)); }
 
 /// Build the `input_image` variant.
-factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail, Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory FunctionAndCustomToolCallOutput.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory FunctionAndCustomToolCallOutput.inputFile({Omittable<String?> fileId = const Omittable.absent(), String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 FunctionAndCustomToolCallOutputType get type;
@@ -131,7 +131,7 @@ final InputImageContent inputImageContent;
 
 @override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type.toJson()};
 
-FunctionAndCustomToolCallOutputInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return FunctionAndCustomToolCallOutputInputImage(inputImageContent.copyWith(
+FunctionAndCustomToolCallOutputInputImage copyWith({Omittable<String?>? imageUrl, Omittable<String?>? fileId, ImageDetail? detail, }) { return FunctionAndCustomToolCallOutputInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
   fileId: fileId,
   detail: detail,
@@ -154,7 +154,7 @@ final InputFileContent inputFileContent;
 
 @override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type.toJson()};
 
-FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return FunctionAndCustomToolCallOutputInputFile(inputFileContent.copyWith(
+FunctionAndCustomToolCallOutputInputFile copyWith({Omittable<String?>? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return FunctionAndCustomToolCallOutputInputFile(inputFileContent.copyWith(
   fileId: fileId,
   filename: filename,
   fileData: fileData,

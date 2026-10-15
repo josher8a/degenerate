@@ -2,6 +2,7 @@
 // Source: tag "IncidentsApi" (2 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_unhinged/models/errors/list_incidents_v2draft_error.dart';
 import 'package:pub_unhinged/models/n3_incident.dart';

@@ -326,11 +326,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundF
 
  }
 /// Additional details on the FinancialAccount Features information.
-@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution, this.restriction, });
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution = const Omittable.absent(), this.restriction, });
 
 factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(json['code'] as String),
-  resolution: json['resolution'] != null ? Resolution.fromJson(json['resolution'] as String) : null,
+  resolution: json.containsKey('resolution') ? Omittable(json['resolution'] != null ? Resolution.fromJson(json['resolution'] as String) : null) : const Omittable.absent(),
   restriction: json['restriction'] != null ? Restriction.fromJson(json['restriction'] as String) : null,
 ); }
 
@@ -338,20 +338,20 @@ factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Ma
 final TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode code;
 
 /// Represents what the user should do, if anything, to activate the Feature.
-final Resolution? resolution;
+final Omittable<Resolution?> resolution;
 
 /// The `platform_restrictions` that are restricting this Feature.
 final Restriction? restriction;
 
 Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
-  if (resolution != null) 'resolution': resolution?.toJson(),
+  if (resolution.isPresent) 'resolution': resolution.value?.toJson(),
   if (restriction != null) 'restriction': restriction?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'); } 
-TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Resolution? Function()? resolution, Restriction? Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
+TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Omittable<Resolution?>? resolution, Restriction? Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: code ?? this.code,
-  resolution: resolution != null ? resolution() : this.resolution,
+  resolution: resolution ?? this.resolution,
   restriction: restriction != null ? restriction() : this.restriction,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

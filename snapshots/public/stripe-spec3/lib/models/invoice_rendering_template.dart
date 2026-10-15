@@ -124,14 +124,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
  }
 /// Invoice Rendering Templates are used to configure how invoices are rendered on surfaces like the PDF. Invoice Rendering Templates
 /// can be created from within the Dashboard, and they can be used over the API when creating invoices.
-@immutable final class InvoiceRenderingTemplate {const InvoiceRenderingTemplate({required this.created, required this.id, required this.livemode, required this.object, required this.status, required this.version, this.metadata, this.nickname, });
+@immutable final class InvoiceRenderingTemplate {const InvoiceRenderingTemplate({required this.created, required this.id, required this.livemode, required this.object, required this.status, required this.version, this.metadata = const Omittable.absent(), this.nickname = const Omittable.absent(), });
 
 factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) { return InvoiceRenderingTemplate(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] as String?,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  nickname: json.containsKey('nickname') ? Omittable(json['nickname'] as String?) : const Omittable.absent(),
   object: InvoiceRenderingTemplateObject.fromJson(json['object'] as String),
   status: InvoiceRenderingTemplateStatus.fromJson(json['status'] as String),
   version: (json['version'] as num).toInt(),
@@ -147,10 +147,10 @@ final String id;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// A brief description of the template, hidden from customers
-final String? nickname;
+final Omittable<String?> nickname;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final InvoiceRenderingTemplateObject object;
@@ -165,8 +165,8 @@ Map<String, dynamic> toJson() { return {
   'created': created,
   'id': id,
   'livemode': livemode,
-  'metadata': ?metadata,
-  'nickname': ?nickname,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (nickname.isPresent) 'nickname': nickname.value,
   'object': object.toJson(),
   'status': status.toJson(),
   'version': version,
@@ -180,17 +180,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final nickname$ = nickname;
+final nickname$ = nickname.value;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
 return errors; } 
-InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, InvoiceRenderingTemplateObject? object, InvoiceRenderingTemplateStatus? status, int? version, }) { return InvoiceRenderingTemplate(
+InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, InvoiceRenderingTemplateObject? object, InvoiceRenderingTemplateStatus? status, int? version, }) { return InvoiceRenderingTemplate(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
-  nickname: nickname != null ? nickname() : this.nickname,
+  metadata: metadata ?? this.metadata,
+  nickname: nickname ?? this.nickname,
   object: object ?? this.object,
   status: status ?? this.status,
   version: version ?? this.version,

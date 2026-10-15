@@ -94,10 +94,10 @@ factory NscStatusInfo.fromJson(Map<String, dynamic> json) { return switch (json[
 }; }
 
 /// Build the `Down` variant.
-factory NscStatusInfo.down({String? reason}) { return NscStatusInfoDown(Down(state: 'Down', reason: reason)); }
+factory NscStatusInfo.down({Omittable<String?> reason = const Omittable.absent()}) { return NscStatusInfoDown(Down(state: 'Down', reason: reason)); }
 
 /// Build the `Unhealthy` variant.
-factory NscStatusInfo.unhealthy({String? reason}) { return NscStatusInfoUnhealthy(Unhealthy(state: 'Unhealthy', reason: reason)); }
+factory NscStatusInfo.unhealthy({Omittable<String?> reason = const Omittable.absent()}) { return NscStatusInfoUnhealthy(Unhealthy(state: 'Unhealthy', reason: reason)); }
 
 /// The discriminator value identifying this variant.
 NscStatusInfoState get state;
@@ -142,7 +142,7 @@ final Down down;
 
 @override Map<String, dynamic> toJson() => {...down.toJson(), 'state': state.toJson()};
 
-NscStatusInfoDown copyWith({String? Function()? reason}) { return NscStatusInfoDown(down.copyWith(
+NscStatusInfoDown copyWith({Omittable<String?>? reason}) { return NscStatusInfoDown(down.copyWith(
   reason: reason,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -163,7 +163,7 @@ final Unhealthy unhealthy;
 
 @override Map<String, dynamic> toJson() => {...unhealthy.toJson(), 'state': state.toJson()};
 
-NscStatusInfoUnhealthy copyWith({String? Function()? reason}) { return NscStatusInfoUnhealthy(unhealthy.copyWith(
+NscStatusInfoUnhealthy copyWith({Omittable<String?>? reason}) { return NscStatusInfoUnhealthy(unhealthy.copyWith(
   reason: reason,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||

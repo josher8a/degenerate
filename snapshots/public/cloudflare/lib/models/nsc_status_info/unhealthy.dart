@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NscStatusInfo (inline: Unhealthy)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Unhealthy {const Unhealthy({required this.state, this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Unhealthy {const Unhealthy({required this.state, this.reason = const Omittable.absent(), });
 
 factory Unhealthy.fromJson(Map<String, dynamic> json) { return Unhealthy(
-  reason: json['reason'] as String?,
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
   state: json['state'] as String,
 ); }
 
 /// Diagnostic information, if available
-final String? reason;
+final Omittable<String?> reason;
 
 final String state;
 
 Map<String, dynamic> toJson() { return {
-  'reason': ?reason,
+  if (reason.isPresent) 'reason': reason.value,
   'state': state,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') && json['state'] is String; } 
-Unhealthy copyWith({String? Function()? reason, String? state, }) { return Unhealthy(
-  reason: reason != null ? reason() : this.reason,
+Unhealthy copyWith({Omittable<String?>? reason, String? state, }) { return Unhealthy(
+  reason: reason ?? this.reason,
   state: state ?? this.state,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

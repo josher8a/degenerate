@@ -82,10 +82,10 @@ factory InputContent.fromJson(Map<String, dynamic> json) { return switch (json['
 factory InputContent.inputText({required String text}) { return InputContentInputText(InputTextContent(text: text)); }
 
 /// Build the `input_image` variant.
-factory InputContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return InputContentInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory InputContent.inputImage({required ImageDetail detail, Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), }) { return InputContentInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory InputContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return InputContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory InputContent.inputFile({Omittable<String?> fileId = const Omittable.absent(), String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return InputContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 InputContentType get type;
@@ -131,7 +131,7 @@ final InputImageContent inputImageContent;
 
 @override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type.toJson()};
 
-InputContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return InputContentInputImage(inputImageContent.copyWith(
+InputContentInputImage copyWith({Omittable<String?>? imageUrl, Omittable<String?>? fileId, ImageDetail? detail, }) { return InputContentInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
   fileId: fileId,
   detail: detail,
@@ -154,7 +154,7 @@ final InputFileContent inputFileContent;
 
 @override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type.toJson()};
 
-InputContentInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputContentInputFile(inputFileContent.copyWith(
+InputContentInputFile copyWith({Omittable<String?>? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputContentInputFile(inputFileContent.copyWith(
   fileId: fileId,
   filename: filename,
   fileData: fileData,

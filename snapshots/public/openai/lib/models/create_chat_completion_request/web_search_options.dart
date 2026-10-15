@@ -89,26 +89,26 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 /// This tool searches the web for relevant results to use in a response.
 /// Learn more about the [web search tool](/docs/guides/tools-web-search?api-mode=chat).
 /// 
-@immutable final class WebSearchOptions {const WebSearchOptions({this.userLocation, this.searchContextSize, });
+@immutable final class WebSearchOptions {const WebSearchOptions({this.userLocation = const Omittable.absent(), this.searchContextSize, });
 
 factory WebSearchOptions.fromJson(Map<String, dynamic> json) { return WebSearchOptions(
-  userLocation: json['user_location'] != null ? UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
+  userLocation: json.containsKey('user_location') ? Omittable(json['user_location'] != null ? UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   searchContextSize: json['search_context_size'] != null ? WebSearchContextSize.fromJson(json['search_context_size'] as String) : null,
 ); }
 
 /// Approximate location parameters for the search.
 /// 
-final UserLocation? userLocation;
+final Omittable<UserLocation?> userLocation;
 
 final WebSearchContextSize? searchContextSize;
 
 Map<String, dynamic> toJson() { return {
-  if (userLocation != null) 'user_location': userLocation?.toJson(),
+  if (userLocation.isPresent) 'user_location': userLocation.value?.toJson(),
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_location', 'search_context_size'}.contains(key)); } 
-WebSearchOptions copyWith({UserLocation? Function()? userLocation, WebSearchContextSize? Function()? searchContextSize, }) { return WebSearchOptions(
-  userLocation: userLocation != null ? userLocation() : this.userLocation,
+WebSearchOptions copyWith({Omittable<UserLocation?>? userLocation, WebSearchContextSize? Function()? searchContextSize, }) { return WebSearchOptions(
+  userLocation: userLocation ?? this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

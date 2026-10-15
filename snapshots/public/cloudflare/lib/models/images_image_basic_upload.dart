@@ -36,7 +36,7 @@ final String? url;
 
 Map<String, dynamic> toJson() { return {
   'creator': ?creator,
-  if (file != null) 'file': base64Encode(file!),
+  if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
   'id': ?id,
   'metadata': ?metadata,
   'requireSignedURLs': requireSignedUrLs,
@@ -61,13 +61,13 @@ ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Functio
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageBasicUpload &&
           creator == other.creator &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           id == other.id &&
           metadata == other.metadata &&
           requireSignedUrLs == other.requireSignedUrLs &&
           url == other.url;
 
-@override int get hashCode => Object.hash(creator, file, id, metadata, requireSignedUrLs, url);
+@override int get hashCode => Object.hash(creator, Object.hashAll(file ?? const []), id, metadata, requireSignedUrLs, url);
 
 @override String toString() => 'ImagesImageBasicUpload(creator: $creator, file: $file, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs, url: $url)';
 

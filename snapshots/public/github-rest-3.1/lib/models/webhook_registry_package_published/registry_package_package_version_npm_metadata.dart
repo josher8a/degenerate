@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookRegistryPackagePublished (inline: RegistryPackage > PackageVersion > NpmMetadata)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/bugs.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/directories.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/dist.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/npm_metadata_author.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/npm_metadata_repository.dart';@immutable final class RegistryPackagePackageVersionNpmMetadata {const RegistryPackagePackageVersionNpmMetadata({this.homepage, this.version, this.npmUser, this.author, this.bugs, this.dependencies, this.devDependencies, this.peerDependencies, this.optionalDependencies, this.description, this.dist, this.gitHead, this.name, this.license, this.main, this.repository, this.scripts, this.id, this.nodeVersion, this.npmVersion, this.hasShrinkwrap, this.maintainers, this.contributors, this.engines, this.deletedById, this.files, this.bin, this.man, this.directories, this.os, this.cpu, this.readme, this.installationCommand, this.releaseId, this.commitOid, this.publishedViaActions, this.keywords, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/bugs.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/directories.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/dist.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/npm_metadata_author.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/npm_metadata_repository.dart';@immutable final class RegistryPackagePackageVersionNpmMetadata {const RegistryPackagePackageVersionNpmMetadata({this.homepage, this.version, this.npmUser, this.author = const Omittable.absent(), this.bugs = const Omittable.absent(), this.dependencies, this.devDependencies, this.peerDependencies, this.optionalDependencies, this.description, this.dist = const Omittable.absent(), this.gitHead, this.name, this.license, this.main, this.repository = const Omittable.absent(), this.scripts, this.id, this.nodeVersion, this.npmVersion, this.hasShrinkwrap, this.maintainers, this.contributors, this.engines, this.deletedById, this.files, this.bin, this.man, this.directories = const Omittable.absent(), this.os, this.cpu, this.readme, this.installationCommand, this.releaseId, this.commitOid, this.publishedViaActions, this.keywords, });
 
 factory RegistryPackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> json) { return RegistryPackagePackageVersionNpmMetadata(
   name: json['name'] as String?,
   version: json['version'] as String?,
   npmUser: json['npm_user'] as String?,
-  author: json['author'] != null ? OneOf2.parse(json['author'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
-  bugs: json['bugs'] != null ? OneOf2.parse(json['bugs'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
+  author: json.containsKey('author') ? Omittable(json['author'] != null ? OneOf2.parse(json['author'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null) : const Omittable.absent(),
+  bugs: json.containsKey('bugs') ? Omittable(json['bugs'] != null ? OneOf2.parse(json['bugs'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null) : const Omittable.absent(),
   dependencies: json['dependencies'] as Map<String, dynamic>?,
   devDependencies: json['dev_dependencies'] as Map<String, dynamic>?,
   peerDependencies: json['peer_dependencies'] as Map<String, dynamic>?,
   optionalDependencies: json['optional_dependencies'] as Map<String, dynamic>?,
   description: json['description'] as String?,
-  dist: json['dist'] != null ? OneOf2.parse(json['dist'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
+  dist: json.containsKey('dist') ? Omittable(json['dist'] != null ? OneOf2.parse(json['dist'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null) : const Omittable.absent(),
   gitHead: json['git_head'] as String?,
   homepage: json['homepage'] as String?,
   license: json['license'] as String?,
   main: json['main'] as String?,
-  repository: json['repository'] != null ? OneOf2.parse(json['repository'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
+  repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? OneOf2.parse(json['repository'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null) : const Omittable.absent(),
   scripts: json['scripts'] as Map<String, dynamic>?,
   id: json['id'] as String?,
   nodeVersion: json['node_version'] as String?,
@@ -32,7 +32,7 @@ factory RegistryPackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> j
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
   bin: json['bin'] as Map<String, dynamic>?,
   man: json['man'] as Map<String, dynamic>?,
-  directories: json['directories'] != null ? OneOf2.parse(json['directories'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
+  directories: json.containsKey('directories') ? Omittable(json['directories'] != null ? OneOf2.parse(json['directories'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null) : const Omittable.absent(),
   os: (json['os'] as List<dynamic>?)?.map((e) => e as String).toList(),
   cpu: (json['cpu'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readme: json['readme'] as String?,
@@ -49,9 +49,9 @@ final String? version;
 
 final String? npmUser;
 
-final NpmMetadataAuthor? author;
+final Omittable<NpmMetadataAuthor?> author;
 
-final Bugs? bugs;
+final Omittable<Bugs?> bugs;
 
 final Map<String,dynamic>? dependencies;
 
@@ -63,7 +63,7 @@ final Map<String,dynamic>? optionalDependencies;
 
 final String? description;
 
-final Dist? dist;
+final Omittable<Dist?> dist;
 
 final String? gitHead;
 
@@ -73,7 +73,7 @@ final String? license;
 
 final String? main;
 
-final NpmMetadataRepository? repository;
+final Omittable<NpmMetadataRepository?> repository;
 
 final Map<String,dynamic>? scripts;
 
@@ -99,7 +99,7 @@ final Map<String,dynamic>? bin;
 
 final Map<String,dynamic>? man;
 
-final Directories? directories;
+final Omittable<Directories?> directories;
 
 final List<String>? os;
 
@@ -121,19 +121,19 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'version': ?version,
   'npm_user': ?npmUser,
-  if (author != null) 'author': author?.toJson(),
-  if (bugs != null) 'bugs': bugs?.toJson(),
+  if (author.isPresent) 'author': author.value?.toJson(),
+  if (bugs.isPresent) 'bugs': bugs.value?.toJson(),
   'dependencies': ?dependencies,
   'dev_dependencies': ?devDependencies,
   'peer_dependencies': ?peerDependencies,
   'optional_dependencies': ?optionalDependencies,
   'description': ?description,
-  if (dist != null) 'dist': dist?.toJson(),
+  if (dist.isPresent) 'dist': dist.value?.toJson(),
   'git_head': ?gitHead,
   'homepage': ?homepage,
   'license': ?license,
   'main': ?main,
-  if (repository != null) 'repository': repository?.toJson(),
+  if (repository.isPresent) 'repository': repository.value?.toJson(),
   'scripts': ?scripts,
   'id': ?id,
   'node_version': ?nodeVersion,
@@ -146,7 +146,7 @@ Map<String, dynamic> toJson() { return {
   'files': ?files,
   'bin': ?bin,
   'man': ?man,
-  if (directories != null) 'directories': directories?.toJson(),
+  if (directories.isPresent) 'directories': directories.value?.toJson(),
   'os': ?os,
   'cpu': ?cpu,
   'readme': ?readme,
@@ -157,23 +157,23 @@ Map<String, dynamic> toJson() { return {
   'deleted_by_id': ?deletedById,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'version', 'npm_user', 'author', 'bugs', 'dependencies', 'dev_dependencies', 'peer_dependencies', 'optional_dependencies', 'description', 'dist', 'git_head', 'homepage', 'license', 'main', 'repository', 'scripts', 'id', 'node_version', 'npm_version', 'has_shrinkwrap', 'maintainers', 'contributors', 'engines', 'keywords', 'files', 'bin', 'man', 'directories', 'os', 'cpu', 'readme', 'installation_command', 'release_id', 'commit_oid', 'published_via_actions', 'deleted_by_id'}.contains(key)); } 
-RegistryPackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Function()? version, String? Function()? npmUser, NpmMetadataAuthor? Function()? author, Bugs? Function()? bugs, Map<String, dynamic>? Function()? dependencies, Map<String, dynamic>? Function()? devDependencies, Map<String, dynamic>? Function()? peerDependencies, Map<String, dynamic>? Function()? optionalDependencies, String? Function()? description, Dist? Function()? dist, String? Function()? gitHead, String? Function()? homepage, String? Function()? license, String? Function()? main, NpmMetadataRepository? Function()? repository, Map<String, dynamic>? Function()? scripts, String? Function()? id, String? Function()? nodeVersion, String? Function()? npmVersion, bool? Function()? hasShrinkwrap, List<String>? Function()? maintainers, List<String>? Function()? contributors, Map<String, dynamic>? Function()? engines, List<String>? Function()? keywords, List<String>? Function()? files, Map<String, dynamic>? Function()? bin, Map<String, dynamic>? Function()? man, Directories? Function()? directories, List<String>? Function()? os, List<String>? Function()? cpu, String? Function()? readme, String? Function()? installationCommand, int? Function()? releaseId, String? Function()? commitOid, bool? Function()? publishedViaActions, int? Function()? deletedById, }) { return RegistryPackagePackageVersionNpmMetadata(
+RegistryPackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Function()? version, String? Function()? npmUser, Omittable<NpmMetadataAuthor?>? author, Omittable<Bugs?>? bugs, Map<String, dynamic>? Function()? dependencies, Map<String, dynamic>? Function()? devDependencies, Map<String, dynamic>? Function()? peerDependencies, Map<String, dynamic>? Function()? optionalDependencies, String? Function()? description, Omittable<Dist?>? dist, String? Function()? gitHead, String? Function()? homepage, String? Function()? license, String? Function()? main, Omittable<NpmMetadataRepository?>? repository, Map<String, dynamic>? Function()? scripts, String? Function()? id, String? Function()? nodeVersion, String? Function()? npmVersion, bool? Function()? hasShrinkwrap, List<String>? Function()? maintainers, List<String>? Function()? contributors, Map<String, dynamic>? Function()? engines, List<String>? Function()? keywords, List<String>? Function()? files, Map<String, dynamic>? Function()? bin, Map<String, dynamic>? Function()? man, Omittable<Directories?>? directories, List<String>? Function()? os, List<String>? Function()? cpu, String? Function()? readme, String? Function()? installationCommand, int? Function()? releaseId, String? Function()? commitOid, bool? Function()? publishedViaActions, int? Function()? deletedById, }) { return RegistryPackagePackageVersionNpmMetadata(
   name: name != null ? name() : this.name,
   version: version != null ? version() : this.version,
   npmUser: npmUser != null ? npmUser() : this.npmUser,
-  author: author != null ? author() : this.author,
-  bugs: bugs != null ? bugs() : this.bugs,
+  author: author ?? this.author,
+  bugs: bugs ?? this.bugs,
   dependencies: dependencies != null ? dependencies() : this.dependencies,
   devDependencies: devDependencies != null ? devDependencies() : this.devDependencies,
   peerDependencies: peerDependencies != null ? peerDependencies() : this.peerDependencies,
   optionalDependencies: optionalDependencies != null ? optionalDependencies() : this.optionalDependencies,
   description: description != null ? description() : this.description,
-  dist: dist != null ? dist() : this.dist,
+  dist: dist ?? this.dist,
   gitHead: gitHead != null ? gitHead() : this.gitHead,
   homepage: homepage != null ? homepage() : this.homepage,
   license: license != null ? license() : this.license,
   main: main != null ? main() : this.main,
-  repository: repository != null ? repository() : this.repository,
+  repository: repository ?? this.repository,
   scripts: scripts != null ? scripts() : this.scripts,
   id: id != null ? id() : this.id,
   nodeVersion: nodeVersion != null ? nodeVersion() : this.nodeVersion,
@@ -186,7 +186,7 @@ RegistryPackagePackageVersionNpmMetadata copyWith({String? Function()? name, Str
   files: files != null ? files() : this.files,
   bin: bin != null ? bin() : this.bin,
   man: man != null ? man() : this.man,
-  directories: directories != null ? directories() : this.directories,
+  directories: directories ?? this.directories,
   os: os != null ? os() : this.os,
   cpu: cpu != null ? cpu() : this.cpu,
   readme: readme != null ? readme() : this.readme,

@@ -39,11 +39,11 @@ Modules copyWith({Uint8List? contentBase64, String? contentType, String? name, }
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Modules &&
-          contentBase64 == other.contentBase64 &&
+          listEquals(contentBase64, other.contentBase64) &&
           contentType == other.contentType &&
           name == other.name;
 
-@override int get hashCode => Object.hash(contentBase64, contentType, name);
+@override int get hashCode => Object.hash(Object.hashAll(contentBase64), contentType, name);
 
 @override String toString() => 'Modules(contentBase64: $contentBase64, contentType: $contentType, name: $name)';
 

@@ -64,10 +64,10 @@ factory CreateWorkerResponse403Errors.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `10037` variant.
-factory CreateWorkerResponse403Errors.$10037({required String message}) { return CreateWorkerResponse403Errors10037(WorkersErrorWorkerLimit(code: '10037', message: message)); }
+factory CreateWorkerResponse403Errors.$10037({required String message}) { return CreateWorkerResponse403Errors10037(WorkersErrorWorkerLimit(code: WorkersErrorWorkerLimitCode.fromJson(10037), message: message)); }
 
 /// Build the `100103` variant.
-factory CreateWorkerResponse403Errors.$100103({required String message}) { return CreateWorkerResponse403Errors100103(WorkersErrorWorkerTagLimit(code: '100103', message: message)); }
+factory CreateWorkerResponse403Errors.$100103({required String message}) { return CreateWorkerResponse403Errors100103(WorkersErrorWorkerTagLimit(code: WorkersErrorWorkerTagLimitCode.fromJson(100103), message: message)); }
 
 /// The discriminator value identifying this variant.
 CreateWorkerResponse403ErrorsCode get code;

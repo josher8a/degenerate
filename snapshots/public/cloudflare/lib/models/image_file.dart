@@ -10,7 +10,7 @@ factory ImageFile.fromJson(Map<String, dynamic> json) { return ImageFile(
 final Uint8List? image;
 
 Map<String, dynamic> toJson() { return {
-  if (image != null) 'image': base64Encode(image!),
+  if (image != null) 'image': switch (image) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image'}.contains(key)); } 
 ImageFile copyWith({Uint8List? Function()? image}) { return ImageFile(
@@ -18,9 +18,9 @@ ImageFile copyWith({Uint8List? Function()? image}) { return ImageFile(
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageFile &&
-          image == other.image;
+          listEquals(image, other.image);
 
-@override int get hashCode => image.hashCode;
+@override int get hashCode => Object.hashAll(image ?? const []);
 
 @override String toString() => 'ImageFile(image: $image)';
 

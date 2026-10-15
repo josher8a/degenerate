@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview,
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });
+@immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions = const Omittable.absent(), });
 
 factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeployment(
   aliases: (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -88,7 +88,7 @@ factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeploy
   source: PagesSource.fromJson(json['source'] as Map<String, dynamic>),
   stages: (json['stages'] as List<dynamic>).map((e) => PagesStage.fromJson(e as Map<String, dynamic>)).toList(),
   url: json['url'] as String,
-  usesFunctions: json['uses_functions'] as bool?,
+  usesFunctions: json.containsKey('uses_functions') ? Omittable(json['uses_functions'] as bool?) : const Omittable.absent(),
 ); }
 
 /// A list of alias URLs pointing to this deployment.
@@ -155,7 +155,7 @@ final List<PagesStage> stages;
 final String url;
 
 /// Whether the deployment uses functions.
-final bool? usesFunctions;
+final Omittable<bool?> usesFunctions;
 
 Map<String, dynamic> toJson() { return {
   'aliases': aliases,
@@ -174,7 +174,7 @@ Map<String, dynamic> toJson() { return {
   'source': source.toJson(),
   'stages': stages.map((e) => e.toJson()).toList(),
   'url': url,
-  'uses_functions': ?usesFunctions,
+  if (usesFunctions.isPresent) 'uses_functions': usesFunctions.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('aliases') &&
       json.containsKey('build_config') &&
@@ -192,7 +192,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('source') &&
       json.containsKey('stages') &&
       json.containsKey('url') && json['url'] is String; } 
-PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, DeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue?>? Function()? envVars, Environment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, bool? Function()? usesFunctions, }) { return PagesDeployment(
+PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, DeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue?>? Function()? envVars, Environment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, Omittable<bool?>? usesFunctions, }) { return PagesDeployment(
   aliases: aliases != null ? aliases() : this.aliases,
   buildConfig: buildConfig ?? this.buildConfig,
   createdOn: createdOn ?? this.createdOn,
@@ -209,7 +209,7 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
   source: source ?? this.source,
   stages: stages ?? this.stages,
   url: url ?? this.url,
-  usesFunctions: usesFunctions != null ? usesFunctions() : this.usesFunctions,
+  usesFunctions: usesFunctions ?? this.usesFunctions,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeployment &&

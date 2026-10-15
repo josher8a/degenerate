@@ -67,7 +67,7 @@ factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return s
 factory CloudflarePipelinesFormat.json({CloudflarePipelinesDecimalEncoding? decimalEncoding, CloudflarePipelinesTimestampFormat? timestampFormat, bool? unstructured, }) { return CloudflarePipelinesFormatJson(CloudflarePipelinesJsonFormat(decimalEncoding: decimalEncoding, timestampFormat: timestampFormat, unstructured: unstructured)); }
 
 /// Build the `Parquet` variant.
-factory CloudflarePipelinesFormat.parquet({CloudflarePipelinesParquetCompression? compression, int? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(CloudflarePipelinesParquetFormat(compression: compression, rowGroupBytes: rowGroupBytes)); }
+factory CloudflarePipelinesFormat.parquet({CloudflarePipelinesParquetCompression? compression, Omittable<int?> rowGroupBytes = const Omittable.absent(), }) { return CloudflarePipelinesFormatParquet(CloudflarePipelinesParquetFormat(compression: compression, rowGroupBytes: rowGroupBytes)); }
 
 /// The discriminator value identifying this variant.
 CloudflarePipelinesFormatType get type;
@@ -114,7 +114,7 @@ final CloudflarePipelinesParquetFormat cloudflarePipelinesParquetFormat;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesParquetFormat.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression? Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
+CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression? Function()? compression, Omittable<int?>? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
   compression: compression,
   rowGroupBytes: rowGroupBytes,
 )); } 

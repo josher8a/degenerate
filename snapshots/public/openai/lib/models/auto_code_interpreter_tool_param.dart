@@ -55,12 +55,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
  }
 /// Configuration for a code interpreter container. Optionally specify the IDs of the files to run the code on.
-@immutable final class AutoCodeInterpreterToolParam {const AutoCodeInterpreterToolParam({this.type = AutoCodeInterpreterToolParamType.auto, this.fileIds, this.memoryLimit, this.networkPolicy, });
+@immutable final class AutoCodeInterpreterToolParam {const AutoCodeInterpreterToolParam({this.type = AutoCodeInterpreterToolParamType.auto, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, });
 
 factory AutoCodeInterpreterToolParam.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParam(
   type: AutoCodeInterpreterToolParamType.fromJson(json['type'] as String),
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  memoryLimit: json['memory_limit'] != null ? ContainerMemoryLimit.fromJson(json['memory_limit'] as String) : null,
+  memoryLimit: json.containsKey('memory_limit') ? Omittable(json['memory_limit'] != null ? ContainerMemoryLimit.fromJson(json['memory_limit'] as String) : null) : const Omittable.absent(),
   networkPolicy: json['network_policy'] != null ? AutoCodeInterpreterToolParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
 ); }
 
@@ -70,7 +70,7 @@ final AutoCodeInterpreterToolParamType type;
 /// An optional list of uploaded files to make available to your code.
 final List<String>? fileIds;
 
-final ContainerMemoryLimit? memoryLimit;
+final Omittable<ContainerMemoryLimit?> memoryLimit;
 
 /// Network access policy for the container.
 final AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy;
@@ -78,7 +78,7 @@ final AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy;
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'file_ids': ?fileIds,
-  if (memoryLimit != null) 'memory_limit': memoryLimit?.toJson(),
+  if (memoryLimit.isPresent) 'memory_limit': memoryLimit.value?.toJson(),
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
@@ -89,10 +89,10 @@ if (fileIds$ != null) {
   if (fileIds$.length > 50) { errors.add('fileIds: must have <= 50 items'); }
 }
 return errors; } 
-AutoCodeInterpreterToolParam copyWith({AutoCodeInterpreterToolParamType? type, List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, }) { return AutoCodeInterpreterToolParam(
+AutoCodeInterpreterToolParam copyWith({AutoCodeInterpreterToolParamType? type, List<String>? Function()? fileIds, Omittable<ContainerMemoryLimit?>? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, }) { return AutoCodeInterpreterToolParam(
   type: type ?? this.type,
   fileIds: fileIds != null ? fileIds() : this.fileIds,
-  memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,
+  memoryLimit: memoryLimit ?? this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

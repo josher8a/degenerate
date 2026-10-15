@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PullRequestSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/auto_merge.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_links.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple/pull_request_simple_base.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple/pull_request_simple_head.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple/pull_request_simple_labels.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// Pull Request Simple
-@immutable final class PullRequestSimple {const PullRequestSimple({required this.statusesUrl, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.url, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.labels, required this.milestone, required this.autoMerge, required this.createdAt, required this.updatedAt, required this.authorAssociation, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.links, required this.base, required this.head, required this.closedAt, this.requestedReviewers, this.assignees, this.draft, this.activeLockReason, this.requestedTeams, });
+@immutable final class PullRequestSimple {const PullRequestSimple({required this.statusesUrl, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.url, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.labels, required this.milestone, required this.autoMerge, required this.createdAt, required this.updatedAt, required this.authorAssociation, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.links, required this.base, required this.head, required this.closedAt, this.requestedReviewers, this.assignees, this.draft, this.activeLockReason = const Omittable.absent(), this.requestedTeams, });
 
 factory PullRequestSimple.fromJson(Map<String, dynamic> json) { return PullRequestSimple(
   url: Uri.parse(json['url'] as String),
@@ -25,7 +25,7 @@ factory PullRequestSimple.fromJson(Map<String, dynamic> json) { return PullReque
   body: json['body'] as String?,
   labels: (json['labels'] as List<dynamic>).map((e) => PullRequestSimpleLabels.fromJson(e as Map<String, dynamic>)).toList(),
   milestone: json['milestone'] != null ? Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
-  activeLockReason: json['active_lock_reason'] as String?,
+  activeLockReason: json.containsKey('active_lock_reason') ? Omittable(json['active_lock_reason'] as String?) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
@@ -83,7 +83,7 @@ final List<PullRequestSimpleLabels> labels;
 
 final Milestone? milestone;
 
-final String? activeLockReason;
+final Omittable<String?> activeLockReason;
 
 final DateTime createdAt;
 
@@ -138,7 +138,7 @@ Map<String, dynamic> toJson() { return {
   'body': body,
   'labels': labels.map((e) => e.toJson()).toList(),
   'milestone': milestone?.toJson(),
-  'active_lock_reason': ?activeLockReason,
+  if (activeLockReason.isPresent) 'active_lock_reason': activeLockReason.value,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'closed_at': closedAt?.toIso8601String(),
@@ -172,21 +172,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('locked') && json['locked'] is bool &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('user') &&
-      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('labels') &&
       json.containsKey('milestone') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
-      json.containsKey('merged_at') && json['merged_at'] is String &&
-      json.containsKey('merge_commit_sha') && json['merge_commit_sha'] is String &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+      json.containsKey('merged_at') && (json['merged_at'] == null || json['merged_at'] is String) &&
+      json.containsKey('merge_commit_sha') && (json['merge_commit_sha'] == null || json['merge_commit_sha'] is String) &&
       json.containsKey('assignee') &&
       json.containsKey('head') &&
       json.containsKey('base') &&
       json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('auto_merge'); } 
-PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<Team>? Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool? Function()? draft, }) { return PullRequestSimple(
+PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<Team>? Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool? Function()? draft, }) { return PullRequestSimple(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -207,7 +207,7 @@ PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri
   body: body != null ? body() : this.body,
   labels: labels ?? this.labels,
   milestone: milestone != null ? milestone() : this.milestone,
-  activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
+  activeLockReason: activeLockReason ?? this.activeLockReason,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   closedAt: closedAt != null ? closedAt() : this.closedAt,

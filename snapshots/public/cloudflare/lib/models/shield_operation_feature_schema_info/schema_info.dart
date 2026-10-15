@@ -84,12 +84,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class SchemaInfo {const SchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction, });
+@immutable final class SchemaInfo {const SchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction = const Omittable.absent(), });
 
 factory SchemaInfo.fromJson(Map<String, dynamic> json) { return SchemaInfo(
   activeSchema: json['active_schema'] != null ? ActiveSchema.fromJson(json['active_schema'] as Map<String, dynamic>) : null,
   learnedAvailable: json['learned_available'] as bool?,
-  mitigationAction: json['mitigation_action'] != null ? SchemaInfoMitigationAction.fromJson(json['mitigation_action'] as String) : null,
+  mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? SchemaInfoMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Schema active on endpoint.
@@ -103,18 +103,18 @@ final bool? learnedAvailable;
 /// Action taken on requests failing validation.
 /// 
 /// Example: `'block'`
-final SchemaInfoMitigationAction? mitigationAction;
+final Omittable<SchemaInfoMitigationAction?> mitigationAction;
 
 Map<String, dynamic> toJson() { return {
   if (activeSchema != null) 'active_schema': activeSchema?.toJson(),
   'learned_available': ?learnedAvailable,
-  if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
+  if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_schema', 'learned_available', 'mitigation_action'}.contains(key)); } 
-SchemaInfo copyWith({ActiveSchema? Function()? activeSchema, bool? Function()? learnedAvailable, SchemaInfoMitigationAction? Function()? mitigationAction, }) { return SchemaInfo(
+SchemaInfo copyWith({ActiveSchema? Function()? activeSchema, bool? Function()? learnedAvailable, Omittable<SchemaInfoMitigationAction?>? mitigationAction, }) { return SchemaInfo(
   activeSchema: activeSchema != null ? activeSchema() : this.activeSchema,
   learnedAvailable: learnedAvailable != null ? learnedAvailable() : this.learnedAvailable,
-  mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
+  mitigationAction: mitigationAction ?? this.mitigationAction,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaInfo &&

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateServersResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class CreateServersResponseResult {const CreateServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description, this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status = 'waiting', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class CreateServersResponseResult {const CreateServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status = 'waiting', });
 
 factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) { return CreateServersResponseResult(
   authType: CreateServersRequestAuthType.fromJson(json['auth_type'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   error: json['error'] as String?,
   hostname: Uri.parse(json['hostname'] as String),
   id: json['id'] as String,
@@ -29,7 +29,7 @@ final DateTime? createdAt;
 final String? createdBy;
 
 /// Example: `'This is one remote mcp server'`
-final String? description;
+final Omittable<String?> description;
 
 final String? error;
 
@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'auth_type': authType.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'error': ?error,
   'hostname': hostname.toString(),
   'id': id,
@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('tools'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final description$ = description;
+final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
 }
@@ -92,11 +92,11 @@ if (id.runes.length > 32) { errors.add('id: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 if (name.runes.length > 350) { errors.add('name: length must be <= 350'); }
 return errors; } 
-CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
+CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   error: error != null ? error() : this.error,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,

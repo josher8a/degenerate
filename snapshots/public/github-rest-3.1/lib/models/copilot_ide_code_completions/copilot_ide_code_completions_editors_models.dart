@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CopilotIdeCodeCompletions (inline: Editors > Models)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions/models_languages.dart';@immutable final class CopilotIdeCodeCompletionsEditorsModels {const CopilotIdeCodeCompletionsEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.languages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions/models_languages.dart';@immutable final class CopilotIdeCodeCompletionsEditorsModels {const CopilotIdeCodeCompletionsEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate = const Omittable.absent(), this.totalEngagedUsers, this.languages, });
 
 factory CopilotIdeCodeCompletionsEditorsModels.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletionsEditorsModels(
   name: json['name'] as String?,
   isCustomModel: json['is_custom_model'] as bool?,
-  customModelTrainingDate: json['custom_model_training_date'] as String?,
+  customModelTrainingDate: json.containsKey('custom_model_training_date') ? Omittable(json['custom_model_training_date'] as String?) : const Omittable.absent(),
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
   languages: (json['languages'] as List<dynamic>?)?.map((e) => ModelsLanguages.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -18,7 +18,7 @@ final String? name;
 final bool? isCustomModel;
 
 /// The training date for the custom model.
-final String? customModelTrainingDate;
+final Omittable<String?> customModelTrainingDate;
 
 /// Number of users who accepted at least one Copilot code completion suggestion for the given editor, for the given language and model. Includes both full and partial acceptances.
 final int? totalEngagedUsers;
@@ -29,15 +29,15 @@ final List<ModelsLanguages>? languages;
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   'is_custom_model': ?isCustomModel,
-  'custom_model_training_date': ?customModelTrainingDate,
+  if (customModelTrainingDate.isPresent) 'custom_model_training_date': customModelTrainingDate.value,
   'total_engaged_users': ?totalEngagedUsers,
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_engaged_users', 'languages'}.contains(key)); } 
-CopilotIdeCodeCompletionsEditorsModels copyWith({String? Function()? name, bool? Function()? isCustomModel, String? Function()? customModelTrainingDate, int? Function()? totalEngagedUsers, List<ModelsLanguages>? Function()? languages, }) { return CopilotIdeCodeCompletionsEditorsModels(
+CopilotIdeCodeCompletionsEditorsModels copyWith({String? Function()? name, bool? Function()? isCustomModel, Omittable<String?>? customModelTrainingDate, int? Function()? totalEngagedUsers, List<ModelsLanguages>? Function()? languages, }) { return CopilotIdeCodeCompletionsEditorsModels(
   name: name != null ? name() : this.name,
   isCustomModel: isCustomModel != null ? isCustomModel() : this.isCustomModel,
-  customModelTrainingDate: customModelTrainingDate != null ? customModelTrainingDate() : this.customModelTrainingDate,
+  customModelTrainingDate: customModelTrainingDate ?? this.customModelTrainingDate,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   languages: languages != null ? languages() : this.languages,
 ); } 

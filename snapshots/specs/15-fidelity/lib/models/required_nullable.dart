@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'nullableObject': nullableObject?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('alwaysPresent') && json['alwaysPresent'] is String &&
-      json.containsKey('nullableString') && json['nullableString'] is String &&
+      json.containsKey('nullableString') && (json['nullableString'] == null || json['nullableString'] is String) &&
       json.containsKey('nullableList') &&
       json.containsKey('nullableObject'); } 
 RequiredNullable copyWith({String? alwaysPresent, String? Function()? nullableString, List<String>? Function()? nullableList, NullableObject? Function()? nullableObject, }) { return RequiredNullable(

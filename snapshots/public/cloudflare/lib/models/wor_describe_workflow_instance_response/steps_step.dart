@@ -94,11 +94,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('attempts') &&
       json.containsKey('config') &&
-      json.containsKey('end') && json['end'] is String &&
+      json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('output') &&
       json.containsKey('start') && json['start'] is String &&
-      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool) &&
       json.containsKey('type') && json['type'] == 'step'; } 
 StepsStep copyWith({List<Attempts>? attempts, StepConfig? config, DateTime? Function()? end, String? name, Map<String,dynamic>? output, DateTime? start, bool? Function()? success, StepType? type, }) { return StepsStep(
   attempts: attempts ?? this.attempts,

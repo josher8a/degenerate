@@ -2,7 +2,7 @@
 // Source: #/components/schemas/SimpleClassroomAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment/classroom_assignment_type.dart';import 'package:pub_github_rest_3_1/models/simple_classroom.dart';/// A GitHub Classroom assignment
-@immutable final class SimpleClassroomAssignment {const SimpleClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.classroom, this.maxTeams, this.maxMembers, });
+@immutable final class SimpleClassroomAssignment {const SimpleClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.classroom, this.maxTeams = const Omittable.absent(), this.maxMembers = const Omittable.absent(), });
 
 factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) { return SimpleClassroomAssignment(
   id: (json['id'] as num).toInt(),
@@ -14,8 +14,8 @@ factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) { return S
   slug: json['slug'] as String,
   studentsAreRepoAdmins: json['students_are_repo_admins'] as bool,
   feedbackPullRequestsEnabled: json['feedback_pull_requests_enabled'] as bool,
-  maxTeams: json['max_teams'] != null ? (json['max_teams'] as num).toInt() : null,
-  maxMembers: json['max_members'] != null ? (json['max_members'] as num).toInt() : null,
+  maxTeams: json.containsKey('max_teams') ? Omittable(json['max_teams'] != null ? (json['max_teams'] as num).toInt() : null) : const Omittable.absent(),
+  maxMembers: json.containsKey('max_members') ? Omittable(json['max_members'] != null ? (json['max_members'] as num).toInt() : null) : const Omittable.absent(),
   editor: json['editor'] as String,
   accepted: (json['accepted'] as num).toInt(),
   submitted: (json['submitted'] as num).toInt(),
@@ -53,10 +53,10 @@ final bool studentsAreRepoAdmins;
 final bool feedbackPullRequestsEnabled;
 
 /// The maximum allowable teams for the assignment.
-final int? maxTeams;
+final Omittable<int?> maxTeams;
 
 /// The maximum allowable members per team.
-final int? maxMembers;
+final Omittable<int?> maxMembers;
 
 /// The selected editor for the assignment.
 final String editor;
@@ -88,8 +88,8 @@ Map<String, dynamic> toJson() { return {
   'slug': slug,
   'students_are_repo_admins': studentsAreRepoAdmins,
   'feedback_pull_requests_enabled': feedbackPullRequestsEnabled,
-  'max_teams': ?maxTeams,
-  'max_members': ?maxMembers,
+  if (maxTeams.isPresent) 'max_teams': maxTeams.value,
+  if (maxMembers.isPresent) 'max_members': maxMembers.value,
   'editor': editor,
   'accepted': accepted,
   'submitted': submitted,
@@ -112,9 +112,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('submitted') && json['submitted'] is num &&
       json.containsKey('passing') && json['passing'] is num &&
       json.containsKey('language') && json['language'] is String &&
-      json.containsKey('deadline') && json['deadline'] is String &&
+      json.containsKey('deadline') && (json['deadline'] == null || json['deadline'] is String) &&
       json.containsKey('classroom'); } 
-SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, ClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, int? Function()? maxTeams, int? Function()? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroom? classroom, }) { return SimpleClassroomAssignment(
+SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, ClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, Omittable<int?>? maxTeams, Omittable<int?>? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroom? classroom, }) { return SimpleClassroomAssignment(
   id: id ?? this.id,
   publicRepo: publicRepo ?? this.publicRepo,
   title: title ?? this.title,
@@ -124,8 +124,8 @@ SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Cl
   slug: slug ?? this.slug,
   studentsAreRepoAdmins: studentsAreRepoAdmins ?? this.studentsAreRepoAdmins,
   feedbackPullRequestsEnabled: feedbackPullRequestsEnabled ?? this.feedbackPullRequestsEnabled,
-  maxTeams: maxTeams != null ? maxTeams() : this.maxTeams,
-  maxMembers: maxMembers != null ? maxMembers() : this.maxMembers,
+  maxTeams: maxTeams ?? this.maxTeams,
+  maxMembers: maxMembers ?? this.maxMembers,
   editor: editor ?? this.editor,
   accepted: accepted ?? this.accepted,
   submitted: submitted ?? this.submitted,

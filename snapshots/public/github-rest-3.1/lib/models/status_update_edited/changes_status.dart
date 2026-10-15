@@ -255,25 +255,25 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class ChangesStatus {const ChangesStatus({this.from, this.to, });
+@immutable final class ChangesStatus {const ChangesStatus({this.from = const Omittable.absent(), this.to = const Omittable.absent(), });
 
 factory ChangesStatus.fromJson(Map<String, dynamic> json) { return ChangesStatus(
-  from: json['from'] != null ? StatusFrom.fromJson(json['from'] as String) : null,
-  to: json['to'] != null ? StatusTo.fromJson(json['to'] as String) : null,
+  from: json.containsKey('from') ? Omittable(json['from'] != null ? StatusFrom.fromJson(json['from'] as String) : null) : const Omittable.absent(),
+  to: json.containsKey('to') ? Omittable(json['to'] != null ? StatusTo.fromJson(json['to'] as String) : null) : const Omittable.absent(),
 ); }
 
-final StatusFrom? from;
+final Omittable<StatusFrom?> from;
 
-final StatusTo? to;
+final Omittable<StatusTo?> to;
 
 Map<String, dynamic> toJson() { return {
-  if (from != null) 'from': from?.toJson(),
-  if (to != null) 'to': to?.toJson(),
+  if (from.isPresent) 'from': from.value?.toJson(),
+  if (to.isPresent) 'to': to.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-ChangesStatus copyWith({StatusFrom? Function()? from, StatusTo? Function()? to, }) { return ChangesStatus(
-  from: from != null ? from() : this.from,
-  to: to != null ? to() : this.to,
+ChangesStatus copyWith({Omittable<StatusFrom?>? from, Omittable<StatusTo?>? to, }) { return ChangesStatus(
+  from: from ?? this.from,
+  to: to ?? this.to,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChangesStatus &&

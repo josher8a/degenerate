@@ -115,13 +115,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
  }
 /// 
-@immutable final class TaxProductResourceJurisdiction {const TaxProductResourceJurisdiction({required this.country, required this.displayName, required this.level, this.state, });
+@immutable final class TaxProductResourceJurisdiction {const TaxProductResourceJurisdiction({required this.country, required this.displayName, required this.level, this.state = const Omittable.absent(), });
 
 factory TaxProductResourceJurisdiction.fromJson(Map<String, dynamic> json) { return TaxProductResourceJurisdiction(
   country: json['country'] as String,
   displayName: json['display_name'] as String,
   level: TaxProductResourceJurisdictionLevel.fromJson(json['level'] as String),
-  state: json['state'] as String?,
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
 ); }
 
 /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
@@ -134,13 +134,13 @@ final String displayName;
 final TaxProductResourceJurisdictionLevel level;
 
 /// [ISO 3166-2 subdivision code](https://en.wikipedia.org/wiki/ISO_3166-2), without country prefix. For example, "NY" for New York, United States.
-final String? state;
+final Omittable<String?> state;
 
 Map<String, dynamic> toJson() { return {
   'country': country,
   'display_name': displayName,
   'level': level.toJson(),
-  'state': ?state,
+  if (state.isPresent) 'state': state.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
@@ -149,16 +149,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
 List<String> validate() { final errors = <String>[];
 if (country.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 if (displayName.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
-final state$ = state;
+final state$ = state.value;
 if (state$ != null) {
   if (state$.runes.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
 return errors; } 
-TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, String? Function()? state, }) { return TaxProductResourceJurisdiction(
+TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, Omittable<String?>? state, }) { return TaxProductResourceJurisdiction(
   country: country ?? this.country,
   displayName: displayName ?? this.displayName,
   level: level ?? this.level,
-  state: state != null ? state() : this.state,
+  state: state ?? this.state,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceJurisdiction &&

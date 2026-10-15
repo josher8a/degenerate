@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2SlurperJobResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/gcs_source_response_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_source.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_target.dart';import 'package:pub_cloudflare/models/r2_slurper_job_status.dart';import 'package:pub_cloudflare/models/r2_source_response_schema.dart';import 'package:pub_cloudflare/models/s3_source_response_schema.dart';@immutable final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt, this.id, this.overwrite, this.source, this.status, this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/gcs_source_response_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_source.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_target.dart';import 'package:pub_cloudflare/models/r2_slurper_job_status.dart';import 'package:pub_cloudflare/models/r2_source_response_schema.dart';import 'package:pub_cloudflare/models/s3_source_response_schema.dart';@immutable final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt = const Omittable.absent(), this.id, this.overwrite, this.source, this.status, this.target, });
 
 factory R2SlurperJobResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobResponse(
   createdAt: json['createdAt'] as String?,
-  finishedAt: json['finishedAt'] as String?,
+  finishedAt: json.containsKey('finishedAt') ? Omittable(json['finishedAt'] as String?) : const Omittable.absent(),
   id: json['id'] as String?,
   overwrite: json['overwrite'] as bool?,
   source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => S3SourceResponseSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => GcsSourceResponseSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => R2SourceResponseSchema.fromJson(v as Map<String, dynamic>),) : null,
@@ -15,7 +15,7 @@ factory R2SlurperJobResponse.fromJson(Map<String, dynamic> json) { return R2Slur
 
 final String? createdAt;
 
-final String? finishedAt;
+final Omittable<String?> finishedAt;
 
 final String? id;
 
@@ -29,7 +29,7 @@ final R2SlurperJobResponseTarget? target;
 
 Map<String, dynamic> toJson() { return {
   'createdAt': ?createdAt,
-  'finishedAt': ?finishedAt,
+  if (finishedAt.isPresent) 'finishedAt': finishedAt.value,
   'id': ?id,
   'overwrite': ?overwrite,
   if (source != null) 'source': source?.toJson(),
@@ -37,9 +37,9 @@ Map<String, dynamic> toJson() { return {
   if (target != null) 'target': target?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'createdAt', 'finishedAt', 'id', 'overwrite', 'source', 'status', 'target'}.contains(key)); } 
-R2SlurperJobResponse copyWith({String? Function()? createdAt, String? Function()? finishedAt, String? Function()? id, bool? Function()? overwrite, R2SlurperJobResponseSource? Function()? source, R2SlurperJobStatus? Function()? status, R2SlurperJobResponseTarget? Function()? target, }) { return R2SlurperJobResponse(
+R2SlurperJobResponse copyWith({String? Function()? createdAt, Omittable<String?>? finishedAt, String? Function()? id, bool? Function()? overwrite, R2SlurperJobResponseSource? Function()? source, R2SlurperJobStatus? Function()? status, R2SlurperJobResponseTarget? Function()? target, }) { return R2SlurperJobResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-  finishedAt: finishedAt != null ? finishedAt() : this.finishedAt,
+  finishedAt: finishedAt ?? this.finishedAt,
   id: id != null ? id() : this.id,
   overwrite: overwrite != null ? overwrite() : this.overwrite,
   source: source != null ? source() : this.source,

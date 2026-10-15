@@ -17,7 +17,7 @@ final Uint8List? file;
 
 Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
-  if (file != null) 'file': base64Encode(file!),
+  if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'file'}.contains(key)); } 
 CreateContainerFileBody copyWith({String? Function()? fileId, Uint8List? Function()? file, }) { return CreateContainerFileBody(
@@ -27,9 +27,9 @@ CreateContainerFileBody copyWith({String? Function()? fileId, Uint8List? Functio
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateContainerFileBody &&
           fileId == other.fileId &&
-          file == other.file;
+          listEquals(file, other.file);
 
-@override int get hashCode => Object.hash(fileId, file);
+@override int get hashCode => Object.hash(fileId, Object.hashAll(file ?? const []));
 
 @override String toString() => 'CreateContainerFileBody(fileId: $fileId, file: $file)';
 

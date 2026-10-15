@@ -18,9 +18,9 @@ DlpDocumentFingerprintsUploadRequest copyWith({Uint8List? file}) { return DlpDoc
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprintsUploadRequest &&
-          file == other.file;
+          listEquals(file, other.file);
 
-@override int get hashCode => file.hashCode;
+@override int get hashCode => Object.hashAll(file);
 
 @override String toString() => 'DlpDocumentFingerprintsUploadRequest(file: $file)';
 

@@ -38,10 +38,10 @@ CreateVoiceRequest copyWith({String? name, Uint8List? audioSample, String? conse
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateVoiceRequest &&
           name == other.name &&
-          audioSample == other.audioSample &&
+          listEquals(audioSample, other.audioSample) &&
           consent == other.consent;
 
-@override int get hashCode => Object.hash(name, audioSample, consent);
+@override int get hashCode => Object.hash(name, Object.hashAll(audioSample), consent);
 
 @override String toString() => 'CreateVoiceRequest(name: $name, audioSample: $audioSample, consent: $consent)';
 

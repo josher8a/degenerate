@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CloudflarePipelinesSourceField (inline: Float32)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesSourceFieldFloat32 {const CloudflarePipelinesSourceFieldFloat32({required this.type, required this.name, this.metadataKey, this.$required, this.sqlName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesSourceFieldFloat32 {const CloudflarePipelinesSourceFieldFloat32({required this.type, required this.name, this.metadataKey = const Omittable.absent(), this.$required, this.sqlName, });
 
 factory CloudflarePipelinesSourceFieldFloat32.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesSourceFieldFloat32(
   type: json['type'] as String,
-  metadataKey: json['metadata_key'] as String?,
+  metadataKey: json.containsKey('metadata_key') ? Omittable(json['metadata_key'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   $required: json['required'] as bool?,
   sqlName: json['sql_name'] as String?,
@@ -13,7 +13,7 @@ factory CloudflarePipelinesSourceFieldFloat32.fromJson(Map<String, dynamic> json
 
 final String type;
 
-final String? metadataKey;
+final Omittable<String?> metadataKey;
 
 final String name;
 
@@ -23,16 +23,16 @@ final String? sqlName;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  'metadata_key': ?metadataKey,
+  if (metadataKey.isPresent) 'metadata_key': metadataKey.value,
   'name': name,
   'required': ?$required,
   'sql_name': ?sqlName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-CloudflarePipelinesSourceFieldFloat32 copyWith({String? type, String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldFloat32(
+CloudflarePipelinesSourceFieldFloat32 copyWith({String? type, Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldFloat32(
   type: type ?? this.type,
-  metadataKey: metadataKey != null ? metadataKey() : this.metadataKey,
+  metadataKey: metadataKey ?? this.metadataKey,
   name: name ?? this.name,
   $required: $required != null ? $required() : this.$required,
   sqlName: sqlName != null ? sqlName() : this.sqlName,

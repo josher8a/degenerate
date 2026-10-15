@@ -355,17 +355,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? weekly, 
 
  }
 /// Configuration for code scanning default setup.
-@immutable final class CodeScanningDefaultSetup {const CodeScanningDefaultSetup({this.state, this.languages, this.runnerType, this.runnerLabel, this.querySuite, this.threatModel, this.updatedAt, this.schedule, });
+@immutable final class CodeScanningDefaultSetup {const CodeScanningDefaultSetup({this.state, this.languages, this.runnerType = const Omittable.absent(), this.runnerLabel = const Omittable.absent(), this.querySuite, this.threatModel, this.updatedAt = const Omittable.absent(), this.schedule = const Omittable.absent(), });
 
 factory CodeScanningDefaultSetup.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetup(
   state: json['state'] != null ? CodeScanningDefaultSetupState.fromJson(json['state'] as String) : null,
   languages: (json['languages'] as List<dynamic>?)?.map((e) => CodeScanningDefaultSetupLanguages.fromJson(e as String)).toList(),
-  runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupRunnerType.fromJson(json['runner_type'] as String) : null,
-  runnerLabel: json['runner_label'] as String?,
+  runnerType: json.containsKey('runner_type') ? Omittable(json['runner_type'] != null ? CodeScanningDefaultSetupRunnerType.fromJson(json['runner_type'] as String) : null) : const Omittable.absent(),
+  runnerLabel: json.containsKey('runner_label') ? Omittable(json['runner_label'] as String?) : const Omittable.absent(),
   querySuite: json['query_suite'] != null ? QuerySuite.fromJson(json['query_suite'] as String) : null,
   threatModel: json['threat_model'] != null ? ThreatModel.fromJson(json['threat_model'] as String) : null,
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  schedule: json['schedule'] != null ? Schedule.fromJson(json['schedule'] as String) : null,
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
+  schedule: json.containsKey('schedule') ? Omittable(json['schedule'] != null ? Schedule.fromJson(json['schedule'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Code scanning default setup has been configured or not.
@@ -375,10 +375,10 @@ final CodeScanningDefaultSetupState? state;
 final List<CodeScanningDefaultSetupLanguages>? languages;
 
 /// Runner type to be used.
-final CodeScanningDefaultSetupRunnerType? runnerType;
+final Omittable<CodeScanningDefaultSetupRunnerType?> runnerType;
 
 /// Runner label to be used if the runner type is labeled.
-final String? runnerLabel;
+final Omittable<String?> runnerLabel;
 
 /// CodeQL query suite to be used.
 final QuerySuite? querySuite;
@@ -387,31 +387,31 @@ final QuerySuite? querySuite;
 final ThreatModel? threatModel;
 
 /// Timestamp of latest configuration update.
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
 /// The frequency of the periodic analysis.
-final Schedule? schedule;
+final Omittable<Schedule?> schedule;
 
 Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
-  if (runnerType != null) 'runner_type': runnerType?.toJson(),
-  'runner_label': ?runnerLabel,
+  if (runnerType.isPresent) 'runner_type': runnerType.value?.toJson(),
+  if (runnerLabel.isPresent) 'runner_label': runnerLabel.value,
   if (querySuite != null) 'query_suite': querySuite?.toJson(),
   if (threatModel != null) 'threat_model': threatModel?.toJson(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  if (schedule != null) 'schedule': schedule?.toJson(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
+  if (schedule.isPresent) 'schedule': schedule.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'languages', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'updated_at', 'schedule'}.contains(key)); } 
-CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState? Function()? state, List<CodeScanningDefaultSetupLanguages>? Function()? languages, CodeScanningDefaultSetupRunnerType? Function()? runnerType, String? Function()? runnerLabel, QuerySuite? Function()? querySuite, ThreatModel? Function()? threatModel, DateTime? Function()? updatedAt, Schedule? Function()? schedule, }) { return CodeScanningDefaultSetup(
+CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState? Function()? state, List<CodeScanningDefaultSetupLanguages>? Function()? languages, Omittable<CodeScanningDefaultSetupRunnerType?>? runnerType, Omittable<String?>? runnerLabel, QuerySuite? Function()? querySuite, ThreatModel? Function()? threatModel, Omittable<DateTime?>? updatedAt, Omittable<Schedule?>? schedule, }) { return CodeScanningDefaultSetup(
   state: state != null ? state() : this.state,
   languages: languages != null ? languages() : this.languages,
-  runnerType: runnerType != null ? runnerType() : this.runnerType,
-  runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
+  runnerType: runnerType ?? this.runnerType,
+  runnerLabel: runnerLabel ?? this.runnerLabel,
   querySuite: querySuite != null ? querySuite() : this.querySuite,
   threatModel: threatModel != null ? threatModel() : this.threatModel,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  schedule: schedule != null ? schedule() : this.schedule,
+  updatedAt: updatedAt ?? this.updatedAt,
+  schedule: schedule ?? this.schedule,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningDefaultSetup &&

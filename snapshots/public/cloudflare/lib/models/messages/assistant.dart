@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Assistant {const Assistant({required this.role, this.audio, this.content, this.functionCall, this.name, this.refusal, this.toolCalls, });
+@immutable final class Assistant {const Assistant({required this.role, this.audio, this.content, this.functionCall, this.name, this.refusal = const Omittable.absent(), this.toolCalls, });
 
 factory Assistant.fromJson(Map<String, dynamic> json) { return Assistant(
   audio: json['audio'] != null ? AssistantAudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
   content: json['content'] != null ? OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => AssistantContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),) : null,
   functionCall: json['function_call'] != null ? AssistantFunctionCallVariant1.fromJson(json['function_call'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  refusal: json['refusal'] as String?,
+  refusal: json.containsKey('refusal') ? Omittable(json['refusal'] as String?) : const Omittable.absent(),
   role: AssistantRole.fromJson(json['role'] as String),
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ToolCallsFunction.fromJson(v as Map<String, dynamic>), fromB: (v) => ToolCallsCustom.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
@@ -73,7 +73,7 @@ final AssistantFunctionCallVariant1? functionCall;
 
 final String? name;
 
-final String? refusal;
+final Omittable<String?> refusal;
 
 final AssistantRole role;
 
@@ -84,17 +84,17 @@ Map<String, dynamic> toJson() { return {
   if (content != null) 'content': content?.toJson(),
   if (functionCall != null) 'function_call': functionCall?.toJson(),
   'name': ?name,
-  'refusal': ?refusal,
+  if (refusal.isPresent) 'refusal': refusal.value,
   'role': role.toJson(),
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') && json['role'] == 'assistant'; } 
-Assistant copyWith({AssistantAudioVariant1? Function()? audio, AssistantContent? Function()? content, AssistantFunctionCallVariant1? Function()? functionCall, String? Function()? name, String? Function()? refusal, AssistantRole? role, List<AssistantToolCalls>? Function()? toolCalls, }) { return Assistant(
+Assistant copyWith({AssistantAudioVariant1? Function()? audio, AssistantContent? Function()? content, AssistantFunctionCallVariant1? Function()? functionCall, String? Function()? name, Omittable<String?>? refusal, AssistantRole? role, List<AssistantToolCalls>? Function()? toolCalls, }) { return Assistant(
   audio: audio != null ? audio() : this.audio,
   content: content != null ? content() : this.content,
   functionCall: functionCall != null ? functionCall() : this.functionCall,
   name: name != null ? name() : this.name,
-  refusal: refusal != null ? refusal() : this.refusal,
+  refusal: refusal ?? this.refusal,
   role: role ?? this.role,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
 ); } 

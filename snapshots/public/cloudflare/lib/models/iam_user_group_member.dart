@@ -2,12 +2,12 @@
 // Source: #/components/schemas/IamUserGroupMember
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_email.dart';/// Member attached to a User Group.
-@immutable final class IamUserGroupMember {const IamUserGroupMember({required this.id, this.email, this.status, });
+@immutable final class IamUserGroupMember {const IamUserGroupMember({required this.id, this.email, this.status = const Omittable.absent(), });
 
 factory IamUserGroupMember.fromJson(Map<String, dynamic> json) { return IamUserGroupMember(
   email: json['email'] != null ? IamEmail.fromJson(json['email'] as String) : null,
   id: json['id'] as String,
-  status: json['status'],
+  status: json.containsKey('status') ? Omittable(json['status']) : const Omittable.absent(),
 ); }
 
 /// The contact email address of the user.
@@ -21,18 +21,18 @@ final String id;
 /// The member's status in the account.
 /// 
 /// Example: `'accepted'`
-final dynamic status;
+final Omittable<dynamic> status;
 
 Map<String, dynamic> toJson() { return {
   if (email != null) 'email': email?.toJson(),
   'id': id,
-  'status': ?status,
+  if (status.isPresent) 'status': status.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-IamUserGroupMember copyWith({IamEmail? Function()? email, String? id, dynamic Function()? status, }) { return IamUserGroupMember(
+IamUserGroupMember copyWith({IamEmail? Function()? email, String? id, Omittable<dynamic>? status, }) { return IamUserGroupMember(
   email: email != null ? email() : this.email,
   id: id ?? this.id,
-  status: status != null ? status() : this.status,
+  status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamUserGroupMember &&

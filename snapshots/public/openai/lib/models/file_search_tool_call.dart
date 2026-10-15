@@ -119,14 +119,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 /// The results of a file search tool call. See the
 /// [file search guide](/docs/guides/tools-file-search) for more information.
 /// 
-@immutable final class FileSearchToolCall {const FileSearchToolCall({required this.id, required this.type, required this.status, required this.queries, this.results, });
+@immutable final class FileSearchToolCall {const FileSearchToolCall({required this.id, required this.type, required this.status, required this.queries, this.results = const Omittable.absent(), });
 
 factory FileSearchToolCall.fromJson(Map<String, dynamic> json) { return FileSearchToolCall(
   id: json['id'] as String,
   type: json['type'] as String,
   status: FileSearchToolCallStatus.fromJson(json['status'] as String),
   queries: (json['queries'] as List<dynamic>).map((e) => e as String).toList(),
-  results: (json['results'] as List<dynamic>?)?.map((e) => FileSearchToolCallResults.fromJson(e as Map<String, dynamic>)).toList(),
+  results: json.containsKey('results') ? Omittable((json['results'] as List<dynamic>?)?.map((e) => FileSearchToolCallResults.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }
 
 /// The unique ID of the file search tool call.
@@ -148,25 +148,25 @@ final List<String> queries;
 
 /// The results of the file search tool call.
 /// 
-final List<FileSearchToolCallResults>? results;
+final Omittable<List<FileSearchToolCallResults>?> results;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
   'type': type,
   'status': status.toJson(),
   'queries': queries,
-  if (results != null) 'results': results?.map((e) => e.toJson()).toList(),
+  if (results.isPresent) 'results': results.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('status') &&
       json.containsKey('queries'); } 
-FileSearchToolCall copyWith({String? id, String? type, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return FileSearchToolCall(
+FileSearchToolCall copyWith({String? id, String? type, FileSearchToolCallStatus? status, List<String>? queries, Omittable<List<FileSearchToolCallResults>?>? results, }) { return FileSearchToolCall(
   id: id ?? this.id,
   type: type ?? this.type,
   status: status ?? this.status,
   queries: queries ?? this.queries,
-  results: results != null ? results() : this.results,
+  results: results ?? this.results,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileSearchToolCall &&
@@ -174,9 +174,10 @@ FileSearchToolCall copyWith({String? id, String? type, FileSearchToolCallStatus?
           type == other.type &&
           status == other.status &&
           listEquals(queries, other.queries) &&
-          listEquals(results, other.results);
+          results.isPresent == other.results.isPresent &&
+          listEquals(results.value, other.results.value);
 
-@override int get hashCode => Object.hash(id, type, status, Object.hashAll(queries), Object.hashAll(results ?? const []));
+@override int get hashCode => Object.hash(id, type, status, Object.hashAll(queries), Object.hashAll(results.value ?? const []));
 
 @override String toString() => 'FileSearchToolCall(id: $id, type: $type, status: $status, queries: $queries, results: $results)';
 

@@ -49,7 +49,7 @@ factory CreateWorkerResponse409Errors.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `10040` variant.
-factory CreateWorkerResponse409Errors.$10040({required String message}) { return CreateWorkerResponse409Errors10040(WorkersErrorWorkerNameConflict(code: '10040', message: message)); }
+factory CreateWorkerResponse409Errors.$10040({required String message}) { return CreateWorkerResponse409Errors10040(WorkersErrorWorkerNameConflict(code: WorkersErrorWorkerNameConflictCode.fromJson(10040), message: message)); }
 
 /// The discriminator value identifying this variant.
 CreateWorkerResponse409ErrorsCode get code;

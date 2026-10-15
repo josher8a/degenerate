@@ -18,8 +18,8 @@ Map<String, dynamic> toJson() { return {
   'vector_string': vectorString,
   'score': score,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && json['vector_string'] is String &&
-      json.containsKey('score') && json['score'] is num; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String) &&
+      json.containsKey('score') && (json['score'] == null || json['score'] is num); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final score$ = score;

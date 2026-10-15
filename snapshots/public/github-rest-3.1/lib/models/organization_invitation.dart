@@ -2,7 +2,7 @@
 // Source: #/components/schemas/OrganizationInvitation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Organization Invitation
-@immutable final class OrganizationInvitation {const OrganizationInvitation({required this.id, required this.login, required this.email, required this.role, required this.createdAt, required this.inviter, required this.teamCount, required this.nodeId, required this.invitationTeamsUrl, this.failedAt, this.failedReason, this.invitationSource, });
+@immutable final class OrganizationInvitation {const OrganizationInvitation({required this.id, required this.login, required this.email, required this.role, required this.createdAt, required this.inviter, required this.teamCount, required this.nodeId, required this.invitationTeamsUrl, this.failedAt = const Omittable.absent(), this.failedReason = const Omittable.absent(), this.invitationSource, });
 
 factory OrganizationInvitation.fromJson(Map<String, dynamic> json) { return OrganizationInvitation(
   id: (json['id'] as num).toInt(),
@@ -10,8 +10,8 @@ factory OrganizationInvitation.fromJson(Map<String, dynamic> json) { return Orga
   email: json['email'] as String?,
   role: json['role'] as String,
   createdAt: json['created_at'] as String,
-  failedAt: json['failed_at'] as String?,
-  failedReason: json['failed_reason'] as String?,
+  failedAt: json.containsKey('failed_at') ? Omittable(json['failed_at'] as String?) : const Omittable.absent(),
+  failedReason: json.containsKey('failed_reason') ? Omittable(json['failed_reason'] as String?) : const Omittable.absent(),
   inviter: SimpleUser.fromJson(json['inviter'] as Map<String, dynamic>),
   teamCount: (json['team_count'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -29,9 +29,9 @@ final String role;
 
 final String createdAt;
 
-final String? failedAt;
+final Omittable<String?> failedAt;
 
-final String? failedReason;
+final Omittable<String?> failedReason;
 
 final SimpleUser inviter;
 
@@ -49,8 +49,8 @@ Map<String, dynamic> toJson() { return {
   'email': email,
   'role': role,
   'created_at': createdAt,
-  'failed_at': ?failedAt,
-  'failed_reason': ?failedReason,
+  if (failedAt.isPresent) 'failed_at': failedAt.value,
+  if (failedReason.isPresent) 'failed_reason': failedReason.value,
   'inviter': inviter.toJson(),
   'team_count': teamCount,
   'node_id': nodeId,
@@ -58,22 +58,22 @@ Map<String, dynamic> toJson() { return {
   'invitation_source': ?invitationSource,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('login') && json['login'] is String &&
-      json.containsKey('email') && json['email'] is String &&
+      json.containsKey('login') && (json['login'] == null || json['login'] is String) &&
+      json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
       json.containsKey('role') && json['role'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('inviter') &&
       json.containsKey('team_count') && json['team_count'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('invitation_teams_url') && json['invitation_teams_url'] is String; } 
-OrganizationInvitation copyWith({int? id, String? Function()? login, String? Function()? email, String? role, String? createdAt, String? Function()? failedAt, String? Function()? failedReason, SimpleUser? inviter, int? teamCount, String? nodeId, String? invitationTeamsUrl, String? Function()? invitationSource, }) { return OrganizationInvitation(
+OrganizationInvitation copyWith({int? id, String? Function()? login, String? Function()? email, String? role, String? createdAt, Omittable<String?>? failedAt, Omittable<String?>? failedReason, SimpleUser? inviter, int? teamCount, String? nodeId, String? invitationTeamsUrl, String? Function()? invitationSource, }) { return OrganizationInvitation(
   id: id ?? this.id,
   login: login != null ? login() : this.login,
   email: email != null ? email() : this.email,
   role: role ?? this.role,
   createdAt: createdAt ?? this.createdAt,
-  failedAt: failedAt != null ? failedAt() : this.failedAt,
-  failedReason: failedReason != null ? failedReason() : this.failedReason,
+  failedAt: failedAt ?? this.failedAt,
+  failedReason: failedReason ?? this.failedReason,
   inviter: inviter ?? this.inviter,
   teamCount: teamCount ?? this.teamCount,
   nodeId: nodeId ?? this.nodeId,

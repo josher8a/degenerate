@@ -302,11 +302,11 @@ PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, Fi
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostFilesRequest &&
           listEquals(expand, other.expand) &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           fileLinkData == other.fileLinkData &&
           purpose == other.purpose;
 
-@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), file, fileLinkData, purpose);
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(file), fileLinkData, purpose);
 
 @override String toString() => 'PostFilesRequest(expand: $expand, file: $file, fileLinkData: $fileLinkData, purpose: $purpose)';
 

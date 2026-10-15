@@ -2,6 +2,7 @@
 // Source: tag "ClassApi" (1 operation)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_unhinged/models/self.dart';
 

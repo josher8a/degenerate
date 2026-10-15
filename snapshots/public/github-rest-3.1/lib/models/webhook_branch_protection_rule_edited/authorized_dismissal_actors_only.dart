@@ -12,7 +12,7 @@ final bool? from;
 Map<String, dynamic> toJson() { return {
   'from': from,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is bool; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && (json['from'] == null || json['from'] is bool); } 
 AuthorizedDismissalActorsOnly copyWith({bool? Function()? from}) { return AuthorizedDismissalActorsOnly(
   from: from != null ? from() : this.from,
 ); } 

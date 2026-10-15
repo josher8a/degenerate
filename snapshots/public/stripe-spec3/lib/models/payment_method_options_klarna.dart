@@ -2,11 +2,11 @@
 // Source: #/components/schemas/PaymentMethodOptionsKlarna
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';/// 
-@immutable final class PaymentMethodOptionsKlarna {const PaymentMethodOptionsKlarna({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsKlarna {const PaymentMethodOptionsKlarna({this.captureMethod, this.preferredLocale = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsKlarna(
   captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  preferredLocale: json['preferred_locale'] as String?,
+  preferredLocale: json.containsKey('preferred_locale') ? Omittable(json['preferred_locale'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
@@ -14,7 +14,7 @@ factory PaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return 
 final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
 
 /// Preferred locale of the Klarna checkout page that the customer is redirected to.
-final String? preferredLocale;
+final Omittable<String?> preferredLocale;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -27,20 +27,20 @@ final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-  'preferred_locale': ?preferredLocale,
+  if (preferredLocale.isPresent) 'preferred_locale': preferredLocale.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'setup_future_usage'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final preferredLocale$ = preferredLocale;
+final preferredLocale$ = preferredLocale.value;
 if (preferredLocale$ != null) {
   if (preferredLocale$.runes.length > 5000) { errors.add('preferredLocale: length must be <= 5000'); }
 }
 return errors; } 
-PaymentMethodOptionsKlarna copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, String? Function()? preferredLocale, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsKlarna(
+PaymentMethodOptionsKlarna copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, Omittable<String?>? preferredLocale, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsKlarna(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
+  preferredLocale: preferredLocale ?? this.preferredLocale,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -90,11 +90,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class ShieldOldZoneSchemaValidationSettingsPut {const ShieldOldZoneSchemaValidationSettingsPut({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
+@immutable final class ShieldOldZoneSchemaValidationSettingsPut {const ShieldOldZoneSchemaValidationSettingsPut({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction = const Omittable.absent(), });
 
 factory ShieldOldZoneSchemaValidationSettingsPut.fromJson(Map<String, dynamic> json) { return ShieldOldZoneSchemaValidationSettingsPut(
   validationDefaultMitigationAction: ShieldOldValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String),
-  validationOverrideMitigationAction: json['validation_override_mitigation_action'] != null ? ShieldOldValidationOverrideMitigationActionWrite.fromJson(json['validation_override_mitigation_action'] as String) : null,
+  validationOverrideMitigationAction: json.containsKey('validation_override_mitigation_action') ? Omittable(json['validation_override_mitigation_action'] != null ? ShieldOldValidationOverrideMitigationActionWrite.fromJson(json['validation_override_mitigation_action'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The default mitigation action used when there is no mitigation action defined on the operation
@@ -115,16 +115,16 @@ final ShieldOldValidationDefaultMitigationAction validationDefaultMitigationActi
 /// 
 /// To clear any override, use the special value `disable_override` or `null`
 /// 
-final ShieldOldValidationOverrideMitigationActionWrite? validationOverrideMitigationAction;
+final Omittable<ShieldOldValidationOverrideMitigationActionWrite?> validationOverrideMitigationAction;
 
 Map<String, dynamic> toJson() { return {
   'validation_default_mitigation_action': validationDefaultMitigationAction.toJson(),
-  if (validationOverrideMitigationAction != null) 'validation_override_mitigation_action': validationOverrideMitigationAction?.toJson(),
+  if (validationOverrideMitigationAction.isPresent) 'validation_override_mitigation_action': validationOverrideMitigationAction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('validation_default_mitigation_action'); } 
-ShieldOldZoneSchemaValidationSettingsPut copyWith({ShieldOldValidationDefaultMitigationAction? validationDefaultMitigationAction, ShieldOldValidationOverrideMitigationActionWrite? Function()? validationOverrideMitigationAction, }) { return ShieldOldZoneSchemaValidationSettingsPut(
+ShieldOldZoneSchemaValidationSettingsPut copyWith({ShieldOldValidationDefaultMitigationAction? validationDefaultMitigationAction, Omittable<ShieldOldValidationOverrideMitigationActionWrite?>? validationOverrideMitigationAction, }) { return ShieldOldZoneSchemaValidationSettingsPut(
   validationDefaultMitigationAction: validationDefaultMitigationAction ?? this.validationDefaultMitigationAction,
-  validationOverrideMitigationAction: validationOverrideMitigationAction != null ? validationOverrideMitigationAction() : this.validationOverrideMitigationAction,
+  validationOverrideMitigationAction: validationOverrideMitigationAction ?? this.validationOverrideMitigationAction,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldZoneSchemaValidationSettingsPut &&

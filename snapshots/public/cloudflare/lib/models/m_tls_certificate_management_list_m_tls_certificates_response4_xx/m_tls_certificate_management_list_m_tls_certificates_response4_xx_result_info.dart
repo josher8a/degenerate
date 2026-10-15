@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MTlsCertificateManagementListMTlsCertificatesResponse4Xx (inline: ResultInfo)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo {const MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo {const MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo({this.count = const Omittable.absent(), this.page = const Omittable.absent(), this.perPage = const Omittable.absent(), this.totalCount = const Omittable.absent(), this.totalPages, });
 
 factory MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo.fromJson(Map<String, dynamic> json) { return MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo(
-  count: json['count'],
-  page: json['page'],
-  perPage: json['per_page'],
-  totalCount: json['total_count'],
+  count: json.containsKey('count') ? Omittable(json['count']) : const Omittable.absent(),
+  page: json.containsKey('page') ? Omittable(json['page']) : const Omittable.absent(),
+  perPage: json.containsKey('per_page') ? Omittable(json['per_page']) : const Omittable.absent(),
+  totalCount: json.containsKey('total_count') ? Omittable(json['total_count']) : const Omittable.absent(),
   totalPages: json['total_pages'] != null ? (json['total_pages'] as num).toDouble() : null,
 ); }
 
 /// Example: `1`
-final dynamic count;
+final Omittable<dynamic> count;
 
 /// Example: `1`
-final dynamic page;
+final Omittable<dynamic> page;
 
 /// Example: `50`
-final dynamic perPage;
+final Omittable<dynamic> perPage;
 
 /// Example: `1`
-final dynamic totalCount;
+final Omittable<dynamic> totalCount;
 
 /// Total pages available of results
 /// 
@@ -29,18 +29,18 @@ final dynamic totalCount;
 final double? totalPages;
 
 Map<String, dynamic> toJson() { return {
-  'count': ?count,
-  'page': ?page,
-  'per_page': ?perPage,
-  'total_count': ?totalCount,
+  if (count.isPresent) 'count': count.value,
+  if (page.isPresent) 'page': page.value,
+  if (perPage.isPresent) 'per_page': perPage.value,
+  if (totalCount.isPresent) 'total_count': totalCount.value,
   'total_pages': ?totalPages,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count', 'total_pages'}.contains(key)); } 
-MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo copyWith({dynamic Function()? count, dynamic Function()? page, dynamic Function()? perPage, dynamic Function()? totalCount, double? Function()? totalPages, }) { return MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo(
-  count: count != null ? count() : this.count,
-  page: page != null ? page() : this.page,
-  perPage: perPage != null ? perPage() : this.perPage,
-  totalCount: totalCount != null ? totalCount() : this.totalCount,
+MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo copyWith({Omittable<dynamic>? count, Omittable<dynamic>? page, Omittable<dynamic>? perPage, Omittable<dynamic>? totalCount, double? Function()? totalPages, }) { return MTlsCertificateManagementListMTlsCertificatesResponse4XxResultInfo(
+  count: count ?? this.count,
+  page: page ?? this.page,
+  perPage: perPage ?? this.perPage,
+  totalCount: totalCount ?? this.totalCount,
   totalPages: totalPages != null ? totalPages() : this.totalPages,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -318,7 +318,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bits, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, required this.name, required this.prefixes, required this.type, this.bandwidthThreshold, this.duration, this.id, this.packetThreshold, this.prefixMatch, this.zscoreSensitivity, this.zscoreTarget, });
+@immutable final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, required this.name, required this.prefixes, required this.type, this.bandwidthThreshold, this.duration, this.id, this.packetThreshold, this.prefixMatch = const Omittable.absent(), this.zscoreSensitivity = const Omittable.absent(), this.zscoreTarget = const Omittable.absent(), });
 
 factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRule(
   automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
@@ -327,11 +327,11 @@ factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return M
   id: json['id'] != null ? MagicVisibilityMnmRuleIdentifier.fromJson(json['id'] as String) : null,
   name: MagicVisibilityMnmMnmRuleName.fromJson(json['name'] as String),
   packetThreshold: json['packet_threshold'] != null ? MagicVisibilityMnmMnmRulePacketThreshold.fromJson(json['packet_threshold'] as num) : null,
-  prefixMatch: json['prefix_match'] != null ? MagicVisibilityMnmMnmRulePrefixMatch.fromJson(json['prefix_match'] as String) : null,
+  prefixMatch: json.containsKey('prefix_match') ? Omittable(json['prefix_match'] != null ? MagicVisibilityMnmMnmRulePrefixMatch.fromJson(json['prefix_match'] as String) : null) : const Omittable.absent(),
   prefixes: (json['prefixes'] as List<dynamic>).map((e) => MagicVisibilityMnmMnmRuleIpPrefix.fromJson(e as String)).toList(),
   type: MagicVisibilityMnmMnmRuleType.fromJson(json['type'] as String),
-  zscoreSensitivity: json['zscore_sensitivity'] != null ? MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(json['zscore_sensitivity'] as String) : null,
-  zscoreTarget: json['zscore_target'] != null ? MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(json['zscore_target'] as String) : null,
+  zscoreSensitivity: json.containsKey('zscore_sensitivity') ? Omittable(json['zscore_sensitivity'] != null ? MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(json['zscore_sensitivity'] as String) : null) : const Omittable.absent(),
+  zscoreTarget: json.containsKey('zscore_target') ? Omittable(json['zscore_target'] != null ? MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(json['zscore_target'] as String) : null) : const Omittable.absent(),
 ); }
 
 final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
@@ -346,15 +346,15 @@ final MagicVisibilityMnmMnmRuleName name;
 
 final MagicVisibilityMnmMnmRulePacketThreshold? packetThreshold;
 
-final MagicVisibilityMnmMnmRulePrefixMatch? prefixMatch;
+final Omittable<MagicVisibilityMnmMnmRulePrefixMatch?> prefixMatch;
 
 final List<MagicVisibilityMnmMnmRuleIpPrefix> prefixes;
 
 final MagicVisibilityMnmMnmRuleType type;
 
-final MagicVisibilityMnmMnmRuleZscoreSensitivity? zscoreSensitivity;
+final Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?> zscoreSensitivity;
 
-final MagicVisibilityMnmMnmRuleZscoreTarget? zscoreTarget;
+final Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?> zscoreTarget;
 
 Map<String, dynamic> toJson() { return {
   'automatic_advertisement': automaticAdvertisement?.toJson(),
@@ -363,28 +363,28 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   'name': name.toJson(),
   if (packetThreshold != null) 'packet_threshold': packetThreshold?.toJson(),
-  if (prefixMatch != null) 'prefix_match': prefixMatch?.toJson(),
+  if (prefixMatch.isPresent) 'prefix_match': prefixMatch.value?.toJson(),
   'prefixes': prefixes.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
-  if (zscoreSensitivity != null) 'zscore_sensitivity': zscoreSensitivity?.toJson(),
-  if (zscoreTarget != null) 'zscore_target': zscoreTarget?.toJson(),
+  if (zscoreSensitivity.isPresent) 'zscore_sensitivity': zscoreSensitivity.value?.toJson(),
+  if (zscoreTarget.isPresent) 'zscore_target': zscoreTarget.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_advertisement') &&
       json.containsKey('name') &&
       json.containsKey('prefixes') &&
       json.containsKey('type'); } 
-MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidthThreshold, MagicVisibilityMnmMnmRuleDuration? Function()? duration, MagicVisibilityMnmRuleIdentifier? Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, MagicVisibilityMnmMnmRulePrefixMatch? Function()? prefixMatch, List<MagicVisibilityMnmMnmRuleIpPrefix>? prefixes, MagicVisibilityMnmMnmRuleType? type, MagicVisibilityMnmMnmRuleZscoreSensitivity? Function()? zscoreSensitivity, MagicVisibilityMnmMnmRuleZscoreTarget? Function()? zscoreTarget, }) { return MagicVisibilityMnmMnmRule(
+MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidthThreshold, MagicVisibilityMnmMnmRuleDuration? Function()? duration, MagicVisibilityMnmRuleIdentifier? Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, Omittable<MagicVisibilityMnmMnmRulePrefixMatch?>? prefixMatch, List<MagicVisibilityMnmMnmRuleIpPrefix>? prefixes, MagicVisibilityMnmMnmRuleType? type, Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?>? zscoreSensitivity, Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?>? zscoreTarget, }) { return MagicVisibilityMnmMnmRule(
   automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
   bandwidthThreshold: bandwidthThreshold != null ? bandwidthThreshold() : this.bandwidthThreshold,
   duration: duration != null ? duration() : this.duration,
   id: id != null ? id() : this.id,
   name: name ?? this.name,
   packetThreshold: packetThreshold != null ? packetThreshold() : this.packetThreshold,
-  prefixMatch: prefixMatch != null ? prefixMatch() : this.prefixMatch,
+  prefixMatch: prefixMatch ?? this.prefixMatch,
   prefixes: prefixes ?? this.prefixes,
   type: type ?? this.type,
-  zscoreSensitivity: zscoreSensitivity != null ? zscoreSensitivity() : this.zscoreSensitivity,
-  zscoreTarget: zscoreTarget != null ? zscoreTarget() : this.zscoreTarget,
+  zscoreSensitivity: zscoreSensitivity ?? this.zscoreSensitivity,
+  zscoreTarget: zscoreTarget ?? this.zscoreTarget,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmRule &&

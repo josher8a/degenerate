@@ -20,9 +20,9 @@ AddUploadPartRequest copyWith({Uint8List? data}) { return AddUploadPartRequest(
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddUploadPartRequest &&
-          data == other.data;
+          listEquals(data, other.data);
 
-@override int get hashCode => data.hashCode;
+@override int get hashCode => Object.hashAll(data);
 
 @override String toString() => 'AddUploadPartRequest(data: $data)';
 

@@ -2,10 +2,10 @@
 // Source: #/components/schemas/SourceReceiverFlow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class SourceReceiverFlow {const SourceReceiverFlow({required this.amountCharged, required this.amountReceived, required this.amountReturned, required this.refundAttributesMethod, required this.refundAttributesStatus, this.address, });
+@immutable final class SourceReceiverFlow {const SourceReceiverFlow({required this.amountCharged, required this.amountReceived, required this.amountReturned, required this.refundAttributesMethod, required this.refundAttributesStatus, this.address = const Omittable.absent(), });
 
 factory SourceReceiverFlow.fromJson(Map<String, dynamic> json) { return SourceReceiverFlow(
-  address: json['address'] as String?,
+  address: json.containsKey('address') ? Omittable(json['address'] as String?) : const Omittable.absent(),
   amountCharged: (json['amount_charged'] as num).toInt(),
   amountReceived: (json['amount_received'] as num).toInt(),
   amountReturned: (json['amount_returned'] as num).toInt(),
@@ -14,7 +14,7 @@ factory SourceReceiverFlow.fromJson(Map<String, dynamic> json) { return SourceRe
 ); }
 
 /// The address of the receiver source. This is the value that should be communicated to the customer to send their funds to.
-final String? address;
+final Omittable<String?> address;
 
 /// The total amount that was moved to your balance. This is almost always equal to the amount charged. In rare cases when customers deposit excess funds and we are unable to refund those, those funds get moved to your balance and show up in amount_charged as well. The amount charged is expressed in the source's currency.
 final int amountCharged;
@@ -32,7 +32,7 @@ final String refundAttributesMethod;
 final String refundAttributesStatus;
 
 Map<String, dynamic> toJson() { return {
-  'address': ?address,
+  if (address.isPresent) 'address': address.value,
   'amount_charged': amountCharged,
   'amount_received': amountReceived,
   'amount_returned': amountReturned,
@@ -46,15 +46,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('refund_attributes_status') && json['refund_attributes_status'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final address$ = address;
+final address$ = address.value;
 if (address$ != null) {
   if (address$.runes.length > 5000) { errors.add('address: length must be <= 5000'); }
 }
 if (refundAttributesMethod.runes.length > 5000) { errors.add('refundAttributesMethod: length must be <= 5000'); }
 if (refundAttributesStatus.runes.length > 5000) { errors.add('refundAttributesStatus: length must be <= 5000'); }
 return errors; } 
-SourceReceiverFlow copyWith({String? Function()? address, int? amountCharged, int? amountReceived, int? amountReturned, String? refundAttributesMethod, String? refundAttributesStatus, }) { return SourceReceiverFlow(
-  address: address != null ? address() : this.address,
+SourceReceiverFlow copyWith({Omittable<String?>? address, int? amountCharged, int? amountReceived, int? amountReturned, String? refundAttributesMethod, String? refundAttributesStatus, }) { return SourceReceiverFlow(
+  address: address ?? this.address,
   amountCharged: amountCharged ?? this.amountCharged,
   amountReceived: amountReceived ?? this.amountReceived,
   amountReturned: amountReturned ?? this.amountReturned,

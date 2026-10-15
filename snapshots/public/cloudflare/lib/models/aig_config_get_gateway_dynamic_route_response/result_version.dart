@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigGetGatewayDynamicRouteResponse (inline: Result > Version)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/active.dart';@immutable final class ResultVersion {const ResultVersion({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/active.dart';@immutable final class ResultVersion {const ResultVersion({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment = const Omittable.absent(), });
 
 factory ResultVersion.fromJson(Map<String, dynamic> json) { return ResultVersion(
   active: Active.fromJson(json['active'] as String),
-  comment: json['comment'] as String?,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   data: json['data'] as String,
   versionId: json['version_id'] as String,
@@ -13,7 +13,7 @@ factory ResultVersion.fromJson(Map<String, dynamic> json) { return ResultVersion
 
 final Active active;
 
-final String? comment;
+final Omittable<String?> comment;
 
 final String createdAt;
 
@@ -23,7 +23,7 @@ final String versionId;
 
 Map<String, dynamic> toJson() { return {
   'active': active.toJson(),
-  'comment': ?comment,
+  if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'data': data,
   'version_id': versionId,
@@ -32,9 +32,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('data') && json['data'] is String &&
       json.containsKey('version_id') && json['version_id'] is String; } 
-ResultVersion copyWith({Active? active, String? Function()? comment, String? createdAt, String? data, String? versionId, }) { return ResultVersion(
+ResultVersion copyWith({Active? active, Omittable<String?>? comment, String? createdAt, String? data, String? versionId, }) { return ResultVersion(
   active: active ?? this.active,
-  comment: comment != null ? comment() : this.comment,
+  comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   data: data ?? this.data,
   versionId: versionId ?? this.versionId,

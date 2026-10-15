@@ -2,21 +2,21 @@
 // Source: #/components/schemas/ConfirmationTokensResourcePaymentMethodOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_options_resource_card.dart';/// Payment-method-specific configuration
-@immutable final class ConfirmationTokensResourcePaymentMethodOptions {const ConfirmationTokensResourcePaymentMethodOptions({this.card});
+@immutable final class ConfirmationTokensResourcePaymentMethodOptions {const ConfirmationTokensResourcePaymentMethodOptions({this.card = const Omittable.absent()});
 
 factory ConfirmationTokensResourcePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourcePaymentMethodOptions(
-  card: json['card'] != null ? ConfirmationTokensResourcePaymentMethodOptionsResourceCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  card: json.containsKey('card') ? Omittable(json['card'] != null ? ConfirmationTokensResourcePaymentMethodOptionsResourceCard.fromJson(json['card'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// This hash contains the card payment method options.
-final ConfirmationTokensResourcePaymentMethodOptionsResourceCard? card;
+final Omittable<ConfirmationTokensResourcePaymentMethodOptionsResourceCard?> card;
 
 Map<String, dynamic> toJson() { return {
-  if (card != null) 'card': card?.toJson(),
+  if (card.isPresent) 'card': card.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card'}.contains(key)); } 
-ConfirmationTokensResourcePaymentMethodOptions copyWith({ConfirmationTokensResourcePaymentMethodOptionsResourceCard? Function()? card}) { return ConfirmationTokensResourcePaymentMethodOptions(
-  card: card != null ? card() : this.card,
+ConfirmationTokensResourcePaymentMethodOptions copyWith({Omittable<ConfirmationTokensResourcePaymentMethodOptionsResourceCard?>? card}) { return ConfirmationTokensResourcePaymentMethodOptions(
+  card: card ?? this.card,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConfirmationTokensResourcePaymentMethodOptions &&

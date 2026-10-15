@@ -24,7 +24,7 @@ final String? email;
 Map<String, dynamic> toJson() { return {
   'createdAt': createdAt.toIso8601String(),
   'website': website.toString(),
-  if (avatar != null) 'avatar': base64Encode(avatar!),
+  if (avatar != null) 'avatar': switch (avatar) { final bytes? => base64Encode(bytes), _ => null },
   'trackingId': ?trackingId,
   'email': ?email,
 }; } 
@@ -41,11 +41,11 @@ FormatTypes copyWith({DateTime? createdAt, Uri? website, Uint8List? Function()? 
       other is FormatTypes &&
           createdAt == other.createdAt &&
           website == other.website &&
-          avatar == other.avatar &&
+          listEquals(avatar, other.avatar) &&
           trackingId == other.trackingId &&
           email == other.email;
 
-@override int get hashCode => Object.hash(createdAt, website, avatar, trackingId, email);
+@override int get hashCode => Object.hash(createdAt, website, Object.hashAll(avatar ?? const []), trackingId, email);
 
 @override String toString() => 'FormatTypes(createdAt: $createdAt, website: $website, avatar: $avatar, trackingId: $trackingId, email: $email)';
 

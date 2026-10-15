@@ -45,12 +45,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   }
 /// }
 /// ```
-@immutable final class EmailSecurityGetMessageDetectionsResponseResult {const EmailSecurityGetMessageDetectionsResponseResult({required this.action, required this.attachments, required this.headers, required this.links, required this.senderInfo, required this.threatCategories, required this.validation, this.finalDisposition, });
+@immutable final class EmailSecurityGetMessageDetectionsResponseResult {const EmailSecurityGetMessageDetectionsResponseResult({required this.action, required this.attachments, required this.headers, required this.links, required this.senderInfo, required this.threatCategories, required this.validation, this.finalDisposition = const Omittable.absent(), });
 
 factory EmailSecurityGetMessageDetectionsResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageDetectionsResponseResult(
   action: json['action'] as String,
   attachments: (json['attachments'] as List<dynamic>).map((e) => EmailSecurityAttachment.fromJson(e as Map<String, dynamic>)).toList(),
-  finalDisposition: json['final_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['final_disposition'] as String) : null,
+  finalDisposition: json.containsKey('final_disposition') ? Omittable(json['final_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['final_disposition'] as String) : null) : const Omittable.absent(),
   headers: (json['headers'] as List<dynamic>).map((e) => EmailSecurityMessageHeader.fromJson(e as Map<String, dynamic>)).toList(),
   links: (json['links'] as List<dynamic>).map((e) => EmailSecurityLink.fromJson(e as Map<String, dynamic>)).toList(),
   senderInfo: SenderInfo.fromJson(json['sender_info'] as Map<String, dynamic>),
@@ -62,7 +62,7 @@ final String action;
 
 final List<EmailSecurityAttachment> attachments;
 
-final EmailSecurityDispositionLabel? finalDisposition;
+final Omittable<EmailSecurityDispositionLabel?> finalDisposition;
 
 final List<EmailSecurityMessageHeader> headers;
 
@@ -77,7 +77,7 @@ final ResultValidation validation;
 Map<String, dynamic> toJson() { return {
   'action': action,
   'attachments': attachments.map((e) => e.toJson()).toList(),
-  if (finalDisposition != null) 'final_disposition': finalDisposition?.toJson(),
+  if (finalDisposition.isPresent) 'final_disposition': finalDisposition.value?.toJson(),
   'headers': headers.map((e) => e.toJson()).toList(),
   'links': links.map((e) => e.toJson()).toList(),
   'sender_info': senderInfo.toJson(),
@@ -91,10 +91,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender_info') &&
       json.containsKey('threat_categories') &&
       json.containsKey('validation'); } 
-EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<EmailSecurityAttachment>? attachments, EmailSecurityDispositionLabel? Function()? finalDisposition, List<EmailSecurityMessageHeader>? headers, List<EmailSecurityLink>? links, SenderInfo? senderInfo, List<EmailSecurityThreatCategory>? threatCategories, ResultValidation? validation, }) { return EmailSecurityGetMessageDetectionsResponseResult(
+EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<EmailSecurityAttachment>? attachments, Omittable<EmailSecurityDispositionLabel?>? finalDisposition, List<EmailSecurityMessageHeader>? headers, List<EmailSecurityLink>? links, SenderInfo? senderInfo, List<EmailSecurityThreatCategory>? threatCategories, ResultValidation? validation, }) { return EmailSecurityGetMessageDetectionsResponseResult(
   action: action ?? this.action,
   attachments: attachments ?? this.attachments,
-  finalDisposition: finalDisposition != null ? finalDisposition() : this.finalDisposition,
+  finalDisposition: finalDisposition ?? this.finalDisposition,
   headers: headers ?? this.headers,
   links: links ?? this.links,
   senderInfo: senderInfo ?? this.senderInfo,

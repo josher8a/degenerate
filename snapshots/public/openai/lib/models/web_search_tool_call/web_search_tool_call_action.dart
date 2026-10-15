@@ -85,7 +85,7 @@ factory WebSearchToolCallAction.fromJson(Map<String, dynamic> json) { return swi
 factory WebSearchToolCallAction.search({required String query, List<String>? queries, List<Sources>? sources, }) { return WebSearchToolCallActionSearch(WebSearchActionSearch(type: WebSearchActionSearchType.fromJson('search'), query: query, queries: queries, sources: sources)); }
 
 /// Build the `open_page` variant.
-factory WebSearchToolCallAction.openPage({Uri? url}) { return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage(type: WebSearchActionOpenPageType.fromJson('open_page'), url: url)); }
+factory WebSearchToolCallAction.openPage({Omittable<Uri?> url = const Omittable.absent()}) { return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage(type: WebSearchActionOpenPageType.fromJson('open_page'), url: url)); }
 
 /// Build the `find_in_page` variant.
 factory WebSearchToolCallAction.findInPage({required Uri url, required String pattern, }) { return WebSearchToolCallActionFindInPage(WebSearchActionFind(type: WebSearchActionFindType.fromJson('find_in_page'), url: url, pattern: pattern)); }
@@ -136,7 +136,7 @@ final WebSearchActionOpenPage webSearchActionOpenPage;
 
 @override Map<String, dynamic> toJson() => {...webSearchActionOpenPage.toJson(), 'type': type.toJson()};
 
-WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
+WebSearchToolCallActionOpenPage copyWith({Omittable<Uri?>? url}) { return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
   url: url,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||

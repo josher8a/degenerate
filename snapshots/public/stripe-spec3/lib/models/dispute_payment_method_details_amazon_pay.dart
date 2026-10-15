@@ -70,21 +70,21 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargeba
 
  }
 /// 
-@immutable final class DisputePaymentMethodDetailsAmazonPay {const DisputePaymentMethodDetailsAmazonPay({this.disputeType});
+@immutable final class DisputePaymentMethodDetailsAmazonPay {const DisputePaymentMethodDetailsAmazonPay({this.disputeType = const Omittable.absent()});
 
 factory DisputePaymentMethodDetailsAmazonPay.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsAmazonPay(
-  disputeType: json['dispute_type'] != null ? DisputeType.fromJson(json['dispute_type'] as String) : null,
+  disputeType: json.containsKey('dispute_type') ? Omittable(json['dispute_type'] != null ? DisputeType.fromJson(json['dispute_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The AmazonPay dispute type, chargeback or claim
-final DisputeType? disputeType;
+final Omittable<DisputeType?> disputeType;
 
 Map<String, dynamic> toJson() { return {
-  if (disputeType != null) 'dispute_type': disputeType?.toJson(),
+  if (disputeType.isPresent) 'dispute_type': disputeType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dispute_type'}.contains(key)); } 
-DisputePaymentMethodDetailsAmazonPay copyWith({DisputeType? Function()? disputeType}) { return DisputePaymentMethodDetailsAmazonPay(
-  disputeType: disputeType != null ? disputeType() : this.disputeType,
+DisputePaymentMethodDetailsAmazonPay copyWith({Omittable<DisputeType?>? disputeType}) { return DisputePaymentMethodDetailsAmazonPay(
+  disputeType: disputeType ?? this.disputeType,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DisputePaymentMethodDetailsAmazonPay &&

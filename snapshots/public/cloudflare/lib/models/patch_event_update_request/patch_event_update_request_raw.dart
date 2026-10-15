@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PatchEventUpdateRequest (inline: Raw)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchEventUpdateRequestRaw {const PatchEventUpdateRequestRaw({this.data, this.source, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchEventUpdateRequestRaw {const PatchEventUpdateRequestRaw({this.data = const Omittable.absent(), this.source, this.tlp, });
 
 factory PatchEventUpdateRequestRaw.fromJson(Map<String, dynamic> json) { return PatchEventUpdateRequestRaw(
-  data: json['data'] as Map<String, dynamic>?,
+  data: json.containsKey('data') ? Omittable(json['data'] as Map<String, dynamic>?) : const Omittable.absent(),
   source: json['source'] as String?,
   tlp: json['tlp'] as String?,
 ); }
 
-final Map<String,dynamic>? data;
+final Omittable<Map<String,dynamic>?> data;
 
 /// Example: `'example.com'`
 final String? source;
@@ -18,13 +18,13 @@ final String? source;
 final String? tlp;
 
 Map<String, dynamic> toJson() { return {
-  'data': ?data,
+  if (data.isPresent) 'data': data.value,
   'source': ?source,
   'tlp': ?tlp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'source', 'tlp'}.contains(key)); } 
-PatchEventUpdateRequestRaw copyWith({Map<String, dynamic>? Function()? data, String? Function()? source, String? Function()? tlp, }) { return PatchEventUpdateRequestRaw(
-  data: data != null ? data() : this.data,
+PatchEventUpdateRequestRaw copyWith({Omittable<Map<String,dynamic>?>? data, String? Function()? source, String? Function()? tlp, }) { return PatchEventUpdateRequestRaw(
+  data: data ?? this.data,
   source: source != null ? source() : this.source,
   tlp: tlp != null ? tlp() : this.tlp,
 ); } 

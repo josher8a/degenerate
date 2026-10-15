@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseCommonFailure52
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_messages2.dart';@immutable final class ResponseCommonFailure52 {const ResponseCommonFailure52({required this.errors, required this.success, this.messages, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_messages2.dart';@immutable final class ResponseCommonFailure52 {const ResponseCommonFailure52({required this.errors, required this.success, this.messages, this.result = const Omittable.absent(), });
 
 factory ResponseCommonFailure52.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure52(
   errors: (json['errors'] as List<dynamic>).map((e) => PageShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => PageShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as Map<String, dynamic>?,
+  result: json.containsKey('result') ? Omittable(json['result'] as Map<String, dynamic>?) : const Omittable.absent(),
   success: json['success'] as bool,
 ); }
 
@@ -14,7 +14,7 @@ final List<PageShieldMessages2> errors;
 
 final List<PageShieldMessages2>? messages;
 
-final Map<String,dynamic>? result;
+final Omittable<Map<String,dynamic>?> result;
 
 /// Whether the API call was successful
 /// 
@@ -24,15 +24,15 @@ final bool success;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  if (result.isPresent) 'result': result.value,
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure52 copyWith({List<PageShieldMessages2>? errors, List<PageShieldMessages2>? Function()? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure52(
+ResponseCommonFailure52 copyWith({List<PageShieldMessages2>? errors, List<PageShieldMessages2>? Function()? messages, Omittable<Map<String,dynamic>?>? result, bool? success, }) { return ResponseCommonFailure52(
   errors: errors ?? this.errors,
   messages: messages != null ? messages() : this.messages,
-  result: result != null ? result() : this.result,
+  result: result ?? this.result,
   success: success ?? this.success,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

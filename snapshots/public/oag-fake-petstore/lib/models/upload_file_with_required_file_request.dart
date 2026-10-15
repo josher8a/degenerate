@@ -26,9 +26,9 @@ UploadFileWithRequiredFileRequest copyWith({String? Function()? additionalMetada
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UploadFileWithRequiredFileRequest &&
           additionalMetadata == other.additionalMetadata &&
-          requiredFile == other.requiredFile;
+          listEquals(requiredFile, other.requiredFile);
 
-@override int get hashCode => Object.hash(additionalMetadata, requiredFile);
+@override int get hashCode => Object.hash(additionalMetadata, Object.hashAll(requiredFile));
 
 @override String toString() => 'UploadFileWithRequiredFileRequest(additionalMetadata: $additionalMetadata, requiredFile: $requiredFile)';
 

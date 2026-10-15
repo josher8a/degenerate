@@ -708,24 +708,18 @@ final class ApiEmitter {
     bool explode,
   ) {
     final name = _sanitizeParameterName(p.name);
-    // A field is nullable in the generated model when it's optional OR its
-    // type is nullable (required-but-nullable) — mirror that here or the
-    // typed conversions dereference a nullable and don't compile.
-    bool fieldNullable(IrField f) => !f.isRequired || f.type.isNullable;
     if (style == 'deepObject') {
       for (final field in fields) {
         final key = '$name[${field.originalName.escaped}]';
-        if (fieldNullable(field)) {
+        final fieldAccessor = _objectFieldAccessor(field, accessor);
+        if (_objectFieldIsNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
+            "if ($fieldAccessor case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
           );
         } else {
-          final valueExpr = _queryScalarExpr(
-            field.type,
-            '$accessor.${field.name}',
-          );
+          final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
           buf.writeln("queryParameters['$key'] = $valueExpr;");
         }
       }
@@ -735,17 +729,15 @@ final class ApiEmitter {
     if (style == 'form' && explode) {
       for (final field in fields) {
         final fieldNameLiteral = field.originalName.literal;
-        if (fieldNullable(field)) {
+        final fieldAccessor = _objectFieldAccessor(field, accessor);
+        if (_objectFieldIsNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
+            "if ($fieldAccessor case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
           );
         } else {
-          final valueExpr = _queryScalarExpr(
-            field.type,
-            '$accessor.${field.name}',
-          );
+          final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
           buf.writeln(
             "queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
           );
@@ -756,13 +748,16 @@ final class ApiEmitter {
 
     final parts = <String>[];
     for (final field in fields) {
-      final nullable = fieldNullable(field);
-      final fieldAccessor = '$accessor.${field.name}${nullable ? '!' : ''}';
-      final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
+      final nullable = _objectFieldIsNullable(field);
+      final fieldAccessor = _objectFieldAccessor(field, accessor);
+      final valueExpr = _queryScalarExpr(
+        field.type,
+        '$fieldAccessor${nullable ? '!' : ''}',
+      );
       if (nullable) {
         // Null fields are omitted (RFC 6570 drops undefined values).
         parts.add(
-          'if ($accessor.${field.name} != null) '
+          'if ($fieldAccessor != null) '
           "...['${field.originalName.escaped}', $valueExpr]",
         );
       } else {
@@ -866,13 +861,12 @@ final class ApiEmitter {
       IrObject(:final fields) => () {
         final parts = <String>[];
         for (final f in fields) {
-          final nullable = !f.isRequired || f.type.isNullable;
-          final accessor = '${p.dartName}.${f.name}${nullable ? '!' : ''}';
+          final nullable = _objectFieldIsNullable(f);
+          final fieldAccessor = _objectFieldAccessor(f, p.dartName);
+          final accessor = '$fieldAccessor${nullable ? '!' : ''}';
           final value =
               'Uri.encodeComponent(${_queryScalarExpr(f.type, accessor)})';
-          final guard = nullable
-              ? 'if (${p.dartName}.${f.name} != null) '
-              : '';
+          final guard = nullable ? 'if ($fieldAccessor != null) ' : '';
           if (explode) {
             parts.add("$guard'${f.originalName.escaped}=\${$value}'");
           } else if (nullable) {
@@ -1219,18 +1213,12 @@ final class ApiEmitter {
       buf.writeln('  body: [');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
+      final fieldAccessor = _objectFieldAccessor(f, 'body');
       final isBytes = switch (f.type) {
         IrPrimitive(kind: PrimitiveKind.bytes) => true,
         _ => false,
       };
-      // Emit null guard only when the Dart field type is actually nullable.
-      // Fields with defaults are non-nullable even if not required,
-      // but only if the default can be represented as a Dart constant.
-      final isNullable =
-          fieldIsNullableInDart(f);
-
-      if (isNullable) {
+      if (_objectFieldIsNullable(f)) {
         // Use a case-pattern variable to enable type promotion on nullable
         // public fields.
         final localVar = '${f.name}\$';
@@ -1243,6 +1231,17 @@ final class ApiEmitter {
     }
     buf.writeln('  ],');
   }
+
+  /// Scalar access to [field] on a model instance [object] (object
+  /// parameters, form and multipart bodies). These encodings omit both an
+  /// absent and an explicit-null value, so a presence wrapper is unwrapped.
+  String _objectFieldAccessor(IrField field, String object) =>
+      '$object.${field.name}${ctx.isOmittable(field) ? '.value' : ''}';
+
+  /// Nullability of [field]'s scalar after removing any presence wrapper —
+  /// matching the model's Dart declaration, so guards and `!` agree with it.
+  bool _objectFieldIsNullable(IrField field) =>
+      ctx.isOmittable(field) || fieldIsNullableInDart(field);
 
   /// Write form-urlencoded body construction code.
   ///
@@ -1259,9 +1258,8 @@ final class ApiEmitter {
       buf.writeln('  body: <String>[');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
-      final isNullable =
-          fieldIsNullableInDart(f);
+      final fieldAccessor = _objectFieldAccessor(f, 'body');
+      final isNullable = _objectFieldIsNullable(f);
       final keyLiteral = f.originalName.escaped;
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =

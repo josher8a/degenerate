@@ -85,40 +85,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
  }
 /// 
-@immutable final class TaxProductResourceTaxSettingsDefaults {const TaxProductResourceTaxSettingsDefaults({required this.provider, this.taxBehavior, this.taxCode, });
+@immutable final class TaxProductResourceTaxSettingsDefaults {const TaxProductResourceTaxSettingsDefaults({required this.provider, this.taxBehavior = const Omittable.absent(), this.taxCode = const Omittable.absent(), });
 
 factory TaxProductResourceTaxSettingsDefaults.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsDefaults(
   provider: Provider.fromJson(json['provider'] as String),
-  taxBehavior: json['tax_behavior'] != null ? TaxProductResourceTaxSettingsDefaultsTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] as String?,
+  taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? TaxProductResourceTaxSettingsDefaultsTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
+  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] as String?) : const Omittable.absent(),
 ); }
 
 /// The tax calculation provider this account uses. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 final Provider provider;
 
 /// Default [tax behavior](https://stripe.com/docs/tax/products-prices-tax-categories-tax-behavior#tax-behavior) used to specify whether the price is considered inclusive of taxes or exclusive of taxes. If the item's price has a tax behavior set, it will take precedence over the default tax behavior.
-final TaxProductResourceTaxSettingsDefaultsTaxBehavior? taxBehavior;
+final Omittable<TaxProductResourceTaxSettingsDefaultsTaxBehavior?> taxBehavior;
 
 /// Default [tax code](https://stripe.com/docs/tax/tax-categories) used to classify your products and prices.
-final String? taxCode;
+final Omittable<String?> taxCode;
 
 Map<String, dynamic> toJson() { return {
   'provider': provider.toJson(),
-  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
-  'tax_code': ?taxCode,
+  if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
+  if (taxCode.isPresent) 'tax_code': taxCode.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('provider'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final taxCode$ = taxCode;
+final taxCode$ = taxCode.value;
 if (taxCode$ != null) {
   if (taxCode$.runes.length > 5000) { errors.add('taxCode: length must be <= 5000'); }
 }
 return errors; } 
-TaxProductResourceTaxSettingsDefaults copyWith({Provider? provider, TaxProductResourceTaxSettingsDefaultsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return TaxProductResourceTaxSettingsDefaults(
+TaxProductResourceTaxSettingsDefaults copyWith({Provider? provider, Omittable<TaxProductResourceTaxSettingsDefaultsTaxBehavior?>? taxBehavior, Omittable<String?>? taxCode, }) { return TaxProductResourceTaxSettingsDefaults(
   provider: provider ?? this.provider,
-  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
-  taxCode: taxCode != null ? taxCode() : this.taxCode,
+  taxBehavior: taxBehavior ?? this.taxBehavior,
+  taxCode: taxCode ?? this.taxCode,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxSettingsDefaults &&

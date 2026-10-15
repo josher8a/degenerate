@@ -14,6 +14,27 @@ Important user-facing changes only. For full details see commit log.
 - **Unusable `pattern` constraints are dropped with a warning instead of emitted**: a spec whose `pattern` is not a valid bare ECMA-262 expression previously flowed straight into `validate()`. The case seen in the wild is a JavaScript regex *literal* — `pattern: '/^image_\d{1,3}$/i'` — which Dart's `RegExp` compiles and which then matches nothing, because the leading `/` consumes a character after which `^` can never hold. The generated `validate()` therefore rejected **every** value for that field. Such patterns are now dropped (the field keeps its other constraints) and the reason reported as a CLI warning, per the rule that non-conforming specs still generate code. Detection is deliberately narrow — a pattern that fails to compile, or an anchor provably unreachable behind a fixed run of literal characters — so patterns involving groups, alternation or quantifiers around the anchor are left alone rather than guessed at. Affects `oag-fake-petstore`'s `FormatTest.patternWithDigitsAndDelimiter`.
 
 - **String `minLength`/`maxLength` are counted in characters, not UTF-16 code units**: JSON Schema (RFC 8259) defines a string's length as its number of characters, while Dart's `String.length` counts UTF-16 code units. Every astral character — emoji, musical symbols, CJK extensions — was therefore counted twice, so `maxLength: 1` rejected a single emoji and `minLength: 3` accepted a two-character string. Emitted checks now use `runes.length`. The `isEmpty`/`isNotEmpty` forms used for `minLength: 1` and `maxLength: 0` are unchanged, since emptiness is the same under either measure. This changes generated output for every length-constrained string field.
+**Omittable fields: generated models now distinguish "omitted" from "set to null" (JSON Merge Patch support).**
+
+### Breaking changes
+
+- **Optional nullable fields are now `Omittable<T?>`** (#21): an optional field whose spec type is nullable (`nullable: true` / `type: [T, 'null']`) has three legal wire states — absent, explicit null, value — which a plain `T?` cannot express. Those fields now generate as `Omittable<T?>` (new in `degenerate_runtime`), defaulting to `Omittable.absent()`:
+  - Construct with `Omittable(value)`; clear with `Omittable(null)`; omit by leaving the parameter out.
+  - Read with `field.value` / `field.isPresent`; `fromJson`/`toJson` round-trip all three states exactly.
+  - `copyWith` takes the `Omittable` directly for these fields instead of a thunk.
+  - Migration: `model.field` → `model.field.value`, `copyWith(field: () => v)` → `copyWith(field: Omittable(v))`. Or pass `--omittable=off` to restore the previous plain-`T?` output (Dart `null` serializes as omitted).
+  - `--omittable=all` additionally wraps optional *non-nullable* fields, for servers that accept null-clears the spec doesn't declare.
+  - Generated code now requires the matching `degenerate_runtime` version (which adds `Omittable`).
+  - Known limitation: fields declared directly on sealed discriminated-union variants and `anyOf` classes keep the previous `T?` omit-null behavior; nested regular models inside them get omittable fields as usual.
+
+### Bug fixes
+
+- **Object query and path parameters unwrap omittable fields**: serializers send scalar values and omit absent or null fields across query styles and path explode modes.
+- **Nullable binary fields serialize as base64**: optional, required nullable, and collection element byte values encode correctly, including explicit nulls.
+- **Schemas named `Omittable` avoid runtime name collisions**: generated model names receive a suffix, with references updated consistently.
+- **Required nullable fields always serialize their key** (#21): a field that is both `required` and nullable (`nullable: true` / `type: [T, 'null']`) dropped its key from `toJson()` when the value was null. A required field must always be present on the wire, so it now serializes as an explicit `"field": null`.
+- **`canParse` accepts explicit null for required nullable fields**: a payload like `{"mode": null}` failed `canParse` even when the spec declares `mode` required and nullable; the generated type check now tolerates null for nullable types.
+- **Binary fields compare by content**: `Uint8List` (`format: binary`/`byte`) fields used identity `==`/`hashCode`, so byte-identical models compared unequal. They now use `listEquals`/`Object.hashAll` like list fields.
 
 ## 0.4.2
 

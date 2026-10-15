@@ -414,36 +414,36 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 /// query](#scheduled_queries)).
 /// 
 /// Related guide: [File upload guide](https://docs.stripe.com/file-upload)
-@immutable final class File {const File({required this.created, required this.id, required this.object, required this.purpose, required this.size, this.expiresAt, this.filename, this.links, this.title, this.type, this.url, });
+@immutable final class File {const File({required this.created, required this.id, required this.object, required this.purpose, required this.size, this.expiresAt = const Omittable.absent(), this.filename = const Omittable.absent(), this.links = const Omittable.absent(), this.title = const Omittable.absent(), this.type = const Omittable.absent(), this.url = const Omittable.absent(), });
 
 factory File.fromJson(Map<String, dynamic> json) { return File(
   created: (json['created'] as num).toInt(),
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  filename: json['filename'] as String?,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
+  filename: json.containsKey('filename') ? Omittable(json['filename'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
-  links: json['links'] != null ? Links.fromJson(json['links'] as Map<String, dynamic>) : null,
+  links: json.containsKey('links') ? Omittable(json['links'] != null ? Links.fromJson(json['links'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: FileObject.fromJson(json['object'] as String),
   purpose: FilePurpose.fromJson(json['purpose'] as String),
   size: (json['size'] as num).toInt(),
-  title: json['title'] as String?,
-  type: json['type'] as String?,
-  url: json['url'] as String?,
+  title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
+  url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
 ); }
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
 
 /// The file expires and isn't available at this time in epoch seconds.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// The suitable name for saving the file to a filesystem.
-final String? filename;
+final Omittable<String?> filename;
 
 /// Unique identifier for the object.
 final String id;
 
 /// A list of [file links](https://api.stripe.com#file_links) that point at this file.
-final Links? links;
+final Omittable<Links?> links;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final FileObject object;
@@ -455,26 +455,26 @@ final FilePurpose purpose;
 final int size;
 
 /// A suitable title for the document.
-final String? title;
+final Omittable<String?> title;
 
 /// The returned file type (for example, `csv`, `pdf`, `jpg`, or `png`).
-final String? type;
+final Omittable<String?> type;
 
 /// Use your live secret API key to download the file from this URL.
-final String? url;
+final Omittable<String?> url;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
-  'expires_at': ?expiresAt,
-  'filename': ?filename,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
+  if (filename.isPresent) 'filename': filename.value,
   'id': id,
-  if (links != null) 'links': links?.toJson(),
+  if (links.isPresent) 'links': links.value?.toJson(),
   'object': object.toJson(),
   'purpose': purpose.toJson(),
   'size': size,
-  'title': ?title,
-  'type': ?type,
-  'url': ?url,
+  if (title.isPresent) 'title': title.value,
+  if (type.isPresent) 'type': type.value,
+  if (url.isPresent) 'url': url.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -483,36 +483,36 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('size') && json['size'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final filename$ = filename;
+final filename$ = filename.value;
 if (filename$ != null) {
   if (filename$.runes.length > 5000) { errors.add('filename: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final title$ = title;
+final title$ = title.value;
 if (title$ != null) {
   if (title$.runes.length > 5000) { errors.add('title: length must be <= 5000'); }
 }
-final type$ = type;
+final type$ = type.value;
 if (type$ != null) {
   if (type$.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
 }
-final url$ = url;
+final url$ = url.value;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
-File copyWith({int? created, int? Function()? expiresAt, String? Function()? filename, String? id, Links? Function()? links, FileObject? object, FilePurpose? purpose, int? size, String? Function()? title, String? Function()? type, String? Function()? url, }) { return File(
+File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? filename, String? id, Omittable<Links?>? links, FileObject? object, FilePurpose? purpose, int? size, Omittable<String?>? title, Omittable<String?>? type, Omittable<String?>? url, }) { return File(
   created: created ?? this.created,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-  filename: filename != null ? filename() : this.filename,
+  expiresAt: expiresAt ?? this.expiresAt,
+  filename: filename ?? this.filename,
   id: id ?? this.id,
-  links: links != null ? links() : this.links,
+  links: links ?? this.links,
   object: object ?? this.object,
   purpose: purpose ?? this.purpose,
   size: size ?? this.size,
-  title: title != null ? title() : this.title,
-  type: type != null ? type() : this.type,
-  url: url != null ? url() : this.url,
+  title: title ?? this.title,
+  type: type ?? this.type,
+  url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is File &&

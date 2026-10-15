@@ -937,7 +937,7 @@ final request = ApiRequest(
       ApiMultipartField.text('decimal', decimal$.toString()),
     if (body.decimalStr case final decimalStr$?)
       ApiMultipartField.text('decimalStr', decimalStr$),
-    if (body.decimalNullableOpt case final decimalNullableOpt$?)
+    if (body.decimalNullableOpt.value case final decimalNullableOpt$?)
       ApiMultipartField.text('decimalNullableOpt', decimalNullableOpt$.toString()),
     if (body.int64Str case final int64Str$?)
       ApiMultipartField.text('int64Str', int64Str$),
@@ -1155,9 +1155,9 @@ final request = ApiRequest(
   path: '/anything/requestBodies/post/multipart/nullableArrayWithEncoding',
   headers: headers,
   body: body == null ? null : [
-    if (body.files case final files$?)
+    if (body.files.value case final files$?)
       ApiMultipartField.text('files', files$.toString()),
-    if (body.tags case final tags$?)
+    if (body.tags.value case final tags$?)
       ApiMultipartField.text('tags', tags$.toString()),
     if (body.model case final model$?)
       ApiMultipartField.text('Model', model$.toString()),
@@ -1237,7 +1237,7 @@ final request = ApiRequest(
       'decimal=${Uri.encodeQueryComponent(decimal$.toString())}',
     if (body.decimalStr case final decimalStr$?)
       'decimalStr=${Uri.encodeQueryComponent(decimalStr$)}',
-    if (body.decimalNullableOpt case final decimalNullableOpt$?)
+    if (body.decimalNullableOpt.value case final decimalNullableOpt$?)
       'decimalNullableOpt=${Uri.encodeQueryComponent(decimalNullableOpt$.toString())}',
     if (body.int64Str case final int64Str$?)
       'int64Str=${Uri.encodeQueryComponent(int64Str$)}',

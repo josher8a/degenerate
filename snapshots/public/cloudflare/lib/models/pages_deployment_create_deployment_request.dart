@@ -146,16 +146,16 @@ final String? pagesBuildOutputDir;
 final String? wranglerConfigHash;
 
 Map<String, dynamic> toJson() { return {
-  if (headers != null) '_headers': base64Encode(headers!),
-  if (redirects != null) '_redirects': base64Encode(redirects!),
-  if (routesJson != null) '_routes.json': base64Encode(routesJson!),
-  if (workerBundle != null) '_worker.bundle': base64Encode(workerBundle!),
-  if (workerJs != null) '_worker.js': base64Encode(workerJs!),
+  if (headers != null) '_headers': switch (headers) { final bytes? => base64Encode(bytes), _ => null },
+  if (redirects != null) '_redirects': switch (redirects) { final bytes? => base64Encode(bytes), _ => null },
+  if (routesJson != null) '_routes.json': switch (routesJson) { final bytes? => base64Encode(bytes), _ => null },
+  if (workerBundle != null) '_worker.bundle': switch (workerBundle) { final bytes? => base64Encode(bytes), _ => null },
+  if (workerJs != null) '_worker.js': switch (workerJs) { final bytes? => base64Encode(bytes), _ => null },
   'branch': ?branch,
   if (commitDirty != null) 'commit_dirty': commitDirty?.toJson(),
   'commit_hash': ?commitHash,
   'commit_message': ?commitMessage,
-  if (functionsFilepathRoutingConfigJson != null) 'functions-filepath-routing-config.json': base64Encode(functionsFilepathRoutingConfigJson!),
+  if (functionsFilepathRoutingConfigJson != null) 'functions-filepath-routing-config.json': switch (functionsFilepathRoutingConfigJson) { final bytes? => base64Encode(bytes), _ => null },
   'manifest': ?manifest,
   'pages_build_output_dir': ?pagesBuildOutputDir,
   'wrangler_config_hash': ?wranglerConfigHash,
@@ -178,21 +178,21 @@ PagesDeploymentCreateDeploymentRequest copyWith({Uint8List? Function()? headers,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentCreateDeploymentRequest &&
-          headers == other.headers &&
-          redirects == other.redirects &&
-          routesJson == other.routesJson &&
-          workerBundle == other.workerBundle &&
-          workerJs == other.workerJs &&
+          listEquals(headers, other.headers) &&
+          listEquals(redirects, other.redirects) &&
+          listEquals(routesJson, other.routesJson) &&
+          listEquals(workerBundle, other.workerBundle) &&
+          listEquals(workerJs, other.workerJs) &&
           branch == other.branch &&
           commitDirty == other.commitDirty &&
           commitHash == other.commitHash &&
           commitMessage == other.commitMessage &&
-          functionsFilepathRoutingConfigJson == other.functionsFilepathRoutingConfigJson &&
+          listEquals(functionsFilepathRoutingConfigJson, other.functionsFilepathRoutingConfigJson) &&
           manifest == other.manifest &&
           pagesBuildOutputDir == other.pagesBuildOutputDir &&
           wranglerConfigHash == other.wranglerConfigHash;
 
-@override int get hashCode => Object.hash(headers, redirects, routesJson, workerBundle, workerJs, branch, commitDirty, commitHash, commitMessage, functionsFilepathRoutingConfigJson, manifest, pagesBuildOutputDir, wranglerConfigHash);
+@override int get hashCode => Object.hash(Object.hashAll(headers ?? const []), Object.hashAll(redirects ?? const []), Object.hashAll(routesJson ?? const []), Object.hashAll(workerBundle ?? const []), Object.hashAll(workerJs ?? const []), branch, commitDirty, commitHash, commitMessage, Object.hashAll(functionsFilepathRoutingConfigJson ?? const []), manifest, pagesBuildOutputDir, wranglerConfigHash);
 
 @override String toString() => 'PagesDeploymentCreateDeploymentRequest(\n  headers: $headers,\n  redirects: $redirects,\n  routesJson: $routesJson,\n  workerBundle: $workerBundle,\n  workerJs: $workerJs,\n  branch: $branch,\n  commitDirty: $commitDirty,\n  commitHash: $commitHash,\n  commitMessage: $commitMessage,\n  functionsFilepathRoutingConfigJson: $functionsFilepathRoutingConfigJson,\n  manifest: $manifest,\n  pagesBuildOutputDir: $pagesBuildOutputDir,\n  wranglerConfigHash: $wranglerConfigHash,\n)';
 

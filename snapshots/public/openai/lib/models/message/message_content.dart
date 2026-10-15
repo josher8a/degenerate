@@ -188,13 +188,13 @@ factory MessageContent.reasoningText({required String text}) { return MessageCon
 factory MessageContent.refusal({required String refusal}) { return MessageContentRefusal(RefusalContent(refusal: refusal)); }
 
 /// Build the `input_image` variant.
-factory MessageContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return MessageContentInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory MessageContent.inputImage({required ImageDetail detail, Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), }) { return MessageContentInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `computer_screenshot` variant.
 factory MessageContent.computerScreenshot({required String? imageUrl, required String? fileId, required ImageDetail detail, }) { return MessageContentComputerScreenshot(ComputerScreenshotContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory MessageContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return MessageContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory MessageContent.inputFile({Omittable<String?> fileId = const Omittable.absent(), String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return MessageContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 MessageContentType get type;
@@ -353,7 +353,7 @@ final InputImageContent inputImageContent;
 
 @override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type.toJson()};
 
-MessageContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return MessageContentInputImage(inputImageContent.copyWith(
+MessageContentInputImage copyWith({Omittable<String?>? imageUrl, Omittable<String?>? fileId, ImageDetail? detail, }) { return MessageContentInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
   fileId: fileId,
   detail: detail,
@@ -399,7 +399,7 @@ final InputFileContent inputFileContent;
 
 @override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type.toJson()};
 
-MessageContentInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return MessageContentInputFile(inputFileContent.copyWith(
+MessageContentInputFile copyWith({Omittable<String?>? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return MessageContentInputFile(inputFileContent.copyWith(
   fileId: fileId,
   filename: filename,
   fileData: fileData,

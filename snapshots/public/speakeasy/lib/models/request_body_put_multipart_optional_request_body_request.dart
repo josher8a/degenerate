@@ -14,7 +14,7 @@ final Uint8List? sampleFile;
 
 Map<String, dynamic> toJson() { return {
   'sampleField': ?sampleField,
-  if (sampleFile != null) 'sampleFile': base64Encode(sampleFile!),
+  if (sampleFile != null) 'sampleFile': switch (sampleFile) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sampleField', 'sampleFile'}.contains(key)); } 
 RequestBodyPutMultipartOptionalRequestBodyRequest copyWith({String? Function()? sampleField, Uint8List? Function()? sampleFile, }) { return RequestBodyPutMultipartOptionalRequestBodyRequest(
@@ -24,9 +24,9 @@ RequestBodyPutMultipartOptionalRequestBodyRequest copyWith({String? Function()? 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyPutMultipartOptionalRequestBodyRequest &&
           sampleField == other.sampleField &&
-          sampleFile == other.sampleFile;
+          listEquals(sampleFile, other.sampleFile);
 
-@override int get hashCode => Object.hash(sampleField, sampleFile);
+@override int get hashCode => Object.hash(sampleField, Object.hashAll(sampleFile ?? const []));
 
 @override String toString() => 'RequestBodyPutMultipartOptionalRequestBodyRequest(sampleField: $sampleField, sampleFile: $sampleFile)';
 

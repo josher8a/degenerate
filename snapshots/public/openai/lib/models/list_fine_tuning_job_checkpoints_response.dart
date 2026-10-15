@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListFineTuningJobCheckpointsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId = const Omittable.absent(), this.lastId = const Omittable.absent(), });
 
 factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningJobCheckpointsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningJobCheckpoint.fromJson(e as Map<String, dynamic>)).toList(),
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),
-  firstId: json['first_id'] as String?,
-  lastId: json['last_id'] as String?,
+  firstId: json.containsKey('first_id') ? Omittable(json['first_id'] as String?) : const Omittable.absent(),
+  lastId: json.containsKey('last_id') ? Omittable(json['last_id'] as String?) : const Omittable.absent(),
   hasMore: json['has_more'] as bool,
 ); }
 
@@ -15,27 +15,27 @@ final List<FineTuningJobCheckpoint> data;
 
 final ContainerFileListResourceObject object;
 
-final String? firstId;
+final Omittable<String?> firstId;
 
-final String? lastId;
+final Omittable<String?> lastId;
 
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {
   'data': data.map((e) => e.toJson()).toList(),
   'object': object.toJson(),
-  'first_id': ?firstId,
-  'last_id': ?lastId,
+  if (firstId.isPresent) 'first_id': firstId.value,
+  if (lastId.isPresent) 'last_id': lastId.value,
   'has_more': hasMore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('object') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ContainerFileListResourceObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningJobCheckpointsResponse(
+ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ContainerFileListResourceObject? object, Omittable<String?>? firstId, Omittable<String?>? lastId, bool? hasMore, }) { return ListFineTuningJobCheckpointsResponse(
   data: data ?? this.data,
   object: object ?? this.object,
-  firstId: firstId != null ? firstId() : this.firstId,
-  lastId: lastId != null ? lastId() : this.lastId,
+  firstId: firstId ?? this.firstId,
+  lastId: lastId ?? this.lastId,
   hasMore: hasMore ?? this.hasMore,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

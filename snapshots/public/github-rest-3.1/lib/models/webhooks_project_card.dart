@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksProjectCard
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';@immutable final class WebhooksProjectCard {const WebhooksProjectCard({required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, this.contentUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';@immutable final class WebhooksProjectCard {const WebhooksProjectCard({required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.afterId = const Omittable.absent(), this.contentUrl, });
 
 factory WebhooksProjectCard.fromJson(Map<String, dynamic> json) { return WebhooksProjectCard(
-  afterId: json['after_id'] != null ? (json['after_id'] as num).toInt() : null,
+  afterId: json.containsKey('after_id') ? Omittable(json['after_id'] != null ? (json['after_id'] as num).toInt() : null) : const Omittable.absent(),
   archived: json['archived'] as bool,
   columnId: (json['column_id'] as num).toInt(),
   columnUrl: Uri.parse(json['column_url'] as String),
@@ -19,7 +19,7 @@ factory WebhooksProjectCard.fromJson(Map<String, dynamic> json) { return Webhook
   url: Uri.parse(json['url'] as String),
 ); }
 
-final int? afterId;
+final Omittable<int?> afterId;
 
 /// Whether or not the card is archived
 final bool archived;
@@ -48,7 +48,7 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'after_id': ?afterId,
+  if (afterId.isPresent) 'after_id': afterId.value,
   'archived': archived,
   'column_id': columnId,
   'column_url': columnUrl.toString(),
@@ -69,12 +69,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('creator') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('note') && json['note'] is String &&
+      json.containsKey('note') && (json['note'] == null || json['note'] is String) &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksProjectCard copyWith({int? Function()? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri? Function()? contentUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectCard(
-  afterId: afterId != null ? afterId() : this.afterId,
+WebhooksProjectCard copyWith({Omittable<int?>? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri? Function()? contentUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectCard(
+  afterId: afterId ?? this.afterId,
   archived: archived ?? this.archived,
   columnId: columnId ?? this.columnId,
   columnUrl: columnUrl ?? this.columnUrl,

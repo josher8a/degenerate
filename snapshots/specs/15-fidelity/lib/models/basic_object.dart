@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BasicObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BasicObject {const BasicObject({required this.reqNonNull, required this.reqNullable, this.optNonNull, this.optNullable, this.reqWithDefault = 'hello', this.optWithDefault = 42, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BasicObject {const BasicObject({required this.reqNonNull, required this.reqNullable, this.optNonNull, this.optNullable = const Omittable.absent(), this.reqWithDefault = 'hello', this.optWithDefault = 42, });
 
 factory BasicObject.fromJson(Map<String, dynamic> json) { return BasicObject(
   reqNonNull: json['reqNonNull'] as String,
   reqNullable: json['reqNullable'] as String?,
   optNonNull: json['optNonNull'] as String?,
-  optNullable: json['optNullable'] as String?,
+  optNullable: json.containsKey('optNullable') ? Omittable(json['optNullable'] as String?) : const Omittable.absent(),
   reqWithDefault: json['reqWithDefault'] as String,
   optWithDefault: json.containsKey('optWithDefault') ? (json['optWithDefault'] as num).toInt() : 42,
 ); }
@@ -22,7 +22,7 @@ final String? reqNullable;
 final String? optNonNull;
 
 /// Optional and nullable.
-final String? optNullable;
+final Omittable<String?> optNullable;
 
 /// Required with a default value.
 final String reqWithDefault;
@@ -34,18 +34,18 @@ Map<String, dynamic> toJson() { return {
   'reqNonNull': reqNonNull,
   'reqNullable': reqNullable,
   'optNonNull': ?optNonNull,
-  'optNullable': ?optNullable,
+  if (optNullable.isPresent) 'optNullable': optNullable.value,
   'reqWithDefault': reqWithDefault,
   'optWithDefault': optWithDefault,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('reqNonNull') && json['reqNonNull'] is String &&
-      json.containsKey('reqNullable') && json['reqNullable'] is String &&
+      json.containsKey('reqNullable') && (json['reqNullable'] == null || json['reqNullable'] is String) &&
       json.containsKey('reqWithDefault') && json['reqWithDefault'] is String; } 
-BasicObject copyWith({String? reqNonNull, String? Function()? reqNullable, String? Function()? optNonNull, String? Function()? optNullable, String? reqWithDefault, int Function()? optWithDefault, }) { return BasicObject(
+BasicObject copyWith({String? reqNonNull, String? Function()? reqNullable, String? Function()? optNonNull, Omittable<String?>? optNullable, String? reqWithDefault, int Function()? optWithDefault, }) { return BasicObject(
   reqNonNull: reqNonNull ?? this.reqNonNull,
   reqNullable: reqNullable != null ? reqNullable() : this.reqNullable,
   optNonNull: optNonNull != null ? optNonNull() : this.optNonNull,
-  optNullable: optNullable != null ? optNullable() : this.optNullable,
+  optNullable: optNullable ?? this.optNullable,
   reqWithDefault: reqWithDefault ?? this.reqWithDefault,
   optWithDefault: optWithDefault != null ? optWithDefault() : this.optWithDefault,
 ); } 

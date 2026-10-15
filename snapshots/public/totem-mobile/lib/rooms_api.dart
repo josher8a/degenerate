@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
+
 export 'apis/rooms_api.dart';
 export 'models/accept_stick_event.dart';
 export 'models/active_detail.dart';

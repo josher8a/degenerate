@@ -69,33 +69,33 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
  }
 /// 
-@immutable final class UsBankAccountNetworks {const UsBankAccountNetworks({required this.supported, this.preferred, });
+@immutable final class UsBankAccountNetworks {const UsBankAccountNetworks({required this.supported, this.preferred = const Omittable.absent(), });
 
 factory UsBankAccountNetworks.fromJson(Map<String, dynamic> json) { return UsBankAccountNetworks(
-  preferred: json['preferred'] as String?,
+  preferred: json.containsKey('preferred') ? Omittable(json['preferred'] as String?) : const Omittable.absent(),
   supported: (json['supported'] as List<dynamic>).map((e) => Supported.fromJson(e as String)).toList(),
 ); }
 
 /// The preferred network.
-final String? preferred;
+final Omittable<String?> preferred;
 
 /// All supported networks.
 final List<Supported> supported;
 
 Map<String, dynamic> toJson() { return {
-  'preferred': ?preferred,
+  if (preferred.isPresent) 'preferred': preferred.value,
   'supported': supported.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final preferred$ = preferred;
+final preferred$ = preferred.value;
 if (preferred$ != null) {
   if (preferred$.runes.length > 5000) { errors.add('preferred: length must be <= 5000'); }
 }
 return errors; } 
-UsBankAccountNetworks copyWith({String? Function()? preferred, List<Supported>? supported, }) { return UsBankAccountNetworks(
-  preferred: preferred != null ? preferred() : this.preferred,
+UsBankAccountNetworks copyWith({Omittable<String?>? preferred, List<Supported>? supported, }) { return UsBankAccountNetworks(
+  preferred: preferred ?? this.preferred,
   supported: supported ?? this.supported,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

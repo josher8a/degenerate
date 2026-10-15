@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChatCompletionMessageList (inline: Data)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_list/content_parts.dart';import 'package:pub_openai/models/chat_completion_message_tool_calls2.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_annotations.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_audio.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_function_call.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';@immutable final class ChatCompletionMessageListData {const ChatCompletionMessageListData({required this.content, required this.refusal, required this.role, required this.id, this.toolCalls, this.annotations, this.functionCall, this.audio, this.contentParts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_list/content_parts.dart';import 'package:pub_openai/models/chat_completion_message_tool_calls2.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_annotations.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_audio.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_function_call.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';@immutable final class ChatCompletionMessageListData {const ChatCompletionMessageListData({required this.content, required this.refusal, required this.role, required this.id, this.toolCalls, this.annotations, this.functionCall, this.audio = const Omittable.absent(), this.contentParts = const Omittable.absent(), });
 
 factory ChatCompletionMessageListData.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageListData(
   content: json['content'] as String?,
@@ -10,9 +10,9 @@ factory ChatCompletionMessageListData.fromJson(Map<String, dynamic> json) { retu
   annotations: (json['annotations'] as List<dynamic>?)?.map((e) => ChatCompletionResponseMessageAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
   role: ChatCompletionResponseMessageRole.fromJson(json['role'] as String),
   functionCall: json['function_call'] != null ? ChatCompletionResponseMessageFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>) : null,
-  audio: json['audio'] != null ? ChatCompletionResponseMessageAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  audio: json.containsKey('audio') ? Omittable(json['audio'] != null ? ChatCompletionResponseMessageAudio.fromJson(json['audio'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
-  contentParts: (json['content_parts'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ChatCompletionRequestMessageContentPartText.fromJson(v as Map<String, dynamic>), fromB: (v) => ChatCompletionRequestMessageContentPartImage.fromJson(v as Map<String, dynamic>),)).toList(),
+  contentParts: json.containsKey('content_parts') ? Omittable((json['content_parts'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ChatCompletionRequestMessageContentPartText.fromJson(v as Map<String, dynamic>), fromB: (v) => ChatCompletionRequestMessageContentPartImage.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
 ); }
 
 /// The contents of the message.
@@ -37,7 +37,7 @@ final ChatCompletionResponseMessageFunctionCall? functionCall;
 /// If the audio output modality is requested, this object contains data
 /// about the audio response from the model. [Learn more](/docs/guides/audio).
 /// 
-final ChatCompletionResponseMessageAudio? audio;
+final Omittable<ChatCompletionResponseMessageAudio?> audio;
 
 /// The identifier of the chat message.
 final String id;
@@ -45,7 +45,7 @@ final String id;
 /// If a content parts array was provided, this is an array of `text` and `image_url` parts.
 /// Otherwise, null.
 /// 
-final List<ContentParts>? contentParts;
+final Omittable<List<ContentParts>?> contentParts;
 
 Map<String, dynamic> toJson() { return {
   'content': content,
@@ -54,24 +54,24 @@ Map<String, dynamic> toJson() { return {
   if (annotations != null) 'annotations': annotations?.map((e) => e.toJson()).toList(),
   'role': role.toJson(),
   if (functionCall != null) 'function_call': functionCall?.toJson(),
-  if (audio != null) 'audio': audio?.toJson(),
+  if (audio.isPresent) 'audio': audio.value?.toJson(),
   'id': id,
-  if (contentParts != null) 'content_parts': contentParts?.map((e) => e.toJson()).toList(),
+  if (contentParts.isPresent) 'content_parts': contentParts.value?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
-      json.containsKey('refusal') && json['refusal'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
+      json.containsKey('refusal') && (json['refusal'] == null || json['refusal'] is String) &&
       json.containsKey('role') &&
       json.containsKey('id') && json['id'] is String; } 
-ChatCompletionMessageListData copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionResponseMessageAnnotations>? Function()? annotations, ChatCompletionResponseMessageRole? role, ChatCompletionResponseMessageFunctionCall? Function()? functionCall, ChatCompletionResponseMessageAudio? Function()? audio, String? id, List<ContentParts>? Function()? contentParts, }) { return ChatCompletionMessageListData(
+ChatCompletionMessageListData copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionResponseMessageAnnotations>? Function()? annotations, ChatCompletionResponseMessageRole? role, ChatCompletionResponseMessageFunctionCall? Function()? functionCall, Omittable<ChatCompletionResponseMessageAudio?>? audio, String? id, Omittable<List<ContentParts>?>? contentParts, }) { return ChatCompletionMessageListData(
   content: content != null ? content() : this.content,
   refusal: refusal != null ? refusal() : this.refusal,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
   annotations: annotations != null ? annotations() : this.annotations,
   role: role ?? this.role,
   functionCall: functionCall != null ? functionCall() : this.functionCall,
-  audio: audio != null ? audio() : this.audio,
+  audio: audio ?? this.audio,
   id: id ?? this.id,
-  contentParts: contentParts != null ? contentParts() : this.contentParts,
+  contentParts: contentParts ?? this.contentParts,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionMessageListData &&
@@ -83,9 +83,10 @@ ChatCompletionMessageListData copyWith({String? Function()? content, String? Fun
           functionCall == other.functionCall &&
           audio == other.audio &&
           id == other.id &&
-          listEquals(contentParts, other.contentParts);
+          contentParts.isPresent == other.contentParts.isPresent &&
+          listEquals(contentParts.value, other.contentParts.value);
 
-@override int get hashCode => Object.hash(content, refusal, Object.hashAll(toolCalls ?? const []), Object.hashAll(annotations ?? const []), role, functionCall, audio, id, Object.hashAll(contentParts ?? const []));
+@override int get hashCode => Object.hash(content, refusal, Object.hashAll(toolCalls ?? const []), Object.hashAll(annotations ?? const []), role, functionCall, audio, id, Object.hashAll(contentParts.value ?? const []));
 
 @override String toString() => 'ChatCompletionMessageListData(\n  content: $content,\n  refusal: $refusal,\n  toolCalls: $toolCalls,\n  annotations: $annotations,\n  role: $role,\n  functionCall: $functionCall,\n  audio: $audio,\n  id: $id,\n  contentParts: $contentParts,\n)';
 

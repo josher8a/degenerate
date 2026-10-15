@@ -140,29 +140,29 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
  }
 /// Realtime session object for the beta interface.
-@immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities, this.model, this.instructions, this.voice, this.inputAudioFormat = InputAudioFormat.pcm16, this.outputAudioFormat = RealtimeSessionOutputAudioFormat.pcm16, this.inputAudioTranscription, this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing, this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt, this.include, });
+@immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities = const Omittable.absent(), this.model, this.instructions, this.voice, this.inputAudioFormat = InputAudioFormat.pcm16, this.outputAudioFormat = RealtimeSessionOutputAudioFormat.pcm16, this.inputAudioTranscription = const Omittable.absent(), this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing = const Omittable.absent(), this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt = const Omittable.absent(), this.include = const Omittable.absent(), });
 
 factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSession(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeSessionObject.fromJson(json['object'] as String) : null,
-  modalities: json['modalities'],
+  modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => RealtimeSessionCreateRequestGaModelVariant2.fromJson(v as String),) : null,
   instructions: json['instructions'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
   inputAudioFormat: json.containsKey('input_audio_format') ? InputAudioFormat.fromJson(json['input_audio_format'] as String) : InputAudioFormat.pcm16,
   outputAudioFormat: json.containsKey('output_audio_format') ? RealtimeSessionOutputAudioFormat.fromJson(json['output_audio_format'] as String) : RealtimeSessionOutputAudioFormat.pcm16,
-  inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
+  inputAudioTranscription: json.containsKey('input_audio_transcription') ? Omittable(json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   turnDetection: json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? InputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
   speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
-  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null,
+  tracing: json.containsKey('tracing') ? Omittable(json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json.containsKey('tool_choice') ? json['tool_choice'] as String : 'auto',
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.8,
   maxResponseOutputTokens: json['max_response_output_tokens'] != null ? OneOf2.parse(json['max_response_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
-  include: (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList(),
+  prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  include: json.containsKey('include') ? Omittable((json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList()) : const Omittable.absent(),
 ); }
 
 /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
@@ -175,7 +175,7 @@ final RealtimeSessionObject? object;
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to `["text"]`.
 /// 
-final dynamic modalities;
+final Omittable<dynamic> modalities;
 
 /// The Realtime model used for this session.
 /// 
@@ -217,7 +217,7 @@ final RealtimeSessionOutputAudioFormat outputAudioFormat;
 
 /// Configuration for input audio transcription, defaults to off and can be set to `null` to turn off once on. Input audio transcription is not native to the model, since the model consumes audio directly. Transcription runs asynchronously through [the /audio/transcriptions endpoint](https://platform.openai.com/docs/api-reference/audio/createTranscription) and should be treated as guidance of input audio content rather than precisely what the model heard. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
 /// 
-final AudioTranscription? inputAudioTranscription;
+final Omittable<AudioTranscription?> inputAudioTranscription;
 
 final RealtimeTurnDetection? turnDetection;
 
@@ -239,7 +239,7 @@ final double speed;
 /// `auto` will create a trace for the session with default values for the
 /// workflow name, group id, and metadata.
 /// 
-final RealtimeSessionCreateRequestTracing? tracing;
+final Omittable<RealtimeSessionCreateRequestTracing?> tracing;
 
 /// Tools (functions) available to the model.
 final List<RealtimeFunctionTool>? tools;
@@ -263,34 +263,34 @@ final MaxResponseOutputTokens? maxResponseOutputTokens;
 /// Expiration timestamp for the session, in seconds since epoch.
 final int? expiresAt;
 
-final Prompt? prompt;
+final Omittable<Prompt?> prompt;
 
 /// Additional fields to include in server outputs.
 /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
 /// 
-final List<Include>? include;
+final Omittable<List<Include>?> include;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
-  'modalities': ?modalities,
+  if (modalities.isPresent) 'modalities': modalities.value,
   if (model != null) 'model': model?.toJson(),
   'instructions': ?instructions,
   if (voice != null) 'voice': voice?.toJson(),
   'input_audio_format': inputAudioFormat.toJson(),
   'output_audio_format': outputAudioFormat.toJson(),
-  if (inputAudioTranscription != null) 'input_audio_transcription': inputAudioTranscription?.toJson(),
+  if (inputAudioTranscription.isPresent) 'input_audio_transcription': inputAudioTranscription.value?.toJson(),
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
   if (inputAudioNoiseReduction != null) 'input_audio_noise_reduction': inputAudioNoiseReduction?.toJson(),
   'speed': speed,
-  if (tracing != null) 'tracing': tracing?.toJson(),
+  if (tracing.isPresent) 'tracing': tracing.value?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   'tool_choice': toolChoice,
   'temperature': temperature,
   if (maxResponseOutputTokens != null) 'max_response_output_tokens': maxResponseOutputTokens?.toJson(),
   'expires_at': ?expiresAt,
-  if (prompt != null) 'prompt': prompt?.toJson(),
-  if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
+  if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
+  if (include.isPresent) 'include': include.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'modalities', 'model', 'instructions', 'voice', 'input_audio_format', 'output_audio_format', 'input_audio_transcription', 'turn_detection', 'input_audio_noise_reduction', 'speed', 'tracing', 'tools', 'tool_choice', 'temperature', 'max_response_output_tokens', 'expires_at', 'prompt', 'include'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
@@ -298,27 +298,27 @@ List<String> validate() { final errors = <String>[];
 if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
 if (speed > 1.5) { errors.add('speed: must be <= 1.5'); }
 return errors; } 
-RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, dynamic Function()? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection? Function()? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, List<RealtimeFunctionTool>? Function()? tools, String Function()? toolChoice, double Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Prompt? Function()? prompt, List<Include>? Function()? include, }) { return RealtimeSession(
+RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, Omittable<dynamic>? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat Function()? outputAudioFormat, Omittable<AudioTranscription?>? inputAudioTranscription, RealtimeTurnDetection? Function()? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double Function()? speed, Omittable<RealtimeSessionCreateRequestTracing?>? tracing, List<RealtimeFunctionTool>? Function()? tools, String Function()? toolChoice, double Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Omittable<Prompt?>? prompt, Omittable<List<Include>?>? include, }) { return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
-  modalities: modalities != null ? modalities() : this.modalities,
+  modalities: modalities ?? this.modalities,
   model: model != null ? model() : this.model,
   instructions: instructions != null ? instructions() : this.instructions,
   voice: voice != null ? voice() : this.voice,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,
   outputAudioFormat: outputAudioFormat != null ? outputAudioFormat() : this.outputAudioFormat,
-  inputAudioTranscription: inputAudioTranscription != null ? inputAudioTranscription() : this.inputAudioTranscription,
+  inputAudioTranscription: inputAudioTranscription ?? this.inputAudioTranscription,
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
   inputAudioNoiseReduction: inputAudioNoiseReduction != null ? inputAudioNoiseReduction() : this.inputAudioNoiseReduction,
   speed: speed != null ? speed() : this.speed,
-  tracing: tracing != null ? tracing() : this.tracing,
+  tracing: tracing ?? this.tracing,
   tools: tools != null ? tools() : this.tools,
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   temperature: temperature != null ? temperature() : this.temperature,
   maxResponseOutputTokens: maxResponseOutputTokens != null ? maxResponseOutputTokens() : this.maxResponseOutputTokens,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-  prompt: prompt != null ? prompt() : this.prompt,
-  include: include != null ? include() : this.include,
+  prompt: prompt ?? this.prompt,
+  include: include ?? this.include,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSession &&
@@ -341,9 +341,10 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
           maxResponseOutputTokens == other.maxResponseOutputTokens &&
           expiresAt == other.expiresAt &&
           prompt == other.prompt &&
-          listEquals(include, other.include);
+          include.isPresent == other.include.isPresent &&
+          listEquals(include.value, other.include.value);
 
-@override int get hashCode => Object.hash(id, object, modalities, model, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, turnDetection, inputAudioNoiseReduction, speed, tracing, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, expiresAt, prompt, Object.hashAll(include ?? const []));
+@override int get hashCode => Object.hash(id, object, modalities, model, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, turnDetection, inputAudioNoiseReduction, speed, tracing, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, expiresAt, prompt, Object.hashAll(include.value ?? const []));
 
 @override String toString() => 'RealtimeSession(\n  id: $id,\n  object: $object,\n  modalities: $modalities,\n  model: $model,\n  instructions: $instructions,\n  voice: $voice,\n  inputAudioFormat: $inputAudioFormat,\n  outputAudioFormat: $outputAudioFormat,\n  inputAudioTranscription: $inputAudioTranscription,\n  turnDetection: $turnDetection,\n  inputAudioNoiseReduction: $inputAudioNoiseReduction,\n  speed: $speed,\n  tracing: $tracing,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  temperature: $temperature,\n  maxResponseOutputTokens: $maxResponseOutputTokens,\n  expiresAt: $expiresAt,\n  prompt: $prompt,\n  include: $include,\n)';
 

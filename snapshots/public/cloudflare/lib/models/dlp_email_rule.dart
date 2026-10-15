@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEmailRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action.dart';import 'package:pub_cloudflare/models/dlp_email_rule_condition.dart';@immutable final class DlpEmailRule {const DlpEmailRule({required this.action, required this.conditions, required this.createdAt, required this.enabled, required this.name, required this.priority, required this.ruleId, required this.updatedAt, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action.dart';import 'package:pub_cloudflare/models/dlp_email_rule_condition.dart';@immutable final class DlpEmailRule {const DlpEmailRule({required this.action, required this.conditions, required this.createdAt, required this.enabled, required this.name, required this.priority, required this.ruleId, required this.updatedAt, this.description = const Omittable.absent(), });
 
 factory DlpEmailRule.fromJson(Map<String, dynamic> json) { return DlpEmailRule(
   action: DlpEmailRuleAction.fromJson(json['action']),
   conditions: (json['conditions'] as List<dynamic>).map((e) => DlpEmailRuleCondition.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   priority: (json['priority'] as num).toInt(),
@@ -22,7 +22,7 @@ final List<DlpEmailRuleCondition> conditions;
 
 final DateTime createdAt;
 
-final String? description;
+final Omittable<String?> description;
 
 final bool enabled;
 
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'conditions': conditions.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'enabled': enabled,
   'name': name,
   'priority': priority,
@@ -57,11 +57,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 List<String> validate() { final errors = <String>[];
 if (priority < 0) { errors.add('priority: must be >= 0'); }
 return errors; } 
-DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? conditions, DateTime? createdAt, String? Function()? description, bool? enabled, String? name, int? priority, String? ruleId, DateTime? updatedAt, }) { return DlpEmailRule(
+DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? conditions, DateTime? createdAt, Omittable<String?>? description, bool? enabled, String? name, int? priority, String? ruleId, DateTime? updatedAt, }) { return DlpEmailRule(
   action: action ?? this.action,
   conditions: conditions ?? this.conditions,
   createdAt: createdAt ?? this.createdAt,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   priority: priority ?? this.priority,

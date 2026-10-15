@@ -1,30 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NullableOptionalFieldsPostResponse (inline: Json)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullableOptionalFieldsPostResponseJson {const NullableOptionalFieldsPostResponseJson({required this.nullableRequired, this.optional, this.nullableOptional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullableOptionalFieldsPostResponseJson {const NullableOptionalFieldsPostResponseJson({required this.nullableRequired, this.optional, this.nullableOptional = const Omittable.absent(), });
 
 factory NullableOptionalFieldsPostResponseJson.fromJson(Map<String, dynamic> json) { return NullableOptionalFieldsPostResponseJson(
   nullableRequired: json['nullableRequired'] as String?,
   optional: json['optional'] as String?,
-  nullableOptional: json['nullableOptional'] as String?,
+  nullableOptional: json.containsKey('nullableOptional') ? Omittable(json['nullableOptional'] as String?) : const Omittable.absent(),
 ); }
 
 final String? nullableRequired;
 
 final String? optional;
 
-final String? nullableOptional;
+final Omittable<String?> nullableOptional;
 
 Map<String, dynamic> toJson() { return {
   'nullableRequired': nullableRequired,
   'optional': ?optional,
-  'nullableOptional': ?nullableOptional,
+  if (nullableOptional.isPresent) 'nullableOptional': nullableOptional.value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('nullableRequired') && json['nullableRequired'] is String; } 
-NullableOptionalFieldsPostResponseJson copyWith({String? Function()? nullableRequired, String? Function()? optional, String? Function()? nullableOptional, }) { return NullableOptionalFieldsPostResponseJson(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('nullableRequired') && (json['nullableRequired'] == null || json['nullableRequired'] is String); } 
+NullableOptionalFieldsPostResponseJson copyWith({String? Function()? nullableRequired, String? Function()? optional, Omittable<String?>? nullableOptional, }) { return NullableOptionalFieldsPostResponseJson(
   nullableRequired: nullableRequired != null ? nullableRequired() : this.nullableRequired,
   optional: optional != null ? optional() : this.optional,
-  nullableOptional: nullableOptional != null ? nullableOptional() : this.nullableOptional,
+  nullableOptional: nullableOptional ?? this.nullableOptional,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NullableOptionalFieldsPostResponseJson &&

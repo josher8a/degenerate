@@ -16,7 +16,7 @@ final String? sourceId;
 final String? model;
 
 Map<String, dynamic> toJson() { return {
-  if (image != null) 'image': base64Encode(image!),
+  if (image != null) 'image': switch (image) { final bytes? => base64Encode(bytes), _ => null },
   'source_id': ?sourceId,
   'model': ?model,
 }; } 
@@ -28,11 +28,11 @@ RestoreGenRequestComposed copyWith({Uint8List? Function()? image, String? Functi
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RestoreGenRequestComposed &&
-          image == other.image &&
+          listEquals(image, other.image) &&
           sourceId == other.sourceId &&
           model == other.model;
 
-@override int get hashCode => Object.hash(image, sourceId, model);
+@override int get hashCode => Object.hash(Object.hashAll(image ?? const []), sourceId, model);
 
 @override String toString() => 'RestoreGenRequestComposed(image: $image, sourceId: $sourceId, model: $model)';
 

@@ -2,6 +2,7 @@
 // Source: tag "MeetingsApi" (10 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/errors/accept_totem_endpoint_error.dart';
 import 'package:pub_totem_mobile/models/errors/get_livekit_token_error.dart';

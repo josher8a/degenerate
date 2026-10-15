@@ -33,12 +33,12 @@ RequestBodyPutMultipartWithEncodingRequest copyWith({Uint8List? file, List<Uint8
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyPutMultipartWithEncodingRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           listEquals(attachments, other.attachments) &&
           metadata == other.metadata &&
           plainTextData == other.plainTextData;
 
-@override int get hashCode => Object.hash(file, Object.hashAll(attachments ?? const []), metadata, plainTextData);
+@override int get hashCode => Object.hash(Object.hashAll(file), Object.hashAll(attachments ?? const []), metadata, plainTextData);
 
 @override String toString() => 'RequestBodyPutMultipartWithEncodingRequest(file: $file, attachments: $attachments, metadata: $metadata, plainTextData: $plainTextData)';
 

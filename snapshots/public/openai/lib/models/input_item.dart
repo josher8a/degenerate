@@ -79,10 +79,10 @@ factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['typ
 }; }
 
 /// Build the `message` variant.
-factory InputItem.message({required EasyInputMessageRole role, required EasyInputMessageContent content, MessagePhase? phase, }) { return InputItemMessage(EasyInputMessage(type: 'message', role: role, content: content, phase: phase)); }
+factory InputItem.message({required EasyInputMessageRole role, required EasyInputMessageContent content, Omittable<MessagePhase?> phase = const Omittable.absent(), }) { return InputItemMessage(EasyInputMessage(type: 'message', role: role, content: content, phase: phase)); }
 
 /// Build the `ItemReferenceParam` variant.
-factory InputItem.itemReferenceParam({required String id}) { return InputItemItemReferenceParam(ItemReferenceParam(type: ItemReferenceParamType.fromJson('ItemReferenceParam'), id: id)); }
+factory InputItem.itemReferenceParam({required String id}) { return InputItemItemReferenceParam(ItemReferenceParam(type: Omittable(ItemReferenceParamType.fromJson('ItemReferenceParam')), id: id)); }
 
 /// The discriminator value identifying this variant.
 InputItemType get type;
@@ -107,7 +107,7 @@ final EasyInputMessage easyInputMessage;
 
 @override Map<String, dynamic> toJson() => {...easyInputMessage.toJson(), 'type': type.toJson()};
 
-InputItemMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, MessagePhase? Function()? phase, }) { return InputItemMessage(easyInputMessage.copyWith(
+InputItemMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, Omittable<MessagePhase?>? phase, }) { return InputItemMessage(easyInputMessage.copyWith(
   role: role,
   content: content,
   phase: phase,

@@ -83,10 +83,10 @@ factory OutputVariant2.fromJson(Map<String, dynamic> json) { return switch (json
 factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(text: text)); }
 
 /// Build the `input_image` variant.
-factory OutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum? detail, }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory OutputVariant2.inputImage({Omittable<String?> imageUrl = const Omittable.absent(), Omittable<String?> fileId = const Omittable.absent(), Omittable<DetailEnum?> detail = const Omittable.absent(), }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory OutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory OutputVariant2.inputFile({Omittable<String?> fileId = const Omittable.absent(), Omittable<String?> filename = const Omittable.absent(), Omittable<String?> fileData = const Omittable.absent(), Omittable<String?> fileUrl = const Omittable.absent(), FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 OutputVariant2Type get type;
@@ -132,7 +132,7 @@ final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
 @override Map<String, dynamic> toJson() => {...inputImageContentParamAutoParam.toJson(), 'type': type.toJson()};
 
-OutputVariant2InputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return OutputVariant2InputImage(inputImageContentParamAutoParam.copyWith(
+OutputVariant2InputImage copyWith({Omittable<String?>? imageUrl, Omittable<String?>? fileId, Omittable<DetailEnum?>? detail, }) { return OutputVariant2InputImage(inputImageContentParamAutoParam.copyWith(
   imageUrl: imageUrl,
   fileId: fileId,
   detail: detail,
@@ -155,7 +155,7 @@ final InputFileContentParam inputFileContentParam;
 
 @override Map<String, dynamic> toJson() => {...inputFileContentParam.toJson(), 'type': type.toJson()};
 
-OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum? Function()? detail, }) { return OutputVariant2InputFile(inputFileContentParam.copyWith(
+OutputVariant2InputFile copyWith({Omittable<String?>? fileId, Omittable<String?>? filename, Omittable<String?>? fileData, Omittable<String?>? fileUrl, FileDetailEnum? Function()? detail, }) { return OutputVariant2InputFile(inputFileContentParam.copyWith(
   fileId: fileId,
   filename: filename,
   fileData: fileData,

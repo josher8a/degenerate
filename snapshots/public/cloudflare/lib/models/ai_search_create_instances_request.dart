@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchCreateInstancesRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_create_instances_request_fusion_method.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_create_instances_request_metadata.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_create_instances_request_type.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant1.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant2.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/cache_threshold.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/custom_metadata.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/embedding_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/public_endpoint_params.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/reranking_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/retrieval_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/rewrite_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/source_params.dart';@immutable final class AiSearchCreateInstancesRequest {const AiSearchCreateInstancesRequest({required this.id, this.aiGatewayId, this.aiSearchModel, this.cache = true, this.cacheThreshold = CacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = AiSearchCreateInstancesRequestFusionMethod.rrf, this.hybridSearchEnabled = false, this.maxNumResults = 10, this.metadata, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams, this.tokenId, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_create_instances_request_fusion_method.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_create_instances_request_metadata.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_create_instances_request_type.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant1.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant2.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/cache_threshold.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/custom_metadata.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/embedding_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/public_endpoint_params.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/reranking_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/retrieval_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/rewrite_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/source_params.dart';@immutable final class AiSearchCreateInstancesRequest {const AiSearchCreateInstancesRequest({required this.id, this.aiGatewayId = const Omittable.absent(), this.aiSearchModel, this.cache = true, this.cacheThreshold = CacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = AiSearchCreateInstancesRequestFusionMethod.rrf, this.hybridSearchEnabled = false, this.maxNumResults = 10, this.metadata, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions = const Omittable.absent(), this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams = const Omittable.absent(), this.tokenId, this.type, });
 
 factory AiSearchCreateInstancesRequest.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequest(
-  aiGatewayId: json['ai_gateway_id'] as String?,
+  aiGatewayId: json.containsKey('ai_gateway_id') ? Omittable(json['ai_gateway_id'] as String?) : const Omittable.absent(),
   aiSearchModel: json['ai_search_model'] != null ? OneOf2.parse(json['ai_search_model'], fromA: (v) => AiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
   cache: json.containsKey('cache') ? json['cache'] as bool : true,
   cacheThreshold: json.containsKey('cache_threshold') ? CacheThreshold.fromJson(json['cache_threshold'] as String) : CacheThreshold.closeEnough,
@@ -21,17 +21,17 @@ factory AiSearchCreateInstancesRequest.fromJson(Map<String, dynamic> json) { ret
   publicEndpointParams: json['public_endpoint_params'] != null ? PublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
   reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
   rerankingModel: json['reranking_model'] != null ? RerankingModel.fromJson(json['reranking_model'] as String) : null,
-  retrievalOptions: json['retrieval_options'] != null ? RetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
+  retrievalOptions: json.containsKey('retrieval_options') ? Omittable(json['retrieval_options'] != null ? RetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   rewriteModel: json['rewrite_model'] != null ? OneOf2.parse(json['rewrite_model'], fromA: (v) => AiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
   source: json['source'] as String?,
-  sourceParams: json['source_params'] != null ? SourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
+  sourceParams: json.containsKey('source_params') ? Omittable(json['source_params'] != null ? SourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tokenId: json['token_id'] as String?,
   type: json['type'] != null ? AiSearchCreateInstancesRequestType.fromJson(json['type'] as String) : null,
 ); }
 
-final String? aiGatewayId;
+final Omittable<String?> aiGatewayId;
 
 final AiSearchModel? aiSearchModel;
 
@@ -68,7 +68,7 @@ final bool reranking;
 
 final RerankingModel? rerankingModel;
 
-final RetrievalOptions? retrievalOptions;
+final Omittable<RetrievalOptions?> retrievalOptions;
 
 final RewriteModel? rewriteModel;
 
@@ -78,14 +78,14 @@ final double scoreThreshold;
 
 final String? source;
 
-final SourceParams? sourceParams;
+final Omittable<SourceParams?> sourceParams;
 
 final String? tokenId;
 
 final AiSearchCreateInstancesRequestType? type;
 
 Map<String, dynamic> toJson() { return {
-  'ai_gateway_id': ?aiGatewayId,
+  if (aiGatewayId.isPresent) 'ai_gateway_id': aiGatewayId.value,
   if (aiSearchModel != null) 'ai_search_model': aiSearchModel?.toJson(),
   'cache': cache,
   'cache_threshold': cacheThreshold.toJson(),
@@ -102,12 +102,12 @@ Map<String, dynamic> toJson() { return {
   if (publicEndpointParams != null) 'public_endpoint_params': publicEndpointParams?.toJson(),
   'reranking': reranking,
   if (rerankingModel != null) 'reranking_model': rerankingModel?.toJson(),
-  if (retrievalOptions != null) 'retrieval_options': retrievalOptions?.toJson(),
+  if (retrievalOptions.isPresent) 'retrieval_options': retrievalOptions.value?.toJson(),
   if (rewriteModel != null) 'rewrite_model': rewriteModel?.toJson(),
   'rewrite_query': rewriteQuery,
   'score_threshold': scoreThreshold,
   'source': ?source,
-  if (sourceParams != null) 'source_params': sourceParams?.toJson(),
+  if (sourceParams.isPresent) 'source_params': sourceParams.value?.toJson(),
   'token_id': ?tokenId,
   if (type != null) 'type': type?.toJson(),
 }; } 
@@ -129,8 +129,8 @@ if (maxNumResults > 50) { errors.add('maxNumResults: must be <= 50'); }
 if (scoreThreshold < 0) { errors.add('scoreThreshold: must be >= 0'); }
 if (scoreThreshold > 1) { errors.add('scoreThreshold: must be <= 1'); }
 return errors; } 
-AiSearchCreateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSearchModel? Function()? aiSearchModel, bool Function()? cache, CacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<CustomMetadata>? Function()? customMetadata, EmbeddingModel? Function()? embeddingModel, AiSearchCreateInstancesRequestFusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, String? id, int Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata? Function()? metadata, PublicEndpointParams? Function()? publicEndpointParams, bool Function()? reranking, RerankingModel? Function()? rerankingModel, RetrievalOptions? Function()? retrievalOptions, RewriteModel? Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, String? Function()? source, SourceParams? Function()? sourceParams, String? Function()? tokenId, AiSearchCreateInstancesRequestType? Function()? type, }) { return AiSearchCreateInstancesRequest(
-  aiGatewayId: aiGatewayId != null ? aiGatewayId() : this.aiGatewayId,
+AiSearchCreateInstancesRequest copyWith({Omittable<String?>? aiGatewayId, AiSearchModel? Function()? aiSearchModel, bool Function()? cache, CacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<CustomMetadata>? Function()? customMetadata, EmbeddingModel? Function()? embeddingModel, AiSearchCreateInstancesRequestFusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, String? id, int Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata? Function()? metadata, PublicEndpointParams? Function()? publicEndpointParams, bool Function()? reranking, RerankingModel? Function()? rerankingModel, Omittable<RetrievalOptions?>? retrievalOptions, RewriteModel? Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, String? Function()? source, Omittable<SourceParams?>? sourceParams, String? Function()? tokenId, AiSearchCreateInstancesRequestType? Function()? type, }) { return AiSearchCreateInstancesRequest(
+  aiGatewayId: aiGatewayId ?? this.aiGatewayId,
   aiSearchModel: aiSearchModel != null ? aiSearchModel() : this.aiSearchModel,
   cache: cache != null ? cache() : this.cache,
   cacheThreshold: cacheThreshold != null ? cacheThreshold() : this.cacheThreshold,
@@ -147,12 +147,12 @@ AiSearchCreateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSear
   publicEndpointParams: publicEndpointParams != null ? publicEndpointParams() : this.publicEndpointParams,
   reranking: reranking != null ? reranking() : this.reranking,
   rerankingModel: rerankingModel != null ? rerankingModel() : this.rerankingModel,
-  retrievalOptions: retrievalOptions != null ? retrievalOptions() : this.retrievalOptions,
+  retrievalOptions: retrievalOptions ?? this.retrievalOptions,
   rewriteModel: rewriteModel != null ? rewriteModel() : this.rewriteModel,
   rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
   source: source != null ? source() : this.source,
-  sourceParams: sourceParams != null ? sourceParams() : this.sourceParams,
+  sourceParams: sourceParams ?? this.sourceParams,
   tokenId: tokenId != null ? tokenId() : this.tokenId,
   type: type != null ? type() : this.type,
 ); } 

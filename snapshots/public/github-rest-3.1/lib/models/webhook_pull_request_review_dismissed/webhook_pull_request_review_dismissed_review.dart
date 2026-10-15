@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismisse
 
  }
 /// The review that was affected.
-@immutable final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt, });
+@immutable final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt = const Omittable.absent(), });
 
 factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedReview(
   links: WebhooksReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
@@ -97,7 +97,7 @@ factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> js
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
   state: ReviewState.fromJson(json['state'] as String),
   submittedAt: DateTime.parse(json['submitted_at'] as String),
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
@@ -125,7 +125,7 @@ final ReviewState state;
 
 final DateTime submittedAt;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
 final WebhooksIssueCommentUser? user;
 
@@ -140,12 +140,12 @@ Map<String, dynamic> toJson() { return {
   'pull_request_url': pullRequestUrl.toString(),
   'state': state.toJson(),
   'submitted_at': submittedAt.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
   'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('author_association') &&
-      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -154,7 +154,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('state') &&
       json.containsKey('submitted_at') && json['submitted_at'] is String &&
       json.containsKey('user'); } 
-WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, ReviewState? state, DateTime? submittedAt, DateTime? Function()? updatedAt, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewDismissedReview(
+WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, ReviewState? state, DateTime? submittedAt, Omittable<DateTime?>? updatedAt, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewDismissedReview(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body != null ? body() : this.body,
@@ -165,7 +165,7 @@ WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, Au
   pullRequestUrl: pullRequestUrl ?? this.pullRequestUrl,
   state: state ?? this.state,
   submittedAt: submittedAt ?? this.submittedAt,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

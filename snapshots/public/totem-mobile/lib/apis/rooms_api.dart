@@ -2,6 +2,7 @@
 // Source: tag "RoomsApi" (6 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/errors/get_state_error.dart';
 import 'package:pub_totem_mobile/models/event_request.dart';

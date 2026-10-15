@@ -2,34 +2,34 @@
 // Source: #/components/schemas/PaymentPagesCheckoutSessionTaxId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id/invoices_resource_invoice_tax_id_type.dart';/// 
-@immutable final class PaymentPagesCheckoutSessionTaxId {const PaymentPagesCheckoutSessionTaxId({required this.type, this.value, });
+@immutable final class PaymentPagesCheckoutSessionTaxId {const PaymentPagesCheckoutSessionTaxId({required this.type, this.value = const Omittable.absent(), });
 
 factory PaymentPagesCheckoutSessionTaxId.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionTaxId(
   type: InvoicesResourceInvoiceTaxIdType.fromJson(json['type'] as String),
-  value: json['value'] as String?,
+  value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
 ); }
 
 /// The type of the tax ID, one of `ad_nrt`, `ar_cuit`, `eu_vat`, `bo_tin`, `br_cnpj`, `br_cpf`, `cn_tin`, `co_nit`, `cr_tin`, `do_rcn`, `ec_ruc`, `eu_oss_vat`, `hr_oib`, `pe_ruc`, `ro_tin`, `rs_pib`, `sv_nit`, `uy_ruc`, `ve_rif`, `vn_tin`, `gb_vat`, `nz_gst`, `au_abn`, `au_arn`, `in_gst`, `no_vat`, `no_voec`, `za_vat`, `ch_vat`, `mx_rfc`, `sg_uen`, `ru_inn`, `ru_kpp`, `ca_bn`, `hk_br`, `es_cif`, `pl_nip`, `tw_vat`, `th_vat`, `jp_cn`, `jp_rn`, `jp_trn`, `li_uid`, `li_vat`, `lk_vat`, `my_itn`, `us_ein`, `kr_brn`, `ca_qst`, `ca_gst_hst`, `ca_pst_bc`, `ca_pst_mb`, `ca_pst_sk`, `my_sst`, `sg_gst`, `ae_trn`, `cl_tin`, `sa_vat`, `id_npwp`, `my_frp`, `il_vat`, `ge_vat`, `ua_vat`, `is_vat`, `bg_uic`, `hu_tin`, `si_tin`, `ke_pin`, `tr_tin`, `eg_tin`, `ph_tin`, `al_tin`, `bh_vat`, `kz_bin`, `ng_tin`, `om_vat`, `de_stn`, `ch_uid`, `tz_vat`, `uz_vat`, `uz_tin`, `md_vat`, `ma_vat`, `by_tin`, `ao_tin`, `bs_tin`, `bb_tin`, `cd_nif`, `mr_nif`, `me_pib`, `zw_tin`, `ba_tin`, `gn_nif`, `mk_vat`, `sr_fin`, `sn_ninea`, `am_tin`, `np_pan`, `tj_tin`, `ug_tin`, `zm_tin`, `kh_tin`, `aw_tin`, `az_tin`, `bd_bin`, `bj_ifu`, `et_tin`, `kg_tin`, `la_tin`, `cm_niu`, `cv_nif`, `bf_ifu`, or `unknown`
 final InvoicesResourceInvoiceTaxIdType type;
 
 /// The value of the tax ID.
-final String? value;
+final Omittable<String?> value;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'value': ?value,
+  if (value.isPresent) 'value': value.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final value$ = value;
+final value$ = value.value;
 if (value$ != null) {
   if (value$.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
 }
 return errors; } 
-PaymentPagesCheckoutSessionTaxId copyWith({InvoicesResourceInvoiceTaxIdType? type, String? Function()? value, }) { return PaymentPagesCheckoutSessionTaxId(
+PaymentPagesCheckoutSessionTaxId copyWith({InvoicesResourceInvoiceTaxIdType? type, Omittable<String?>? value, }) { return PaymentPagesCheckoutSessionTaxId(
   type: type ?? this.type,
-  value: value != null ? value() : this.value,
+  value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionTaxId &&

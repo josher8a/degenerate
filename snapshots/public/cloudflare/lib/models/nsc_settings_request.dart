@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NscSettingsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscSettingsRequest {const NscSettingsRequest({this.defaultAsn});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscSettingsRequest {const NscSettingsRequest({this.defaultAsn = const Omittable.absent()});
 
 factory NscSettingsRequest.fromJson(Map<String, dynamic> json) { return NscSettingsRequest(
-  defaultAsn: json['default_asn'] != null ? (json['default_asn'] as num).toInt() : null,
+  defaultAsn: json.containsKey('default_asn') ? Omittable(json['default_asn'] != null ? (json['default_asn'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
-final int? defaultAsn;
+final Omittable<int?> defaultAsn;
 
 Map<String, dynamic> toJson() { return {
-  'default_asn': ?defaultAsn,
+  if (defaultAsn.isPresent) 'default_asn': defaultAsn.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_asn'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final defaultAsn$ = defaultAsn;
+final defaultAsn$ = defaultAsn.value;
 if (defaultAsn$ != null) {
   if (defaultAsn$ < 0) { errors.add('defaultAsn: must be >= 0'); }
 }
 return errors; } 
-NscSettingsRequest copyWith({int? Function()? defaultAsn}) { return NscSettingsRequest(
-  defaultAsn: defaultAsn != null ? defaultAsn() : this.defaultAsn,
+NscSettingsRequest copyWith({Omittable<int?>? defaultAsn}) { return NscSettingsRequest(
+  defaultAsn: defaultAsn ?? this.defaultAsn,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NscSettingsRequest &&

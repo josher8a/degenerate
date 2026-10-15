@@ -11,17 +11,17 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 ///   "pattern": "example.com"
 /// }
 /// ```
-@immutable final class EmailSecurityCreateTrustedDomain {const EmailSecurityCreateTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, this.comments, });
+@immutable final class EmailSecurityCreateTrustedDomain {const EmailSecurityCreateTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, this.comments = const Omittable.absent(), });
 
 factory EmailSecurityCreateTrustedDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateTrustedDomain(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRecent: json['is_recent'] as bool,
   isRegex: json['is_regex'] as bool,
   isSimilarity: json['is_similarity'] as bool,
   pattern: json['pattern'] as String,
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Select to prevent recently registered domains from triggering a
 /// Suspicious or Malicious disposition.
@@ -37,7 +37,7 @@ final bool isSimilarity;
 final String pattern;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_recent': isRecent,
   'is_regex': isRegex,
   'is_similarity': isSimilarity,
@@ -49,15 +49,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
       json.containsKey('pattern') && json['pattern'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final comments$ = comments;
+final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 return errors; } 
-EmailSecurityCreateTrustedDomain copyWith({String? Function()? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, }) { return EmailSecurityCreateTrustedDomain(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityCreateTrustedDomain copyWith({Omittable<String?>? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, }) { return EmailSecurityCreateTrustedDomain(
+  comments: comments ?? this.comments,
   isRecent: isRecent ?? this.isRecent,
   isRegex: isRegex ?? this.isRegex,
   isSimilarity: isSimilarity ?? this.isSimilarity,

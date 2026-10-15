@@ -295,8 +295,8 @@ final class ReferralChoices$Unknown extends ReferralChoices {
 final class OnboardSchema {
   const OnboardSchema({
     this.referralSource = ReferralChoices.$default,
-    this.yearBorn,
-    this.hopes,
+    this.yearBorn = const Omittable.absent(),
+    this.hopes = const Omittable.absent(),
     this.referralOther = '',
   });
 
@@ -305,10 +305,16 @@ final class OnboardSchema {
       referralSource: json.containsKey('referral_source')
           ? ReferralChoices.fromJson(json['referral_source'] as String)
           : ReferralChoices.$default,
-      yearBorn: json['year_born'] != null
-          ? (json['year_born'] as num).toInt()
-          : null,
-      hopes: json['hopes'] as String?,
+      yearBorn: json.containsKey('year_born')
+          ? Omittable(
+              json['year_born'] != null
+                  ? (json['year_born'] as num).toInt()
+                  : null,
+            )
+          : const Omittable.absent(),
+      hopes: json.containsKey('hopes')
+          ? Omittable(json['hopes'] as String?)
+          : const Omittable.absent(),
       referralOther: json.containsKey('referral_other')
           ? json['referral_other'] as String?
           : '',
@@ -317,9 +323,9 @@ final class OnboardSchema {
 
   final ReferralChoices referralSource;
 
-  final int? yearBorn;
+  final Omittable<int?> yearBorn;
 
-  final String? hopes;
+  final Omittable<String?> hopes;
 
   /// Please tell us more about how you found us
   final String? referralOther;
@@ -327,8 +333,8 @@ final class OnboardSchema {
   Map<String, dynamic> toJson() {
     return {
       'referral_source': referralSource.toJson(),
-      'year_born': ?yearBorn,
-      'hopes': ?hopes,
+      if (yearBorn.isPresent) 'year_born': yearBorn.value,
+      if (hopes.isPresent) 'hopes': hopes.value,
       'referral_other': ?referralOther,
     };
   }
@@ -358,16 +364,16 @@ final class OnboardSchema {
 
   OnboardSchema copyWith({
     ReferralChoices Function()? referralSource,
-    int? Function()? yearBorn,
-    String? Function()? hopes,
+    Omittable<int?>? yearBorn,
+    Omittable<String?>? hopes,
     String? Function()? referralOther,
   }) {
     return OnboardSchema(
       referralSource: referralSource != null
           ? referralSource()
           : this.referralSource,
-      yearBorn: yearBorn != null ? yearBorn() : this.yearBorn,
-      hopes: hopes != null ? hopes() : this.hopes,
+      yearBorn: yearBorn ?? this.yearBorn,
+      hopes: hopes ?? this.hopes,
       referralOther: referralOther != null
           ? referralOther()
           : this.referralOther,

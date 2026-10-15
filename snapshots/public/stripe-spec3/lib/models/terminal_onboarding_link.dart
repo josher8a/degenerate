@@ -54,13 +54,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? terminal
 
  }
 /// Returns redirect links used for onboarding onto Tap to Pay on iPhone.
-@immutable final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, required this.redirectUrl, this.onBehalfOf, });
+@immutable final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, required this.redirectUrl, this.onBehalfOf = const Omittable.absent(), });
 
 factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) { return TerminalOnboardingLink(
   linkOptions: TerminalOnboardingLinkLinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),
   linkType: LinkType.fromJson(json['link_type'] as String),
   object: TerminalOnboardingLinkObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] as String?,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] as String?) : const Omittable.absent(),
   redirectUrl: json['redirect_url'] as String,
 ); }
 
@@ -72,7 +72,7 @@ final LinkType linkType;
 final TerminalOnboardingLinkObject object;
 
 /// Stripe account ID to generate the link for.
-final String? onBehalfOf;
+final Omittable<String?> onBehalfOf;
 
 /// The link passed back to the user for their onboarding.
 final String redirectUrl;
@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'link_options': linkOptions.toJson(),
   'link_type': linkType.toJson(),
   'object': object.toJson(),
-  'on_behalf_of': ?onBehalfOf,
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value,
   'redirect_url': redirectUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
@@ -90,17 +90,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_
       json.containsKey('redirect_url') && json['redirect_url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final onBehalfOf$ = onBehalfOf;
+final onBehalfOf$ = onBehalfOf.value;
 if (onBehalfOf$ != null) {
   if (onBehalfOf$.runes.length > 5000) { errors.add('onBehalfOf: length must be <= 5000'); }
 }
 if (redirectUrl.runes.length > 5000) { errors.add('redirectUrl: length must be <= 5000'); }
 return errors; } 
-TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, LinkType? linkType, TerminalOnboardingLinkObject? object, String? Function()? onBehalfOf, String? redirectUrl, }) { return TerminalOnboardingLink(
+TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, LinkType? linkType, TerminalOnboardingLinkObject? object, Omittable<String?>? onBehalfOf, String? redirectUrl, }) { return TerminalOnboardingLink(
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   redirectUrl: redirectUrl ?? this.redirectUrl,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

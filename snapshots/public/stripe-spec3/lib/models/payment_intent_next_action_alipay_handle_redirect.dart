@@ -2,58 +2,58 @@
 // Source: #/components/schemas/PaymentIntentNextActionAlipayHandleRedirect
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentIntentNextActionAlipayHandleRedirect {const PaymentIntentNextActionAlipayHandleRedirect({this.nativeData, this.nativeUrl, this.returnUrl, this.url, });
+@immutable final class PaymentIntentNextActionAlipayHandleRedirect {const PaymentIntentNextActionAlipayHandleRedirect({this.nativeData = const Omittable.absent(), this.nativeUrl = const Omittable.absent(), this.returnUrl = const Omittable.absent(), this.url = const Omittable.absent(), });
 
 factory PaymentIntentNextActionAlipayHandleRedirect.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionAlipayHandleRedirect(
-  nativeData: json['native_data'] as String?,
-  nativeUrl: json['native_url'] as String?,
-  returnUrl: json['return_url'] as String?,
-  url: json['url'] as String?,
+  nativeData: json.containsKey('native_data') ? Omittable(json['native_data'] as String?) : const Omittable.absent(),
+  nativeUrl: json.containsKey('native_url') ? Omittable(json['native_url'] as String?) : const Omittable.absent(),
+  returnUrl: json.containsKey('return_url') ? Omittable(json['return_url'] as String?) : const Omittable.absent(),
+  url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
 ); }
 
 /// The native data to be used with Alipay SDK you must redirect your customer to in order to authenticate the payment in an Android App.
-final String? nativeData;
+final Omittable<String?> nativeData;
 
 /// The native URL you must redirect your customer to in order to authenticate the payment in an iOS App.
-final String? nativeUrl;
+final Omittable<String?> nativeUrl;
 
 /// If the customer does not exit their browser while authenticating, they will be redirected to this specified URL after completion.
-final String? returnUrl;
+final Omittable<String?> returnUrl;
 
 /// The URL you must redirect your customer to in order to authenticate the payment.
-final String? url;
+final Omittable<String?> url;
 
 Map<String, dynamic> toJson() { return {
-  'native_data': ?nativeData,
-  'native_url': ?nativeUrl,
-  'return_url': ?returnUrl,
-  'url': ?url,
+  if (nativeData.isPresent) 'native_data': nativeData.value,
+  if (nativeUrl.isPresent) 'native_url': nativeUrl.value,
+  if (returnUrl.isPresent) 'return_url': returnUrl.value,
+  if (url.isPresent) 'url': url.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'native_data', 'native_url', 'return_url', 'url'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final nativeData$ = nativeData;
+final nativeData$ = nativeData.value;
 if (nativeData$ != null) {
   if (nativeData$.runes.length > 5000) { errors.add('nativeData: length must be <= 5000'); }
 }
-final nativeUrl$ = nativeUrl;
+final nativeUrl$ = nativeUrl.value;
 if (nativeUrl$ != null) {
   if (nativeUrl$.runes.length > 5000) { errors.add('nativeUrl: length must be <= 5000'); }
 }
-final returnUrl$ = returnUrl;
+final returnUrl$ = returnUrl.value;
 if (returnUrl$ != null) {
   if (returnUrl$.runes.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
-final url$ = url;
+final url$ = url.value;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
-PaymentIntentNextActionAlipayHandleRedirect copyWith({String? Function()? nativeData, String? Function()? nativeUrl, String? Function()? returnUrl, String? Function()? url, }) { return PaymentIntentNextActionAlipayHandleRedirect(
-  nativeData: nativeData != null ? nativeData() : this.nativeData,
-  nativeUrl: nativeUrl != null ? nativeUrl() : this.nativeUrl,
-  returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
-  url: url != null ? url() : this.url,
+PaymentIntentNextActionAlipayHandleRedirect copyWith({Omittable<String?>? nativeData, Omittable<String?>? nativeUrl, Omittable<String?>? returnUrl, Omittable<String?>? url, }) { return PaymentIntentNextActionAlipayHandleRedirect(
+  nativeData: nativeData ?? this.nativeData,
+  nativeUrl: nativeUrl ?? this.nativeUrl,
+  returnUrl: returnUrl ?? this.returnUrl,
+  url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionAlipayHandleRedirect &&

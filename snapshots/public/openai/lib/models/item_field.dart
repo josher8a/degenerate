@@ -425,7 +425,7 @@ factory ItemField.toolSearchOutput({required String id, required String? callId,
 factory ItemField.functionCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldFunctionCallOutput(FunctionToolCallOutput(type: 'function_call_output', id: id, callId: callId, output: output, status: status)); }
 
 /// Build the `file_search_call` variant.
-factory ItemField.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return ItemFieldFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
+factory ItemField.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, Omittable<List<FileSearchToolCallResults>?> results = const Omittable.absent(), }) { return ItemFieldFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
 
 /// Build the `web_search_call` variant.
 factory ItemField.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return ItemFieldWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
@@ -440,7 +440,7 @@ factory ItemField.computerCall({required String id, required String callId, requ
 factory ItemField.computerToolCallOutputResource({required String id, required String callId, required ComputerScreenshotImage output, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutputResource(type: 'ComputerToolCallOutputResource', id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
 
 /// Build the `reasoning` variant.
-factory ItemField.reasoning({required String id, required List<SummaryTextContent> summary, String? encryptedContent, List<ReasoningTextContent>? content, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+factory ItemField.reasoning({required String id, required List<SummaryTextContent> summary, Omittable<String?> encryptedContent = const Omittable.absent(), List<ReasoningTextContent>? content, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
 
 /// Build the `compaction` variant.
 factory ItemField.compaction({required String id, required String encryptedContent, String? createdBy, }) { return ItemFieldCompaction(CompactionBody(id: id, encryptedContent: encryptedContent, createdBy: createdBy)); }
@@ -452,7 +452,7 @@ factory ItemField.codeInterpreterCall({required String id, required CodeInterpre
 factory ItemField.localShellCall({required String id, required String callId, required LocalShellExecAction action, required ComputerToolCallOutputResourceStatus status, }) { return ItemFieldLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
 
 /// Build the `local_shell_call_output` variant.
-factory ItemField.localShellCallOutput({required String id, required String output, LocalShellToolCallOutputStatus? status, }) { return ItemFieldLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
+factory ItemField.localShellCallOutput({required String id, required String output, Omittable<LocalShellToolCallOutputStatus?> status = const Omittable.absent(), }) { return ItemFieldLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
 
 /// Build the `shell_call` variant.
 factory ItemField.shellCall({required String id, required String callId, required FunctionShellAction action, required LocalShellCallStatus status, required FunctionShellCallEnvironment? environment, String? createdBy, }) { return ItemFieldShellCall(FunctionShellCall(id: id, callId: callId, action: action, status: status, environment: environment, createdBy: createdBy)); }
@@ -464,19 +464,19 @@ factory ItemField.shellCallOutput({required String id, required String callId, r
 factory ItemField.applyPatchCall({required String id, required String callId, required ApplyPatchCallStatus status, required ApplyPatchToolCallOperation operation, String? createdBy, }) { return ItemFieldApplyPatchCall(ApplyPatchToolCall(id: id, callId: callId, status: status, operation: operation, createdBy: createdBy)); }
 
 /// Build the `apply_patch_call_output` variant.
-factory ItemField.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, String? output, String? createdBy, }) { return ItemFieldApplyPatchCallOutput(ApplyPatchToolCallOutput(id: id, callId: callId, status: status, output: output, createdBy: createdBy)); }
+factory ItemField.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, Omittable<String?> output = const Omittable.absent(), String? createdBy, }) { return ItemFieldApplyPatchCallOutput(ApplyPatchToolCallOutput(id: id, callId: callId, status: status, output: output, createdBy: createdBy)); }
 
 /// Build the `mcp_list_tools` variant.
-factory ItemField.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, String? error, }) { return ItemFieldMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
+factory ItemField.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, Omittable<String?> error = const Omittable.absent(), }) { return ItemFieldMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
 
 /// Build the `mcp_approval_request` variant.
 factory ItemField.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return ItemFieldMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
 
 /// Build the `mcp_approval_response` variant.
-factory ItemField.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, String? reason, }) { return ItemFieldMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
+factory ItemField.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, Omittable<String?> reason = const Omittable.absent(), }) { return ItemFieldMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
 
 /// Build the `mcp_call` variant.
-factory ItemField.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? output, String? error, McpToolCallStatus? status, String? approvalRequestId, }) { return ItemFieldMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
+factory ItemField.mcpCall({required String id, required String serverLabel, required String name, required String arguments, Omittable<String?> output = const Omittable.absent(), Omittable<String?> error = const Omittable.absent(), McpToolCallStatus? status, Omittable<String?> approvalRequestId = const Omittable.absent(), }) { return ItemFieldMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
 
 /// Build the `custom_tool_call` variant.
 factory ItemField.customToolCall({required String callId, required String name, required String input, String? id, String? namespace, }) { return ItemFieldCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
@@ -667,7 +667,7 @@ final FileSearchToolCall fileSearchToolCall;
 
 @override Map<String, dynamic> toJson() => {...fileSearchToolCall.toJson(), 'type': type.toJson()};
 
-ItemFieldFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return ItemFieldFileSearchCall(fileSearchToolCall.copyWith(
+ItemFieldFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, Omittable<List<FileSearchToolCallResults>?>? results, }) { return ItemFieldFileSearchCall(fileSearchToolCall.copyWith(
   id: id,
   status: status,
   queries: queries,
@@ -798,7 +798,7 @@ final ReasoningItem reasoningItem;
 
 @override Map<String, dynamic> toJson() => {...reasoningItem.toJson(), 'type': type.toJson()};
 
-ItemFieldReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ItemFieldReasoning(reasoningItem.copyWith(
+ItemFieldReasoning copyWith({String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ItemFieldReasoning(reasoningItem.copyWith(
   id: id,
   encryptedContent: encryptedContent,
   summary: summary,
@@ -903,7 +903,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...localShellToolCallOutput.toJson(), 'type': type.toJson()};
 
-ItemFieldLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return ItemFieldLocalShellCallOutput(localShellToolCallOutput.copyWith(
+ItemFieldLocalShellCallOutput copyWith({String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) { return ItemFieldLocalShellCallOutput(localShellToolCallOutput.copyWith(
   id: id,
   output: output,
   status: status,
@@ -1011,7 +1011,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...applyPatchToolCallOutput.toJson(), 'type': type.toJson()};
 
-ItemFieldApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String? Function()? createdBy, }) { return ItemFieldApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
+ItemFieldApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, String? Function()? createdBy, }) { return ItemFieldApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
   id: id,
   callId: callId,
   status: status,
@@ -1038,7 +1038,7 @@ final McpListTools mcpListTools;
 
 @override Map<String, dynamic> toJson() => {...mcpListTools.toJson(), 'type': type.toJson()};
 
-ItemFieldMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, String? Function()? error, }) { return ItemFieldMcpListTools(mcpListTools.copyWith(
+ItemFieldMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, Omittable<String?>? error, }) { return ItemFieldMcpListTools(mcpListTools.copyWith(
   id: id,
   serverLabel: serverLabel,
   tools: tools,
@@ -1090,7 +1090,7 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
 
 @override Map<String, dynamic> toJson() => {...mcpApprovalResponseResource.toJson(), 'type': type.toJson()};
 
-ItemFieldMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return ItemFieldMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
+ItemFieldMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) { return ItemFieldMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
   id: id,
   approvalRequestId: approvalRequestId,
   approve: approve,
@@ -1116,7 +1116,7 @@ final McpToolCall mcpToolCall;
 
 @override Map<String, dynamic> toJson() => {...mcpToolCall.toJson(), 'type': type.toJson()};
 
-ItemFieldMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ItemFieldMcpCall(mcpToolCall.copyWith(
+ItemFieldMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) { return ItemFieldMcpCall(mcpToolCall.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,

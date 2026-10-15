@@ -369,10 +369,10 @@ factory ItemResource.fromJson(Map<String, dynamic> json) { return switch (json['
 factory ItemResource.inputMessageResource({required InputMessageResourceRole role, required List<InputContent> content, required String id, ComputerToolCallOutputResourceStatus? status, }) { return ItemResourceInputMessageResource(InputMessageResource(type: 'InputMessageResource', role: role, status: status, content: content, id: id)); }
 
 /// Build the `message` variant.
-factory ItemResource.message({required String id, required ChatCompletionResponseMessageRole role, required List<OutputMessageContent> content, required ComputerToolCallOutputResourceStatus status, MessagePhase? phase, }) { return ItemResourceMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
+factory ItemResource.message({required String id, required ChatCompletionResponseMessageRole role, required List<OutputMessageContent> content, required ComputerToolCallOutputResourceStatus status, Omittable<MessagePhase?> phase = const Omittable.absent(), }) { return ItemResourceMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
 
 /// Build the `file_search_call` variant.
-factory ItemResource.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return ItemResourceFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
+factory ItemResource.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, Omittable<List<FileSearchToolCallResults>?> results = const Omittable.absent(), }) { return ItemResourceFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
 
 /// Build the `computer_call` variant.
 factory ItemResource.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputResourceStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ItemResourceComputerCall(ComputerToolCall(id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
@@ -405,7 +405,7 @@ factory ItemResource.codeInterpreterCall({required String id, required CodeInter
 factory ItemResource.localShellCall({required String id, required String callId, required LocalShellExecAction action, required ComputerToolCallOutputResourceStatus status, }) { return ItemResourceLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
 
 /// Build the `local_shell_call_output` variant.
-factory ItemResource.localShellCallOutput({required String id, required String output, LocalShellToolCallOutputStatus? status, }) { return ItemResourceLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
+factory ItemResource.localShellCallOutput({required String id, required String output, Omittable<LocalShellToolCallOutputStatus?> status = const Omittable.absent(), }) { return ItemResourceLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
 
 /// Build the `shell_call` variant.
 factory ItemResource.shellCall({required String id, required String callId, required FunctionShellAction action, required LocalShellCallStatus status, required FunctionShellCallEnvironment? environment, String? createdBy, }) { return ItemResourceShellCall(FunctionShellCall(id: id, callId: callId, action: action, status: status, environment: environment, createdBy: createdBy)); }
@@ -417,19 +417,19 @@ factory ItemResource.shellCallOutput({required String id, required String callId
 factory ItemResource.applyPatchCall({required String id, required String callId, required ApplyPatchCallStatus status, required ApplyPatchToolCallOperation operation, String? createdBy, }) { return ItemResourceApplyPatchCall(ApplyPatchToolCall(id: id, callId: callId, status: status, operation: operation, createdBy: createdBy)); }
 
 /// Build the `apply_patch_call_output` variant.
-factory ItemResource.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, String? output, String? createdBy, }) { return ItemResourceApplyPatchCallOutput(ApplyPatchToolCallOutput(id: id, callId: callId, status: status, output: output, createdBy: createdBy)); }
+factory ItemResource.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, Omittable<String?> output = const Omittable.absent(), String? createdBy, }) { return ItemResourceApplyPatchCallOutput(ApplyPatchToolCallOutput(id: id, callId: callId, status: status, output: output, createdBy: createdBy)); }
 
 /// Build the `mcp_list_tools` variant.
-factory ItemResource.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, String? error, }) { return ItemResourceMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
+factory ItemResource.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, Omittable<String?> error = const Omittable.absent(), }) { return ItemResourceMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
 
 /// Build the `mcp_approval_request` variant.
 factory ItemResource.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return ItemResourceMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
 
 /// Build the `mcp_approval_response` variant.
-factory ItemResource.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, String? reason, }) { return ItemResourceMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
+factory ItemResource.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, Omittable<String?> reason = const Omittable.absent(), }) { return ItemResourceMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
 
 /// Build the `mcp_call` variant.
-factory ItemResource.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? output, String? error, McpToolCallStatus? status, String? approvalRequestId, }) { return ItemResourceMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
+factory ItemResource.mcpCall({required String id, required String serverLabel, required String name, required String arguments, Omittable<String?> output = const Omittable.absent(), Omittable<String?> error = const Omittable.absent(), McpToolCallStatus? status, Omittable<String?> approvalRequestId = const Omittable.absent(), }) { return ItemResourceMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
 
 /// The discriminator value identifying this variant.
 ItemResourceType get type;
@@ -501,7 +501,7 @@ final OutputMessage outputMessage;
 
 @override Map<String, dynamic> toJson() => {...outputMessage.toJson(), 'type': type.toJson()};
 
-ItemResourceMessage copyWith({String? id, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, MessagePhase? Function()? phase, ComputerToolCallOutputResourceStatus? status, }) { return ItemResourceMessage(outputMessage.copyWith(
+ItemResourceMessage copyWith({String? id, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, Omittable<MessagePhase?>? phase, ComputerToolCallOutputResourceStatus? status, }) { return ItemResourceMessage(outputMessage.copyWith(
   id: id,
   role: role,
   content: content,
@@ -528,7 +528,7 @@ final FileSearchToolCall fileSearchToolCall;
 
 @override Map<String, dynamic> toJson() => {...fileSearchToolCall.toJson(), 'type': type.toJson()};
 
-ItemResourceFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return ItemResourceFileSearchCall(fileSearchToolCall.copyWith(
+ItemResourceFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, Omittable<List<FileSearchToolCallResults>?>? results, }) { return ItemResourceFileSearchCall(fileSearchToolCall.copyWith(
   id: id,
   status: status,
   queries: queries,
@@ -822,7 +822,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...localShellToolCallOutput.toJson(), 'type': type.toJson()};
 
-ItemResourceLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return ItemResourceLocalShellCallOutput(localShellToolCallOutput.copyWith(
+ItemResourceLocalShellCallOutput copyWith({String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) { return ItemResourceLocalShellCallOutput(localShellToolCallOutput.copyWith(
   id: id,
   output: output,
   status: status,
@@ -930,7 +930,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...applyPatchToolCallOutput.toJson(), 'type': type.toJson()};
 
-ItemResourceApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String? Function()? createdBy, }) { return ItemResourceApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
+ItemResourceApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, String? Function()? createdBy, }) { return ItemResourceApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
   id: id,
   callId: callId,
   status: status,
@@ -957,7 +957,7 @@ final McpListTools mcpListTools;
 
 @override Map<String, dynamic> toJson() => {...mcpListTools.toJson(), 'type': type.toJson()};
 
-ItemResourceMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, String? Function()? error, }) { return ItemResourceMcpListTools(mcpListTools.copyWith(
+ItemResourceMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, Omittable<String?>? error, }) { return ItemResourceMcpListTools(mcpListTools.copyWith(
   id: id,
   serverLabel: serverLabel,
   tools: tools,
@@ -1009,7 +1009,7 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
 
 @override Map<String, dynamic> toJson() => {...mcpApprovalResponseResource.toJson(), 'type': type.toJson()};
 
-ItemResourceMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return ItemResourceMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
+ItemResourceMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) { return ItemResourceMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
   id: id,
   approvalRequestId: approvalRequestId,
   approve: approve,
@@ -1035,7 +1035,7 @@ final McpToolCall mcpToolCall;
 
 @override Map<String, dynamic> toJson() => {...mcpToolCall.toJson(), 'type': type.toJson()};
 
-ItemResourceMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ItemResourceMcpCall(mcpToolCall.copyWith(
+ItemResourceMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) { return ItemResourceMcpCall(mcpToolCall.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,

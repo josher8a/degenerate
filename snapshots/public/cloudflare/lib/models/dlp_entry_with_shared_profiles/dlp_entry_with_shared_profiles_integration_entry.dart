@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEntryWithSharedProfiles (inline: IntegrationEntry)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/dlp_entry_profile.dart';import 'package:pub_cloudflare/models/integration_entry/integration_entry_type.dart';@immutable final class DlpEntryWithSharedProfilesIntegrationEntry {const DlpEntryWithSharedProfilesIntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, required this.profiles, this.profileId, this.uploadStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/dlp_entry_profile.dart';import 'package:pub_cloudflare/models/integration_entry/integration_entry_type.dart';@immutable final class DlpEntryWithSharedProfilesIntegrationEntry {const DlpEntryWithSharedProfilesIntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, required this.profiles, this.profileId = const Omittable.absent(), this.uploadStatus, });
 
 factory DlpEntryWithSharedProfilesIntegrationEntry.fromJson(Map<String, dynamic> json) { return DlpEntryWithSharedProfilesIntegrationEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   name: json['name'] as String,
-  profileId: json['profile_id'] as String?,
+  profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: IntegrationEntryType.fromJson(json['type'] as String),
   uploadStatus: json['upload_status'] != null ? DlpDatasetUploadStatus.fromJson(json['upload_status'] as String) : null,
@@ -23,7 +23,7 @@ final String id;
 
 final String name;
 
-final String? profileId;
+final Omittable<String?> profileId;
 
 final DateTime updatedAt;
 
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   'id': id,
   'name': name,
-  'profile_id': ?profileId,
+  if (profileId.isPresent) 'profile_id': profileId.value,
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
   if (uploadStatus != null) 'upload_status': uploadStatus?.toJson(),
@@ -51,12 +51,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('type') && json['type'] == 'integration' &&
       json.containsKey('profiles'); } 
-DlpEntryWithSharedProfilesIntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, IntegrationEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) { return DlpEntryWithSharedProfilesIntegrationEntry(
+DlpEntryWithSharedProfilesIntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, IntegrationEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) { return DlpEntryWithSharedProfilesIntegrationEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   name: name ?? this.name,
-  profileId: profileId != null ? profileId() : this.profileId,
+  profileId: profileId ?? this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,

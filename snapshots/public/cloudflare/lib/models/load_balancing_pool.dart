@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LoadBalancingPool
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_check_regions2.dart';import 'package:pub_cloudflare/models/load_balancing_enabled.dart';import 'package:pub_cloudflare/models/load_balancing_latitude.dart';import 'package:pub_cloudflare/models/load_balancing_load_shedding.dart';import 'package:pub_cloudflare/models/load_balancing_longitude.dart';import 'package:pub_cloudflare/models/load_balancing_minimum_origins.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_id.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_id.dart';import 'package:pub_cloudflare/models/load_balancing_name.dart';import 'package:pub_cloudflare/models/load_balancing_notification_email.dart';import 'package:pub_cloudflare/models/load_balancing_notification_filter.dart';import 'package:pub_cloudflare/models/load_balancing_origin.dart';import 'package:pub_cloudflare/models/load_balancing_origin_steering.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_description.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_disabled_at.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_timestamp.dart';@immutable final class LoadBalancingPool {const LoadBalancingPool({this.checkRegions, this.createdOn, this.description, this.disabledAt, this.enabled, this.id, this.latitude, this.loadShedding, this.longitude, this.minimumOrigins, this.modifiedOn, this.monitor, this.monitorGroup, this.name, this.networks, this.notificationEmail, this.notificationFilter, this.originSteering, this.origins, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_check_regions2.dart';import 'package:pub_cloudflare/models/load_balancing_enabled.dart';import 'package:pub_cloudflare/models/load_balancing_latitude.dart';import 'package:pub_cloudflare/models/load_balancing_load_shedding.dart';import 'package:pub_cloudflare/models/load_balancing_longitude.dart';import 'package:pub_cloudflare/models/load_balancing_minimum_origins.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_id.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_id.dart';import 'package:pub_cloudflare/models/load_balancing_name.dart';import 'package:pub_cloudflare/models/load_balancing_notification_email.dart';import 'package:pub_cloudflare/models/load_balancing_notification_filter.dart';import 'package:pub_cloudflare/models/load_balancing_origin.dart';import 'package:pub_cloudflare/models/load_balancing_origin_steering.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_description.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_disabled_at.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_timestamp.dart';@immutable final class LoadBalancingPool {const LoadBalancingPool({this.checkRegions = const Omittable.absent(), this.createdOn, this.description, this.disabledAt, this.enabled, this.id, this.latitude, this.loadShedding, this.longitude, this.minimumOrigins, this.modifiedOn, this.monitor, this.monitorGroup, this.name, this.networks, this.notificationEmail, this.notificationFilter, this.originSteering, this.origins, });
 
 factory LoadBalancingPool.fromJson(Map<String, dynamic> json) { return LoadBalancingPool(
-  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => LoadBalancingCheckRegions2.fromJson(e as String)).toList(),
+  checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => LoadBalancingCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   createdOn: json['created_on'] != null ? LoadBalancingTimestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? LoadBalancingSchemasDescription.fromJson(json['description'] as String) : null,
   disabledAt: json['disabled_at'] != null ? LoadBalancingSchemasDisabledAt.fromJson(json['disabled_at'] as String) : null,
@@ -26,7 +26,7 @@ factory LoadBalancingPool.fromJson(Map<String, dynamic> json) { return LoadBalan
 ); }
 
 /// A list of regions from which to run health checks. Null means every Cloudflare data center.
-final List<LoadBalancingCheckRegions2>? checkRegions;
+final Omittable<List<LoadBalancingCheckRegions2>?> checkRegions;
 
 final LoadBalancingTimestamp? createdOn;
 
@@ -75,7 +75,7 @@ final LoadBalancingOriginSteering? originSteering;
 final List<LoadBalancingOrigin>? origins;
 
 Map<String, dynamic> toJson() { return {
-  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (disabledAt != null) 'disabled_at': disabledAt?.toJson(),
@@ -96,8 +96,8 @@ Map<String, dynamic> toJson() { return {
   if (origins != null) 'origins': origins?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_regions', 'created_on', 'description', 'disabled_at', 'enabled', 'id', 'latitude', 'load_shedding', 'longitude', 'minimum_origins', 'modified_on', 'monitor', 'monitor_group', 'name', 'networks', 'notification_email', 'notification_filter', 'origin_steering', 'origins'}.contains(key)); } 
-LoadBalancingPool copyWith({List<LoadBalancingCheckRegions2>? Function()? checkRegions, LoadBalancingTimestamp? Function()? createdOn, LoadBalancingSchemasDescription? Function()? description, LoadBalancingSchemasDisabledAt? Function()? disabledAt, LoadBalancingEnabled? Function()? enabled, LoadBalancingSchemasIdentifier? Function()? id, LoadBalancingLatitude? Function()? latitude, LoadBalancingLoadShedding? Function()? loadShedding, LoadBalancingLongitude? Function()? longitude, LoadBalancingMinimumOrigins? Function()? minimumOrigins, LoadBalancingTimestamp? Function()? modifiedOn, LoadBalancingMonitorId? Function()? monitor, LoadBalancingMonitorGroupId? Function()? monitorGroup, LoadBalancingName? Function()? name, List<String>? Function()? networks, LoadBalancingNotificationEmail? Function()? notificationEmail, LoadBalancingNotificationFilter? Function()? notificationFilter, LoadBalancingOriginSteering? Function()? originSteering, List<LoadBalancingOrigin>? Function()? origins, }) { return LoadBalancingPool(
-  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+LoadBalancingPool copyWith({Omittable<List<LoadBalancingCheckRegions2>?>? checkRegions, LoadBalancingTimestamp? Function()? createdOn, LoadBalancingSchemasDescription? Function()? description, LoadBalancingSchemasDisabledAt? Function()? disabledAt, LoadBalancingEnabled? Function()? enabled, LoadBalancingSchemasIdentifier? Function()? id, LoadBalancingLatitude? Function()? latitude, LoadBalancingLoadShedding? Function()? loadShedding, LoadBalancingLongitude? Function()? longitude, LoadBalancingMinimumOrigins? Function()? minimumOrigins, LoadBalancingTimestamp? Function()? modifiedOn, LoadBalancingMonitorId? Function()? monitor, LoadBalancingMonitorGroupId? Function()? monitorGroup, LoadBalancingName? Function()? name, List<String>? Function()? networks, LoadBalancingNotificationEmail? Function()? notificationEmail, LoadBalancingNotificationFilter? Function()? notificationFilter, LoadBalancingOriginSteering? Function()? originSteering, List<LoadBalancingOrigin>? Function()? origins, }) { return LoadBalancingPool(
+  checkRegions: checkRegions ?? this.checkRegions,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   disabledAt: disabledAt != null ? disabledAt() : this.disabledAt,
@@ -119,7 +119,8 @@ LoadBalancingPool copyWith({List<LoadBalancingCheckRegions2>? Function()? checkR
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingPool &&
-          listEquals(checkRegions, other.checkRegions) &&
+          checkRegions.isPresent == other.checkRegions.isPresent &&
+          listEquals(checkRegions.value, other.checkRegions.value) &&
           createdOn == other.createdOn &&
           description == other.description &&
           disabledAt == other.disabledAt &&
@@ -139,7 +140,7 @@ LoadBalancingPool copyWith({List<LoadBalancingCheckRegions2>? Function()? checkR
           originSteering == other.originSteering &&
           listEquals(origins, other.origins);
 
-@override int get hashCode => Object.hash(Object.hashAll(checkRegions ?? const []), createdOn, description, disabledAt, enabled, id, latitude, loadShedding, longitude, minimumOrigins, modifiedOn, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const []));
+@override int get hashCode => Object.hash(Object.hashAll(checkRegions.value ?? const []), createdOn, description, disabledAt, enabled, id, latitude, loadShedding, longitude, minimumOrigins, modifiedOn, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const []));
 
 @override String toString() => 'LoadBalancingPool(\n  checkRegions: $checkRegions,\n  createdOn: $createdOn,\n  description: $description,\n  disabledAt: $disabledAt,\n  enabled: $enabled,\n  id: $id,\n  latitude: $latitude,\n  loadShedding: $loadShedding,\n  longitude: $longitude,\n  minimumOrigins: $minimumOrigins,\n  modifiedOn: $modifiedOn,\n  monitor: $monitor,\n  monitorGroup: $monitorGroup,\n  name: $name,\n  networks: $networks,\n  notificationEmail: $notificationEmail,\n  notificationFilter: $notificationFilter,\n  originSteering: $originSteering,\n  origins: $origins,\n)';
 

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ServerVad
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
-@immutable final class ServerVad {const ServerVad({this.type = 'server_vad', this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse = true, this.interruptResponse = true, this.idleTimeoutMs, });
+@immutable final class ServerVad {const ServerVad({this.type = 'server_vad', this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse = true, this.interruptResponse = true, this.idleTimeoutMs = const Omittable.absent(), });
 
 factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
   type: json['type'] as String,
@@ -11,7 +11,7 @@ factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
   silenceDurationMs: json['silence_duration_ms'] != null ? (json['silence_duration_ms'] as num).toInt() : null,
   createResponse: json.containsKey('create_response') ? json['create_response'] as bool : true,
   interruptResponse: json.containsKey('interrupt_response') ? json['interrupt_response'] as bool : true,
-  idleTimeoutMs: json['idle_timeout_ms'] != null ? (json['idle_timeout_ms'] as num).toInt() : null,
+  idleTimeoutMs: json.containsKey('idle_timeout_ms') ? Omittable(json['idle_timeout_ms'] != null ? (json['idle_timeout_ms'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// Type of turn detection, `server_vad` to turn on simple Server VAD.
@@ -60,7 +60,7 @@ final bool interruptResponse;
 /// associated with the Response) will be emitted when the timeout is reached.
 /// Idle timeout is currently only supported for `server_vad` mode.
 /// 
-final int? idleTimeoutMs;
+final Omittable<int?> idleTimeoutMs;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -69,25 +69,25 @@ Map<String, dynamic> toJson() { return {
   'silence_duration_ms': ?silenceDurationMs,
   'create_response': createResponse,
   'interrupt_response': interruptResponse,
-  'idle_timeout_ms': ?idleTimeoutMs,
+  if (idleTimeoutMs.isPresent) 'idle_timeout_ms': idleTimeoutMs.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final idleTimeoutMs$ = idleTimeoutMs;
+final idleTimeoutMs$ = idleTimeoutMs.value;
 if (idleTimeoutMs$ != null) {
   if (idleTimeoutMs$ < 5000) { errors.add('idleTimeoutMs: must be >= 5000'); }
   if (idleTimeoutMs$ > 30000) { errors.add('idleTimeoutMs: must be <= 30000'); }
 }
 return errors; } 
-ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return ServerVad(
+ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) { return ServerVad(
   type: type ?? this.type,
   threshold: threshold != null ? threshold() : this.threshold,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,
   silenceDurationMs: silenceDurationMs != null ? silenceDurationMs() : this.silenceDurationMs,
   createResponse: createResponse != null ? createResponse() : this.createResponse,
   interruptResponse: interruptResponse != null ? interruptResponse() : this.interruptResponse,
-  idleTimeoutMs: idleTimeoutMs != null ? idleTimeoutMs() : this.idleTimeoutMs,
+  idleTimeoutMs: idleTimeoutMs ?? this.idleTimeoutMs,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ServerVad &&

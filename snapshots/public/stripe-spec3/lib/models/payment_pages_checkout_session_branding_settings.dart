@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pill, W 
 
  }
 /// 
-@immutable final class PaymentPagesCheckoutSessionBrandingSettings {const PaymentPagesCheckoutSessionBrandingSettings({required this.backgroundColor, required this.borderStyle, required this.buttonColor, required this.displayName, required this.fontFamily, this.icon, this.logo, });
+@immutable final class PaymentPagesCheckoutSessionBrandingSettings {const PaymentPagesCheckoutSessionBrandingSettings({required this.backgroundColor, required this.borderStyle, required this.buttonColor, required this.displayName, required this.fontFamily, this.icon = const Omittable.absent(), this.logo = const Omittable.absent(), });
 
 factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionBrandingSettings(
   backgroundColor: json['background_color'] as String,
@@ -93,8 +93,8 @@ factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic
   buttonColor: json['button_color'] as String,
   displayName: json['display_name'] as String,
   fontFamily: json['font_family'] as String,
-  icon: json['icon'] != null ? PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null,
-  logo: json['logo'] != null ? PaymentPagesCheckoutSessionBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
+  icon: json.containsKey('icon') ? Omittable(json['icon'] != null ? PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  logo: json.containsKey('logo') ? Omittable(json['logo'] != null ? PaymentPagesCheckoutSessionBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// A hex color value starting with `#` representing the background color for the Checkout Session.
@@ -113,10 +113,10 @@ final String displayName;
 final String fontFamily;
 
 /// The icon for the Checkout Session. You cannot set both `logo` and `icon`.
-final PaymentPagesCheckoutSessionBrandingSettingsIcon? icon;
+final Omittable<PaymentPagesCheckoutSessionBrandingSettingsIcon?> icon;
 
 /// The logo for the Checkout Session. You cannot set both `logo` and `icon`.
-final PaymentPagesCheckoutSessionBrandingSettingsLogo? logo;
+final Omittable<PaymentPagesCheckoutSessionBrandingSettingsLogo?> logo;
 
 Map<String, dynamic> toJson() { return {
   'background_color': backgroundColor,
@@ -124,8 +124,8 @@ Map<String, dynamic> toJson() { return {
   'button_color': buttonColor,
   'display_name': displayName,
   'font_family': fontFamily,
-  if (icon != null) 'icon': icon?.toJson(),
-  if (logo != null) 'logo': logo?.toJson(),
+  if (icon.isPresent) 'icon': icon.value?.toJson(),
+  if (logo.isPresent) 'logo': logo.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('background_color') && json['background_color'] is String &&
       json.containsKey('border_style') &&
@@ -139,14 +139,14 @@ if (buttonColor.runes.length > 5000) { errors.add('buttonColor: length must be <
 if (displayName.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 if (fontFamily.runes.length > 5000) { errors.add('fontFamily: length must be <= 5000'); }
 return errors; } 
-PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, PaymentPagesCheckoutSessionBrandingSettingsBorderStyle? borderStyle, String? buttonColor, String? displayName, String? fontFamily, PaymentPagesCheckoutSessionBrandingSettingsIcon? Function()? icon, PaymentPagesCheckoutSessionBrandingSettingsLogo? Function()? logo, }) { return PaymentPagesCheckoutSessionBrandingSettings(
+PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, PaymentPagesCheckoutSessionBrandingSettingsBorderStyle? borderStyle, String? buttonColor, String? displayName, String? fontFamily, Omittable<PaymentPagesCheckoutSessionBrandingSettingsIcon?>? icon, Omittable<PaymentPagesCheckoutSessionBrandingSettingsLogo?>? logo, }) { return PaymentPagesCheckoutSessionBrandingSettings(
   backgroundColor: backgroundColor ?? this.backgroundColor,
   borderStyle: borderStyle ?? this.borderStyle,
   buttonColor: buttonColor ?? this.buttonColor,
   displayName: displayName ?? this.displayName,
   fontFamily: fontFamily ?? this.fontFamily,
-  icon: icon != null ? icon() : this.icon,
-  logo: logo != null ? logo() : this.logo,
+  icon: icon ?? this.icon,
+  logo: logo ?? this.logo,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionBrandingSettings &&

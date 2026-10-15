@@ -2,6 +2,7 @@
 // Source: tag "UsersApi" (7 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/feedback_schema.dart';
 import 'package:pub_totem_mobile/models/keeper_profile_schema.dart';

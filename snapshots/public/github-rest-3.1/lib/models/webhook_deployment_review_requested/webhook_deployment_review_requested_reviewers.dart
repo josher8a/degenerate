@@ -68,24 +68,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer, this.type, });
+@immutable final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer = const Omittable.absent(), this.type, });
 
 factory WebhookDeploymentReviewRequestedReviewers.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedReviewers(
-  reviewer: json['reviewer'] != null ? WebhookDeploymentReviewRequestedReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,
+  reviewer: json.containsKey('reviewer') ? Omittable(json['reviewer'] != null ? WebhookDeploymentReviewRequestedReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: json['type'] != null ? ReviewersType.fromJson(json['type'] as String) : null,
 ); }
 
-final WebhookDeploymentReviewRequestedReviewersReviewer? reviewer;
+final Omittable<WebhookDeploymentReviewRequestedReviewersReviewer?> reviewer;
 
 final ReviewersType? type;
 
 Map<String, dynamic> toJson() { return {
-  if (reviewer != null) 'reviewer': reviewer?.toJson(),
+  if (reviewer.isPresent) 'reviewer': reviewer.value?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewer', 'type'}.contains(key)); } 
-WebhookDeploymentReviewRequestedReviewers copyWith({WebhookDeploymentReviewRequestedReviewersReviewer? Function()? reviewer, ReviewersType? Function()? type, }) { return WebhookDeploymentReviewRequestedReviewers(
-  reviewer: reviewer != null ? reviewer() : this.reviewer,
+WebhookDeploymentReviewRequestedReviewers copyWith({Omittable<WebhookDeploymentReviewRequestedReviewersReviewer?>? reviewer, ReviewersType? Function()? type, }) { return WebhookDeploymentReviewRequestedReviewers(
+  reviewer: reviewer ?? this.reviewer,
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

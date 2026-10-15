@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesBase
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesBase {const ZonesBase({required this.id, required this.value, this.editable = true, this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesBase {const ZonesBase({required this.id, required this.value, this.editable = true, this.modifiedOn = const Omittable.absent(), });
 
 factory ZonesBase.fromJson(Map<String, dynamic> json) { return ZonesBase(
   editable: json.containsKey('editable') ? json['editable'] as bool : true,
   id: json['id'] as String,
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'],
 ); }
 
@@ -21,7 +21,7 @@ final String id;
 /// last time this setting was modified.
 /// 
 /// Example: `'2014-01-01T05:20:00.12345Z'`
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 /// Current value of the zone setting.
 /// 
@@ -31,15 +31,15 @@ final dynamic value;
 Map<String, dynamic> toJson() { return {
   'editable': editable,
   'id': id,
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('value'); } 
-ZonesBase copyWith({bool Function()? editable, String? id, DateTime? Function()? modifiedOn, dynamic Function()? value, }) { return ZonesBase(
+ZonesBase copyWith({bool Function()? editable, String? id, Omittable<DateTime?>? modifiedOn, dynamic Function()? value, }) { return ZonesBase(
   editable: editable != null ? editable() : this.editable,
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

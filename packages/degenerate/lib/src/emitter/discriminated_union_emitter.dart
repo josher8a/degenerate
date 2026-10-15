@@ -217,14 +217,23 @@ final class DiscriminatedUnionEmitter {
 
   /// Override getter for a hoisted field on a variant whose payload exposes it
   /// directly (a `$ref` wrapper field).
-  Method _forwardCommonGetter(IrField f, String payloadField) => Method(
+  ///
+  /// The base getter exposes the plain value, so a payload field the model
+  /// presence-wraps ([payloadOmittable]) forwards its `.value`.
+  Method _forwardCommonGetter(
+    IrField f,
+    String payloadField, {
+    required bool payloadOmittable,
+  }) => Method(
     (m) => m
       ..name = f.name
       ..type = MethodType.getter
       ..lambda = true
       ..annotations.add(refer('override'))
       ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
-      ..body = Code('$payloadField.${f.name}'),
+      ..body = Code(
+        '$payloadField.${f.name}${payloadOmittable ? '.value' : ''}',
+      ),
   );
 
   /// Class name for a variant, disambiguated when it would collide with an
@@ -271,6 +280,9 @@ final class DiscriminatedUnionEmitter {
       IrEnum(:final name, :final valueKind)
           when valueKind == PrimitiveKind.string =>
         '$name.fromJson(${discValue.literal})',
+      // An int/num enum's fromJson takes the number, not its spelling.
+      IrEnum(:final name) =>
+        '$name.fromJson(${discValue.scalarLiteral ?? discValue.literal})',
       IrExtensionType(:final name, :final inner)
           when inner.kind == PrimitiveKind.string =>
         '$name.fromJson(${discValue.literal})',
@@ -325,7 +337,12 @@ final class DiscriminatedUnionEmitter {
       (m) => m
         ..name = 'copyWith'
         ..returns = refer(className)
-        ..optionalParameters.addAll(payloadFields.map(copyWithParam))
+        // The payload model's own copyWith shape, presence wrappers included.
+        ..optionalParameters.addAll(
+          payloadFields.map(
+            (f) => copyWithParam(f, omittable: ctx.isOmittable(f)),
+          ),
+        )
         ..body = Code(
           'return $className($receiver.copyWith(\n$forwards\n));',
         ),
@@ -343,9 +360,21 @@ final class DiscriminatedUnionEmitter {
     final String body;
     if (variantType is IrTypeRef) {
       final payload = irTypeName(variantType);
+      // The payload model presence-wraps an optional nullable discriminator
+      // field, so its constructor takes Omittable(value).
+      final discField = switch (info.resolvedType) {
+        IrObject(:final fields) => fields
+            .where((f) => f.originalName == union.discriminatorProperty)
+            .firstOrNull,
+        _ => null,
+      };
+      final rawDisc = _rawDiscValueExpr(discValue);
+      final discExpr = discField != null && ctx.isOmittable(discField)
+          ? 'Omittable($rawDisc)'
+          : rawDisc;
       final discArg = info.discFieldType != null &&
               !discValue.test((v) => v == info.discDefault)
-          ? '$_discDartName: ${_rawDiscValueExpr(discValue)}'
+          ? '$_discDartName: $discExpr'
           : null;
       final parts = [
         ?discArg,
@@ -367,17 +396,26 @@ final class DiscriminatedUnionEmitter {
             final bReq = fieldIsRequiredInCtor(b) ? 0 : 1;
             return aReq.compareTo(bReq);
           })).map(
-            (f) => Parameter(
-              (p) => p
-                ..name = f.name
-                ..named = true
-                ..required = fieldIsRequiredInCtor(f)
-                ..type = irTypeToReference(
-                  f.type,
-                  forceNullable: !f.isRequired && !fieldHasDefault(f),
-                )
-                ..defaultTo = fieldDefaultCode(f),
-            ),
+            (f) {
+              // A $ref payload is a model whose constructor presence-wraps
+              // these fields; inline variant fields stay plain.
+              final wrapped = variantType is IrTypeRef && ctx.isOmittable(f);
+              return Parameter(
+                (p) => p
+                  ..name = f.name
+                  ..named = true
+                  ..required = fieldIsRequiredInCtor(f)
+                  ..type = wrapped
+                      ? omittableTypeRef(f)
+                      : irTypeToReference(
+                          f.type,
+                          forceNullable: !f.isRequired && !fieldHasDefault(f),
+                        )
+                  ..defaultTo = wrapped
+                      ? const Code('const Omittable.absent()')
+                      : fieldDefaultCode(f),
+              );
+            },
           ),
         )
         ..body = Code(body),
@@ -753,7 +791,15 @@ final class DiscriminatedUnionEmitter {
           );
         }())
         ..methods.addAll(
-          commonFields.map((f) => _forwardCommonGetter(f, fieldName)),
+          commonFields.map(
+            (f) => _forwardCommonGetter(
+              f,
+              fieldName,
+              payloadOmittable: _variantPayloadFields(discValue).any(
+                (p) => p.name == f.name && ctx.isOmittable(p),
+              ),
+            ),
+          ),
         ),
     );
   }

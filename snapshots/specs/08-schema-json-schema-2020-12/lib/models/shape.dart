@@ -64,10 +64,10 @@ factory Shape.fromJson(Map<String, dynamic> json) { return switch (json['kind'])
 }; }
 
 /// Build the `circle` variant.
-factory Shape.circle({required double radius, required String id, String? color, DateTime? createdAt, }) { return ShapeCircle$Variant(ShapeCircle(kind: 'circle', radius: radius, color: color, id: id, createdAt: createdAt)); }
+factory Shape.circle({required double radius, required String id, Omittable<String?> color = const Omittable.absent(), DateTime? createdAt, }) { return ShapeCircle$Variant(ShapeCircle(kind: 'circle', radius: radius, color: color, id: id, createdAt: createdAt)); }
 
 /// Build the `rectangle` variant.
-factory Shape.rectangle({required double width, required double height, required String id, dynamic meta, DateTime? createdAt, }) { return ShapeRectangle$Variant(ShapeRectangle(kind: 'rectangle', width: width, height: height, meta: meta, id: id, createdAt: createdAt)); }
+factory Shape.rectangle({required double width, required double height, required String id, Omittable<dynamic> meta = const Omittable.absent(), DateTime? createdAt, }) { return ShapeRectangle$Variant(ShapeRectangle(kind: 'rectangle', width: width, height: height, meta: meta, id: id, createdAt: createdAt)); }
 
 /// The discriminator value identifying this variant.
 ShapeKind get kind;
@@ -95,7 +95,7 @@ final ShapeCircle shapeCircle;
 
 @override Map<String, dynamic> toJson() => {...shapeCircle.toJson(), 'kind': kind.toJson()};
 
-ShapeCircle$Variant copyWith({double? radius, String? Function()? color, String? id, DateTime? Function()? createdAt, }) { return ShapeCircle$Variant(shapeCircle.copyWith(
+ShapeCircle$Variant copyWith({double? radius, Omittable<String?>? color, String? id, DateTime? Function()? createdAt, }) { return ShapeCircle$Variant(shapeCircle.copyWith(
   radius: radius,
   color: color,
   id: id,
@@ -123,7 +123,7 @@ final ShapeRectangle shapeRectangle;
 
 @override Map<String, dynamic> toJson() => {...shapeRectangle.toJson(), 'kind': kind.toJson()};
 
-ShapeRectangle$Variant copyWith({double? width, double? height, dynamic Function()? meta, String? id, DateTime? Function()? createdAt, }) { return ShapeRectangle$Variant(shapeRectangle.copyWith(
+ShapeRectangle$Variant copyWith({double? width, double? height, Omittable<dynamic>? meta, String? id, DateTime? Function()? createdAt, }) { return ShapeRectangle$Variant(shapeRectangle.copyWith(
   width: width,
   height: height,
   meta: meta,

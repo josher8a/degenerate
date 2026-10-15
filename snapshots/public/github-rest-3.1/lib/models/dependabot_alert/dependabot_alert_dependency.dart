@@ -187,13 +187,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
  }
 /// Details for the vulnerable dependency.
-@immutable final class DependabotAlertDependency {const DependabotAlertDependency({this.package, this.manifestPath, this.scope, this.relationship, });
+@immutable final class DependabotAlertDependency {const DependabotAlertDependency({this.package, this.manifestPath, this.scope = const Omittable.absent(), this.relationship = const Omittable.absent(), });
 
 factory DependabotAlertDependency.fromJson(Map<String, dynamic> json) { return DependabotAlertDependency(
   package: json['package'] != null ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>) : null,
   manifestPath: json['manifest_path'] as String?,
-  scope: json['scope'] != null ? DependabotAlertDependencyScope.fromJson(json['scope'] as String) : null,
-  relationship: json['relationship'] != null ? DependabotAlertDependencyRelationship.fromJson(json['relationship'] as String) : null,
+  scope: json.containsKey('scope') ? Omittable(json['scope'] != null ? DependabotAlertDependencyScope.fromJson(json['scope'] as String) : null) : const Omittable.absent(),
+  relationship: json.containsKey('relationship') ? Omittable(json['relationship'] != null ? DependabotAlertDependencyRelationship.fromJson(json['relationship'] as String) : null) : const Omittable.absent(),
 ); }
 
 final DependabotAlertPackage? package;
@@ -202,27 +202,27 @@ final DependabotAlertPackage? package;
 final String? manifestPath;
 
 /// The execution scope of the vulnerable dependency.
-final DependabotAlertDependencyScope? scope;
+final Omittable<DependabotAlertDependencyScope?> scope;
 
 /// The vulnerable dependency's relationship to your project.
 /// 
 /// > `[!NOTE]`
 /// > We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 /// 
-final DependabotAlertDependencyRelationship? relationship;
+final Omittable<DependabotAlertDependencyRelationship?> relationship;
 
 Map<String, dynamic> toJson() { return {
   if (package != null) 'package': package?.toJson(),
   'manifest_path': ?manifestPath,
-  if (scope != null) 'scope': scope?.toJson(),
-  if (relationship != null) 'relationship': relationship?.toJson(),
+  if (scope.isPresent) 'scope': scope.value?.toJson(),
+  if (relationship.isPresent) 'relationship': relationship.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'package', 'manifest_path', 'scope', 'relationship'}.contains(key)); } 
-DependabotAlertDependency copyWith({DependabotAlertPackage? Function()? package, String? Function()? manifestPath, DependabotAlertDependencyScope? Function()? scope, DependabotAlertDependencyRelationship? Function()? relationship, }) { return DependabotAlertDependency(
+DependabotAlertDependency copyWith({DependabotAlertPackage? Function()? package, String? Function()? manifestPath, Omittable<DependabotAlertDependencyScope?>? scope, Omittable<DependabotAlertDependencyRelationship?>? relationship, }) { return DependabotAlertDependency(
   package: package != null ? package() : this.package,
   manifestPath: manifestPath != null ? manifestPath() : this.manifestPath,
-  scope: scope != null ? scope() : this.scope,
-  relationship: relationship != null ? relationship() : this.relationship,
+  scope: scope ?? this.scope,
+  relationship: relationship ?? this.relationship,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertDependency &&

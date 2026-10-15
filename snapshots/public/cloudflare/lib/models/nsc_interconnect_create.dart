@@ -64,7 +64,7 @@ factory NscInterconnectCreate.fromJson(Map<String, dynamic> json) { return switc
 }; }
 
 /// Build the `direct` variant.
-factory NscInterconnectCreate.direct({required String account, required String slotId, String? speed, }) { return NscInterconnectCreateDirect(NscInterconnectCreatePhysicalBody(type: 'direct', account: account, slotId: slotId, speed: speed)); }
+factory NscInterconnectCreate.direct({required String account, required String slotId, Omittable<String?> speed = const Omittable.absent(), }) { return NscInterconnectCreateDirect(NscInterconnectCreatePhysicalBody(type: 'direct', account: account, slotId: slotId, speed: speed)); }
 
 /// Build the `gcp_partner` variant.
 factory NscInterconnectCreate.gcpPartner({required String account, required Bandwidth bandwidth, required String pairingKey, }) { return NscInterconnectCreateGcpPartner(NscInterconnectCreateGcpPartnerBody(type: 'gcp_partner', account: account, bandwidth: bandwidth, pairingKey: pairingKey)); }
@@ -93,7 +93,7 @@ final NscInterconnectCreatePhysicalBody nscInterconnectCreatePhysicalBody;
 
 @override Map<String, dynamic> toJson() => {...nscInterconnectCreatePhysicalBody.toJson(), 'type': type.toJson()};
 
-NscInterconnectCreateDirect copyWith({String? account, String? slotId, String? Function()? speed, }) { return NscInterconnectCreateDirect(nscInterconnectCreatePhysicalBody.copyWith(
+NscInterconnectCreateDirect copyWith({String? account, String? slotId, Omittable<String?>? speed, }) { return NscInterconnectCreateDirect(nscInterconnectCreatePhysicalBody.copyWith(
   account: account,
   slotId: slotId,
   speed: speed,

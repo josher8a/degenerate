@@ -11,6 +11,7 @@ library;
 import 'dart:io';
 
 import 'package:degenerate/src/dart_names.dart' show toTypeName;
+import 'package:degenerate/src/emitter/emit_utils.dart' show OmittableMode;
 import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/ir/ir_rewriter.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
@@ -26,6 +27,8 @@ import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/parser/ref_inliner.dart';
 import 'package:path/path.dart' as p;
+
+export 'package:degenerate/src/emitter/emit_utils.dart' show OmittableMode;
 
 // packageVersion updated by scripts/release.dart
 /// Current package version.
@@ -63,6 +66,7 @@ final class GeneratorConfig {
     this.emitTypedParams = false,
     this.barrelHide = const [],
     this.optionalHeaders = const [],
+    this.omittable = OmittableMode.nullableOnly,
   });
 
   /// Path to the input OpenAPI spec file.
@@ -149,6 +153,9 @@ final class GeneratorConfig {
   /// provided via `ApiConfig.defaultHeaders` or an interceptor rather than
   /// per-call. Matched case-insensitively against the original param name.
   final List<String> optionalHeaders;
+  /// How generated models represent "field omitted" vs "field set to null"
+  /// on optional fields. See [OmittableMode].
+  final OmittableMode omittable;
 }
 
 /// The main code generator pipeline.
@@ -500,6 +507,7 @@ final class Generator {
       emitRoundtripFixtures: config.emitRoundtripFixtures,
       unionMetadata: unionMetadata,
       barrelHide: config.barrelHide,
+      omittable: config.omittable,
     );
 
     if (config.workspace) {

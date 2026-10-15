@@ -84,41 +84,42 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CodeScanningSarifsStatus {const CodeScanningSarifsStatus({this.processingStatus, this.analysesUrl, this.errors, });
+@immutable final class CodeScanningSarifsStatus {const CodeScanningSarifsStatus({this.processingStatus, this.analysesUrl = const Omittable.absent(), this.errors = const Omittable.absent(), });
 
 factory CodeScanningSarifsStatus.fromJson(Map<String, dynamic> json) { return CodeScanningSarifsStatus(
   processingStatus: json['processing_status'] != null ? ProcessingStatus.fromJson(json['processing_status'] as String) : null,
-  analysesUrl: json['analyses_url'] != null ? Uri.parse(json['analyses_url'] as String) : null,
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  analysesUrl: json.containsKey('analyses_url') ? Omittable(json['analyses_url'] != null ? Uri.parse(json['analyses_url'] as String) : null) : const Omittable.absent(),
+  errors: json.containsKey('errors') ? Omittable((json['errors'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
 ); }
 
 /// `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
 final ProcessingStatus? processingStatus;
 
 /// The REST API URL for getting the analyses associated with the upload.
-final Uri? analysesUrl;
+final Omittable<Uri?> analysesUrl;
 
 /// Any errors that ocurred during processing of the delivery.
-final List<String>? errors;
+final Omittable<List<String>?> errors;
 
 Map<String, dynamic> toJson() { return {
   if (processingStatus != null) 'processing_status': processingStatus?.toJson(),
-  if (analysesUrl != null) 'analyses_url': analysesUrl?.toString(),
-  'errors': ?errors,
+  if (analysesUrl.isPresent) 'analyses_url': analysesUrl.value?.toString(),
+  if (errors.isPresent) 'errors': errors.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'processing_status', 'analyses_url', 'errors'}.contains(key)); } 
-CodeScanningSarifsStatus copyWith({ProcessingStatus? Function()? processingStatus, Uri? Function()? analysesUrl, List<String>? Function()? errors, }) { return CodeScanningSarifsStatus(
+CodeScanningSarifsStatus copyWith({ProcessingStatus? Function()? processingStatus, Omittable<Uri?>? analysesUrl, Omittable<List<String>?>? errors, }) { return CodeScanningSarifsStatus(
   processingStatus: processingStatus != null ? processingStatus() : this.processingStatus,
-  analysesUrl: analysesUrl != null ? analysesUrl() : this.analysesUrl,
-  errors: errors != null ? errors() : this.errors,
+  analysesUrl: analysesUrl ?? this.analysesUrl,
+  errors: errors ?? this.errors,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningSarifsStatus &&
           processingStatus == other.processingStatus &&
           analysesUrl == other.analysesUrl &&
-          listEquals(errors, other.errors);
+          errors.isPresent == other.errors.isPresent &&
+          listEquals(errors.value, other.errors.value);
 
-@override int get hashCode => Object.hash(processingStatus, analysesUrl, Object.hashAll(errors ?? const []));
+@override int get hashCode => Object.hash(processingStatus, analysesUrl, Object.hashAll(errors.value ?? const []));
 
 @override String toString() => 'CodeScanningSarifsStatus(processingStatus: $processingStatus, analysesUrl: $analysesUrl, errors: $errors)';
 

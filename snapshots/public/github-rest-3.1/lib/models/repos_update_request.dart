@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ReposUpdateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/package/package_visibility.dart';import 'package:pub_github_rest_3_1/models/repos_update_request/repos_update_request_security_and_analysis.dart';@immutable final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private = false, this.visibility, this.securityAndAnalysis, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.isTemplate = false, this.defaultBranch, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived = false, this.allowForking = false, this.webCommitSignoffRequired = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/package/package_visibility.dart';import 'package:pub_github_rest_3_1/models/repos_update_request/repos_update_request_security_and_analysis.dart';@immutable final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private = false, this.visibility, this.securityAndAnalysis = const Omittable.absent(), this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.isTemplate = false, this.defaultBranch, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived = false, this.allowForking = false, this.webCommitSignoffRequired = false, });
 
 factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateRequest(
   name: json['name'] as String?,
@@ -9,7 +9,7 @@ factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpd
   homepage: json['homepage'] as String?,
   private: json.containsKey('private') ? json['private'] as bool : false,
   visibility: json['visibility'] != null ? PackageVisibility.fromJson(json['visibility'] as String) : null,
-  securityAndAnalysis: json['security_and_analysis'] != null ? ReposUpdateRequestSecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,
+  securityAndAnalysis: json.containsKey('security_and_analysis') ? Omittable(json['security_and_analysis'] != null ? ReposUpdateRequestSecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   hasIssues: json.containsKey('has_issues') ? json['has_issues'] as bool : true,
   hasProjects: json.containsKey('has_projects') ? json['has_projects'] as bool : true,
   hasWiki: json.containsKey('has_wiki') ? json['has_wiki'] as bool : true,
@@ -55,7 +55,7 @@ final PackageVisibility? visibility;
 /// `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.
 /// 
 /// You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
-final ReposUpdateRequestSecurityAndAnalysis? securityAndAnalysis;
+final Omittable<ReposUpdateRequestSecurityAndAnalysis?> securityAndAnalysis;
 
 /// Either `true` to enable issues for this repository or `false` to disable them.
 final bool hasIssues;
@@ -138,7 +138,7 @@ Map<String, dynamic> toJson() { return {
   'homepage': ?homepage,
   'private': private,
   if (visibility != null) 'visibility': visibility?.toJson(),
-  if (securityAndAnalysis != null) 'security_and_analysis': securityAndAnalysis?.toJson(),
+  if (securityAndAnalysis.isPresent) 'security_and_analysis': securityAndAnalysis.value?.toJson(),
   'has_issues': hasIssues,
   'has_projects': hasProjects,
   'has_wiki': hasWiki,
@@ -160,13 +160,13 @@ Map<String, dynamic> toJson() { return {
   'web_commit_signoff_required': webCommitSignoffRequired,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'homepage', 'private', 'visibility', 'security_and_analysis', 'has_issues', 'has_projects', 'has_wiki', 'is_template', 'default_branch', 'allow_squash_merge', 'allow_merge_commit', 'allow_rebase_merge', 'allow_auto_merge', 'delete_branch_on_merge', 'allow_update_branch', 'use_squash_pr_title_as_default', 'squash_merge_commit_title', 'squash_merge_commit_message', 'merge_commit_title', 'merge_commit_message', 'archived', 'allow_forking', 'web_commit_signoff_required'}.contains(key)); } 
-ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool Function()? private, PackageVisibility? Function()? visibility, ReposUpdateRequestSecurityAndAnalysis? Function()? securityAndAnalysis, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? isTemplate, String? Function()? defaultBranch, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowUpdateBranch, bool Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool Function()? archived, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, }) { return ReposUpdateRequest(
+ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool Function()? private, PackageVisibility? Function()? visibility, Omittable<ReposUpdateRequestSecurityAndAnalysis?>? securityAndAnalysis, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? isTemplate, String? Function()? defaultBranch, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowUpdateBranch, bool Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool Function()? archived, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, }) { return ReposUpdateRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,
   private: private != null ? private() : this.private,
   visibility: visibility != null ? visibility() : this.visibility,
-  securityAndAnalysis: securityAndAnalysis != null ? securityAndAnalysis() : this.securityAndAnalysis,
+  securityAndAnalysis: securityAndAnalysis ?? this.securityAndAnalysis,
   hasIssues: hasIssues != null ? hasIssues() : this.hasIssues,
   hasProjects: hasProjects != null ? hasProjects() : this.hasProjects,
   hasWiki: hasWiki != null ? hasWiki() : this.hasWiki,

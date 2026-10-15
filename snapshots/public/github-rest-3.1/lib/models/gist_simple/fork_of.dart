@@ -2,7 +2,7 @@
 // Source: #/components/schemas/GistSimple (inline: ForkOf)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_simple/fork_of_files_value.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist
-@immutable final class ForkOf {const ForkOf({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, required this.user, required this.commentsUrl, this.commentsEnabled, this.owner, this.truncated, this.forks, this.history, });
+@immutable final class ForkOf {const ForkOf({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, required this.user, required this.commentsUrl, this.commentsEnabled, this.owner = const Omittable.absent(), this.truncated, this.forks, this.history, });
 
 factory ForkOf.fromJson(Map<String, dynamic> json) { return ForkOf(
   url: Uri.parse(json['url'] as String),
@@ -22,7 +22,7 @@ factory ForkOf.fromJson(Map<String, dynamic> json) { return ForkOf(
   commentsEnabled: json['comments_enabled'] as bool?,
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   commentsUrl: Uri.parse(json['comments_url'] as String),
-  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  owner: json.containsKey('owner') ? Omittable(json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   truncated: json['truncated'] as bool?,
   forks: (json['forks'] as List<dynamic>?)?.map((e) => e).toList(),
   history: (json['history'] as List<dynamic>?)?.map((e) => e).toList(),
@@ -62,7 +62,7 @@ final SimpleUser? user;
 
 final Uri commentsUrl;
 
-final SimpleUser? owner;
+final Omittable<SimpleUser?> owner;
 
 final bool? truncated;
 
@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'comments_enabled': ?commentsEnabled,
   'user': user?.toJson(),
   'comments_url': commentsUrl.toString(),
-  if (owner != null) 'owner': owner?.toJson(),
+  if (owner.isPresent) 'owner': owner.value?.toJson(),
   'truncated': ?truncated,
   'forks': ?forks,
   'history': ?history,
@@ -105,11 +105,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('public') && json['public'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('user') &&
       json.containsKey('comments_url') && json['comments_url'] is String; } 
-ForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,ForkOfFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool? Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, SimpleUser? Function()? owner, bool? Function()? truncated, List<dynamic>? Function()? forks, List<dynamic>? Function()? history, }) { return ForkOf(
+ForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,ForkOfFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool? Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, Omittable<SimpleUser?>? owner, bool? Function()? truncated, List<dynamic>? Function()? forks, List<dynamic>? Function()? history, }) { return ForkOf(
   url: url ?? this.url,
   forksUrl: forksUrl ?? this.forksUrl,
   commitsUrl: commitsUrl ?? this.commitsUrl,
@@ -127,7 +127,7 @@ ForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? n
   commentsEnabled: commentsEnabled != null ? commentsEnabled() : this.commentsEnabled,
   user: user != null ? user() : this.user,
   commentsUrl: commentsUrl ?? this.commentsUrl,
-  owner: owner != null ? owner() : this.owner,
+  owner: owner ?? this.owner,
   truncated: truncated != null ? truncated() : this.truncated,
   forks: forks != null ? forks() : this.forks,
   history: history != null ? history() : this.history,

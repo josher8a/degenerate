@@ -729,16 +729,16 @@ factory RealtimeServerEvent.fromJson(Map<String, dynamic> json) { return switch 
 factory RealtimeServerEvent.conversationCreated({required String eventId, required RealtimeServerEventConversationCreatedConversation conversation, }) { return RealtimeServerEventConversationCreated$Variant(RealtimeServerEventConversationCreated(type: 'conversation.created', eventId: eventId, conversation: conversation)); }
 
 /// Build the `conversation.item.created` variant.
-factory RealtimeServerEvent.conversationItemCreated({required String eventId, required RealtimeConversationItem item, String? previousItemId, }) { return RealtimeServerEventConversationItemCreated$Variant(RealtimeServerEventConversationItemCreated(type: 'conversation.item.created', eventId: eventId, previousItemId: previousItemId, item: item)); }
+factory RealtimeServerEvent.conversationItemCreated({required String eventId, required RealtimeConversationItem item, Omittable<String?> previousItemId = const Omittable.absent(), }) { return RealtimeServerEventConversationItemCreated$Variant(RealtimeServerEventConversationItemCreated(type: 'conversation.item.created', eventId: eventId, previousItemId: previousItemId, item: item)); }
 
 /// Build the `conversation.item.deleted` variant.
 factory RealtimeServerEvent.conversationItemDeleted({required String eventId, required String itemId, }) { return RealtimeServerEventConversationItemDeleted$Variant(RealtimeServerEventConversationItemDeleted(type: 'conversation.item.deleted', eventId: eventId, itemId: itemId)); }
 
 /// Build the `conversation.item.input_audio_transcription.completed` variant.
-factory RealtimeServerEvent.conversationItemInputAudioTranscriptionCompleted({required String eventId, required String itemId, required int contentIndex, required String transcript, required CreateTranscriptionResponseJsonUsage usage, List<LogProbProperties>? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(type: 'conversation.item.input_audio_transcription.completed', eventId: eventId, itemId: itemId, contentIndex: contentIndex, transcript: transcript, logprobs: logprobs, usage: usage)); }
+factory RealtimeServerEvent.conversationItemInputAudioTranscriptionCompleted({required String eventId, required String itemId, required int contentIndex, required String transcript, required CreateTranscriptionResponseJsonUsage usage, Omittable<List<LogProbProperties>?> logprobs = const Omittable.absent(), }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(type: 'conversation.item.input_audio_transcription.completed', eventId: eventId, itemId: itemId, contentIndex: contentIndex, transcript: transcript, logprobs: logprobs, usage: usage)); }
 
 /// Build the `conversation.item.input_audio_transcription.delta` variant.
-factory RealtimeServerEvent.conversationItemInputAudioTranscriptionDelta({required String eventId, required String itemId, int? contentIndex, String? delta, List<LogProbProperties>? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionDelta(type: 'conversation.item.input_audio_transcription.delta', eventId: eventId, itemId: itemId, contentIndex: contentIndex, delta: delta, logprobs: logprobs)); }
+factory RealtimeServerEvent.conversationItemInputAudioTranscriptionDelta({required String eventId, required String itemId, int? contentIndex, String? delta, Omittable<List<LogProbProperties>?> logprobs = const Omittable.absent(), }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionDelta(type: 'conversation.item.input_audio_transcription.delta', eventId: eventId, itemId: itemId, contentIndex: contentIndex, delta: delta, logprobs: logprobs)); }
 
 /// Build the `conversation.item.input_audio_transcription.failed` variant.
 factory RealtimeServerEvent.conversationItemInputAudioTranscriptionFailed({required String eventId, required String itemId, required int contentIndex, required RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError error, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionFailed(type: 'conversation.item.input_audio_transcription.failed', eventId: eventId, itemId: itemId, contentIndex: contentIndex, error: error)); }
@@ -756,7 +756,7 @@ factory RealtimeServerEvent.error({required String eventId, required RealtimeBet
 factory RealtimeServerEvent.inputAudioBufferCleared({required String eventId}) { return RealtimeServerEventInputAudioBufferCleared$Variant(RealtimeServerEventInputAudioBufferCleared(type: 'input_audio_buffer.cleared', eventId: eventId)); }
 
 /// Build the `input_audio_buffer.committed` variant.
-factory RealtimeServerEvent.inputAudioBufferCommitted({required String eventId, required String itemId, String? previousItemId, }) { return RealtimeServerEventInputAudioBufferCommitted$Variant(RealtimeServerEventInputAudioBufferCommitted(type: 'input_audio_buffer.committed', eventId: eventId, previousItemId: previousItemId, itemId: itemId)); }
+factory RealtimeServerEvent.inputAudioBufferCommitted({required String eventId, required String itemId, Omittable<String?> previousItemId = const Omittable.absent(), }) { return RealtimeServerEventInputAudioBufferCommitted$Variant(RealtimeServerEventInputAudioBufferCommitted(type: 'input_audio_buffer.committed', eventId: eventId, previousItemId: previousItemId, itemId: itemId)); }
 
 /// Build the `input_audio_buffer.dtmf_event_received` variant.
 factory RealtimeServerEvent.inputAudioBufferDtmfEventReceived({required String event, required int receivedAt, }) { return RealtimeServerEventInputAudioBufferDtmfEventReceived$Variant(RealtimeServerEventInputAudioBufferDtmfEventReceived(type: 'input_audio_buffer.dtmf_event_received', event: event, receivedAt: receivedAt)); }
@@ -828,10 +828,10 @@ factory RealtimeServerEvent.outputAudioBufferStopped({required String eventId, r
 factory RealtimeServerEvent.outputAudioBufferCleared({required String eventId, required String responseId, }) { return RealtimeServerEventOutputAudioBufferCleared$Variant(RealtimeServerEventOutputAudioBufferCleared(type: 'output_audio_buffer.cleared', eventId: eventId, responseId: responseId)); }
 
 /// Build the `conversation.item.added` variant.
-factory RealtimeServerEvent.conversationItemAdded({required String eventId, required RealtimeConversationItem item, String? previousItemId, }) { return RealtimeServerEventConversationItemAdded$Variant(RealtimeServerEventConversationItemAdded(type: 'conversation.item.added', eventId: eventId, previousItemId: previousItemId, item: item)); }
+factory RealtimeServerEvent.conversationItemAdded({required String eventId, required RealtimeConversationItem item, Omittable<String?> previousItemId = const Omittable.absent(), }) { return RealtimeServerEventConversationItemAdded$Variant(RealtimeServerEventConversationItemAdded(type: 'conversation.item.added', eventId: eventId, previousItemId: previousItemId, item: item)); }
 
 /// Build the `conversation.item.done` variant.
-factory RealtimeServerEvent.conversationItemDone({required String eventId, required RealtimeConversationItem item, String? previousItemId, }) { return RealtimeServerEventConversationItemDone$Variant(RealtimeServerEventConversationItemDone(type: 'conversation.item.done', eventId: eventId, previousItemId: previousItemId, item: item)); }
+factory RealtimeServerEvent.conversationItemDone({required String eventId, required RealtimeConversationItem item, Omittable<String?> previousItemId = const Omittable.absent(), }) { return RealtimeServerEventConversationItemDone$Variant(RealtimeServerEventConversationItemDone(type: 'conversation.item.done', eventId: eventId, previousItemId: previousItemId, item: item)); }
 
 /// Build the `input_audio_buffer.timeout_triggered` variant.
 factory RealtimeServerEvent.inputAudioBufferTimeoutTriggered({required String eventId, required int audioStartMs, required int audioEndMs, required String itemId, }) { return RealtimeServerEventInputAudioBufferTimeoutTriggered$Variant(RealtimeServerEventInputAudioBufferTimeoutTriggered(type: 'input_audio_buffer.timeout_triggered', eventId: eventId, audioStartMs: audioStartMs, audioEndMs: audioEndMs, itemId: itemId)); }
@@ -849,7 +849,7 @@ factory RealtimeServerEvent.mcpListToolsCompleted({required String eventId, requ
 factory RealtimeServerEvent.mcpListToolsFailed({required String eventId, required String itemId, }) { return RealtimeServerEventMcpListToolsFailed$Variant(RealtimeServerEventMcpListToolsFailed(type: 'mcp_list_tools.failed', eventId: eventId, itemId: itemId)); }
 
 /// Build the `response.mcp_call_arguments.delta` variant.
-factory RealtimeServerEvent.responseMcpCallArgumentsDelta({required String eventId, required String responseId, required String itemId, required int outputIndex, required String delta, String? obfuscation, }) { return RealtimeServerEventResponseMcpCallArgumentsDelta$Variant(RealtimeServerEventResponseMcpCallArgumentsDelta(type: 'response.mcp_call_arguments.delta', eventId: eventId, responseId: responseId, itemId: itemId, outputIndex: outputIndex, delta: delta, obfuscation: obfuscation)); }
+factory RealtimeServerEvent.responseMcpCallArgumentsDelta({required String eventId, required String responseId, required String itemId, required int outputIndex, required String delta, Omittable<String?> obfuscation = const Omittable.absent(), }) { return RealtimeServerEventResponseMcpCallArgumentsDelta$Variant(RealtimeServerEventResponseMcpCallArgumentsDelta(type: 'response.mcp_call_arguments.delta', eventId: eventId, responseId: responseId, itemId: itemId, outputIndex: outputIndex, delta: delta, obfuscation: obfuscation)); }
 
 /// Build the `response.mcp_call_arguments.done` variant.
 factory RealtimeServerEvent.responseMcpCallArgumentsDone({required String eventId, required String responseId, required String itemId, required int outputIndex, required String arguments, }) { return RealtimeServerEventResponseMcpCallArgumentsDone$Variant(RealtimeServerEventResponseMcpCallArgumentsDone(type: 'response.mcp_call_arguments.done', eventId: eventId, responseId: responseId, itemId: itemId, outputIndex: outputIndex, arguments: arguments)); }
@@ -951,7 +951,7 @@ final RealtimeServerEventConversationItemCreated realtimeServerEventConversation
 
 @override Map<String, dynamic> toJson() => {...realtimeServerEventConversationItemCreated.toJson(), 'type': type.toJson()};
 
-RealtimeServerEventConversationItemCreated$Variant copyWith({String? eventId, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemCreated$Variant(realtimeServerEventConversationItemCreated.copyWith(
+RealtimeServerEventConversationItemCreated$Variant copyWith({String? eventId, Omittable<String?>? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemCreated$Variant(realtimeServerEventConversationItemCreated.copyWith(
   eventId: eventId,
   previousItemId: previousItemId,
   item: item,
@@ -996,7 +996,7 @@ final RealtimeServerEventConversationItemInputAudioTranscriptionCompleted realti
 
 @override Map<String, dynamic> toJson() => {...realtimeServerEventConversationItemInputAudioTranscriptionCompleted.toJson(), 'type': type.toJson()};
 
-RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant copyWith({String? eventId, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, CreateTranscriptionResponseJsonUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant(realtimeServerEventConversationItemInputAudioTranscriptionCompleted.copyWith(
+RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant copyWith({String? eventId, String? itemId, int? contentIndex, String? transcript, Omittable<List<LogProbProperties>?>? logprobs, CreateTranscriptionResponseJsonUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant(realtimeServerEventConversationItemInputAudioTranscriptionCompleted.copyWith(
   eventId: eventId,
   itemId: itemId,
   contentIndex: contentIndex,
@@ -1022,7 +1022,7 @@ final RealtimeServerEventConversationItemInputAudioTranscriptionDelta realtimeSe
 
 @override Map<String, dynamic> toJson() => {...realtimeServerEventConversationItemInputAudioTranscriptionDelta.toJson(), 'type': type.toJson()};
 
-RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant copyWith({String? eventId, String? itemId, int? Function()? contentIndex, String? Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(realtimeServerEventConversationItemInputAudioTranscriptionDelta.copyWith(
+RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant copyWith({String? eventId, String? itemId, int? Function()? contentIndex, String? Function()? delta, Omittable<List<LogProbProperties>?>? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(realtimeServerEventConversationItemInputAudioTranscriptionDelta.copyWith(
   eventId: eventId,
   itemId: itemId,
   contentIndex: contentIndex,
@@ -1160,7 +1160,7 @@ final RealtimeServerEventInputAudioBufferCommitted realtimeServerEventInputAudio
 
 @override Map<String, dynamic> toJson() => {...realtimeServerEventInputAudioBufferCommitted.toJson(), 'type': type.toJson()};
 
-RealtimeServerEventInputAudioBufferCommitted$Variant copyWith({String? eventId, String? Function()? previousItemId, String? itemId, }) { return RealtimeServerEventInputAudioBufferCommitted$Variant(realtimeServerEventInputAudioBufferCommitted.copyWith(
+RealtimeServerEventInputAudioBufferCommitted$Variant copyWith({String? eventId, Omittable<String?>? previousItemId, String? itemId, }) { return RealtimeServerEventInputAudioBufferCommitted$Variant(realtimeServerEventInputAudioBufferCommitted.copyWith(
   eventId: eventId,
   previousItemId: previousItemId,
   itemId: itemId,
@@ -1735,7 +1735,7 @@ final RealtimeServerEventConversationItemAdded realtimeServerEventConversationIt
 
 @override Map<String, dynamic> toJson() => {...realtimeServerEventConversationItemAdded.toJson(), 'type': type.toJson()};
 
-RealtimeServerEventConversationItemAdded$Variant copyWith({String? eventId, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemAdded$Variant(realtimeServerEventConversationItemAdded.copyWith(
+RealtimeServerEventConversationItemAdded$Variant copyWith({String? eventId, Omittable<String?>? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemAdded$Variant(realtimeServerEventConversationItemAdded.copyWith(
   eventId: eventId,
   previousItemId: previousItemId,
   item: item,
@@ -1758,7 +1758,7 @@ final RealtimeServerEventConversationItemDone realtimeServerEventConversationIte
 
 @override Map<String, dynamic> toJson() => {...realtimeServerEventConversationItemDone.toJson(), 'type': type.toJson()};
 
-RealtimeServerEventConversationItemDone$Variant copyWith({String? eventId, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemDone$Variant(realtimeServerEventConversationItemDone.copyWith(
+RealtimeServerEventConversationItemDone$Variant copyWith({String? eventId, Omittable<String?>? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemDone$Variant(realtimeServerEventConversationItemDone.copyWith(
   eventId: eventId,
   previousItemId: previousItemId,
   item: item,
@@ -1899,7 +1899,7 @@ final RealtimeServerEventResponseMcpCallArgumentsDelta realtimeServerEventRespon
 
 @override Map<String, dynamic> toJson() => {...realtimeServerEventResponseMcpCallArgumentsDelta.toJson(), 'type': type.toJson()};
 
-RealtimeServerEventResponseMcpCallArgumentsDelta$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, String? delta, String? Function()? obfuscation, }) { return RealtimeServerEventResponseMcpCallArgumentsDelta$Variant(realtimeServerEventResponseMcpCallArgumentsDelta.copyWith(
+RealtimeServerEventResponseMcpCallArgumentsDelta$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, String? delta, Omittable<String?>? obfuscation, }) { return RealtimeServerEventResponseMcpCallArgumentsDelta$Variant(realtimeServerEventResponseMcpCallArgumentsDelta.copyWith(
   eventId: eventId,
   responseId: responseId,
   itemId: itemId,

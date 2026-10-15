@@ -2,12 +2,12 @@
 // Source: #/components/schemas/PaymentMethodDetailsCardWallet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet/payment_method_card_wallet_type.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_amex_express_checkout.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_apple_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_google_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_link.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_masterpass.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_samsung_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_visa_checkout.dart';/// 
-@immutable final class PaymentMethodDetailsCardWallet {const PaymentMethodDetailsCardWallet({required this.type, this.amexExpressCheckout, this.applePay, this.dynamicLast4, this.googlePay, this.link, this.masterpass, this.samsungPay, this.visaCheckout, });
+@immutable final class PaymentMethodDetailsCardWallet {const PaymentMethodDetailsCardWallet({required this.type, this.amexExpressCheckout, this.applePay, this.dynamicLast4 = const Omittable.absent(), this.googlePay, this.link, this.masterpass, this.samsungPay, this.visaCheckout, });
 
 factory PaymentMethodDetailsCardWallet.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardWallet(
   amexExpressCheckout: json['amex_express_checkout'] != null ? PaymentMethodDetailsCardWalletAmexExpressCheckout.fromJson(json['amex_express_checkout'] as Map<String, dynamic>) : null,
   applePay: json['apple_pay'] != null ? PaymentMethodDetailsCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
-  dynamicLast4: json['dynamic_last4'] as String?,
+  dynamicLast4: json.containsKey('dynamic_last4') ? Omittable(json['dynamic_last4'] as String?) : const Omittable.absent(),
   googlePay: json['google_pay'] != null ? PaymentMethodDetailsCardWalletGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
   link: json['link'] != null ? PaymentMethodDetailsCardWalletLink.fromJson(json['link'] as Map<String, dynamic>) : null,
   masterpass: json['masterpass'] != null ? PaymentMethodDetailsCardWalletMasterpass.fromJson(json['masterpass'] as Map<String, dynamic>) : null,
@@ -21,7 +21,7 @@ final PaymentMethodDetailsCardWalletAmexExpressCheckout? amexExpressCheckout;
 final PaymentMethodDetailsCardWalletApplePay? applePay;
 
 /// (For tokenized numbers only.) The last four digits of the device account number.
-final String? dynamicLast4;
+final Omittable<String?> dynamicLast4;
 
 final PaymentMethodDetailsCardWalletGooglePay? googlePay;
 
@@ -39,7 +39,7 @@ final PaymentMethodDetailsCardWalletVisaCheckout? visaCheckout;
 Map<String, dynamic> toJson() { return {
   if (amexExpressCheckout != null) 'amex_express_checkout': amexExpressCheckout?.toJson(),
   if (applePay != null) 'apple_pay': applePay?.toJson(),
-  'dynamic_last4': ?dynamicLast4,
+  if (dynamicLast4.isPresent) 'dynamic_last4': dynamicLast4.value,
   if (googlePay != null) 'google_pay': googlePay?.toJson(),
   if (link != null) 'link': link?.toJson(),
   if (masterpass != null) 'masterpass': masterpass?.toJson(),
@@ -50,15 +50,15 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final dynamicLast4$ = dynamicLast4;
+final dynamicLast4$ = dynamicLast4.value;
 if (dynamicLast4$ != null) {
   if (dynamicLast4$.runes.length > 5000) { errors.add('dynamicLast4: length must be <= 5000'); }
 }
 return errors; } 
-PaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletAmexExpressCheckout? Function()? amexExpressCheckout, PaymentMethodDetailsCardWalletApplePay? Function()? applePay, String? Function()? dynamicLast4, PaymentMethodDetailsCardWalletGooglePay? Function()? googlePay, PaymentMethodDetailsCardWalletLink? Function()? link, PaymentMethodDetailsCardWalletMasterpass? Function()? masterpass, PaymentMethodDetailsCardWalletSamsungPay? Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodDetailsCardWalletVisaCheckout? Function()? visaCheckout, }) { return PaymentMethodDetailsCardWallet(
+PaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletAmexExpressCheckout? Function()? amexExpressCheckout, PaymentMethodDetailsCardWalletApplePay? Function()? applePay, Omittable<String?>? dynamicLast4, PaymentMethodDetailsCardWalletGooglePay? Function()? googlePay, PaymentMethodDetailsCardWalletLink? Function()? link, PaymentMethodDetailsCardWalletMasterpass? Function()? masterpass, PaymentMethodDetailsCardWalletSamsungPay? Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodDetailsCardWalletVisaCheckout? Function()? visaCheckout, }) { return PaymentMethodDetailsCardWallet(
   amexExpressCheckout: amexExpressCheckout != null ? amexExpressCheckout() : this.amexExpressCheckout,
   applePay: applePay != null ? applePay() : this.applePay,
-  dynamicLast4: dynamicLast4 != null ? dynamicLast4() : this.dynamicLast4,
+  dynamicLast4: dynamicLast4 ?? this.dynamicLast4,
   googlePay: googlePay != null ? googlePay() : this.googlePay,
   link: link != null ? link() : this.link,
   masterpass: masterpass != null ? masterpass() : this.masterpass,

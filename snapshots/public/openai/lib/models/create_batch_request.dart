@@ -197,13 +197,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $24h, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateBatchRequest {const CreateBatchRequest({required this.inputFileId, required this.endpoint, required this.completionWindow, this.metadata, this.outputExpiresAfter, });
+@immutable final class CreateBatchRequest {const CreateBatchRequest({required this.inputFileId, required this.endpoint, required this.completionWindow, this.metadata = const Omittable.absent(), this.outputExpiresAfter, });
 
 factory CreateBatchRequest.fromJson(Map<String, dynamic> json) { return CreateBatchRequest(
   inputFileId: json['input_file_id'] as String,
   endpoint: Endpoint.fromJson(json['endpoint'] as String),
   completionWindow: CompletionWindow.fromJson(json['completion_window'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   outputExpiresAfter: json['output_expires_after'] != null ? BatchFileExpirationAfter.fromJson(json['output_expires_after'] as Map<String, dynamic>) : null,
 ); }
 
@@ -228,7 +228,7 @@ final CompletionWindow completionWindow;
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 final BatchFileExpirationAfter? outputExpiresAfter;
 
@@ -236,17 +236,17 @@ Map<String, dynamic> toJson() { return {
   'input_file_id': inputFileId,
   'endpoint': endpoint.toJson(),
   'completion_window': completionWindow.toJson(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   if (outputExpiresAfter != null) 'output_expires_after': outputExpiresAfter?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_file_id') && json['input_file_id'] is String &&
       json.containsKey('endpoint') &&
       json.containsKey('completion_window'); } 
-CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, CompletionWindow? completionWindow, Map<String, String>? Function()? metadata, BatchFileExpirationAfter? Function()? outputExpiresAfter, }) { return CreateBatchRequest(
+CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, CompletionWindow? completionWindow, Omittable<Map<String,String>?>? metadata, BatchFileExpirationAfter? Function()? outputExpiresAfter, }) { return CreateBatchRequest(
   inputFileId: inputFileId ?? this.inputFileId,
   endpoint: endpoint ?? this.endpoint,
   completionWindow: completionWindow ?? this.completionWindow,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   outputExpiresAfter: outputExpiresAfter != null ? outputExpiresAfter() : this.outputExpiresAfter,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

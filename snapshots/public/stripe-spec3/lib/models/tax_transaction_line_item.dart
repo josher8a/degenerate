@@ -55,19 +55,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTrans
 
  }
 /// 
-@immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata, this.product, this.reversal, });
+@immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata = const Omittable.absent(), this.product = const Omittable.absent(), this.reversal = const Omittable.absent(), });
 
 factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxTransactionLineItem(
   amount: (json['amount'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: TaxTransactionLineItemObject.fromJson(json['object'] as String),
-  product: json['product'] as String?,
+  product: json.containsKey('product') ? Omittable(json['product'] as String?) : const Omittable.absent(),
   quantity: (json['quantity'] as num).toInt(),
   reference: json['reference'] as String,
-  reversal: json['reversal'] != null ? TaxProductResourceTaxTransactionLineItemResourceReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null,
+  reversal: json.containsKey('reversal') ? Omittable(json['reversal'] != null ? TaxProductResourceTaxTransactionLineItemResourceReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxCode: json['tax_code'] as String,
   type: TaxTransactionLineItemType.fromJson(json['type'] as String),
@@ -86,13 +86,13 @@ final String id;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final TaxTransactionLineItemObject object;
 
 /// The ID of an existing [Product](https://docs.stripe.com/api/products/object).
-final String? product;
+final Omittable<String?> product;
 
 /// The number of units of the item being purchased. For reversals, this is the quantity reversed.
 final int quantity;
@@ -101,7 +101,7 @@ final int quantity;
 final String reference;
 
 /// If `type=reversal`, contains information about what was reversed.
-final TaxProductResourceTaxTransactionLineItemResourceReversal? reversal;
+final Omittable<TaxProductResourceTaxTransactionLineItemResourceReversal?> reversal;
 
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
 final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
@@ -117,12 +117,12 @@ Map<String, dynamic> toJson() { return {
   'amount_tax': amountTax,
   'id': id,
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
-  'product': ?product,
+  if (product.isPresent) 'product': product.value,
   'quantity': quantity,
   'reference': reference,
-  if (reversal != null) 'reversal': reversal?.toJson(),
+  if (reversal.isPresent) 'reversal': reversal.value?.toJson(),
   'tax_behavior': taxBehavior.toJson(),
   'tax_code': taxCode,
   'type': type.toJson(),
@@ -140,24 +140,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final product$ = product;
+final product$ = product.value;
 if (product$ != null) {
   if (product$.runes.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
 if (reference.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 if (taxCode.runes.length > 5000) { errors.add('taxCode: length must be <= 5000'); }
 return errors; } 
-TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxProductResourceTaxTransactionLineItemResourceReversal? Function()? reversal, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
+TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxTransactionLineItemObject? object, Omittable<String?>? product, int? quantity, String? reference, Omittable<TaxProductResourceTaxTransactionLineItemResourceReversal?>? reversal, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  product: product != null ? product() : this.product,
+  product: product ?? this.product,
   quantity: quantity ?? this.quantity,
   reference: reference ?? this.reference,
-  reversal: reversal != null ? reversal() : this.reversal,
+  reversal: reversal ?? this.reversal,
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,

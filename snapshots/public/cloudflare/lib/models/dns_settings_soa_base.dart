@@ -2,12 +2,12 @@
 // Source: #/components/schemas/DnsSettingsSoaBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of the zone's SOA record.
-@immutable final class DnsSettingsSoaBase {const DnsSettingsSoaBase({this.expire, this.minTtl, this.mname, this.refresh, this.retry, this.rname, this.ttl, });
+@immutable final class DnsSettingsSoaBase {const DnsSettingsSoaBase({this.expire, this.minTtl, this.mname = const Omittable.absent(), this.refresh, this.retry, this.rname, this.ttl, });
 
 factory DnsSettingsSoaBase.fromJson(Map<String, dynamic> json) { return DnsSettingsSoaBase(
   expire: json['expire'] != null ? (json['expire'] as num).toDouble() : null,
   minTtl: json['min_ttl'] != null ? (json['min_ttl'] as num).toDouble() : null,
-  mname: json['mname'] as String?,
+  mname: json.containsKey('mname') ? Omittable(json['mname'] as String?) : const Omittable.absent(),
   refresh: json['refresh'] != null ? (json['refresh'] as num).toDouble() : null,
   retry: json['retry'] != null ? (json['retry'] as num).toDouble() : null,
   rname: json['rname'] as String?,
@@ -27,7 +27,7 @@ final double? minTtl;
 /// The primary nameserver, which may be used for outbound zone transfers. If null, a Cloudflare-assigned value will be used.
 /// 
 /// Example: `'kristina.ns.cloudflare.com'`
-final String? mname;
+final Omittable<String?> mname;
 
 /// Time in seconds after which secondary servers should re-check the SOA record to see if the zone has been updated.
 /// 
@@ -52,7 +52,7 @@ final double? ttl;
 Map<String, dynamic> toJson() { return {
   'expire': ?expire,
   'min_ttl': ?minTtl,
-  'mname': ?mname,
+  if (mname.isPresent) 'mname': mname.value,
   'refresh': ?refresh,
   'retry': ?retry,
   'rname': ?rname,
@@ -87,10 +87,10 @@ if (ttl$ != null) {
   if (ttl$ > 86400) { errors.add('ttl: must be <= 86400'); }
 }
 return errors; } 
-DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? minTtl, String? Function()? mname, double? Function()? refresh, double? Function()? retry, String? Function()? rname, double? Function()? ttl, }) { return DnsSettingsSoaBase(
+DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? minTtl, Omittable<String?>? mname, double? Function()? refresh, double? Function()? retry, String? Function()? rname, double? Function()? ttl, }) { return DnsSettingsSoaBase(
   expire: expire != null ? expire() : this.expire,
   minTtl: minTtl != null ? minTtl() : this.minTtl,
-  mname: mname != null ? mname() : this.mname,
+  mname: mname ?? this.mname,
   refresh: refresh != null ? refresh() : this.refresh,
   retry: retry != null ? retry() : this.retry,
   rname: rname != null ? rname() : this.rname,

@@ -10,7 +10,7 @@ factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (
 }; }
 
 /// Build the `http` variant.
-factory InfraServiceConfig.http({required InfraServiceHost host, required String name, DateTime? createdAt, String? serviceId, DateTime? updatedAt, int? httpPort, int? httpsPort, }) { return InfraServiceConfigHttp(InfraHttpServiceConfig(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt, httpPort: httpPort, httpsPort: httpsPort)); }
+factory InfraServiceConfig.http({required InfraServiceHost host, required String name, DateTime? createdAt, String? serviceId, DateTime? updatedAt, Omittable<int?> httpPort = const Omittable.absent(), Omittable<int?> httpsPort = const Omittable.absent(), }) { return InfraServiceConfigHttp(InfraHttpServiceConfig(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt, httpPort: httpPort, httpsPort: httpsPort)); }
 
 /// The discriminator value identifying this variant.
 InfraServiceType get type;
@@ -33,7 +33,7 @@ final InfraHttpServiceConfig infraHttpServiceConfig;
 
 @override Map<String, dynamic> toJson() => {...infraHttpServiceConfig.toJson(), 'type': type.toJson()};
 
-InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, int? Function()? httpPort, int? Function()? httpsPort, }) { return InfraServiceConfigHttp(infraHttpServiceConfig.copyWith(
+InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, Omittable<int?>? httpPort, Omittable<int?>? httpsPort, }) { return InfraServiceConfigHttp(infraHttpServiceConfig.copyWith(
   createdAt: createdAt,
   host: host,
   name: name,

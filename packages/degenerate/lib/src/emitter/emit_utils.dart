@@ -1,12 +1,14 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
-import 'package:degenerate/src/escaping.dart';
+import 'package:degenerate/src/emitter/field_defaults.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 // Dart-source escaping primitives live in their own IR-free library so that
 // SpecString can call them; re-export here for the emitters that already
 // import emit_utils.
+export 'package:degenerate/src/emitter/field_defaults.dart';
+export 'package:degenerate/src/emitter/omittable_mode.dart';
 export 'package:degenerate/src/escaping.dart';
 
 // ─── EmitContext convenience methods ───────────────────
@@ -104,6 +106,17 @@ String emitRaw(Library library) {
   );
   return '${raw.trimRight()}\n';
 }
+
+/// `Omittable<T?>` for a presence-wrapped field. The inner type is always
+/// nullable so `Omittable(null)` (explicit null on the wire) is legal even in
+/// `all` mode, where the spec type itself isn't nullable. [nullable] makes
+/// the wrapper itself nullable (`copyWith` parameters).
+Reference omittableTypeRef(IrField f, {bool nullable = false}) => TypeReference(
+  (b) => b
+    ..symbol = 'Omittable'
+    ..types.add(irTypeToReference(f.type, forceNullable: true))
+    ..isNullable = nullable,
+);
 
 /// Build a type [Reference] from an [IrType].
 Reference irTypeToReference(
@@ -461,7 +474,12 @@ bool _isOneOfInRegistry(String name, EmitContext ctx) {
 }
 
 /// Check whether an [IrType] represents a list (used for equality checks).
-bool isListType(IrType type) => type is IrList;
+/// Whether a field of this type is a Dart `List` at runtime — `IrList`, or
+/// bytes (`Uint8List` implements `List<int>`). These need `listEquals` /
+/// `Object.hashAll` for value equality instead of `==`/`hashCode`.
+bool isListType(IrType type) =>
+    type is IrList ||
+    (type is IrPrimitive && type.kind == PrimitiveKind.bytes);
 
 /// Whether [type] is or contains a `bytes` primitive (recurses through
 /// List/Map wrappers). Used to determine `dart:typed_data` / `dart:convert`
@@ -639,31 +657,6 @@ final _typeNameUnsafe = RegExp(r'[<>,?\s]');
 final _nonIdentChar = RegExp('[^a-zA-Z0-9_]');
 final _leadingDigit = RegExp('^[0-9]');
 
-/// Convert an enum string value to a valid Dart enum constant name.
-final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
-// A leading +/- before a letter (not a digit) isn't handled by _splitWords
-// and would corrupt casing. Strip it before passing to toCamelCase.
-// Only matches at the start of the string to preserve interior hyphens
-// that serve as word separators (e.g. 'google-apps' → 'googleApps').
-final _leadingSignBeforeLetter = RegExp('^[+-](?=[a-zA-Z])');
-
-/// Convert an enum string value to a valid Dart enum constant name.
-String enumValueName(String value) {
-  // Strip characters that are invalid in identifiers and not recognized as
-  // word separators by _splitWords, so they don't interfere with casing.
-  // e.g. "[DONE]" -> "DONE" -> toCamelCase -> "done"
-  // (not "[Done]" -> "Done").
-  var cleaned = value.replaceAll(_nonIdentChars, '');
-  cleaned = cleaned.replaceFirst(_leadingSignBeforeLetter, '');
-  var name = toCamelCase(cleaned);
-  name = sanitizeFieldName(name);
-  // Also escape enum-internal reserved names (value, values, json, etc.)
-  if (enumReservedNames.contains(name)) {
-    name = '\$$name';
-  }
-  return name;
-}
-
 /// Escape `$` in a name for use inside a Dart single-quoted string literal.
 ///
 /// Names like `$0Request` need `$` escaped to avoid string interpolation.
@@ -757,7 +750,19 @@ Method buildToStringOverride(String body) => Method(
 /// set-or-leave it (`toJson` emits `?field`, omitting a null → reads back as
 /// absent). A defaulted-optional field is declared non-nullable `T`, so its
 /// thunk returns `T` and can't be cleared — matching the field type.
-Parameter copyWithParam(IrField f) {
+///
+/// An [omittable] field takes the wrapper itself (`Omittable<T?>?`): `null`
+/// means "not passed", while the wrapper already spells absent, explicit null
+/// or a value — no thunk needed.
+Parameter copyWithParam(IrField f, {bool omittable = false}) {
+  if (omittable) {
+    return Parameter(
+      (p) => p
+        ..name = f.name
+        ..named = true
+        ..type = omittableTypeRef(f, nullable: true),
+    );
+  }
   final usesThunk = !f.isRequired || f.type.isNullable;
   if (usesThunk) {
     final fieldIsNullable = fieldIsNullableInDart(f);
@@ -783,7 +788,8 @@ Parameter copyWithParam(IrField f) {
 
 /// The constructor-call assignment line for [f] in a `copyWith` body
 /// (e.g. `  name: name != null ? name() : this.name,`).
-String copyWithAssignment(IrField f) {
+String copyWithAssignment(IrField f, {bool omittable = false}) {
+  if (omittable) return '  ${f.name}: ${f.name} ?? this.${f.name},';
   final isNullable = !f.isRequired || f.type.isNullable;
   if (isNullable) {
     return '  ${f.name}: ${f.name} != null ? ${f.name}() : this.${f.name},';
@@ -794,8 +800,12 @@ String copyWithAssignment(IrField f) {
 /// The `operator ==` comparison expression for [f], using `listEquals` for
 /// list-typed fields. [self] overrides the receiver expression for the field
 /// (used when the field name shadows the `other` parameter).
-String equalsComparison(IrField f, {String? self}) {
+String equalsComparison(IrField f, {String? self, bool omittable = false}) {
   final lhs = self ?? f.name;
+  if (isListType(f.type) && omittable) {
+    return '$lhs.isPresent == other.${f.name}.isPresent &&\n'
+        '          listEquals($lhs.value, other.${f.name}.value)';
+  }
   if (isListType(f.type)) {
     return 'listEquals($lhs, other.${f.name})';
   }
@@ -804,7 +814,15 @@ String equalsComparison(IrField f, {String? self}) {
 
 /// The `hashCode` expression for [f], using `Object.hashAll` for list-typed
 /// fields (with `?? const []` when [isNullable]).
-String hashCodeExpr(IrField f, {required bool isNullable}) {
+String hashCodeExpr(
+  IrField f, {
+  required bool isNullable,
+  bool omittable = false,
+}) {
+  // Absent and present-null collide here; equality still separates them.
+  if (isListType(f.type) && omittable) {
+    return 'Object.hashAll(${f.name}.value ?? const [])';
+  }
   if (isListType(f.type)) {
     if (isNullable) return 'Object.hashAll(${f.name} ?? const [])';
     return 'Object.hashAll(${f.name})';
@@ -856,60 +874,30 @@ String primitiveToJsonExpr(
   PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
   PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
   PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-  PrimitiveKind.bytes =>
-    q.isEmpty ? 'base64Encode($accessor)' : 'base64Encode($accessor!)',
+  PrimitiveKind.bytes => q.isEmpty
+      ? 'base64Encode($accessor)'
+      : 'switch ($accessor) { final bytes? => base64Encode(bytes), _ => null }',
   _ => accessor,
 };
-
-/// Whether [type] is an object-like type (object, ref, or union) for which an
-/// empty `{}` literal is not a valid Dart default.
-bool _isObjectLikeType(IrType type) =>
-    type.isClassType && type is! IrEnum || type is IrTypeRef;
-
-/// The Dart default-value expression for [f]'s constructor parameter, or null
-/// when the field has no representable default. Shared by the model emitter
-/// and the sealed-union variant factories so their parameters stay in sync.
-Code? fieldDefaultCode(IrField f) {
-  if (f.defaultValue == null) return null;
-  return switch ((f.defaultValue, f.type)) {
-    (Map(isEmpty: true), _) when _isObjectLikeType(f.type) => null,
-    (final String v, IrEnum(:final name)) => Code('$name.${enumValueName(v)}'),
-    (final String v, IrPrimitive(kind: PrimitiveKind.string)) => Code(
-      dartStringLiteral(v),
-    ),
-    (String(), _) => null,
-    (final bool v, IrPrimitive(kind: PrimitiveKind.bool)) => Code('$v'),
-    (bool(), _) => null,
-    (final num v, IrPrimitive(kind: PrimitiveKind.int)) => Code('${v.toInt()}'),
-    (final num v, IrPrimitive(kind: PrimitiveKind.double)) => Code(
-      '${v.toDouble()}',
-    ),
-    (final num v, IrPrimitive()) => Code('$v'),
-    (num(), _) => null,
-    (List(isEmpty: true), _) => const Code('const []'),
-    (Map(isEmpty: true), _) => const Code('const {}'),
-    _ => null,
-  };
-}
-
-/// Whether [f] has a representable Dart constructor default.
-bool fieldHasDefault(IrField f) => fieldDefaultCode(f) != null;
-
-/// Whether [f] must be a `required` named parameter in the Dart constructor
-/// (required in the spec and no default value to fall back on).
-bool fieldIsRequiredInCtor(IrField f) => f.isRequired && !fieldHasDefault(f);
-
-/// Whether [f]'s Dart declaration type is nullable (optional without default,
-/// or explicitly nullable in the spec).
-bool fieldIsNullableInDart(IrField f) =>
-    (!f.isRequired && !fieldHasDefault(f)) || f.type.isNullable;
 
 /// Build a toJson map entry string for [f] with the given serialized [key].
 ///
 /// [isNullable] controls whether null-guarding is applied. Each emitter
 /// computes this differently (model emitter respects defaults; sealed union
 /// uses simple optionality).
-String toJsonEntry(IrField f, String key, {required bool isNullable}) {
+///
+/// An [omittable] field serializes only when present, including a present
+/// explicit null.
+String toJsonEntry(
+  IrField f,
+  String key, {
+  required bool isNullable,
+  bool omittable = false,
+}) {
+  if (omittable) {
+    final value = buildToJsonCode(f.type, '${f.name}.value', nullable: true);
+    return '  if (${f.name}.isPresent) $key: $value,';
+  }
   if (isNullable) {
     final value = buildToJsonCode(f.type, f.name, nullable: true);
     // Required-but-nullable: always emit the key (value may be null).

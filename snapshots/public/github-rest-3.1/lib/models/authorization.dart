@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Authorization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/authorization/authorization_app.dart';import 'package:pub_github_rest_3_1/models/scoped_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The authorization for an OAuth app, GitHub App, or a Personal Access Token.
-@immutable final class Authorization {const Authorization({required this.id, required this.url, required this.scopes, required this.token, required this.tokenLastEight, required this.hashedToken, required this.app, required this.note, required this.noteUrl, required this.updatedAt, required this.createdAt, required this.fingerprint, required this.expiresAt, this.user, this.installation, });
+@immutable final class Authorization {const Authorization({required this.id, required this.url, required this.scopes, required this.token, required this.tokenLastEight, required this.hashedToken, required this.app, required this.note, required this.noteUrl, required this.updatedAt, required this.createdAt, required this.fingerprint, required this.expiresAt, this.user = const Omittable.absent(), this.installation = const Omittable.absent(), });
 
 factory Authorization.fromJson(Map<String, dynamic> json) { return Authorization(
   id: (json['id'] as num).toInt(),
@@ -17,8 +17,8 @@ factory Authorization.fromJson(Map<String, dynamic> json) { return Authorization
   updatedAt: DateTime.parse(json['updated_at'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   fingerprint: json['fingerprint'] as String?,
-  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-  installation: json['installation'] != null ? ScopedInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  user: json.containsKey('user') ? Omittable(json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  installation: json.containsKey('installation') ? Omittable(json['installation'] != null ? ScopedInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   expiresAt: json['expires_at'] != null ? DateTime.parse(json['expires_at'] as String) : null,
 ); }
 
@@ -47,9 +47,9 @@ final DateTime createdAt;
 
 final String? fingerprint;
 
-final SimpleUser? user;
+final Omittable<SimpleUser?> user;
 
-final ScopedInstallation? installation;
+final Omittable<ScopedInstallation?> installation;
 
 final DateTime? expiresAt;
 
@@ -66,24 +66,24 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
   'fingerprint': fingerprint,
-  if (user != null) 'user': user?.toJson(),
-  if (installation != null) 'installation': installation?.toJson(),
+  if (user.isPresent) 'user': user.value?.toJson(),
+  if (installation.isPresent) 'installation': installation.value?.toJson(),
   'expires_at': expiresAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('scopes') &&
       json.containsKey('token') && json['token'] is String &&
-      json.containsKey('token_last_eight') && json['token_last_eight'] is String &&
-      json.containsKey('hashed_token') && json['hashed_token'] is String &&
+      json.containsKey('token_last_eight') && (json['token_last_eight'] == null || json['token_last_eight'] is String) &&
+      json.containsKey('hashed_token') && (json['hashed_token'] == null || json['hashed_token'] is String) &&
       json.containsKey('app') &&
-      json.containsKey('note') && json['note'] is String &&
-      json.containsKey('note_url') && json['note_url'] is String &&
+      json.containsKey('note') && (json['note'] == null || json['note'] is String) &&
+      json.containsKey('note_url') && (json['note_url'] == null || json['note_url'] is String) &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('fingerprint') && json['fingerprint'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String; } 
-Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, String? token, String? Function()? tokenLastEight, String? Function()? hashedToken, AuthorizationApp? app, String? Function()? note, Uri? Function()? noteUrl, DateTime? updatedAt, DateTime? createdAt, String? Function()? fingerprint, SimpleUser? Function()? user, ScopedInstallation? Function()? installation, DateTime? Function()? expiresAt, }) { return Authorization(
+      json.containsKey('fingerprint') && (json['fingerprint'] == null || json['fingerprint'] is String) &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String); } 
+Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, String? token, String? Function()? tokenLastEight, String? Function()? hashedToken, AuthorizationApp? app, String? Function()? note, Uri? Function()? noteUrl, DateTime? updatedAt, DateTime? createdAt, String? Function()? fingerprint, Omittable<SimpleUser?>? user, Omittable<ScopedInstallation?>? installation, DateTime? Function()? expiresAt, }) { return Authorization(
   id: id ?? this.id,
   url: url ?? this.url,
   scopes: scopes != null ? scopes() : this.scopes,
@@ -96,8 +96,8 @@ Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, Str
   updatedAt: updatedAt ?? this.updatedAt,
   createdAt: createdAt ?? this.createdAt,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  user: user != null ? user() : this.user,
-  installation: installation != null ? installation() : this.installation,
+  user: user ?? this.user,
+  installation: installation ?? this.installation,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

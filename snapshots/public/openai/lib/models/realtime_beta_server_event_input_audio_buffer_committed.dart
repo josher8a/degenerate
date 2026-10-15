@@ -59,12 +59,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputAud
 /// message item that will be created, thus a `conversation.item.created` event
 /// will also be sent to the client.
 /// 
-@immutable final class RealtimeBetaServerEventInputAudioBufferCommitted {const RealtimeBetaServerEventInputAudioBufferCommitted({required this.eventId, required this.type, required this.itemId, this.previousItemId, });
+@immutable final class RealtimeBetaServerEventInputAudioBufferCommitted {const RealtimeBetaServerEventInputAudioBufferCommitted({required this.eventId, required this.type, required this.itemId, this.previousItemId = const Omittable.absent(), });
 
 factory RealtimeBetaServerEventInputAudioBufferCommitted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventInputAudioBufferCommitted(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventInputAudioBufferCommittedType.fromJson(json['type'] as String),
-  previousItemId: json['previous_item_id'] as String?,
+  previousItemId: json.containsKey('previous_item_id') ? Omittable(json['previous_item_id'] as String?) : const Omittable.absent(),
   itemId: json['item_id'] as String,
 ); }
 
@@ -77,7 +77,7 @@ final RealtimeBetaServerEventInputAudioBufferCommittedType type;
 /// The ID of the preceding item after which the new item will be inserted.
 /// Can be `null` if the item has no predecessor.
 /// 
-final String? previousItemId;
+final Omittable<String?> previousItemId;
 
 /// The ID of the user message item that will be created.
 final String itemId;
@@ -85,16 +85,16 @@ final String itemId;
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
   'type': type.toJson(),
-  'previous_item_id': ?previousItemId,
+  if (previousItemId.isPresent) 'previous_item_id': previousItemId.value,
   'item_id': itemId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventInputAudioBufferCommitted copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferCommittedType? type, String? Function()? previousItemId, String? itemId, }) { return RealtimeBetaServerEventInputAudioBufferCommitted(
+RealtimeBetaServerEventInputAudioBufferCommitted copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferCommittedType? type, Omittable<String?>? previousItemId, String? itemId, }) { return RealtimeBetaServerEventInputAudioBufferCommitted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
-  previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
+  previousItemId: previousItemId ?? this.previousItemId,
   itemId: itemId ?? this.itemId,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

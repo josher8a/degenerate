@@ -84,14 +84,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
+@immutable final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state = const Omittable.absent(), this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
 
 factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { return CodeScanningAlertInstanceList(
   ref: json['ref'] != null ? CodeScanningRef.fromJson(json['ref'] as String) : null,
   analysisKey: json['analysis_key'] != null ? CodeScanningAnalysisAnalysisKey.fromJson(json['analysis_key'] as String) : null,
   environment: json['environment'] != null ? CodeScanningAlertEnvironment.fromJson(json['environment'] as String) : null,
   category: json['category'] != null ? CodeScanningAnalysisCategory.fromJson(json['category'] as String) : null,
-  state: json['state'] != null ? CodeScanningAlertInstanceState.fromJson(json['state'] as String) : null,
+  state: json.containsKey('state') ? Omittable(json['state'] != null ? CodeScanningAlertInstanceState.fromJson(json['state'] as String) : null) : const Omittable.absent(),
   commitSha: json['commit_sha'] as String?,
   message: json['message'] != null ? Message.fromJson(json['message'] as Map<String, dynamic>) : null,
   location: json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
@@ -113,7 +113,7 @@ final CodeScanningAlertEnvironment? environment;
 final CodeScanningAnalysisCategory? category;
 
 /// State of a code scanning alert instance.
-final CodeScanningAlertInstanceState? state;
+final Omittable<CodeScanningAlertInstanceState?> state;
 
 final String? commitSha;
 
@@ -132,7 +132,7 @@ Map<String, dynamic> toJson() { return {
   if (analysisKey != null) 'analysis_key': analysisKey?.toJson(),
   if (environment != null) 'environment': environment?.toJson(),
   if (category != null) 'category': category?.toJson(),
-  if (state != null) 'state': state?.toJson(),
+  if (state.isPresent) 'state': state.value?.toJson(),
   'commit_sha': ?commitSha,
   if (message != null) 'message': message?.toJson(),
   if (location != null) 'location': location?.toJson(),
@@ -140,12 +140,12 @@ Map<String, dynamic> toJson() { return {
   if (classifications != null) 'classifications': classifications?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key)); } 
-CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeScanningAnalysisAnalysisKey? Function()? analysisKey, CodeScanningAlertEnvironment? Function()? environment, CodeScanningAnalysisCategory? Function()? category, CodeScanningAlertInstanceState? Function()? state, String? Function()? commitSha, Message? Function()? message, CodeScanningAlertLocation? Function()? location, String? Function()? htmlUrl, List<CodeScanningAlertClassification?>? Function()? classifications, }) { return CodeScanningAlertInstanceList(
+CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeScanningAnalysisAnalysisKey? Function()? analysisKey, CodeScanningAlertEnvironment? Function()? environment, CodeScanningAnalysisCategory? Function()? category, Omittable<CodeScanningAlertInstanceState?>? state, String? Function()? commitSha, Message? Function()? message, CodeScanningAlertLocation? Function()? location, String? Function()? htmlUrl, List<CodeScanningAlertClassification?>? Function()? classifications, }) { return CodeScanningAlertInstanceList(
   ref: ref != null ? ref() : this.ref,
   analysisKey: analysisKey != null ? analysisKey() : this.analysisKey,
   environment: environment != null ? environment() : this.environment,
   category: category != null ? category() : this.category,
-  state: state != null ? state() : this.state,
+  state: state ?? this.state,
   commitSha: commitSha != null ? commitSha() : this.commitSha,
   message: message != null ? message() : this.message,
   location: location != null ? location() : this.location,

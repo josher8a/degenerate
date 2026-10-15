@@ -138,50 +138,50 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
  }
 /// Information about an input's toggle
-@immutable final class TerminalReaderReaderResourceToggle {const TerminalReaderReaderResourceToggle({this.defaultValue, this.description, this.title, this.value, });
+@immutable final class TerminalReaderReaderResourceToggle {const TerminalReaderReaderResourceToggle({this.defaultValue = const Omittable.absent(), this.description = const Omittable.absent(), this.title = const Omittable.absent(), this.value = const Omittable.absent(), });
 
 factory TerminalReaderReaderResourceToggle.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceToggle(
-  defaultValue: json['default_value'] != null ? TerminalReaderReaderResourceToggleDefaultValue.fromJson(json['default_value'] as String) : null,
-  description: json['description'] as String?,
-  title: json['title'] as String?,
-  value: json['value'] != null ? TerminalReaderReaderResourceToggleValue.fromJson(json['value'] as String) : null,
+  defaultValue: json.containsKey('default_value') ? Omittable(json['default_value'] != null ? TerminalReaderReaderResourceToggleDefaultValue.fromJson(json['default_value'] as String) : null) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
+  value: json.containsKey('value') ? Omittable(json['value'] != null ? TerminalReaderReaderResourceToggleValue.fromJson(json['value'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The toggle's default value. Can be `enabled` or `disabled`.
-final TerminalReaderReaderResourceToggleDefaultValue? defaultValue;
+final Omittable<TerminalReaderReaderResourceToggleDefaultValue?> defaultValue;
 
 /// The toggle's description text. Maximum 50 characters.
-final String? description;
+final Omittable<String?> description;
 
 /// The toggle's title text. Maximum 50 characters.
-final String? title;
+final Omittable<String?> title;
 
 /// The toggle's collected value. Can be `enabled` or `disabled`.
-final TerminalReaderReaderResourceToggleValue? value;
+final Omittable<TerminalReaderReaderResourceToggleValue?> value;
 
 Map<String, dynamic> toJson() { return {
-  if (defaultValue != null) 'default_value': defaultValue?.toJson(),
-  'description': ?description,
-  'title': ?title,
-  if (value != null) 'value': value?.toJson(),
+  if (defaultValue.isPresent) 'default_value': defaultValue.value?.toJson(),
+  if (description.isPresent) 'description': description.value,
+  if (title.isPresent) 'title': title.value,
+  if (value.isPresent) 'value': value.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'description', 'title', 'value'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final description$ = description;
+final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-final title$ = title;
+final title$ = title.value;
 if (title$ != null) {
   if (title$.runes.length > 5000) { errors.add('title: length must be <= 5000'); }
 }
 return errors; } 
-TerminalReaderReaderResourceToggle copyWith({TerminalReaderReaderResourceToggleDefaultValue? Function()? defaultValue, String? Function()? description, String? Function()? title, TerminalReaderReaderResourceToggleValue? Function()? value, }) { return TerminalReaderReaderResourceToggle(
-  defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
-  description: description != null ? description() : this.description,
-  title: title != null ? title() : this.title,
-  value: value != null ? value() : this.value,
+TerminalReaderReaderResourceToggle copyWith({Omittable<TerminalReaderReaderResourceToggleDefaultValue?>? defaultValue, Omittable<String?>? description, Omittable<String?>? title, Omittable<TerminalReaderReaderResourceToggleValue?>? value, }) { return TerminalReaderReaderResourceToggle(
+  defaultValue: defaultValue ?? this.defaultValue,
+  description: description ?? this.description,
+  title: title ?? this.title,
+  value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceToggle &&

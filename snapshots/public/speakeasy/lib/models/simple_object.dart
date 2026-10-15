@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
  }
 /// A simple object that uses all our supported primitive types and enums and has optional properties.
-@immutable final class SimpleObject {const SimpleObject({required this.str, required this.$bool, required this.$int, required this.int32, required this.$num, required this.float32, required this.$enum, required this.date, required this.dateTime, required this.any, required this.intEnum, required this.int32Enum, this.strOpt, this.boolOpt, this.intOptNull, this.numOptNull, this.bigint, this.bigintStr, this.decimal, this.decimalStr, this.decimalNullableOpt, this.int64Str, this.float64Str, });
+@immutable final class SimpleObject {const SimpleObject({required this.str, required this.$bool, required this.$int, required this.int32, required this.$num, required this.float32, required this.$enum, required this.date, required this.dateTime, required this.any, required this.intEnum, required this.int32Enum, this.strOpt, this.boolOpt, this.intOptNull, this.numOptNull, this.bigint, this.bigintStr, this.decimal, this.decimalStr, this.decimalNullableOpt = const Omittable.absent(), this.int64Str, this.float64Str, });
 
 factory SimpleObject.fromJson(Map<String, dynamic> json) { return SimpleObject(
   str: json['str'] as String,
@@ -191,7 +191,7 @@ factory SimpleObject.fromJson(Map<String, dynamic> json) { return SimpleObject(
   bigintStr: json['bigintStr'] as String?,
   decimal: json['decimal'] != null ? (json['decimal'] as num).toDouble() : null,
   decimalStr: json['decimalStr'] as String?,
-  decimalNullableOpt: json['decimalNullableOpt'] != null ? (json['decimalNullableOpt'] as num).toDouble() : null,
+  decimalNullableOpt: json.containsKey('decimalNullableOpt') ? Omittable(json['decimalNullableOpt'] != null ? (json['decimalNullableOpt'] as num).toDouble() : null) : const Omittable.absent(),
   int64Str: json['int64Str'] as String?,
   float64Str: json['float64Str'] as String?,
 ); }
@@ -282,7 +282,7 @@ final double? decimal;
 /// Example: `'3.14159265358979344719667586'`
 final String? decimalStr;
 
-final double? decimalNullableOpt;
+final Omittable<double?> decimalNullableOpt;
 
 /// An int64 string
 /// 
@@ -315,7 +315,7 @@ Map<String, dynamic> toJson() { return {
   'bigintStr': ?bigintStr,
   'decimal': ?decimal,
   'decimalStr': ?decimalStr,
-  'decimalNullableOpt': ?decimalNullableOpt,
+  if (decimalNullableOpt.isPresent) 'decimalNullableOpt': decimalNullableOpt.value,
   'int64Str': ?int64Str,
   'float64Str': ?float64Str,
 }; } 
@@ -331,7 +331,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('str')
       json.containsKey('any') &&
       json.containsKey('intEnum') &&
       json.containsKey('int32Enum'); } 
-SimpleObject copyWith({String? str, bool? $bool, int? $int, int? int32, double? $num, double? float32, Enum? $enum, String? date, DateTime? dateTime, dynamic Function()? any, String? Function()? strOpt, bool? Function()? boolOpt, int? Function()? intOptNull, double? Function()? numOptNull, IntEnum? intEnum, Int32Enum? int32Enum, int? Function()? bigint, String? Function()? bigintStr, double? Function()? decimal, String? Function()? decimalStr, double? Function()? decimalNullableOpt, String? Function()? int64Str, String? Function()? float64Str, }) { return SimpleObject(
+SimpleObject copyWith({String? str, bool? $bool, int? $int, int? int32, double? $num, double? float32, Enum? $enum, String? date, DateTime? dateTime, dynamic Function()? any, String? Function()? strOpt, bool? Function()? boolOpt, int? Function()? intOptNull, double? Function()? numOptNull, IntEnum? intEnum, Int32Enum? int32Enum, int? Function()? bigint, String? Function()? bigintStr, double? Function()? decimal, String? Function()? decimalStr, Omittable<double?>? decimalNullableOpt, String? Function()? int64Str, String? Function()? float64Str, }) { return SimpleObject(
   str: str ?? this.str,
   $bool: $bool ?? this.$bool,
   $int: $int ?? this.$int,
@@ -352,7 +352,7 @@ SimpleObject copyWith({String? str, bool? $bool, int? $int, int? int32, double? 
   bigintStr: bigintStr != null ? bigintStr() : this.bigintStr,
   decimal: decimal != null ? decimal() : this.decimal,
   decimalStr: decimalStr != null ? decimalStr() : this.decimalStr,
-  decimalNullableOpt: decimalNullableOpt != null ? decimalNullableOpt() : this.decimalNullableOpt,
+  decimalNullableOpt: decimalNullableOpt ?? this.decimalNullableOpt,
   int64Str: int64Str != null ? int64Str() : this.int64Str,
   float64Str: float64Str != null ? float64Str() : this.float64Str,
 ); } 

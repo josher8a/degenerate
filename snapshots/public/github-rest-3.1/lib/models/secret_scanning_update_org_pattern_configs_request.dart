@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SecretScanningUpdateOrgPatternConfigsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_row_version.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_update_org_pattern_configs_request/custom_pattern_settings.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_update_org_pattern_configs_request/provider_pattern_settings.dart';@immutable final class SecretScanningUpdateOrgPatternConfigsRequest {const SecretScanningUpdateOrgPatternConfigsRequest({this.patternConfigVersion, this.providerPatternSettings, this.customPatternSettings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_row_version.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_update_org_pattern_configs_request/custom_pattern_settings.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_update_org_pattern_configs_request/provider_pattern_settings.dart';@immutable final class SecretScanningUpdateOrgPatternConfigsRequest {const SecretScanningUpdateOrgPatternConfigsRequest({this.patternConfigVersion = const Omittable.absent(), this.providerPatternSettings, this.customPatternSettings, });
 
 factory SecretScanningUpdateOrgPatternConfigsRequest.fromJson(Map<String, dynamic> json) { return SecretScanningUpdateOrgPatternConfigsRequest(
-  patternConfigVersion: json['pattern_config_version'] != null ? SecretScanningRowVersion.fromJson(json['pattern_config_version'] as String) : null,
+  patternConfigVersion: json.containsKey('pattern_config_version') ? Omittable(json['pattern_config_version'] != null ? SecretScanningRowVersion.fromJson(json['pattern_config_version'] as String) : null) : const Omittable.absent(),
   providerPatternSettings: (json['provider_pattern_settings'] as List<dynamic>?)?.map((e) => ProviderPatternSettings.fromJson(e as Map<String, dynamic>)).toList(),
   customPatternSettings: (json['custom_pattern_settings'] as List<dynamic>?)?.map((e) => CustomPatternSettings.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
-final SecretScanningRowVersion? patternConfigVersion;
+final Omittable<SecretScanningRowVersion?> patternConfigVersion;
 
 /// Pattern settings for provider patterns.
 final List<ProviderPatternSettings>? providerPatternSettings;
@@ -19,13 +19,13 @@ final List<ProviderPatternSettings>? providerPatternSettings;
 final List<CustomPatternSettings>? customPatternSettings;
 
 Map<String, dynamic> toJson() { return {
-  if (patternConfigVersion != null) 'pattern_config_version': patternConfigVersion?.toJson(),
+  if (patternConfigVersion.isPresent) 'pattern_config_version': patternConfigVersion.value?.toJson(),
   if (providerPatternSettings != null) 'provider_pattern_settings': providerPatternSettings?.map((e) => e.toJson()).toList(),
   if (customPatternSettings != null) 'custom_pattern_settings': customPatternSettings?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pattern_config_version', 'provider_pattern_settings', 'custom_pattern_settings'}.contains(key)); } 
-SecretScanningUpdateOrgPatternConfigsRequest copyWith({SecretScanningRowVersion? Function()? patternConfigVersion, List<ProviderPatternSettings>? Function()? providerPatternSettings, List<CustomPatternSettings>? Function()? customPatternSettings, }) { return SecretScanningUpdateOrgPatternConfigsRequest(
-  patternConfigVersion: patternConfigVersion != null ? patternConfigVersion() : this.patternConfigVersion,
+SecretScanningUpdateOrgPatternConfigsRequest copyWith({Omittable<SecretScanningRowVersion?>? patternConfigVersion, List<ProviderPatternSettings>? Function()? providerPatternSettings, List<CustomPatternSettings>? Function()? customPatternSettings, }) { return SecretScanningUpdateOrgPatternConfigsRequest(
+  patternConfigVersion: patternConfigVersion ?? this.patternConfigVersion,
   providerPatternSettings: providerPatternSettings != null ? providerPatternSettings() : this.providerPatternSettings,
   customPatternSettings: customPatternSettings != null ? customPatternSettings() : this.customPatternSettings,
 ); } 

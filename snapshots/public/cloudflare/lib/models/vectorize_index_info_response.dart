@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/VectorizeIndexInfoResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_dimensions.dart';import 'package:pub_cloudflare/models/vectorize_mutation_uuid.dart';@immutable final class VectorizeIndexInfoResponse {const VectorizeIndexInfoResponse({this.dimensions, this.processedUpToDatetime, this.processedUpToMutation, this.vectorCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_dimensions.dart';import 'package:pub_cloudflare/models/vectorize_mutation_uuid.dart';@immutable final class VectorizeIndexInfoResponse {const VectorizeIndexInfoResponse({this.dimensions, this.processedUpToDatetime = const Omittable.absent(), this.processedUpToMutation = const Omittable.absent(), this.vectorCount, });
 
 factory VectorizeIndexInfoResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexInfoResponse(
   dimensions: json['dimensions'] != null ? VectorizeIndexDimensions.fromJson(json['dimensions'] as num) : null,
-  processedUpToDatetime: json['processedUpToDatetime'] != null ? DateTime.parse(json['processedUpToDatetime'] as String) : null,
-  processedUpToMutation: json['processedUpToMutation'] != null ? VectorizeMutationUuid.fromJson(json['processedUpToMutation'] as dynamic) : null,
+  processedUpToDatetime: json.containsKey('processedUpToDatetime') ? Omittable(json['processedUpToDatetime'] != null ? DateTime.parse(json['processedUpToDatetime'] as String) : null) : const Omittable.absent(),
+  processedUpToMutation: json.containsKey('processedUpToMutation') ? Omittable(json['processedUpToMutation'] != null ? VectorizeMutationUuid.fromJson(json['processedUpToMutation'] as dynamic) : null) : const Omittable.absent(),
   vectorCount: json['vectorCount'] != null ? (json['vectorCount'] as num).toInt() : null,
 ); }
 
@@ -16,9 +16,9 @@ final VectorizeIndexDimensions? dimensions;
 /// Specifies the timestamp the last mutation batch was processed as an ISO8601 string.
 /// 
 /// Example: `'2024-07-22T18:25:44.442097Z'`
-final DateTime? processedUpToDatetime;
+final Omittable<DateTime?> processedUpToDatetime;
 
-final VectorizeMutationUuid? processedUpToMutation;
+final Omittable<VectorizeMutationUuid?> processedUpToMutation;
 
 /// Specifies the number of vectors present in the index
 /// 
@@ -27,15 +27,15 @@ final int? vectorCount;
 
 Map<String, dynamic> toJson() { return {
   if (dimensions != null) 'dimensions': dimensions?.toJson(),
-  if (processedUpToDatetime != null) 'processedUpToDatetime': processedUpToDatetime?.toIso8601String(),
-  if (processedUpToMutation != null) 'processedUpToMutation': processedUpToMutation?.toJson(),
+  if (processedUpToDatetime.isPresent) 'processedUpToDatetime': processedUpToDatetime.value?.toIso8601String(),
+  if (processedUpToMutation.isPresent) 'processedUpToMutation': processedUpToMutation.value?.toJson(),
   'vectorCount': ?vectorCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dimensions', 'processedUpToDatetime', 'processedUpToMutation', 'vectorCount'}.contains(key)); } 
-VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions? Function()? dimensions, DateTime? Function()? processedUpToDatetime, VectorizeMutationUuid? Function()? processedUpToMutation, int? Function()? vectorCount, }) { return VectorizeIndexInfoResponse(
+VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions? Function()? dimensions, Omittable<DateTime?>? processedUpToDatetime, Omittable<VectorizeMutationUuid?>? processedUpToMutation, int? Function()? vectorCount, }) { return VectorizeIndexInfoResponse(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
-  processedUpToDatetime: processedUpToDatetime != null ? processedUpToDatetime() : this.processedUpToDatetime,
-  processedUpToMutation: processedUpToMutation != null ? processedUpToMutation() : this.processedUpToMutation,
+  processedUpToDatetime: processedUpToDatetime ?? this.processedUpToDatetime,
+  processedUpToMutation: processedUpToMutation ?? this.processedUpToMutation,
   vectorCount: vectorCount != null ? vectorCount() : this.vectorCount,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

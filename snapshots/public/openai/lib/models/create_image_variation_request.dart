@@ -84,11 +84,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $256x256
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
+@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model = const Omittable.absent(), this.n = 1, this.responseFormat = CreateImageRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
 
 factory CreateImageVariationRequest.fromJson(Map<String, dynamic> json) { return CreateImageVariationRequest(
   image: base64Decode(json['image'] as String),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageVariationRequestModelVariant2.fromJson(v as String),) : null,
+  model: json.containsKey('model') ? Omittable(json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageVariationRequestModelVariant2.fromJson(v as String),) : null) : const Omittable.absent(),
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
   responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageRequestResponseFormat.url,
   size: json.containsKey('size') ? json['size'] != null ? CreateImageVariationRequestSize.fromJson(json['size'] as String) : null : CreateImageVariationRequestSize.$1024x1024,
@@ -101,7 +101,7 @@ final Uint8List image;
 /// The model to use for image generation. Only `dall-e-2` is supported at this time.
 /// 
 /// Example: `'dall-e-2'`
-final CreateImageVariationRequestModel? model;
+final Omittable<CreateImageVariationRequestModel?> model;
 
 /// The number of images to generate. Must be between 1 and 10.
 /// 
@@ -126,7 +126,7 @@ final String? user;
 
 Map<String, dynamic> toJson() { return {
   'image': base64Encode(image),
-  if (model != null) 'model': model?.toJson(),
+  if (model.isPresent) 'model': model.value?.toJson(),
   'n': ?n,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   if (size != null) 'size': size?.toJson(),
@@ -141,9 +141,9 @@ if (n$ != null) {
   if (n$ > 10) { errors.add('n: must be <= 10'); }
 }
 return errors; } 
-CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String? Function()? user, }) { return CreateImageVariationRequest(
+CreateImageVariationRequest copyWith({Uint8List? image, Omittable<CreateImageVariationRequestModel?>? model, int? Function()? n, CreateImageRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String? Function()? user, }) { return CreateImageVariationRequest(
   image: image ?? this.image,
-  model: model != null ? model() : this.model,
+  model: model ?? this.model,
   n: n != null ? n() : this.n,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   size: size != null ? size() : this.size,
@@ -151,14 +151,14 @@ CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequ
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateImageVariationRequest &&
-          image == other.image &&
+          listEquals(image, other.image) &&
           model == other.model &&
           n == other.n &&
           responseFormat == other.responseFormat &&
           size == other.size &&
           user == other.user;
 
-@override int get hashCode => Object.hash(image, model, n, responseFormat, size, user);
+@override int get hashCode => Object.hash(Object.hashAll(image), model, n, responseFormat, size, user);
 
 @override String toString() => 'CreateImageVariationRequest(image: $image, model: $model, n: $n, responseFormat: $responseFormat, size: $size, user: $user)';
 

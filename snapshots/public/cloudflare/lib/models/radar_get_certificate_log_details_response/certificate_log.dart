@@ -115,8 +115,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('startInclusive') && json['startInclusive'] is String &&
       json.containsKey('state') &&
       json.containsKey('stateTimestamp') && json['stateTimestamp'] is String &&
-      json.containsKey('submittableCertCount') && json['submittableCertCount'] is String &&
-      json.containsKey('submittedCertCount') && json['submittedCertCount'] is String &&
+      json.containsKey('submittableCertCount') && (json['submittableCertCount'] == null || json['submittableCertCount'] is String) &&
+      json.containsKey('submittedCertCount') && (json['submittedCertCount'] == null || json['submittedCertCount'] is String) &&
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

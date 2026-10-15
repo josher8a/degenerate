@@ -10,7 +10,7 @@ factory TestBodyMultipartFormdataSingleBinaryRequest.fromJson(Map<String, dynami
 final Uint8List? myFile;
 
 Map<String, dynamic> toJson() { return {
-  if (myFile != null) 'my-file': base64Encode(myFile!),
+  if (myFile != null) 'my-file': switch (myFile) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'my-file'}.contains(key)); } 
 TestBodyMultipartFormdataSingleBinaryRequest copyWith({Uint8List? Function()? myFile}) { return TestBodyMultipartFormdataSingleBinaryRequest(
@@ -18,9 +18,9 @@ TestBodyMultipartFormdataSingleBinaryRequest copyWith({Uint8List? Function()? my
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TestBodyMultipartFormdataSingleBinaryRequest &&
-          myFile == other.myFile;
+          listEquals(myFile, other.myFile);
 
-@override int get hashCode => myFile.hashCode;
+@override int get hashCode => Object.hashAll(myFile ?? const []);
 
 @override String toString() => 'TestBodyMultipartFormdataSingleBinaryRequest(myFile: $myFile)';
 

@@ -174,11 +174,11 @@ CreateFileRequest copyWith({Uint8List? file, CreateFileRequestPurpose? purpose, 
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateFileRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           purpose == other.purpose &&
           expiresAfter == other.expiresAfter;
 
-@override int get hashCode => Object.hash(file, purpose, expiresAfter);
+@override int get hashCode => Object.hash(Object.hashAll(file), purpose, expiresAfter);
 
 @override String toString() => 'CreateFileRequest(file: $file, purpose: $purpose, expiresAfter: $expiresAfter)';
 

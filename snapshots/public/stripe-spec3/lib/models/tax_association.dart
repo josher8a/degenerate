@@ -55,14 +55,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxAssoc
 
  }
 /// A Tax Association exposes the Tax Transactions that Stripe attempted to create on your behalf based on the PaymentIntent input
-@immutable final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts, });
+@immutable final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts = const Omittable.absent(), });
 
 factory TaxAssociation.fromJson(Map<String, dynamic> json) { return TaxAssociation(
   calculation: json['calculation'] as String,
   id: json['id'] as String,
   object: TaxAssociationObject.fromJson(json['object'] as String),
   paymentIntent: json['payment_intent'] as String,
-  taxTransactionAttempts: (json['tax_transaction_attempts'] as List<dynamic>?)?.map((e) => TaxProductResourceTaxAssociationTransactionAttempts.fromJson(e as Map<String, dynamic>)).toList(),
+  taxTransactionAttempts: json.containsKey('tax_transaction_attempts') ? Omittable((json['tax_transaction_attempts'] as List<dynamic>?)?.map((e) => TaxProductResourceTaxAssociationTransactionAttempts.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }
 
 /// The [Tax Calculation](https://docs.stripe.com/api/tax/calculations/object) that was included in PaymentIntent.
@@ -78,14 +78,14 @@ final TaxAssociationObject object;
 final String paymentIntent;
 
 /// Information about the tax transactions linked to this payment intent
-final List<TaxProductResourceTaxAssociationTransactionAttempts>? taxTransactionAttempts;
+final Omittable<List<TaxProductResourceTaxAssociationTransactionAttempts>?> taxTransactionAttempts;
 
 Map<String, dynamic> toJson() { return {
   'calculation': calculation,
   'id': id,
   'object': object.toJson(),
   'payment_intent': paymentIntent,
-  if (taxTransactionAttempts != null) 'tax_transaction_attempts': taxTransactionAttempts?.map((e) => e.toJson()).toList(),
+  if (taxTransactionAttempts.isPresent) 'tax_transaction_attempts': taxTransactionAttempts.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation') && json['calculation'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -97,12 +97,12 @@ if (calculation.runes.length > 5000) { errors.add('calculation: length must be <
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (paymentIntent.runes.length > 5000) { errors.add('paymentIntent: length must be <= 5000'); }
 return errors; } 
-TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? object, String? paymentIntent, List<TaxProductResourceTaxAssociationTransactionAttempts>? Function()? taxTransactionAttempts, }) { return TaxAssociation(
+TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? object, String? paymentIntent, Omittable<List<TaxProductResourceTaxAssociationTransactionAttempts>?>? taxTransactionAttempts, }) { return TaxAssociation(
   calculation: calculation ?? this.calculation,
   id: id ?? this.id,
   object: object ?? this.object,
   paymentIntent: paymentIntent ?? this.paymentIntent,
-  taxTransactionAttempts: taxTransactionAttempts != null ? taxTransactionAttempts() : this.taxTransactionAttempts,
+  taxTransactionAttempts: taxTransactionAttempts ?? this.taxTransactionAttempts,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxAssociation &&
@@ -110,9 +110,10 @@ TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? 
           id == other.id &&
           object == other.object &&
           paymentIntent == other.paymentIntent &&
-          listEquals(taxTransactionAttempts, other.taxTransactionAttempts);
+          taxTransactionAttempts.isPresent == other.taxTransactionAttempts.isPresent &&
+          listEquals(taxTransactionAttempts.value, other.taxTransactionAttempts.value);
 
-@override int get hashCode => Object.hash(calculation, id, object, paymentIntent, Object.hashAll(taxTransactionAttempts ?? const []));
+@override int get hashCode => Object.hash(calculation, id, object, paymentIntent, Object.hashAll(taxTransactionAttempts.value ?? const []));
 
 @override String toString() => 'TaxAssociation(calculation: $calculation, id: $id, object: $object, paymentIntent: $paymentIntent, taxTransactionAttempts: $taxTransactionAttempts)';
 

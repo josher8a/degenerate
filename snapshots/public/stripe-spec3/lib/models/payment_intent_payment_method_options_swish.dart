@@ -2,15 +2,15 @@
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptionsSwish
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
-@immutable final class PaymentIntentPaymentMethodOptionsSwish {const PaymentIntentPaymentMethodOptionsSwish({this.reference, this.setupFutureUsage, });
+@immutable final class PaymentIntentPaymentMethodOptionsSwish {const PaymentIntentPaymentMethodOptionsSwish({this.reference = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsSwish(
-  reference: json['reference'] as String?,
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// A reference for this payment to be displayed in the Swish app.
-final String? reference;
+final Omittable<String?> reference;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -22,19 +22,19 @@ final String? reference;
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
-  'reference': ?reference,
+  if (reference.isPresent) 'reference': reference.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final reference$ = reference;
+final reference$ = reference.value;
 if (reference$ != null) {
   if (reference$.runes.length > 35) { errors.add('reference: length must be <= 35'); }
 }
 return errors; } 
-PaymentIntentPaymentMethodOptionsSwish copyWith({String? Function()? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(
-  reference: reference != null ? reference() : this.reference,
+PaymentIntentPaymentMethodOptionsSwish copyWith({Omittable<String?>? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(
+  reference: reference ?? this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

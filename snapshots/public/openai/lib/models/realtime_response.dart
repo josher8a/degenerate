@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RealtimeResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_object.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_status.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_usage.dart';import 'package:pub_openai/models/realtime_beta_response/status_details.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/realtime_response/realtime_response_audio.dart';import 'package:pub_openai/models/realtime_response_create_params/output_modalities.dart';/// The response resource.
-@immutable final class RealtimeResponse {const RealtimeResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.audio, this.usage, this.conversationId, this.outputModalities, this.maxOutputTokens, });
+@immutable final class RealtimeResponse {const RealtimeResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata = const Omittable.absent(), this.audio, this.usage, this.conversationId, this.outputModalities, this.maxOutputTokens, });
 
 factory RealtimeResponse.fromJson(Map<String, dynamic> json) { return RealtimeResponse(
   id: json['id'] as String?,
@@ -10,7 +10,7 @@ factory RealtimeResponse.fromJson(Map<String, dynamic> json) { return RealtimeRe
   status: json['status'] != null ? RealtimeBetaResponseStatus.fromJson(json['status'] as String) : null,
   statusDetails: json['status_details'] != null ? StatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
   output: (json['output'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   audio: json['audio'] != null ? RealtimeResponseAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   usage: json['usage'] != null ? RealtimeBetaResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   conversationId: json['conversation_id'] as String?,
@@ -42,7 +42,7 @@ final List<RealtimeConversationItem>? output;
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// Configuration for audio output.
 final RealtimeResponseAudio? audio;
@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (statusDetails != null) 'status_details': statusDetails?.toJson(),
   if (output != null) 'output': output?.map((e) => e.toJson()).toList(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   if (audio != null) 'audio': audio?.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
   'conversation_id': ?conversationId,
@@ -88,13 +88,13 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'audio', 'usage', 'conversation_id', 'output_modalities', 'max_output_tokens'}.contains(key)); } 
-RealtimeResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Map<String, String>? Function()? metadata, RealtimeResponseAudio? Function()? audio, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, List<OutputModalities>? Function()? outputModalities, MaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeResponse(
+RealtimeResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Omittable<Map<String,String>?>? metadata, RealtimeResponseAudio? Function()? audio, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, List<OutputModalities>? Function()? outputModalities, MaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
   output: output != null ? output() : this.output,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   audio: audio != null ? audio() : this.audio,
   usage: usage != null ? usage() : this.usage,
   conversationId: conversationId != null ? conversationId() : this.conversationId,

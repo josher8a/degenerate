@@ -65,7 +65,7 @@ factory NamespaceToolParamTools.fromJson(Map<String, dynamic> json) { return swi
 }; }
 
 /// Build the `function` variant.
-factory NamespaceToolParamTools.function({required String name, String? description, EmptyModelParam? parameters, bool? strict, }) { return NamespaceToolParamToolsFunction(FunctionToolParam(name: name, description: description, parameters: parameters, strict: strict)); }
+factory NamespaceToolParamTools.function({required String name, Omittable<String?> description = const Omittable.absent(), Omittable<EmptyModelParam?> parameters = const Omittable.absent(), Omittable<bool?> strict = const Omittable.absent(), }) { return NamespaceToolParamToolsFunction(FunctionToolParam(name: name, description: description, parameters: parameters, strict: strict)); }
 
 /// Build the `custom` variant.
 factory NamespaceToolParamTools.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return NamespaceToolParamToolsCustom(CustomToolParam(name: name, description: description, format: format, deferLoading: deferLoading)); }
@@ -96,7 +96,7 @@ final FunctionToolParam functionToolParam;
 
 @override Map<String, dynamic> toJson() => {...functionToolParam.toJson(), 'type': type.toJson()};
 
-NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, }) { return NamespaceToolParamToolsFunction(functionToolParam.copyWith(
+NamespaceToolParamToolsFunction copyWith({String? name, Omittable<String?>? description, Omittable<EmptyModelParam?>? parameters, Omittable<bool?>? strict, }) { return NamespaceToolParamToolsFunction(functionToolParam.copyWith(
   name: name,
   description: description,
   parameters: parameters,
@@ -111,7 +111,7 @@ NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? desc
 
 @override String get name => functionToolParam.name;
 
-@override String? get description => functionToolParam.description;
+@override String? get description => functionToolParam.description.value;
 
  }
 @immutable final class NamespaceToolParamToolsCustom extends NamespaceToolParamTools {const NamespaceToolParamToolsCustom(this.customToolParam);

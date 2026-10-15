@@ -55,12 +55,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingC
 
  }
 /// Indicates the billing credit balance for billing credits granted to a customer.
-@immutable final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, required this.livemode, required this.object, this.customerAccount, });
+@immutable final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, required this.livemode, required this.object, this.customerAccount = const Omittable.absent(), });
 
 factory BillingCreditBalanceSummary.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceSummary(
   balances: (json['balances'] as List<dynamic>).map((e) => CreditBalance.fromJson(e as Map<String, dynamic>)).toList(),
   customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: BillingCreditBalanceSummaryObject.fromJson(json['object'] as String),
 ); }
@@ -72,7 +72,7 @@ final List<CreditBalance> balances;
 final BankAccountCustomer customer;
 
 /// The account the balance is for.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -83,7 +83,7 @@ final BillingCreditBalanceSummaryObject object;
 Map<String, dynamic> toJson() { return {
   'balances': balances.map((e) => e.toJson()).toList(),
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'livemode': livemode,
   'object': object.toJson(),
 }; } 
@@ -93,15 +93,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final customerAccount$ = customerAccount;
+final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 return errors; } 
-BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BankAccountCustomer? customer, String? Function()? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
+BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BankAccountCustomer? customer, Omittable<String?>? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
   balances: balances ?? this.balances,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 

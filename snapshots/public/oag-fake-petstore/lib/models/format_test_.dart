@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'decimal': ?decimal,
   'string': ?string,
   'byte': base64Encode(byte),
-  if (binary != null) 'binary': base64Encode(binary!),
+  if (binary != null) 'binary': switch (binary) { final bytes? => base64Encode(bytes), _ => null },
   'date': date,
   if (dateTime != null) 'dateTime': dateTime?.toIso8601String(),
   'uuid': ?uuid,
@@ -142,8 +142,8 @@ FormatTest copyWith({int? Function()? integer, int? Function()? int32, int? Func
           $double == other.$double &&
           decimal == other.decimal &&
           string == other.string &&
-          byte == other.byte &&
-          binary == other.binary &&
+          listEquals(byte, other.byte) &&
+          listEquals(binary, other.binary) &&
           date == other.date &&
           dateTime == other.dateTime &&
           uuid == other.uuid &&
@@ -151,7 +151,7 @@ FormatTest copyWith({int? Function()? integer, int? Function()? int32, int? Func
           patternWithDigits == other.patternWithDigits &&
           patternWithDigitsAndDelimiter == other.patternWithDigitsAndDelimiter;
 
-@override int get hashCode => Object.hash(integer, int32, int64, number, float, $double, decimal, string, byte, binary, date, dateTime, uuid, password, patternWithDigits, patternWithDigitsAndDelimiter);
+@override int get hashCode => Object.hash(integer, int32, int64, number, float, $double, decimal, string, Object.hashAll(byte), Object.hashAll(binary ?? const []), date, dateTime, uuid, password, patternWithDigits, patternWithDigitsAndDelimiter);
 
 @override String toString() => 'FormatTest(\n  integer: $integer,\n  int32: $int32,\n  int64: $int64,\n  number: $number,\n  float: $float,\n  \$double: ${$double},\n  decimal: $decimal,\n  string: $string,\n  byte: $byte,\n  binary: $binary,\n  date: $date,\n  dateTime: $dateTime,\n  uuid: $uuid,\n  password: $password,\n  patternWithDigits: $patternWithDigits,\n  patternWithDigitsAndDelimiter: $patternWithDigitsAndDelimiter,\n)';
 

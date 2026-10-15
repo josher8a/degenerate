@@ -199,37 +199,37 @@ factory CloudflarePipelinesSourceField.fromJson(Map<String, dynamic> json) { ret
 }; }
 
 /// Build the `int32` variant.
-factory CloudflarePipelinesSourceField.int32({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldInt32$Variant(CloudflarePipelinesSourceFieldInt32(type: 'int32', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.int32({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldInt32$Variant(CloudflarePipelinesSourceFieldInt32(type: 'int32', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `int64` variant.
-factory CloudflarePipelinesSourceField.int64({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldInt64$Variant(CloudflarePipelinesSourceFieldInt64(type: 'int64', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.int64({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldInt64$Variant(CloudflarePipelinesSourceFieldInt64(type: 'int64', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `float32` variant.
-factory CloudflarePipelinesSourceField.float32({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldFloat32$Variant(CloudflarePipelinesSourceFieldFloat32(type: 'float32', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.float32({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldFloat32$Variant(CloudflarePipelinesSourceFieldFloat32(type: 'float32', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `float64` variant.
-factory CloudflarePipelinesSourceField.float64({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldFloat64$Variant(CloudflarePipelinesSourceFieldFloat64(type: 'float64', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.float64({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldFloat64$Variant(CloudflarePipelinesSourceFieldFloat64(type: 'float64', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `bool` variant.
-factory CloudflarePipelinesSourceField.$bool({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldBool$Variant(CloudflarePipelinesSourceFieldBool(type: 'bool', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.$bool({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldBool$Variant(CloudflarePipelinesSourceFieldBool(type: 'bool', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `string` variant.
-factory CloudflarePipelinesSourceField.string({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldString$Variant(CloudflarePipelinesSourceFieldString(type: 'string', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.string({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldString$Variant(CloudflarePipelinesSourceFieldString(type: 'string', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `binary` variant.
-factory CloudflarePipelinesSourceField.binary({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldBinary$Variant(CloudflarePipelinesSourceFieldBinary(type: 'binary', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.binary({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldBinary$Variant(CloudflarePipelinesSourceFieldBinary(type: 'binary', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `timestamp` variant.
-factory CloudflarePipelinesSourceField.timestamp({required String name, CloudflarePipelinesTimestampUnit? unit, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldTimestamp(Timestamp(type: 'timestamp', unit: unit, metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.timestamp({required String name, CloudflarePipelinesTimestampUnit? unit, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldTimestamp(Timestamp(type: 'timestamp', unit: unit, metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `json` variant.
-factory CloudflarePipelinesSourceField.json({required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldJson$Variant(CloudflarePipelinesSourceFieldJson(type: 'json', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.json({required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldJson$Variant(CloudflarePipelinesSourceFieldJson(type: 'json', metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// Build the `struct` variant.
-factory CloudflarePipelinesSourceField.struct({required List<CloudflarePipelinesSourceField> fields, required String? name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldStruct(Struct(type: 'struct', fields: fields, name: name, metadataKey: metadataKey, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.struct({required List<CloudflarePipelinesSourceField> fields, required String? name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldStruct(Struct(type: 'struct', fields: fields, name: name, metadataKey: metadataKey, $required: $required, sqlName: sqlName)); }
 
 /// Build the `list` variant.
-factory CloudflarePipelinesSourceField.list({required CloudflarePipelinesSourceField items, required String name, String? metadataKey, bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldList$Variant(CloudflarePipelinesSourceFieldList(type: 'list', items: items, metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
+factory CloudflarePipelinesSourceField.list({required CloudflarePipelinesSourceField items, required String name, Omittable<String?> metadataKey = const Omittable.absent(), bool? $required, String? sqlName, }) { return CloudflarePipelinesSourceFieldList$Variant(CloudflarePipelinesSourceFieldList(type: 'list', items: items, metadataKey: metadataKey, name: name, $required: $required, sqlName: sqlName)); }
 
 /// The discriminator value identifying this variant.
 CloudflarePipelinesSourceFieldType get type;
@@ -270,7 +270,7 @@ final CloudflarePipelinesSourceFieldInt32 cloudflarePipelinesSourceFieldInt32;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldInt32.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldInt32$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldInt32$Variant(cloudflarePipelinesSourceFieldInt32.copyWith(
+CloudflarePipelinesSourceFieldInt32$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldInt32$Variant(cloudflarePipelinesSourceFieldInt32.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -283,7 +283,7 @@ CloudflarePipelinesSourceFieldInt32$Variant copyWith({String? Function()? metada
 
 @override String toString() => 'CloudflarePipelinesSourceField.int32($cloudflarePipelinesSourceFieldInt32)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldInt32.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldInt32.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldInt32.name;
 
@@ -302,7 +302,7 @@ final CloudflarePipelinesSourceFieldInt64 cloudflarePipelinesSourceFieldInt64;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldInt64.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldInt64$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldInt64$Variant(cloudflarePipelinesSourceFieldInt64.copyWith(
+CloudflarePipelinesSourceFieldInt64$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldInt64$Variant(cloudflarePipelinesSourceFieldInt64.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -315,7 +315,7 @@ CloudflarePipelinesSourceFieldInt64$Variant copyWith({String? Function()? metada
 
 @override String toString() => 'CloudflarePipelinesSourceField.int64($cloudflarePipelinesSourceFieldInt64)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldInt64.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldInt64.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldInt64.name;
 
@@ -334,7 +334,7 @@ final CloudflarePipelinesSourceFieldFloat32 cloudflarePipelinesSourceFieldFloat3
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldFloat32.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldFloat32$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldFloat32$Variant(cloudflarePipelinesSourceFieldFloat32.copyWith(
+CloudflarePipelinesSourceFieldFloat32$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldFloat32$Variant(cloudflarePipelinesSourceFieldFloat32.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -347,7 +347,7 @@ CloudflarePipelinesSourceFieldFloat32$Variant copyWith({String? Function()? meta
 
 @override String toString() => 'CloudflarePipelinesSourceField.float32($cloudflarePipelinesSourceFieldFloat32)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldFloat32.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldFloat32.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldFloat32.name;
 
@@ -366,7 +366,7 @@ final CloudflarePipelinesSourceFieldFloat64 cloudflarePipelinesSourceFieldFloat6
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldFloat64.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldFloat64$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldFloat64$Variant(cloudflarePipelinesSourceFieldFloat64.copyWith(
+CloudflarePipelinesSourceFieldFloat64$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldFloat64$Variant(cloudflarePipelinesSourceFieldFloat64.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -379,7 +379,7 @@ CloudflarePipelinesSourceFieldFloat64$Variant copyWith({String? Function()? meta
 
 @override String toString() => 'CloudflarePipelinesSourceField.float64($cloudflarePipelinesSourceFieldFloat64)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldFloat64.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldFloat64.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldFloat64.name;
 
@@ -398,7 +398,7 @@ final CloudflarePipelinesSourceFieldBool cloudflarePipelinesSourceFieldBool;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldBool.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldBool$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldBool$Variant(cloudflarePipelinesSourceFieldBool.copyWith(
+CloudflarePipelinesSourceFieldBool$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldBool$Variant(cloudflarePipelinesSourceFieldBool.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -411,7 +411,7 @@ CloudflarePipelinesSourceFieldBool$Variant copyWith({String? Function()? metadat
 
 @override String toString() => 'CloudflarePipelinesSourceField.\$bool($cloudflarePipelinesSourceFieldBool)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldBool.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldBool.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldBool.name;
 
@@ -430,7 +430,7 @@ final CloudflarePipelinesSourceFieldString cloudflarePipelinesSourceFieldString;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldString.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldString$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldString$Variant(cloudflarePipelinesSourceFieldString.copyWith(
+CloudflarePipelinesSourceFieldString$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldString$Variant(cloudflarePipelinesSourceFieldString.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -443,7 +443,7 @@ CloudflarePipelinesSourceFieldString$Variant copyWith({String? Function()? metad
 
 @override String toString() => 'CloudflarePipelinesSourceField.string($cloudflarePipelinesSourceFieldString)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldString.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldString.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldString.name;
 
@@ -462,7 +462,7 @@ final CloudflarePipelinesSourceFieldBinary cloudflarePipelinesSourceFieldBinary;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldBinary.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldBinary$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldBinary$Variant(cloudflarePipelinesSourceFieldBinary.copyWith(
+CloudflarePipelinesSourceFieldBinary$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldBinary$Variant(cloudflarePipelinesSourceFieldBinary.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -475,7 +475,7 @@ CloudflarePipelinesSourceFieldBinary$Variant copyWith({String? Function()? metad
 
 @override String toString() => 'CloudflarePipelinesSourceField.binary($cloudflarePipelinesSourceFieldBinary)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldBinary.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldBinary.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldBinary.name;
 
@@ -494,7 +494,7 @@ final Timestamp timestamp;
 
 @override Map<String, dynamic> toJson() => {...timestamp.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldTimestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit, String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldTimestamp(timestamp.copyWith(
+CloudflarePipelinesSourceFieldTimestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit, Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldTimestamp(timestamp.copyWith(
   unit: unit,
   metadataKey: metadataKey,
   name: name,
@@ -508,7 +508,7 @@ CloudflarePipelinesSourceFieldTimestamp copyWith({CloudflarePipelinesTimestampUn
 
 @override String toString() => 'CloudflarePipelinesSourceField.timestamp($timestamp)';
 
-@override String? get metadataKey => timestamp.metadataKey;
+@override String? get metadataKey => timestamp.metadataKey.value;
 
 @override String? get name => timestamp.name;
 
@@ -527,7 +527,7 @@ final CloudflarePipelinesSourceFieldJson cloudflarePipelinesSourceFieldJson;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldJson.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldJson$Variant copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldJson$Variant(cloudflarePipelinesSourceFieldJson.copyWith(
+CloudflarePipelinesSourceFieldJson$Variant copyWith({Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldJson$Variant(cloudflarePipelinesSourceFieldJson.copyWith(
   metadataKey: metadataKey,
   name: name,
   $required: $required,
@@ -540,7 +540,7 @@ CloudflarePipelinesSourceFieldJson$Variant copyWith({String? Function()? metadat
 
 @override String toString() => 'CloudflarePipelinesSourceField.json($cloudflarePipelinesSourceFieldJson)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldJson.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldJson.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldJson.name;
 
@@ -559,7 +559,7 @@ final Struct struct;
 
 @override Map<String, dynamic> toJson() => {...struct.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldStruct copyWith({List<CloudflarePipelinesSourceField>? fields, String? Function()? name, String? Function()? metadataKey, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldStruct(struct.copyWith(
+CloudflarePipelinesSourceFieldStruct copyWith({List<CloudflarePipelinesSourceField>? fields, String? Function()? name, Omittable<String?>? metadataKey, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldStruct(struct.copyWith(
   fields: fields,
   name: name,
   metadataKey: metadataKey,
@@ -573,7 +573,7 @@ CloudflarePipelinesSourceFieldStruct copyWith({List<CloudflarePipelinesSourceFie
 
 @override String toString() => 'CloudflarePipelinesSourceField.struct($struct)';
 
-@override String? get metadataKey => struct.metadataKey;
+@override String? get metadataKey => struct.metadataKey.value;
 
 @override String? get name => struct.name;
 
@@ -592,7 +592,7 @@ final CloudflarePipelinesSourceFieldList cloudflarePipelinesSourceFieldList;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesSourceFieldList.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesSourceFieldList$Variant copyWith({CloudflarePipelinesSourceField? items, String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldList$Variant(cloudflarePipelinesSourceFieldList.copyWith(
+CloudflarePipelinesSourceFieldList$Variant copyWith({CloudflarePipelinesSourceField? items, Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldList$Variant(cloudflarePipelinesSourceFieldList.copyWith(
   items: items,
   metadataKey: metadataKey,
   name: name,
@@ -606,7 +606,7 @@ CloudflarePipelinesSourceFieldList$Variant copyWith({CloudflarePipelinesSourceFi
 
 @override String toString() => 'CloudflarePipelinesSourceField.list($cloudflarePipelinesSourceFieldList)';
 
-@override String? get metadataKey => cloudflarePipelinesSourceFieldList.metadataKey;
+@override String? get metadataKey => cloudflarePipelinesSourceFieldList.metadataKey.value;
 
 @override String? get name => cloudflarePipelinesSourceFieldList.name;
 

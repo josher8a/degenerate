@@ -98,13 +98,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip, this.securityAdds, this.securityRemoves, this.url, });
+@immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip = const Omittable.absent(), this.securityAdds, this.securityRemoves, this.url, });
 
 factory IntelMiscategorization.fromJson(Map<String, dynamic> json) { return IntelMiscategorization(
   contentAdds: (json['content_adds'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   contentRemoves: (json['content_removes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   indicatorType: json['indicator_type'] != null ? IndicatorType.fromJson(json['indicator_type'] as String) : null,
-  ip: json['ip'] as String?,
+  ip: json.containsKey('ip') ? Omittable(json['ip'] as String?) : const Omittable.absent(),
   securityAdds: (json['security_adds'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   securityRemoves: (json['security_removes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   url: json['url'] as String?,
@@ -124,7 +124,7 @@ final List<int>? contentRemoves;
 final IndicatorType? indicatorType;
 
 /// Provide only if indicator_type is `ipv4` or `ipv6`.
-final String? ip;
+final Omittable<String?> ip;
 
 /// Security category IDs to add.
 /// 
@@ -143,17 +143,17 @@ Map<String, dynamic> toJson() { return {
   'content_adds': ?contentAdds,
   'content_removes': ?contentRemoves,
   if (indicatorType != null) 'indicator_type': indicatorType?.toJson(),
-  'ip': ?ip,
+  if (ip.isPresent) 'ip': ip.value,
   'security_adds': ?securityAdds,
   'security_removes': ?securityRemoves,
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_adds', 'content_removes', 'indicator_type', 'ip', 'security_adds', 'security_removes', 'url'}.contains(key)); } 
-IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? Function()? contentRemoves, IndicatorType? Function()? indicatorType, String? Function()? ip, List<int>? Function()? securityAdds, List<int>? Function()? securityRemoves, String? Function()? url, }) { return IntelMiscategorization(
+IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? Function()? contentRemoves, IndicatorType? Function()? indicatorType, Omittable<String?>? ip, List<int>? Function()? securityAdds, List<int>? Function()? securityRemoves, String? Function()? url, }) { return IntelMiscategorization(
   contentAdds: contentAdds != null ? contentAdds() : this.contentAdds,
   contentRemoves: contentRemoves != null ? contentRemoves() : this.contentRemoves,
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,
-  ip: ip != null ? ip() : this.ip,
+  ip: ip ?? this.ip,
   securityAdds: securityAdds != null ? securityAdds() : this.securityAdds,
   securityRemoves: securityRemoves != null ? securityRemoves() : this.securityRemoves,
   url: url != null ? url() : this.url,

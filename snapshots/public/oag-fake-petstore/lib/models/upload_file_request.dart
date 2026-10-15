@@ -16,7 +16,7 @@ final Uint8List? file;
 
 Map<String, dynamic> toJson() { return {
   'additionalMetadata': ?additionalMetadata,
-  if (file != null) 'file': base64Encode(file!),
+  if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additionalMetadata', 'file'}.contains(key)); } 
 UploadFileRequest copyWith({String? Function()? additionalMetadata, Uint8List? Function()? file, }) { return UploadFileRequest(
@@ -26,9 +26,9 @@ UploadFileRequest copyWith({String? Function()? additionalMetadata, Uint8List? F
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UploadFileRequest &&
           additionalMetadata == other.additionalMetadata &&
-          file == other.file;
+          listEquals(file, other.file);
 
-@override int get hashCode => Object.hash(additionalMetadata, file);
+@override int get hashCode => Object.hash(additionalMetadata, Object.hashAll(file ?? const []));
 
 @override String toString() => 'UploadFileRequest(additionalMetadata: $additionalMetadata, file: $file)';
 

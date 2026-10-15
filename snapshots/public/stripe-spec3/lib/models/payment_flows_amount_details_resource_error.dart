@@ -70,34 +70,34 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amountDe
 
  }
 /// 
-@immutable final class PaymentFlowsAmountDetailsResourceError {const PaymentFlowsAmountDetailsResourceError({this.code, this.message, });
+@immutable final class PaymentFlowsAmountDetailsResourceError {const PaymentFlowsAmountDetailsResourceError({this.code = const Omittable.absent(), this.message = const Omittable.absent(), });
 
 factory PaymentFlowsAmountDetailsResourceError.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsResourceError(
-  code: json['code'] != null ? PaymentFlowsAmountDetailsResourceErrorCode.fromJson(json['code'] as String) : null,
-  message: json['message'] as String?,
+  code: json.containsKey('code') ? Omittable(json['code'] != null ? PaymentFlowsAmountDetailsResourceErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
+  message: json.containsKey('message') ? Omittable(json['message'] as String?) : const Omittable.absent(),
 ); }
 
 /// The code of the error that occurred when validating the current amount details.
-final PaymentFlowsAmountDetailsResourceErrorCode? code;
+final Omittable<PaymentFlowsAmountDetailsResourceErrorCode?> code;
 
 /// A message providing more details about the error.
-final String? message;
+final Omittable<String?> message;
 
 Map<String, dynamic> toJson() { return {
-  if (code != null) 'code': code?.toJson(),
-  'message': ?message,
+  if (code.isPresent) 'code': code.value?.toJson(),
+  if (message.isPresent) 'message': message.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final message$ = message;
+final message$ = message.value;
 if (message$ != null) {
   if (message$.runes.length > 5000) { errors.add('message: length must be <= 5000'); }
 }
 return errors; } 
-PaymentFlowsAmountDetailsResourceError copyWith({PaymentFlowsAmountDetailsResourceErrorCode? Function()? code, String? Function()? message, }) { return PaymentFlowsAmountDetailsResourceError(
-  code: code != null ? code() : this.code,
-  message: message != null ? message() : this.message,
+PaymentFlowsAmountDetailsResourceError copyWith({Omittable<PaymentFlowsAmountDetailsResourceErrorCode?>? code, Omittable<String?>? message, }) { return PaymentFlowsAmountDetailsResourceError(
+  code: code ?? this.code,
+  message: message ?? this.message,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsResourceError &&

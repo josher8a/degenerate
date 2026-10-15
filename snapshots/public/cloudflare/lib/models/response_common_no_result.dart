@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseCommonNoResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_messages2.dart';@immutable final class ResponseCommonNoResult {const ResponseCommonNoResult({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_messages2.dart';@immutable final class ResponseCommonNoResult {const ResponseCommonNoResult({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
 factory ResponseCommonNoResult.fromJson(Map<String, dynamic> json) { return ResponseCommonNoResult(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] as Map<String, dynamic>?,
+  result: json.containsKey('result') ? Omittable(json['result'] as Map<String, dynamic>?) : const Omittable.absent(),
 ); }
 
 final List<WorkersKvMessages2> errors;
@@ -19,13 +19,13 @@ final List<WorkersKvMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final Map<String,dynamic>? result;
+final Omittable<Map<String,dynamic>?> result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': ?result,
+  if (result.isPresent) 'result': result.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
@@ -35,11 +35,11 @@ List<String> validate() { final errors$ = <String>[];
 if (errors.toSet().length != errors.length) { errors$.add('errors: items must be unique'); }
 if (messages.toSet().length != messages.length) { errors$.add('messages: items must be unique'); }
 return errors$; } 
-ResponseCommonNoResult copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, Map<String, dynamic>? Function()? result, }) { return ResponseCommonNoResult(
+ResponseCommonNoResult copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, Omittable<Map<String,dynamic>?>? result, }) { return ResponseCommonNoResult(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result != null ? result() : this.result,
+  result: result ?? this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonNoResult &&

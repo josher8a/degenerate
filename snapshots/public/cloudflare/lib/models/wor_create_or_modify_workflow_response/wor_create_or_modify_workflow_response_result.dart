@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('script_name') && json['script_name'] is String &&
       json.containsKey('terminator_running') && json['terminator_running'] is num &&
-      json.containsKey('triggered_on') && json['triggered_on'] is String &&
+      json.containsKey('triggered_on') && (json['triggered_on'] == null || json['triggered_on'] is String) &&
       json.containsKey('version_id') && json['version_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];

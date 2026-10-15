@@ -2,19 +2,19 @@
 // Source: #/components/schemas/PaymentMethodNzBankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodNzBankAccount {const PaymentMethodNzBankAccount({required this.bankCode, required this.bankName, required this.branchCode, required this.last4, this.accountHolderName, this.suffix, });
+@immutable final class PaymentMethodNzBankAccount {const PaymentMethodNzBankAccount({required this.bankCode, required this.bankName, required this.branchCode, required this.last4, this.accountHolderName = const Omittable.absent(), this.suffix = const Omittable.absent(), });
 
 factory PaymentMethodNzBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodNzBankAccount(
-  accountHolderName: json['account_holder_name'] as String?,
+  accountHolderName: json.containsKey('account_holder_name') ? Omittable(json['account_holder_name'] as String?) : const Omittable.absent(),
   bankCode: json['bank_code'] as String,
   bankName: json['bank_name'] as String,
   branchCode: json['branch_code'] as String,
   last4: json['last4'] as String,
-  suffix: json['suffix'] as String?,
+  suffix: json.containsKey('suffix') ? Omittable(json['suffix'] as String?) : const Omittable.absent(),
 ); }
 
 /// The name on the bank account. Only present if the account holder name is different from the name of the authorized signatory collected in the PaymentMethod’s billing details.
-final String? accountHolderName;
+final Omittable<String?> accountHolderName;
 
 /// The numeric code for the bank account's bank.
 final String bankCode;
@@ -29,15 +29,15 @@ final String branchCode;
 final String last4;
 
 /// The suffix of the bank account number.
-final String? suffix;
+final Omittable<String?> suffix;
 
 Map<String, dynamic> toJson() { return {
-  'account_holder_name': ?accountHolderName,
+  if (accountHolderName.isPresent) 'account_holder_name': accountHolderName.value,
   'bank_code': bankCode,
   'bank_name': bankName,
   'branch_code': branchCode,
   'last4': last4,
-  'suffix': ?suffix,
+  if (suffix.isPresent) 'suffix': suffix.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_code') && json['bank_code'] is String &&
       json.containsKey('bank_name') && json['bank_name'] is String &&
@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_
       json.containsKey('last4') && json['last4'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final accountHolderName$ = accountHolderName;
+final accountHolderName$ = accountHolderName.value;
 if (accountHolderName$ != null) {
   if (accountHolderName$.runes.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
 }
@@ -53,18 +53,18 @@ if (bankCode.runes.length > 5000) { errors.add('bankCode: length must be <= 5000
 if (bankName.runes.length > 5000) { errors.add('bankName: length must be <= 5000'); }
 if (branchCode.runes.length > 5000) { errors.add('branchCode: length must be <= 5000'); }
 if (last4.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
-final suffix$ = suffix;
+final suffix$ = suffix.value;
 if (suffix$ != null) {
   if (suffix$.runes.length > 5000) { errors.add('suffix: length must be <= 5000'); }
 }
 return errors; } 
-PaymentMethodNzBankAccount copyWith({String? Function()? accountHolderName, String? bankCode, String? bankName, String? branchCode, String? last4, String? Function()? suffix, }) { return PaymentMethodNzBankAccount(
-  accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
+PaymentMethodNzBankAccount copyWith({Omittable<String?>? accountHolderName, String? bankCode, String? bankName, String? branchCode, String? last4, Omittable<String?>? suffix, }) { return PaymentMethodNzBankAccount(
+  accountHolderName: accountHolderName ?? this.accountHolderName,
   bankCode: bankCode ?? this.bankCode,
   bankName: bankName ?? this.bankName,
   branchCode: branchCode ?? this.branchCode,
   last4: last4 ?? this.last4,
-  suffix: suffix != null ? suffix() : this.suffix,
+  suffix: suffix ?? this.suffix,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodNzBankAccount &&

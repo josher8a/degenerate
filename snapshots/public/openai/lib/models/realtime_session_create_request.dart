@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_request/chunking_strategy_variant1.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_session_create_request/client_secret.dart';import 'package:pub_openai/models/realtime_session_create_request/input_audio_transcription.dart';import 'package:pub_openai/models/realtime_session_create_request/max_response_output_tokens.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_turn_detection.dart';import 'package:pub_openai/models/realtime_truncation.dart';import 'package:pub_openai/models/retention_ratio_truncation.dart';import 'package:pub_openai/models/tracing_configuration.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// A new Realtime session configuration, with an ephemeral key. Default TTL
 /// for keys is one minute.
 /// 
-@immutable final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({required this.clientSecret, this.modalities, this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription, this.speed = 1.0, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.truncation, this.prompt, });
+@immutable final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({required this.clientSecret, this.modalities = const Omittable.absent(), this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription, this.speed = 1.0, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.truncation, this.prompt, });
 
 factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequest(
   clientSecret: ClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
-  modalities: json['modalities'],
+  modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
   instructions: json['instructions'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),) : null,
   inputAudioFormat: json['input_audio_format'] as String?,
@@ -31,7 +31,7 @@ final ClientSecret clientSecret;
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to `["text"]`.
 /// 
-final dynamic modalities;
+final Omittable<dynamic> modalities;
 
 /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.
 /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
@@ -107,7 +107,7 @@ final Prompt? prompt;
 
 Map<String, dynamic> toJson() { return {
   'client_secret': clientSecret.toJson(),
-  'modalities': ?modalities,
+  if (modalities.isPresent) 'modalities': modalities.value,
   'instructions': ?instructions,
   if (voice != null) 'voice': voice?.toJson(),
   'input_audio_format': ?inputAudioFormat,
@@ -129,9 +129,9 @@ List<String> validate() { final errors = <String>[];
 if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
 if (speed > 1.5) { errors.add('speed: must be <= 1.5'); }
 return errors; } 
-RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, dynamic Function()? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, String? Function()? inputAudioFormat, String? Function()? outputAudioFormat, InputAudioTranscription? Function()? inputAudioTranscription, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateRequest(
+RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, Omittable<dynamic>? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, String? Function()? inputAudioFormat, String? Function()? outputAudioFormat, InputAudioTranscription? Function()? inputAudioTranscription, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateRequest(
   clientSecret: clientSecret ?? this.clientSecret,
-  modalities: modalities != null ? modalities() : this.modalities,
+  modalities: modalities ?? this.modalities,
   instructions: instructions != null ? instructions() : this.instructions,
   voice: voice != null ? voice() : this.voice,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,

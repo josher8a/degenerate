@@ -2,12 +2,12 @@
 // Source: #/components/schemas/GetPricesSearchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_charges_search_response/get_charges_search_response_object.dart';import 'package:pub_stripe_spec3/models/price.dart';/// 
-@immutable final class GetPricesSearchResponse {const GetPricesSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage, this.totalCount, });
+@immutable final class GetPricesSearchResponse {const GetPricesSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage = const Omittable.absent(), this.totalCount, });
 
 factory GetPricesSearchResponse.fromJson(Map<String, dynamic> json) { return GetPricesSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => Price.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  nextPage: json['next_page'] as String?,
+  nextPage: json.containsKey('next_page') ? Omittable(json['next_page'] as String?) : const Omittable.absent(),
   object: GetChargesSearchResponseObject.fromJson(json['object'] as String),
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] as String,
@@ -17,7 +17,7 @@ final List<Price> data;
 
 final bool hasMore;
 
-final String? nextPage;
+final Omittable<String?> nextPage;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final GetChargesSearchResponseObject object;
@@ -30,7 +30,7 @@ final String url;
 Map<String, dynamic> toJson() { return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
-  'next_page': ?nextPage,
+  if (nextPage.isPresent) 'next_page': nextPage.value,
   'object': object.toJson(),
   'total_count': ?totalCount,
   'url': url,
@@ -41,16 +41,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final nextPage$ = nextPage;
+final nextPage$ = nextPage.value;
 if (nextPage$ != null) {
   if (nextPage$.runes.length > 5000) { errors.add('nextPage: length must be <= 5000'); }
 }
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
-GetPricesSearchResponse copyWith({List<Price>? data, bool? hasMore, String? Function()? nextPage, GetChargesSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetPricesSearchResponse(
+GetPricesSearchResponse copyWith({List<Price>? data, bool? hasMore, Omittable<String?>? nextPage, GetChargesSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetPricesSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
-  nextPage: nextPage != null ? nextPage() : this.nextPage,
+  nextPage: nextPage ?? this.nextPage,
   object: object ?? this.object,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url ?? this.url,

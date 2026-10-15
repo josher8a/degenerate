@@ -176,7 +176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecto
 /// Give the model access to additional tools via remote Model Context Protocol
 /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
 /// 
-@immutable final class McpTool {const McpTool({required this.type, required this.serverLabel, this.serverUrl, this.connectorId, this.authorization, this.serverDescription, this.headers, this.allowedTools, this.requireApproval, this.deferLoading, });
+@immutable final class McpTool {const McpTool({required this.type, required this.serverLabel, this.serverUrl, this.connectorId, this.authorization, this.serverDescription, this.headers = const Omittable.absent(), this.allowedTools = const Omittable.absent(), this.requireApproval = const Omittable.absent(), this.deferLoading, });
 
 factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
   type: json['type'] as String,
@@ -185,9 +185,9 @@ factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
   connectorId: json['connector_id'] != null ? ConnectorId.fromJson(json['connector_id'] as String) : null,
   authorization: json['authorization'] as String?,
   serverDescription: json['server_description'] as String?,
-  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  allowedTools: json['allowed_tools'] != null ? OneOf2.parse(json['allowed_tools'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => McpToolFilter.fromJson(v as Map<String, dynamic>),) : null,
-  requireApproval: json['require_approval'] != null ? OneOf2.parse(json['require_approval'], fromA: (v) => McpToolApprovalFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => McpToolApprovalSetting.fromJson(v as String),) : null,
+  headers: json.containsKey('headers') ? Omittable((json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  allowedTools: json.containsKey('allowed_tools') ? Omittable(json['allowed_tools'] != null ? OneOf2.parse(json['allowed_tools'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => McpToolFilter.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  requireApproval: json.containsKey('require_approval') ? Omittable(json['require_approval'] != null ? OneOf2.parse(json['require_approval'], fromA: (v) => McpToolApprovalFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => McpToolApprovalSetting.fromJson(v as String),) : null) : const Omittable.absent(),
   deferLoading: json['defer_loading'] as bool?,
 ); }
 
@@ -233,14 +233,14 @@ final String? serverDescription;
 /// Optional HTTP headers to send to the MCP server. Use for authentication
 /// or other purposes.
 /// 
-final Map<String,String>? headers;
+final Omittable<Map<String,String>?> headers;
 
 /// List of allowed tool names or a filter object.
 /// 
-final AllowedTools? allowedTools;
+final Omittable<AllowedTools?> allowedTools;
 
 /// Specify which of the MCP server's tools require approval.
-final RequireApproval? requireApproval;
+final Omittable<RequireApproval?> requireApproval;
 
 /// Whether this MCP tool is deferred and discovered via tool search.
 /// 
@@ -253,23 +253,23 @@ Map<String, dynamic> toJson() { return {
   if (connectorId != null) 'connector_id': connectorId?.toJson(),
   'authorization': ?authorization,
   'server_description': ?serverDescription,
-  'headers': ?headers,
-  if (allowedTools != null) 'allowed_tools': allowedTools?.toJson(),
-  if (requireApproval != null) 'require_approval': requireApproval?.toJson(),
+  if (headers.isPresent) 'headers': headers.value,
+  if (allowedTools.isPresent) 'allowed_tools': allowedTools.value?.toJson(),
+  if (requireApproval.isPresent) 'require_approval': requireApproval.value?.toJson(),
   'defer_loading': ?deferLoading,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('server_label') && json['server_label'] is String; } 
-McpTool copyWith({String? type, String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool? Function()? deferLoading, }) { return McpTool(
+McpTool copyWith({String? type, String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Omittable<Map<String,String>?>? headers, Omittable<AllowedTools?>? allowedTools, Omittable<RequireApproval?>? requireApproval, bool? Function()? deferLoading, }) { return McpTool(
   type: type ?? this.type,
   serverLabel: serverLabel ?? this.serverLabel,
   serverUrl: serverUrl != null ? serverUrl() : this.serverUrl,
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   authorization: authorization != null ? authorization() : this.authorization,
   serverDescription: serverDescription != null ? serverDescription() : this.serverDescription,
-  headers: headers != null ? headers() : this.headers,
-  allowedTools: allowedTools != null ? allowedTools() : this.allowedTools,
-  requireApproval: requireApproval != null ? requireApproval() : this.requireApproval,
+  headers: headers ?? this.headers,
+  allowedTools: allowedTools ?? this.allowedTools,
+  requireApproval: requireApproval ?? this.requireApproval,
   deferLoading: deferLoading != null ? deferLoading() : this.deferLoading,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

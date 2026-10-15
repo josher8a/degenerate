@@ -62,10 +62,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoiceP
 /// Invoice Payments include the mapping between payment objects, such as Payment Intent, and Invoices.
 /// This resource and its endpoints allows you to easily track if a payment is associated with a specific invoice and
 /// monitor the allocation details of the payments.
-@immutable final class InvoicePayment {const InvoicePayment({required this.amountRequested, required this.created, required this.currency, required this.id, required this.invoice, required this.isDefault, required this.livemode, required this.object, required this.payment, required this.status, required this.statusTransitions, this.amountPaid, });
+@immutable final class InvoicePayment {const InvoicePayment({required this.amountRequested, required this.created, required this.currency, required this.id, required this.invoice, required this.isDefault, required this.livemode, required this.object, required this.payment, required this.status, required this.statusTransitions, this.amountPaid = const Omittable.absent(), });
 
 factory InvoicePayment.fromJson(Map<String, dynamic> json) { return InvoicePayment(
-  amountPaid: json['amount_paid'] != null ? (json['amount_paid'] as num).toInt() : null,
+  amountPaid: json.containsKey('amount_paid') ? Omittable(json['amount_paid'] != null ? (json['amount_paid'] as num).toInt() : null) : const Omittable.absent(),
   amountRequested: (json['amount_requested'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -80,7 +80,7 @@ factory InvoicePayment.fromJson(Map<String, dynamic> json) { return InvoicePayme
 ); }
 
 /// Amount that was actually paid for this invoice, in cents (or local equivalent). This field is null until the payment is `paid`. This amount can be less than the `amount_requested` if the PaymentIntent’s `amount_received` is not sufficient to pay all of the invoices that it is attached to.
-final int? amountPaid;
+final Omittable<int?> amountPaid;
 
 /// Amount intended to be paid toward this invoice, in cents (or local equivalent)
 final int amountRequested;
@@ -114,7 +114,7 @@ final String status;
 final InvoicesPaymentsInvoicePaymentStatusTransitions statusTransitions;
 
 Map<String, dynamic> toJson() { return {
-  'amount_paid': ?amountPaid,
+  if (amountPaid.isPresent) 'amount_paid': amountPaid.value,
   'amount_requested': amountRequested,
   'created': created,
   'currency': currency,
@@ -144,8 +144,8 @@ if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 return errors; } 
-InvoicePayment copyWith({int? Function()? amountPaid, int? amountRequested, int? created, String? currency, String? id, InvoicePaymentInvoice? invoice, bool? isDefault, bool? livemode, InvoicePaymentObject? object, InvoicesPaymentsInvoicePaymentAssociatedPayment? payment, String? status, InvoicesPaymentsInvoicePaymentStatusTransitions? statusTransitions, }) { return InvoicePayment(
-  amountPaid: amountPaid != null ? amountPaid() : this.amountPaid,
+InvoicePayment copyWith({Omittable<int?>? amountPaid, int? amountRequested, int? created, String? currency, String? id, InvoicePaymentInvoice? invoice, bool? isDefault, bool? livemode, InvoicePaymentObject? object, InvoicesPaymentsInvoicePaymentAssociatedPayment? payment, String? status, InvoicesPaymentsInvoicePaymentStatusTransitions? statusTransitions, }) { return InvoicePayment(
+  amountPaid: amountPaid ?? this.amountPaid,
   amountRequested: amountRequested ?? this.amountRequested,
   created: created ?? this.created,
   currency: currency ?? this.currency,

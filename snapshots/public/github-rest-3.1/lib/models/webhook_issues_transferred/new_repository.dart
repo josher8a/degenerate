@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WebhookIssuesTransferred (inline: Changes > NewRepository)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/collaborator/collaborator_permissions.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';import 'package:pub_github_rest_3_1/models/webhook_push/repository_license.dart';import 'package:pub_github_rest_3_1/models/webhook_push/repository_visibility.dart';/// A git repository
-@immutable final class NewRepository {const NewRepository({required this.fullName, required this.watchersCount, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.archiveUrl, required this.treesUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.topics, required this.defaultBranch, required this.teamsUrl, required this.deploymentsUrl, required this.description, required this.tagsUrl, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.forksUrl, required this.svnUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.subscriptionUrl, required this.subscribersUrl, required this.hasPages, required this.statusesUrl, required this.stargazersUrl, required this.stargazersCount, required this.sshUrl, required this.size, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.releasesUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.pushedAt, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.pullsUrl, required this.nodeId, required this.notificationsUrl, required this.openIssues, required this.openIssuesCount, required this.private, required this.name, required this.owner, this.organization, this.public, this.webCommitSignoffRequired, this.masterBranch, this.isTemplate, this.roleName, this.pullRequestCreationPolicy, this.hasPullRequests = true, this.stargazers, this.hasDiscussions = false, this.hasWiki = true, this.hasProjects = true, this.hasIssues = true, this.hasDownloads = true, this.allowAutoMerge = false, this.disabled, this.deleteBranchOnMerge = false, this.customProperties, this.archived = false, this.allowUpdateBranch, this.allowSquashMerge = true, this.allowRebaseMerge = true, this.allowMergeCommit = true, this.allowForking, this.permissions, });
+@immutable final class NewRepository {const NewRepository({required this.fullName, required this.watchersCount, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.archiveUrl, required this.treesUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.topics, required this.defaultBranch, required this.teamsUrl, required this.deploymentsUrl, required this.description, required this.tagsUrl, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.forksUrl, required this.svnUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.subscriptionUrl, required this.subscribersUrl, required this.hasPages, required this.statusesUrl, required this.stargazersUrl, required this.stargazersCount, required this.sshUrl, required this.size, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.releasesUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.pushedAt, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.pullsUrl, required this.nodeId, required this.notificationsUrl, required this.openIssues, required this.openIssuesCount, required this.private, required this.name, required this.owner, this.organization, this.public, this.webCommitSignoffRequired, this.masterBranch, this.isTemplate, this.roleName = const Omittable.absent(), this.pullRequestCreationPolicy, this.hasPullRequests = true, this.stargazers, this.hasDiscussions = false, this.hasWiki = true, this.hasProjects = true, this.hasIssues = true, this.hasDownloads = true, this.allowAutoMerge = false, this.disabled, this.deleteBranchOnMerge = false, this.customProperties, this.archived = false, this.allowUpdateBranch, this.allowSquashMerge = true, this.allowRebaseMerge = true, this.allowMergeCommit = true, this.allowForking, this.permissions, });
 
 factory NewRepository.fromJson(Map<String, dynamic> json) { return NewRepository(
   allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
@@ -79,7 +79,7 @@ factory NewRepository.fromJson(Map<String, dynamic> json) { return NewRepository
   pullsUrl: json['pulls_url'] as String,
   pushedAt: json['pushed_at'],
   releasesUrl: json['releases_url'] as String,
-  roleName: json['role_name'] as String?,
+  roleName: json.containsKey('role_name') ? Omittable(json['role_name'] as String?) : const Omittable.absent(),
   size: (json['size'] as num).toInt(),
   sshUrl: json['ssh_url'] as String,
   stargazers: json['stargazers'] != null ? (json['stargazers'] as num).toInt() : null,
@@ -271,7 +271,7 @@ final dynamic pushedAt;
 
 final String releasesUrl;
 
-final String? roleName;
+final Omittable<String?> roleName;
 
 final int size;
 
@@ -387,7 +387,7 @@ Map<String, dynamic> toJson() { return {
   'pulls_url': pullsUrl,
   'pushed_at': pushedAt,
   'releases_url': releasesUrl,
-  'role_name': ?roleName,
+  if (roleName.isPresent) 'role_name': roleName.value,
   'size': size,
   'ssh_url': sshUrl,
   'stargazers': ?stargazers,
@@ -423,7 +423,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('created_at') &&
       json.containsKey('default_branch') && json['default_branch'] is String &&
       json.containsKey('deployments_url') && json['deployments_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('downloads_url') && json['downloads_url'] is String &&
       json.containsKey('events_url') && json['events_url'] is String &&
       json.containsKey('fork') && json['fork'] is bool &&
@@ -441,7 +441,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('has_projects') && json['has_projects'] is bool &&
       json.containsKey('has_wiki') && json['has_wiki'] is bool &&
       json.containsKey('has_discussions') && json['has_discussions'] is bool &&
-      json.containsKey('homepage') && json['homepage'] is String &&
+      json.containsKey('homepage') && (json['homepage'] == null || json['homepage'] is String) &&
       json.containsKey('hooks_url') && json['hooks_url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -450,12 +450,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('issues_url') && json['issues_url'] is String &&
       json.containsKey('keys_url') && json['keys_url'] is String &&
       json.containsKey('labels_url') && json['labels_url'] is String &&
-      json.containsKey('language') && json['language'] is String &&
+      json.containsKey('language') && (json['language'] == null || json['language'] is String) &&
       json.containsKey('languages_url') && json['languages_url'] is String &&
       json.containsKey('license') &&
       json.containsKey('merges_url') && json['merges_url'] is String &&
       json.containsKey('milestones_url') && json['milestones_url'] is String &&
-      json.containsKey('mirror_url') && json['mirror_url'] is String &&
+      json.containsKey('mirror_url') && (json['mirror_url'] == null || json['mirror_url'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('notifications_url') && json['notifications_url'] is String &&
@@ -483,7 +483,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('visibility') &&
       json.containsKey('watchers') && json['watchers'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num; } 
-NewRepository copyWith({bool Function()? allowAutoMerge, bool? Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, dynamic createdAt, Map<String, dynamic>? Function()? customProperties, String? defaultBranch, bool Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool? Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, bool? hasDiscussions, bool Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, RepositoryLicense? Function()? license, String? Function()? masterBranch, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, PackageOwner? Function()? owner, CollaboratorPermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, dynamic Function()? pushedAt, String? releasesUrl, String? Function()? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, RepositoryVisibility? visibility, int? watchers, int? watchersCount, bool? Function()? webCommitSignoffRequired, }) { return NewRepository(
+NewRepository copyWith({bool Function()? allowAutoMerge, bool? Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, dynamic createdAt, Map<String, dynamic>? Function()? customProperties, String? defaultBranch, bool Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool? Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, bool? hasDiscussions, bool Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, RepositoryLicense? Function()? license, String? Function()? masterBranch, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, PackageOwner? Function()? owner, CollaboratorPermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, dynamic Function()? pushedAt, String? releasesUrl, Omittable<String?>? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, RepositoryVisibility? visibility, int? watchers, int? watchersCount, bool? Function()? webCommitSignoffRequired, }) { return NewRepository(
   allowAutoMerge: allowAutoMerge != null ? allowAutoMerge() : this.allowAutoMerge,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   allowMergeCommit: allowMergeCommit != null ? allowMergeCommit() : this.allowMergeCommit,
@@ -558,7 +558,7 @@ NewRepository copyWith({bool Function()? allowAutoMerge, bool? Function()? allow
   pullsUrl: pullsUrl ?? this.pullsUrl,
   pushedAt: pushedAt != null ? pushedAt() : this.pushedAt,
   releasesUrl: releasesUrl ?? this.releasesUrl,
-  roleName: roleName != null ? roleName() : this.roleName,
+  roleName: roleName ?? this.roleName,
   size: size ?? this.size,
   sshUrl: sshUrl ?? this.sshUrl,
   stargazers: stargazers != null ? stargazers() : this.stargazers,

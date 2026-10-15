@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DeploymentSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';/// A deployment created as the result of an Actions check run from a workflow that references an environment
-@immutable final class DeploymentSimple {const DeploymentSimple({required this.url, required this.id, required this.nodeId, required this.task, required this.environment, required this.description, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.originalEnvironment, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp, });
+@immutable final class DeploymentSimple {const DeploymentSimple({required this.url, required this.id, required this.nodeId, required this.task, required this.environment, required this.description, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.originalEnvironment, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp = const Omittable.absent(), });
 
 factory DeploymentSimple.fromJson(Map<String, dynamic> json) { return DeploymentSimple(
   url: Uri.parse(json['url'] as String),
@@ -18,7 +18,7 @@ factory DeploymentSimple.fromJson(Map<String, dynamic> json) { return Deployment
   repositoryUrl: Uri.parse(json['repository_url'] as String),
   transientEnvironment: json['transient_environment'] as bool?,
   productionEnvironment: json['production_environment'] as bool?,
-  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final Uri url;
@@ -52,7 +52,7 @@ final bool? transientEnvironment;
 /// Specifies if the given environment is one that end-users directly interact with. Default: false.
 final bool? productionEnvironment;
 
-final Integration? performedViaGithubApp;
+final Omittable<Integration?> performedViaGithubApp;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
@@ -68,19 +68,19 @@ Map<String, dynamic> toJson() { return {
   'repository_url': repositoryUrl.toString(),
   'transient_environment': ?transientEnvironment,
   'production_environment': ?productionEnvironment,
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('task') && json['task'] is String &&
       json.containsKey('environment') && json['environment'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('statuses_url') && json['statuses_url'] is String &&
       json.containsKey('repository_url') && json['repository_url'] is String; } 
-DeploymentSimple copyWith({Uri? url, int? id, String? nodeId, String? task, String? Function()? originalEnvironment, String? environment, String? Function()? description, DateTime? createdAt, DateTime? updatedAt, Uri? statusesUrl, Uri? repositoryUrl, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, Integration? Function()? performedViaGithubApp, }) { return DeploymentSimple(
+DeploymentSimple copyWith({Uri? url, int? id, String? nodeId, String? task, String? Function()? originalEnvironment, String? environment, String? Function()? description, DateTime? createdAt, DateTime? updatedAt, Uri? statusesUrl, Uri? repositoryUrl, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, Omittable<Integration?>? performedViaGithubApp, }) { return DeploymentSimple(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -94,7 +94,7 @@ DeploymentSimple copyWith({Uri? url, int? id, String? nodeId, String? task, Stri
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentSimple &&

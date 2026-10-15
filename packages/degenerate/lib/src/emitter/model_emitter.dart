@@ -81,10 +81,12 @@ final class ModelEmitter {
         (b) => b
           ..name = f.name
           ..modifier = FieldModifier.final$
-          ..type = irTypeToReference(
-            f.type,
-            forceNullable: !f.isRequired && !fieldHasDefault(f),
-          )
+          ..type = ctx.isOmittable(f)
+              ? omittableTypeRef(f)
+              : irTypeToReference(
+                  f.type,
+                  forceNullable: !f.isRequired && !fieldHasDefault(f),
+                )
           ..docs.addAll(_fieldDocs(f)),
       ),
     );
@@ -108,7 +110,9 @@ final class ModelEmitter {
           ..named = true
           ..toThis = true
           ..required = fieldIsRequiredInCtor(f)
-          ..defaultTo = fieldDefaultCode(f),
+          ..defaultTo = ctx.isOmittable(f)
+              ? const Code('const Omittable.absent()')
+              : fieldDefaultCode(f),
       );
     }).toList();
     // Sort required named parameters before optional ones.
@@ -146,6 +150,11 @@ final class ModelEmitter {
           // produce null.
           final isOptional = fieldIsNullableInDart(f);
           final code = ctx.fromJson(f.type, accessor, isOptional: isOptional);
+          if (ctx.isOmittable(f)) {
+            // Key presence decides absent vs present; a present null decodes
+            // to Omittable(null), preserving the three wire states.
+            return '  ${f.name}: json.containsKey(${f.originalName.literal}) ? Omittable($code) : const Omittable.absent(),';
+          }
           if (!f.isRequired && fieldHasDefault(f)) {
             // Optional with default: use null-safe extraction or skip entirely.
             // The constructor default handles missing values.
@@ -205,6 +214,7 @@ final class ModelEmitter {
               f,
               f.originalName.literal,
               isNullable: fieldIsNullableInDart(f),
+              omittable: ctx.isOmittable(f),
             ))
         .join('\n');
 
@@ -241,6 +251,11 @@ final class ModelEmitter {
               _constDiscriminatorCheck(f, accessor) ??
               _canParseTypeCheck(f.type, accessor);
           if (typeCheck != null) {
+            // A nullable required field legally carries an explicit null (the
+            // const-discriminator pin already allows it).
+            if (f.type.isNullable && !typeCheck.contains('== null')) {
+              return '$keyCheck && ($accessor == null || $typeCheck)';
+            }
             return '$keyCheck && $typeCheck';
           }
           return keyCheck;
@@ -348,12 +363,13 @@ final class ModelEmitter {
     for (final f in model.fields) {
       final c = _constraintsOf(f.type);
       if (c.isEmpty) continue;
-      final nullableInDart = fieldIsNullableInDart(f);
+      final omittable = ctx.isOmittable(f);
+      final nullableInDart = omittable || fieldIsNullableInDart(f);
       final accessor = nullableInDart ? fresh(f.name) : f.name;
       final checks = _fieldConstraintChecks(f, accessor, acc, c);
       if (nullableInDart) {
         lines
-          ..add('final $accessor = ${f.name};')
+          ..add('final $accessor = ${f.name}${omittable ? '.value' : ''};')
           ..add('if ($accessor != null) {')
           ..addAll(checks.map((line) => '  $line'))
           ..add('}');
@@ -472,9 +488,13 @@ final class ModelEmitter {
   }
 
   Method _buildCopyWith() {
-    final params = model.fields.map(copyWithParam);
+    final params = model.fields.map(
+      (f) => copyWithParam(f, omittable: ctx.isOmittable(f)),
+    );
 
-    final assignments = model.fields.map(copyWithAssignment).join('\n');
+    final assignments = model.fields
+        .map((f) => copyWithAssignment(f, omittable: ctx.isOmittable(f)))
+        .join('\n');
 
     final allParams = [...params];
     var allAssignments = assignments;
@@ -509,6 +529,7 @@ final class ModelEmitter {
           (f) => equalsComparison(
             f,
             self: f.name == 'other' ? 'this.${f.name}' : null,
+            omittable: ctx.isOmittable(f),
           ),
         )
         .join(' &&\n          ');
@@ -535,6 +556,7 @@ final class ModelEmitter {
           (f) => hashCodeExpr(
             f,
             isNullable: fieldIsNullableInDart(f),
+            omittable: ctx.isOmittable(f),
           ),
         )
         .toList();

@@ -2,27 +2,27 @@
 // Source: #/components/schemas/PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions({this.commodityCode});
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions({this.commodityCode = const Omittable.absent()});
 
 factory PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions(
-  commodityCode: json['commodity_code'] as String?,
+  commodityCode: json.containsKey('commodity_code') ? Omittable(json['commodity_code'] as String?) : const Omittable.absent(),
 ); }
 
-final String? commodityCode;
+final Omittable<String?> commodityCode;
 
 Map<String, dynamic> toJson() { return {
-  'commodity_code': ?commodityCode,
+  if (commodityCode.isPresent) 'commodity_code': commodityCode.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commodity_code'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final commodityCode$ = commodityCode;
+final commodityCode$ = commodityCode.value;
 if (commodityCode$ != null) {
   if (commodityCode$.runes.length > 5000) { errors.add('commodityCode: length must be <= 5000'); }
 }
 return errors; } 
-PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions copyWith({String? Function()? commodityCode}) { return PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions(
-  commodityCode: commodityCode != null ? commodityCode() : this.commodityCode,
+PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions copyWith({Omittable<String?>? commodityCode}) { return PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions(
+  commodityCode: commodityCode ?? this.commodityCode,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsCardPaymentIntentAmountDetailsLineItemPaymentMethodOptions &&

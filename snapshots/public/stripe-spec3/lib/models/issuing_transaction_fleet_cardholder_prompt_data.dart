@@ -2,64 +2,64 @@
 // Source: #/components/schemas/IssuingTransactionFleetCardholderPromptData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class IssuingTransactionFleetCardholderPromptData {const IssuingTransactionFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
+@immutable final class IssuingTransactionFleetCardholderPromptData {const IssuingTransactionFleetCardholderPromptData({this.driverId = const Omittable.absent(), this.odometer = const Omittable.absent(), this.unspecifiedId = const Omittable.absent(), this.userId = const Omittable.absent(), this.vehicleNumber = const Omittable.absent(), });
 
 factory IssuingTransactionFleetCardholderPromptData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetCardholderPromptData(
-  driverId: json['driver_id'] as String?,
-  odometer: json['odometer'] != null ? (json['odometer'] as num).toInt() : null,
-  unspecifiedId: json['unspecified_id'] as String?,
-  userId: json['user_id'] as String?,
-  vehicleNumber: json['vehicle_number'] as String?,
+  driverId: json.containsKey('driver_id') ? Omittable(json['driver_id'] as String?) : const Omittable.absent(),
+  odometer: json.containsKey('odometer') ? Omittable(json['odometer'] != null ? (json['odometer'] as num).toInt() : null) : const Omittable.absent(),
+  unspecifiedId: json.containsKey('unspecified_id') ? Omittable(json['unspecified_id'] as String?) : const Omittable.absent(),
+  userId: json.containsKey('user_id') ? Omittable(json['user_id'] as String?) : const Omittable.absent(),
+  vehicleNumber: json.containsKey('vehicle_number') ? Omittable(json['vehicle_number'] as String?) : const Omittable.absent(),
 ); }
 
 /// Driver ID.
-final String? driverId;
+final Omittable<String?> driverId;
 
 /// Odometer reading.
-final int? odometer;
+final Omittable<int?> odometer;
 
 /// An alphanumeric ID. This field is used when a vehicle ID, driver ID, or generic ID is entered by the cardholder, but the merchant or card network did not specify the prompt type.
-final String? unspecifiedId;
+final Omittable<String?> unspecifiedId;
 
 /// User ID.
-final String? userId;
+final Omittable<String?> userId;
 
 /// Vehicle number.
-final String? vehicleNumber;
+final Omittable<String?> vehicleNumber;
 
 Map<String, dynamic> toJson() { return {
-  'driver_id': ?driverId,
-  'odometer': ?odometer,
-  'unspecified_id': ?unspecifiedId,
-  'user_id': ?userId,
-  'vehicle_number': ?vehicleNumber,
+  if (driverId.isPresent) 'driver_id': driverId.value,
+  if (odometer.isPresent) 'odometer': odometer.value,
+  if (unspecifiedId.isPresent) 'unspecified_id': unspecifiedId.value,
+  if (userId.isPresent) 'user_id': userId.value,
+  if (vehicleNumber.isPresent) 'vehicle_number': vehicleNumber.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'driver_id', 'odometer', 'unspecified_id', 'user_id', 'vehicle_number'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final driverId$ = driverId;
+final driverId$ = driverId.value;
 if (driverId$ != null) {
   if (driverId$.runes.length > 5000) { errors.add('driverId: length must be <= 5000'); }
 }
-final unspecifiedId$ = unspecifiedId;
+final unspecifiedId$ = unspecifiedId.value;
 if (unspecifiedId$ != null) {
   if (unspecifiedId$.runes.length > 5000) { errors.add('unspecifiedId: length must be <= 5000'); }
 }
-final userId$ = userId;
+final userId$ = userId.value;
 if (userId$ != null) {
   if (userId$.runes.length > 5000) { errors.add('userId: length must be <= 5000'); }
 }
-final vehicleNumber$ = vehicleNumber;
+final vehicleNumber$ = vehicleNumber.value;
 if (vehicleNumber$ != null) {
   if (vehicleNumber$.runes.length > 5000) { errors.add('vehicleNumber: length must be <= 5000'); }
 }
 return errors; } 
-IssuingTransactionFleetCardholderPromptData copyWith({String? Function()? driverId, int? Function()? odometer, String? Function()? unspecifiedId, String? Function()? userId, String? Function()? vehicleNumber, }) { return IssuingTransactionFleetCardholderPromptData(
-  driverId: driverId != null ? driverId() : this.driverId,
-  odometer: odometer != null ? odometer() : this.odometer,
-  unspecifiedId: unspecifiedId != null ? unspecifiedId() : this.unspecifiedId,
-  userId: userId != null ? userId() : this.userId,
-  vehicleNumber: vehicleNumber != null ? vehicleNumber() : this.vehicleNumber,
+IssuingTransactionFleetCardholderPromptData copyWith({Omittable<String?>? driverId, Omittable<int?>? odometer, Omittable<String?>? unspecifiedId, Omittable<String?>? userId, Omittable<String?>? vehicleNumber, }) { return IssuingTransactionFleetCardholderPromptData(
+  driverId: driverId ?? this.driverId,
+  odometer: odometer ?? this.odometer,
+  unspecifiedId: unspecifiedId ?? this.unspecifiedId,
+  userId: userId ?? this.userId,
+  vehicleNumber: vehicleNumber ?? this.vehicleNumber,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionFleetCardholderPromptData &&

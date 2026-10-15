@@ -429,18 +429,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vivid, W
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateImageRequest {const CreateImageRequest({required this.prompt, this.model, this.n = 1, this.quality = CreateImageRequestQuality.auto, this.responseFormat = CreateImageRequestResponseFormat.url, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.stream = false, this.partialImages, this.size = CreateImageRequestSize.auto, this.moderation = CreateImageRequestModeration.auto, this.background = CreateImageEditRequestBackground.auto, this.style = Style.vivid, this.user, });
+@immutable final class CreateImageRequest {const CreateImageRequest({required this.prompt, this.model = const Omittable.absent(), this.n = 1, this.quality = CreateImageRequestQuality.auto, this.responseFormat = CreateImageRequestResponseFormat.url, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.stream = false, this.partialImages = const Omittable.absent(), this.size = CreateImageRequestSize.auto, this.moderation = CreateImageRequestModeration.auto, this.background = CreateImageEditRequestBackground.auto, this.style = Style.vivid, this.user, });
 
 factory CreateImageRequest.fromJson(Map<String, dynamic> json) { return CreateImageRequest(
   prompt: json['prompt'] as String,
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageRequestModelVariant2.fromJson(v as String),) : null,
+  model: json.containsKey('model') ? Omittable(json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageRequestModelVariant2.fromJson(v as String),) : null) : const Omittable.absent(),
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
   quality: json.containsKey('quality') ? json['quality'] != null ? CreateImageRequestQuality.fromJson(json['quality'] as String) : null : CreateImageRequestQuality.auto,
   responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageRequestResponseFormat.url,
   outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? CreateImageEditRequestOutputFormat.fromJson(json['output_format'] as String) : null : CreateImageEditRequestOutputFormat.png,
   outputCompression: json.containsKey('output_compression') ? json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null : 100,
   stream: json.containsKey('stream') ? json['stream'] as bool? : false,
-  partialImages: json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null,
+  partialImages: json.containsKey('partial_images') ? Omittable(json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null) : const Omittable.absent(),
   size: json.containsKey('size') ? json['size'] != null ? CreateImageRequestSize.fromJson(json['size'] as String) : null : CreateImageRequestSize.auto,
   moderation: json.containsKey('moderation') ? json['moderation'] != null ? CreateImageRequestModeration.fromJson(json['moderation'] as String) : null : CreateImageRequestModeration.auto,
   background: json.containsKey('background') ? json['background'] != null ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : null : CreateImageEditRequestBackground.auto,
@@ -456,7 +456,7 @@ final String prompt;
 /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.
 /// 
 /// Example: `'gpt-image-1.5'`
-final CreateImageRequestModel? model;
+final Omittable<CreateImageRequestModel?> model;
 
 /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.
 /// 
@@ -497,7 +497,7 @@ final int? outputCompression;
 /// Example: `false`
 final bool? stream;
 
-final PartialImages? partialImages;
+final Omittable<PartialImages?> partialImages;
 
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`, and one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3`.
 /// 
@@ -534,14 +534,14 @@ final String? user;
 
 Map<String, dynamic> toJson() { return {
   'prompt': prompt,
-  if (model != null) 'model': model?.toJson(),
+  if (model.isPresent) 'model': model.value?.toJson(),
   'n': ?n,
   if (quality != null) 'quality': quality?.toJson(),
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   if (outputFormat != null) 'output_format': outputFormat?.toJson(),
   'output_compression': ?outputCompression,
   'stream': ?stream,
-  if (partialImages != null) 'partial_images': partialImages?.toJson(),
+  if (partialImages.isPresent) 'partial_images': partialImages.value?.toJson(),
   if (size != null) 'size': size?.toJson(),
   if (moderation != null) 'moderation': moderation?.toJson(),
   if (background != null) 'background': background?.toJson(),
@@ -557,16 +557,16 @@ if (n$ != null) {
   if (n$ > 10) { errors.add('n: must be <= 10'); }
 }
 return errors; } 
-CreateImageRequest copyWith({String? prompt, CreateImageRequestModel? Function()? model, int? Function()? n, CreateImageRequestQuality? Function()? quality, CreateImageRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageRequestSize? Function()? size, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, Style? Function()? style, String? Function()? user, }) { return CreateImageRequest(
+CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>? model, int? Function()? n, CreateImageRequestQuality? Function()? quality, CreateImageRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, bool? Function()? stream, Omittable<PartialImages?>? partialImages, CreateImageRequestSize? Function()? size, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, Style? Function()? style, String? Function()? user, }) { return CreateImageRequest(
   prompt: prompt ?? this.prompt,
-  model: model != null ? model() : this.model,
+  model: model ?? this.model,
   n: n != null ? n() : this.n,
   quality: quality != null ? quality() : this.quality,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   outputFormat: outputFormat != null ? outputFormat() : this.outputFormat,
   outputCompression: outputCompression != null ? outputCompression() : this.outputCompression,
   stream: stream != null ? stream() : this.stream,
-  partialImages: partialImages != null ? partialImages() : this.partialImages,
+  partialImages: partialImages ?? this.partialImages,
   size: size != null ? size() : this.size,
   moderation: moderation != null ? moderation() : this.moderation,
   background: background != null ? background() : this.background,

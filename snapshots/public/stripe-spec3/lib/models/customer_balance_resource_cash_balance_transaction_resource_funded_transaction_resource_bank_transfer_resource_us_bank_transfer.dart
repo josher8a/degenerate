@@ -85,34 +85,34 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
  }
 /// 
-@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer({this.network, this.senderName, });
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer({this.network, this.senderName = const Omittable.absent(), });
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer(
   network: json['network'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork.fromJson(json['network'] as String) : null,
-  senderName: json['sender_name'] as String?,
+  senderName: json.containsKey('sender_name') ? Omittable(json['sender_name'] as String?) : const Omittable.absent(),
 ); }
 
 /// The banking network used for this funding.
 final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork? network;
 
 /// The full name of the sender, as supplied by the sending bank.
-final String? senderName;
+final Omittable<String?> senderName;
 
 Map<String, dynamic> toJson() { return {
   if (network != null) 'network': network?.toJson(),
-  'sender_name': ?senderName,
+  if (senderName.isPresent) 'sender_name': senderName.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network', 'sender_name'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final senderName$ = senderName;
+final senderName$ = senderName.value;
 if (senderName$ != null) {
   if (senderName$.runes.length > 5000) { errors.add('senderName: length must be <= 5000'); }
 }
 return errors; } 
-CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork? Function()? network, String? Function()? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer(
+CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork? Function()? network, Omittable<String?>? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer(
   network: network != null ? network() : this.network,
-  senderName: senderName != null ? senderName() : this.senderName,
+  senderName: senderName ?? this.senderName,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer &&

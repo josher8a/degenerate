@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WebhookDeploymentStatusCreated (inline: Deployment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/deployment_performed_via_github_app.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_deployment_payload.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';/// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
-@immutable final class WebhookDeploymentStatusCreatedDeployment {const WebhookDeploymentStatusCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, required this.updatedAt, required this.url, this.performedViaGithubApp, this.productionEnvironment, this.transientEnvironment, });
+@immutable final class WebhookDeploymentStatusCreatedDeployment {const WebhookDeploymentStatusCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, required this.updatedAt, required this.url, this.performedViaGithubApp = const Omittable.absent(), this.productionEnvironment, this.transientEnvironment, });
 
 factory WebhookDeploymentStatusCreatedDeployment.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedDeployment(
   createdAt: json['created_at'] as String,
@@ -13,7 +13,7 @@ factory WebhookDeploymentStatusCreatedDeployment.fromJson(Map<String, dynamic> j
   nodeId: json['node_id'] as String,
   originalEnvironment: json['original_environment'] as String,
   payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
-  performedViaGithubApp: json['performed_via_github_app'] != null ? DeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? DeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   productionEnvironment: json['production_environment'] as bool?,
   ref: json['ref'] as String,
   repositoryUrl: Uri.parse(json['repository_url'] as String),
@@ -42,7 +42,7 @@ final String originalEnvironment;
 final WebhookDeploymentStatusCreatedDeploymentPayload? payload;
 
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-final DeploymentPerformedViaGithubApp? performedViaGithubApp;
+final Omittable<DeploymentPerformedViaGithubApp?> performedViaGithubApp;
 
 final bool? productionEnvironment;
 
@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'original_environment': originalEnvironment,
   'payload': payload?.toJson(),
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   'production_environment': ?productionEnvironment,
   'ref': ref,
   'repository_url': repositoryUrl.toString(),
@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -97,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('task') && json['task'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentStatusCreatedDeployment copyWith({String? createdAt, WebhooksMilestone3Creator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, WebhookDeploymentStatusCreatedDeploymentPayload? Function()? payload, DeploymentPerformedViaGithubApp? Function()? performedViaGithubApp, bool? Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool? Function()? transientEnvironment, String? updatedAt, Uri? url, }) { return WebhookDeploymentStatusCreatedDeployment(
+WebhookDeploymentStatusCreatedDeployment copyWith({String? createdAt, WebhooksMilestone3Creator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, WebhookDeploymentStatusCreatedDeploymentPayload? Function()? payload, Omittable<DeploymentPerformedViaGithubApp?>? performedViaGithubApp, bool? Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool? Function()? transientEnvironment, String? updatedAt, Uri? url, }) { return WebhookDeploymentStatusCreatedDeployment(
   createdAt: createdAt ?? this.createdAt,
   creator: creator != null ? creator() : this.creator,
   description: description != null ? description() : this.description,
@@ -106,7 +106,7 @@ WebhookDeploymentStatusCreatedDeployment copyWith({String? createdAt, WebhooksMi
   nodeId: nodeId ?? this.nodeId,
   originalEnvironment: originalEnvironment ?? this.originalEnvironment,
   payload: payload != null ? payload() : this.payload,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
   ref: ref ?? this.ref,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,

@@ -283,8 +283,8 @@ final class SessionState {
     required this.keeperSlug,
     required this.speakingOrder,
     this.status = SessionStatus.waiting,
-    this.speakingNow,
-    this.nextSpeaker,
+    this.speakingNow = const Omittable.absent(),
+    this.nextSpeaker = const Omittable.absent(),
     this.totemStatus = TotemStatus.none,
   });
 
@@ -297,8 +297,12 @@ final class SessionState {
       speakingOrder: (json['speaking_order'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      speakingNow: json['speaking_now'] as String?,
-      nextSpeaker: json['next_speaker'] as String?,
+      speakingNow: json.containsKey('speaking_now')
+          ? Omittable(json['speaking_now'] as String?)
+          : const Omittable.absent(),
+      nextSpeaker: json.containsKey('next_speaker')
+          ? Omittable(json['next_speaker'] as String?)
+          : const Omittable.absent(),
       totemStatus: json.containsKey('totem_status')
           ? TotemStatus.fromJson(json['totem_status'] as String)
           : TotemStatus.none,
@@ -311,9 +315,9 @@ final class SessionState {
 
   final List<String> speakingOrder;
 
-  final String? speakingNow;
+  final Omittable<String?> speakingNow;
 
-  final String? nextSpeaker;
+  final Omittable<String?> nextSpeaker;
 
   final TotemStatus totemStatus;
 
@@ -322,8 +326,8 @@ final class SessionState {
       'keeper_slug': keeperSlug,
       'status': status.toJson(),
       'speaking_order': speakingOrder,
-      'speaking_now': ?speakingNow,
-      'next_speaker': ?nextSpeaker,
+      if (speakingNow.isPresent) 'speaking_now': speakingNow.value,
+      if (nextSpeaker.isPresent) 'next_speaker': nextSpeaker.value,
       'totem_status': totemStatus.toJson(),
     };
   }
@@ -338,16 +342,16 @@ final class SessionState {
     String? keeperSlug,
     SessionStatus Function()? status,
     List<String>? speakingOrder,
-    String? Function()? speakingNow,
-    String? Function()? nextSpeaker,
+    Omittable<String?>? speakingNow,
+    Omittable<String?>? nextSpeaker,
     TotemStatus Function()? totemStatus,
   }) {
     return SessionState(
       keeperSlug: keeperSlug ?? this.keeperSlug,
       status: status != null ? status() : this.status,
       speakingOrder: speakingOrder ?? this.speakingOrder,
-      speakingNow: speakingNow != null ? speakingNow() : this.speakingNow,
-      nextSpeaker: nextSpeaker != null ? nextSpeaker() : this.nextSpeaker,
+      speakingNow: speakingNow ?? this.speakingNow,
+      nextSpeaker: nextSpeaker ?? this.nextSpeaker,
       totemStatus: totemStatus != null ? totemStatus() : this.totemStatus,
     );
   }

@@ -2,17 +2,17 @@
 // Source: #/components/schemas/GistHistory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_commit/change_status.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist History
-@immutable final class GistHistory {const GistHistory({this.user, this.version, this.committedAt, this.changeStatus, this.url, });
+@immutable final class GistHistory {const GistHistory({this.user = const Omittable.absent(), this.version, this.committedAt, this.changeStatus, this.url, });
 
 factory GistHistory.fromJson(Map<String, dynamic> json) { return GistHistory(
-  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json.containsKey('user') ? Omittable(json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   version: json['version'] as String?,
   committedAt: json['committed_at'] != null ? DateTime.parse(json['committed_at'] as String) : null,
   changeStatus: json['change_status'] != null ? ChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
-final SimpleUser? user;
+final Omittable<SimpleUser?> user;
 
 final String? version;
 
@@ -23,15 +23,15 @@ final ChangeStatus? changeStatus;
 final Uri? url;
 
 Map<String, dynamic> toJson() { return {
-  if (user != null) 'user': user?.toJson(),
+  if (user.isPresent) 'user': user.value?.toJson(),
   'version': ?version,
   if (committedAt != null) 'committed_at': committedAt?.toIso8601String(),
   if (changeStatus != null) 'change_status': changeStatus?.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user', 'version', 'committed_at', 'change_status', 'url'}.contains(key)); } 
-GistHistory copyWith({SimpleUser? Function()? user, String? Function()? version, DateTime? Function()? committedAt, ChangeStatus? Function()? changeStatus, Uri? Function()? url, }) { return GistHistory(
-  user: user != null ? user() : this.user,
+GistHistory copyWith({Omittable<SimpleUser?>? user, String? Function()? version, DateTime? Function()? committedAt, ChangeStatus? Function()? changeStatus, Uri? Function()? url, }) { return GistHistory(
+  user: user ?? this.user,
   version: version != null ? version() : this.version,
   committedAt: committedAt != null ? committedAt() : this.committedAt,
   changeStatus: changeStatus != null ? changeStatus() : this.changeStatus,

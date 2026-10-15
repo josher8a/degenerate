@@ -202,7 +202,7 @@ factory CloudflarePipelinesFieldType.fromJson(Map<String, dynamic> json) { retur
 factory CloudflarePipelinesFieldType.timestamp({CloudflarePipelinesTimestampUnit? unit}) { return CloudflarePipelinesFieldTypeTimestamp(CloudflarePipelinesTimestampField(unit: unit)); }
 
 /// Build the `Struct` variant.
-factory CloudflarePipelinesFieldType.struct({required List<CloudflarePipelinesSourceField> fields, String? name, }) { return CloudflarePipelinesFieldTypeStruct(CloudflarePipelinesStructField(fields: fields, name: name)); }
+factory CloudflarePipelinesFieldType.struct({required List<CloudflarePipelinesSourceField> fields, Omittable<String?> name = const Omittable.absent(), }) { return CloudflarePipelinesFieldTypeStruct(CloudflarePipelinesStructField(fields: fields, name: name)); }
 
 /// Build the `List` variant.
 factory CloudflarePipelinesFieldType.list({required CloudflarePipelinesSourceField items}) { return CloudflarePipelinesFieldTypeList(CloudflarePipelinesListField(items: items)); }
@@ -411,7 +411,7 @@ final CloudflarePipelinesStructField cloudflarePipelinesStructField;
 
 @override Map<String, dynamic> toJson() => {...cloudflarePipelinesStructField.toJson(), 'type': type.toJson()};
 
-CloudflarePipelinesFieldTypeStruct copyWith({List<CloudflarePipelinesSourceField>? fields, String? Function()? name, }) { return CloudflarePipelinesFieldTypeStruct(cloudflarePipelinesStructField.copyWith(
+CloudflarePipelinesFieldTypeStruct copyWith({List<CloudflarePipelinesSourceField>? fields, Omittable<String?>? name, }) { return CloudflarePipelinesFieldTypeStruct(cloudflarePipelinesStructField.copyWith(
   fields: fields,
   name: name,
 )); } 

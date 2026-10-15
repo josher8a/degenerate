@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DigitalExperienceMonitoringHttpDetailsResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsResponse {const DigitalExperienceMonitoringHttpDetailsResponse({this.host, this.httpStats, this.httpStatsByColo, this.interval, this.kind, this.method, this.name, this.targetPolicies, this.targeted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsResponse {const DigitalExperienceMonitoringHttpDetailsResponse({this.host, this.httpStats = const Omittable.absent(), this.httpStatsByColo, this.interval, this.kind = const Omittable.absent(), this.method, this.name, this.targetPolicies = const Omittable.absent(), this.targeted, });
 
 factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: json['host'] as String?,
-  httpStats: json['httpStats'] != null ? HttpStats.fromJson(json['httpStats'] as Map<String, dynamic>) : null,
+  httpStats: json.containsKey('httpStats') ? Omittable(json['httpStats'] != null ? HttpStats.fromJson(json['httpStats'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   httpStatsByColo: (json['httpStatsByColo'] as List<dynamic>?)?.map((e) => HttpStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   interval: json['interval'] as String?,
-  kind: json['kind'],
+  kind: json.containsKey('kind') ? Omittable(json['kind']) : const Omittable.absent(),
   method: json['method'] as String?,
   name: json['name'] as String?,
-  targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => TargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
+  targetPolicies: json.containsKey('target_policies') ? Omittable((json['target_policies'] as List<dynamic>?)?.map((e) => TargetPolicies.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   targeted: json['targeted'] as bool?,
 ); }
 
@@ -20,7 +20,7 @@ factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dyna
 /// Example: `'http://example.com'`
 final String? host;
 
-final HttpStats? httpStats;
+final Omittable<HttpStats?> httpStats;
 
 final List<HttpStatsByColo>? httpStatsByColo;
 
@@ -29,7 +29,7 @@ final List<HttpStatsByColo>? httpStatsByColo;
 /// Example: `'0h5m0s'`
 final String? interval;
 
-final dynamic kind;
+final Omittable<dynamic> kind;
 
 /// The HTTP method to use when running the test
 /// 
@@ -41,31 +41,31 @@ final String? method;
 /// Example: `'Atlassian Sign In Page'`
 final String? name;
 
-final List<TargetPolicies>? targetPolicies;
+final Omittable<List<TargetPolicies>?> targetPolicies;
 
 final bool? targeted;
 
 Map<String, dynamic> toJson() { return {
   'host': ?host,
-  if (httpStats != null) 'httpStats': httpStats?.toJson(),
+  if (httpStats.isPresent) 'httpStats': httpStats.value?.toJson(),
   if (httpStatsByColo != null) 'httpStatsByColo': httpStatsByColo?.map((e) => e.toJson()).toList(),
   'interval': ?interval,
-  'kind': ?kind,
+  if (kind.isPresent) 'kind': kind.value,
   'method': ?method,
   'name': ?name,
-  if (targetPolicies != null) 'target_policies': targetPolicies?.map((e) => e.toJson()).toList(),
+  if (targetPolicies.isPresent) 'target_policies': targetPolicies.value?.map((e) => e.toJson()).toList(),
   'targeted': ?targeted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'httpStats', 'httpStatsByColo', 'interval', 'kind', 'method', 'name', 'target_policies', 'targeted'}.contains(key)); } 
-DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? host, HttpStats? Function()? httpStats, List<HttpStatsByColo>? Function()? httpStatsByColo, String? Function()? interval, dynamic Function()? kind, String? Function()? method, String? Function()? name, List<TargetPolicies>? Function()? targetPolicies, bool? Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
+DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? host, Omittable<HttpStats?>? httpStats, List<HttpStatsByColo>? Function()? httpStatsByColo, String? Function()? interval, Omittable<dynamic>? kind, String? Function()? method, String? Function()? name, Omittable<List<TargetPolicies>?>? targetPolicies, bool? Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: host != null ? host() : this.host,
-  httpStats: httpStats != null ? httpStats() : this.httpStats,
+  httpStats: httpStats ?? this.httpStats,
   httpStatsByColo: httpStatsByColo != null ? httpStatsByColo() : this.httpStatsByColo,
   interval: interval != null ? interval() : this.interval,
-  kind: kind != null ? kind() : this.kind,
+  kind: kind ?? this.kind,
   method: method != null ? method() : this.method,
   name: name != null ? name() : this.name,
-  targetPolicies: targetPolicies != null ? targetPolicies() : this.targetPolicies,
+  targetPolicies: targetPolicies ?? this.targetPolicies,
   targeted: targeted != null ? targeted() : this.targeted,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -77,10 +77,11 @@ DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? hos
           kind == other.kind &&
           method == other.method &&
           name == other.name &&
-          listEquals(targetPolicies, other.targetPolicies) &&
+          targetPolicies.isPresent == other.targetPolicies.isPresent &&
+          listEquals(targetPolicies.value, other.targetPolicies.value) &&
           targeted == other.targeted;
 
-@override int get hashCode => Object.hash(host, httpStats, Object.hashAll(httpStatsByColo ?? const []), interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted);
+@override int get hashCode => Object.hash(host, httpStats, Object.hashAll(httpStatsByColo ?? const []), interval, kind, method, name, Object.hashAll(targetPolicies.value ?? const []), targeted);
 
 @override String toString() => 'DigitalExperienceMonitoringHttpDetailsResponse(\n  host: $host,\n  httpStats: $httpStats,\n  httpStatsByColo: $httpStatsByColo,\n  interval: $interval,\n  kind: $kind,\n  method: $method,\n  name: $name,\n  targetPolicies: $targetPolicies,\n  targeted: $targeted,\n)';
 

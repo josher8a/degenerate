@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityBatchAllowPoliciesRequest (inline: Puts)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_allow_policy_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestPuts {const EmailSecurityBatchAllowPoliciesRequestPuts({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.id, this.comments, this.isRecipient, this.isSender, this.isSpoof, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_allow_policy_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestPuts {const EmailSecurityBatchAllowPoliciesRequestPuts({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.id, this.comments = const Omittable.absent(), this.isRecipient, this.isSender, this.isSpoof, });
 
 factory EmailSecurityBatchAllowPoliciesRequestPuts.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesRequestPuts(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isAcceptableSender: json['is_acceptable_sender'] as bool,
   isExemptRecipient: json['is_exempt_recipient'] as bool,
   isRecipient: json['is_recipient'] as bool?,
@@ -18,7 +18,7 @@ factory EmailSecurityBatchAllowPoliciesRequestPuts.fromJson(Map<String, dynamic>
   id: EmailSecurityAllowPolicyId.fromJson(json['id'] as num),
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.
 /// Note: This will not exempt messages with Malicious or Suspicious dispositions.
@@ -50,7 +50,7 @@ final bool verifySender;
 final EmailSecurityAllowPolicyId id;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_acceptable_sender': isAcceptableSender,
   'is_exempt_recipient': isExemptRecipient,
   'is_recipient': ?isRecipient,
@@ -73,15 +73,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
       json.containsKey('id'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final comments$ = comments;
+final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 return errors; } 
-EmailSecurityBatchAllowPoliciesRequestPuts copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, EmailSecurityAllowPolicyId? id, }) { return EmailSecurityBatchAllowPoliciesRequestPuts(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityBatchAllowPoliciesRequestPuts copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, EmailSecurityAllowPolicyId? id, }) { return EmailSecurityBatchAllowPoliciesRequestPuts(
+  comments: comments ?? this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,
   isRecipient: isRecipient != null ? isRecipient() : this.isRecipient,

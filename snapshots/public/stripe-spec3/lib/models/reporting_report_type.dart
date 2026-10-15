@@ -62,12 +62,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reportin
 /// 
 /// Note that certain report types can only be run based on your live-mode data (not test-mode
 /// data), and will error when queried without a [live-mode API key](https://docs.stripe.com/keys#test-live-modes).
-@immutable final class ReportingReportType {const ReportingReportType({required this.dataAvailableEnd, required this.dataAvailableStart, required this.id, required this.livemode, required this.name, required this.object, required this.updated, required this.version, this.defaultColumns, });
+@immutable final class ReportingReportType {const ReportingReportType({required this.dataAvailableEnd, required this.dataAvailableStart, required this.id, required this.livemode, required this.name, required this.object, required this.updated, required this.version, this.defaultColumns = const Omittable.absent(), });
 
 factory ReportingReportType.fromJson(Map<String, dynamic> json) { return ReportingReportType(
   dataAvailableEnd: (json['data_available_end'] as num).toInt(),
   dataAvailableStart: (json['data_available_start'] as num).toInt(),
-  defaultColumns: (json['default_columns'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  defaultColumns: json.containsKey('default_columns') ? Omittable((json['default_columns'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   name: json['name'] as String,
@@ -83,7 +83,7 @@ final int dataAvailableEnd;
 final int dataAvailableStart;
 
 /// List of column names that are included by default when this Report Type gets run. (If the Report Type doesn't support the `columns` parameter, this will be null.)
-final List<String>? defaultColumns;
+final Omittable<List<String>?> defaultColumns;
 
 /// The [ID of the Report Type](https://docs.stripe.com/reporting/statements/api#available-report-types), such as `balance.summary.1`.
 final String id;
@@ -106,7 +106,7 @@ final int version;
 Map<String, dynamic> toJson() { return {
   'data_available_end': dataAvailableEnd,
   'data_available_start': dataAvailableStart,
-  'default_columns': ?defaultColumns,
+  if (defaultColumns.isPresent) 'default_columns': defaultColumns.value,
   'id': id,
   'livemode': livemode,
   'name': name,
@@ -127,10 +127,10 @@ List<String> validate() { final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 return errors; } 
-ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, List<String>? Function()? defaultColumns, String? id, bool? livemode, String? name, ReportingReportTypeObject? object, int? updated, int? version, }) { return ReportingReportType(
+ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Omittable<List<String>?>? defaultColumns, String? id, bool? livemode, String? name, ReportingReportTypeObject? object, int? updated, int? version, }) { return ReportingReportType(
   dataAvailableEnd: dataAvailableEnd ?? this.dataAvailableEnd,
   dataAvailableStart: dataAvailableStart ?? this.dataAvailableStart,
-  defaultColumns: defaultColumns != null ? defaultColumns() : this.defaultColumns,
+  defaultColumns: defaultColumns ?? this.defaultColumns,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   name: name ?? this.name,
@@ -142,7 +142,8 @@ ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Li
       other is ReportingReportType &&
           dataAvailableEnd == other.dataAvailableEnd &&
           dataAvailableStart == other.dataAvailableStart &&
-          listEquals(defaultColumns, other.defaultColumns) &&
+          defaultColumns.isPresent == other.defaultColumns.isPresent &&
+          listEquals(defaultColumns.value, other.defaultColumns.value) &&
           id == other.id &&
           livemode == other.livemode &&
           name == other.name &&
@@ -150,7 +151,7 @@ ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Li
           updated == other.updated &&
           version == other.version;
 
-@override int get hashCode => Object.hash(dataAvailableEnd, dataAvailableStart, Object.hashAll(defaultColumns ?? const []), id, livemode, name, object, updated, version);
+@override int get hashCode => Object.hash(dataAvailableEnd, dataAvailableStart, Object.hashAll(defaultColumns.value ?? const []), id, livemode, name, object, updated, version);
 
 @override String toString() => 'ReportingReportType(\n  dataAvailableEnd: $dataAvailableEnd,\n  dataAvailableStart: $dataAvailableStart,\n  defaultColumns: $defaultColumns,\n  id: $id,\n  livemode: $livemode,\n  name: $name,\n  object: $object,\n  updated: $updated,\n  version: $version,\n)';
 

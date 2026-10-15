@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
  }
 /// to test the default value of properties
-@immutable final class DefaultValue {const DefaultValue({this.arrayStringEnumRefDefault, this.arrayStringEnumDefault, this.arrayStringDefault, this.arrayIntegerDefault, this.arrayString, this.arrayStringNullable, this.arrayStringExtensionNullable, this.stringNullable, });
+@immutable final class DefaultValue {const DefaultValue({this.arrayStringEnumRefDefault, this.arrayStringEnumDefault, this.arrayStringDefault, this.arrayIntegerDefault, this.arrayString, this.arrayStringNullable = const Omittable.absent(), this.arrayStringExtensionNullable, this.stringNullable = const Omittable.absent(), });
 
 factory DefaultValue.fromJson(Map<String, dynamic> json) { return DefaultValue(
   arrayStringEnumRefDefault: (json['array_string_enum_ref_default'] as List<dynamic>?)?.map((e) => StringEnumRef.fromJson(e as String)).toList(),
@@ -92,9 +92,9 @@ factory DefaultValue.fromJson(Map<String, dynamic> json) { return DefaultValue(
   arrayStringDefault: (json['array_string_default'] as List<dynamic>?)?.map((e) => e as String).toList(),
   arrayIntegerDefault: (json['array_integer_default'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   arrayString: (json['array_string'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  arrayStringNullable: (json['array_string_nullable'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  arrayStringNullable: json.containsKey('array_string_nullable') ? Omittable((json['array_string_nullable'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   arrayStringExtensionNullable: (json['array_string_extension_nullable'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  stringNullable: json['string_nullable'] as String?,
+  stringNullable: json.containsKey('string_nullable') ? Omittable(json['string_nullable'] as String?) : const Omittable.absent(),
 ); }
 
 final List<StringEnumRef>? arrayStringEnumRefDefault;
@@ -107,11 +107,11 @@ final List<int>? arrayIntegerDefault;
 
 final List<String>? arrayString;
 
-final List<String>? arrayStringNullable;
+final Omittable<List<String>?> arrayStringNullable;
 
 final List<String>? arrayStringExtensionNullable;
 
-final String? stringNullable;
+final Omittable<String?> stringNullable;
 
 Map<String, dynamic> toJson() { return {
   if (arrayStringEnumRefDefault != null) 'array_string_enum_ref_default': arrayStringEnumRefDefault?.map((e) => e.toJson()).toList(),
@@ -119,20 +119,20 @@ Map<String, dynamic> toJson() { return {
   'array_string_default': ?arrayStringDefault,
   'array_integer_default': ?arrayIntegerDefault,
   'array_string': ?arrayString,
-  'array_string_nullable': ?arrayStringNullable,
+  if (arrayStringNullable.isPresent) 'array_string_nullable': arrayStringNullable.value,
   'array_string_extension_nullable': ?arrayStringExtensionNullable,
-  'string_nullable': ?stringNullable,
+  if (stringNullable.isPresent) 'string_nullable': stringNullable.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'array_string_enum_ref_default', 'array_string_enum_default', 'array_string_default', 'array_integer_default', 'array_string', 'array_string_nullable', 'array_string_extension_nullable', 'string_nullable'}.contains(key)); } 
-DefaultValue copyWith({List<StringEnumRef>? Function()? arrayStringEnumRefDefault, List<ArrayStringEnumDefault>? Function()? arrayStringEnumDefault, List<String>? Function()? arrayStringDefault, List<int>? Function()? arrayIntegerDefault, List<String>? Function()? arrayString, List<String>? Function()? arrayStringNullable, List<String>? Function()? arrayStringExtensionNullable, String? Function()? stringNullable, }) { return DefaultValue(
+DefaultValue copyWith({List<StringEnumRef>? Function()? arrayStringEnumRefDefault, List<ArrayStringEnumDefault>? Function()? arrayStringEnumDefault, List<String>? Function()? arrayStringDefault, List<int>? Function()? arrayIntegerDefault, List<String>? Function()? arrayString, Omittable<List<String>?>? arrayStringNullable, List<String>? Function()? arrayStringExtensionNullable, Omittable<String?>? stringNullable, }) { return DefaultValue(
   arrayStringEnumRefDefault: arrayStringEnumRefDefault != null ? arrayStringEnumRefDefault() : this.arrayStringEnumRefDefault,
   arrayStringEnumDefault: arrayStringEnumDefault != null ? arrayStringEnumDefault() : this.arrayStringEnumDefault,
   arrayStringDefault: arrayStringDefault != null ? arrayStringDefault() : this.arrayStringDefault,
   arrayIntegerDefault: arrayIntegerDefault != null ? arrayIntegerDefault() : this.arrayIntegerDefault,
   arrayString: arrayString != null ? arrayString() : this.arrayString,
-  arrayStringNullable: arrayStringNullable != null ? arrayStringNullable() : this.arrayStringNullable,
+  arrayStringNullable: arrayStringNullable ?? this.arrayStringNullable,
   arrayStringExtensionNullable: arrayStringExtensionNullable != null ? arrayStringExtensionNullable() : this.arrayStringExtensionNullable,
-  stringNullable: stringNullable != null ? stringNullable() : this.stringNullable,
+  stringNullable: stringNullable ?? this.stringNullable,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DefaultValue &&
@@ -141,11 +141,12 @@ DefaultValue copyWith({List<StringEnumRef>? Function()? arrayStringEnumRefDefaul
           listEquals(arrayStringDefault, other.arrayStringDefault) &&
           listEquals(arrayIntegerDefault, other.arrayIntegerDefault) &&
           listEquals(arrayString, other.arrayString) &&
-          listEquals(arrayStringNullable, other.arrayStringNullable) &&
+          arrayStringNullable.isPresent == other.arrayStringNullable.isPresent &&
+          listEquals(arrayStringNullable.value, other.arrayStringNullable.value) &&
           listEquals(arrayStringExtensionNullable, other.arrayStringExtensionNullable) &&
           stringNullable == other.stringNullable;
 
-@override int get hashCode => Object.hash(Object.hashAll(arrayStringEnumRefDefault ?? const []), Object.hashAll(arrayStringEnumDefault ?? const []), Object.hashAll(arrayStringDefault ?? const []), Object.hashAll(arrayIntegerDefault ?? const []), Object.hashAll(arrayString ?? const []), Object.hashAll(arrayStringNullable ?? const []), Object.hashAll(arrayStringExtensionNullable ?? const []), stringNullable);
+@override int get hashCode => Object.hash(Object.hashAll(arrayStringEnumRefDefault ?? const []), Object.hashAll(arrayStringEnumDefault ?? const []), Object.hashAll(arrayStringDefault ?? const []), Object.hashAll(arrayIntegerDefault ?? const []), Object.hashAll(arrayString ?? const []), Object.hashAll(arrayStringNullable.value ?? const []), Object.hashAll(arrayStringExtensionNullable ?? const []), stringNullable);
 
 @override String toString() => 'DefaultValue(arrayStringEnumRefDefault: $arrayStringEnumRefDefault, arrayStringEnumDefault: $arrayStringEnumDefault, arrayStringDefault: $arrayStringDefault, arrayIntegerDefault: $arrayIntegerDefault, arrayString: $arrayString, arrayStringNullable: $arrayStringNullable, arrayStringExtensionNullable: $arrayStringExtensionNullable, stringNullable: $stringNullable)';
 

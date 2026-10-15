@@ -13,7 +13,7 @@ final Uint8List? file;
 final String? fileName;
 
 Map<String, dynamic> toJson() { return {
-  if (file != null) 'file': base64Encode(file!),
+  if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
   'file_name': ?fileName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file', 'file_name'}.contains(key)); } 
@@ -23,10 +23,10 @@ WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List? Function()? file, Strin
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiUploadFinetuneAssetRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           fileName == other.fileName;
 
-@override int get hashCode => Object.hash(file, fileName);
+@override int get hashCode => Object.hash(Object.hashAll(file ?? const []), fileName);
 
 @override String toString() => 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)';
 

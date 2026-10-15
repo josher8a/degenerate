@@ -2,13 +2,13 @@
 // Source: #/components/schemas/SourceOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/source_order_item.dart';/// 
-@immutable final class SourceOrder {const SourceOrder({required this.amount, required this.currency, this.email, this.items, this.shipping, });
+@immutable final class SourceOrder {const SourceOrder({required this.amount, required this.currency, this.email, this.items = const Omittable.absent(), this.shipping, });
 
 factory SourceOrder.fromJson(Map<String, dynamic> json) { return SourceOrder(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   email: json['email'] as String?,
-  items: (json['items'] as List<dynamic>?)?.map((e) => SourceOrderItem.fromJson(e as Map<String, dynamic>)).toList(),
+  items: json.containsKey('items') ? Omittable((json['items'] as List<dynamic>?)?.map((e) => SourceOrderItem.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   shipping: json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
 ); }
 
@@ -22,7 +22,7 @@ final String currency;
 final String? email;
 
 /// List of items constituting the order.
-final List<SourceOrderItem>? items;
+final Omittable<List<SourceOrderItem>?> items;
 
 final Shipping? shipping;
 
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'amount': amount,
   'currency': currency,
   'email': ?email,
-  if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
+  if (items.isPresent) 'items': items.value?.map((e) => e.toJson()).toList(),
   if (shipping != null) 'shipping': shipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
@@ -42,11 +42,11 @@ if (email$ != null) {
   if (email$.runes.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 return errors; } 
-SourceOrder copyWith({int? amount, String? currency, String? Function()? email, List<SourceOrderItem>? Function()? items, Shipping? Function()? shipping, }) { return SourceOrder(
+SourceOrder copyWith({int? amount, String? currency, String? Function()? email, Omittable<List<SourceOrderItem>?>? items, Shipping? Function()? shipping, }) { return SourceOrder(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   email: email != null ? email() : this.email,
-  items: items != null ? items() : this.items,
+  items: items ?? this.items,
   shipping: shipping != null ? shipping() : this.shipping,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -54,10 +54,11 @@ SourceOrder copyWith({int? amount, String? currency, String? Function()? email, 
           amount == other.amount &&
           currency == other.currency &&
           email == other.email &&
-          listEquals(items, other.items) &&
+          items.isPresent == other.items.isPresent &&
+          listEquals(items.value, other.items.value) &&
           shipping == other.shipping;
 
-@override int get hashCode => Object.hash(amount, currency, email, Object.hashAll(items ?? const []), shipping);
+@override int get hashCode => Object.hash(amount, currency, email, Object.hashAll(items.value ?? const []), shipping);
 
 @override String toString() => 'SourceOrder(amount: $amount, currency: $currency, email: $email, items: $items, shipping: $shipping)';
 

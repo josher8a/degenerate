@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpWordListEntry
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpWordListEntry {const DlpWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, this.profileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpWordListEntry {const DlpWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, this.profileId = const Omittable.absent(), });
 
 factory DlpWordListEntry.fromJson(Map<String, dynamic> json) { return DlpWordListEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   name: json['name'] as String,
-  profileId: json['profile_id'] as String?,
+  profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   wordList: json['word_list'],
 ); }
@@ -21,7 +21,7 @@ final String id;
 
 final String name;
 
-final String? profileId;
+final Omittable<String?> profileId;
 
 final DateTime updatedAt;
 
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   'id': id,
   'name': name,
-  'profile_id': ?profileId,
+  if (profileId.isPresent) 'profile_id': profileId.value,
   'updated_at': updatedAt.toIso8601String(),
   'word_list': wordList,
 }; } 
@@ -42,12 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('word_list'); } 
-DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, dynamic Function()? wordList, }) { return DlpWordListEntry(
+DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, }) { return DlpWordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   name: name ?? this.name,
-  profileId: profileId != null ? profileId() : this.profileId,
+  profileId: profileId ?? this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
   wordList: wordList != null ? wordList() : this.wordList,
 ); } 

@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DigitalExperienceMonitoringTestsResponse (inline: Tests)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data/digital_experience_monitoring_device_dex_test_schemas_data_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/http_results.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/http_results_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/traceroute_results.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/traceroute_results_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class Tests {const Tests({required this.created, required this.description, required this.enabled, required this.host, required this.id, required this.interval, required this.kind, required this.name, required this.updated, this.httpResults, this.httpResultsByColo, this.method, this.targetPolicies, this.targeted, this.tracerouteResults, this.tracerouteResultsByColo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data/digital_experience_monitoring_device_dex_test_schemas_data_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/http_results.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/http_results_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/traceroute_results.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/traceroute_results_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class Tests {const Tests({required this.created, required this.description, required this.enabled, required this.host, required this.id, required this.interval, required this.kind, required this.name, required this.updated, this.httpResults = const Omittable.absent(), this.httpResultsByColo, this.method, this.targetPolicies = const Omittable.absent(), this.targeted, this.tracerouteResults = const Omittable.absent(), this.tracerouteResultsByColo, });
 
 factory Tests.fromJson(Map<String, dynamic> json) { return Tests(
   created: json['created'] as String,
   description: json['description'] as String,
   enabled: json['enabled'] as bool,
   host: json['host'] as String,
-  httpResults: json['httpResults'] != null ? HttpResults.fromJson(json['httpResults'] as Map<String, dynamic>) : null,
+  httpResults: json.containsKey('httpResults') ? Omittable(json['httpResults'] != null ? HttpResults.fromJson(json['httpResults'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   httpResultsByColo: (json['httpResultsByColo'] as List<dynamic>?)?.map((e) => HttpResultsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   id: DigitalExperienceMonitoringUuid.fromJson(json['id'] as String),
   interval: json['interval'] as String,
   kind: DigitalExperienceMonitoringDeviceDexTestSchemasDataKind.fromJson(json['kind'] as String),
   method: json['method'] as String?,
   name: json['name'] as String,
-  targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => TargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
+  targetPolicies: json.containsKey('target_policies') ? Omittable((json['target_policies'] as List<dynamic>?)?.map((e) => TargetPolicies.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   targeted: json['targeted'] as bool?,
-  tracerouteResults: json['tracerouteResults'] != null ? TracerouteResults.fromJson(json['tracerouteResults'] as Map<String, dynamic>) : null,
+  tracerouteResults: json.containsKey('tracerouteResults') ? Omittable(json['tracerouteResults'] != null ? TracerouteResults.fromJson(json['tracerouteResults'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tracerouteResultsByColo: (json['tracerouteResultsByColo'] as List<dynamic>?)?.map((e) => TracerouteResultsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   updated: json['updated'] as String,
 ); }
@@ -33,7 +33,7 @@ final bool enabled;
 
 final String host;
 
-final HttpResults? httpResults;
+final Omittable<HttpResults?> httpResults;
 
 final List<HttpResultsByColo>? httpResultsByColo;
 
@@ -51,11 +51,11 @@ final String? method;
 /// name given to this test
 final String name;
 
-final List<TargetPolicies>? targetPolicies;
+final Omittable<List<TargetPolicies>?> targetPolicies;
 
 final bool? targeted;
 
-final TracerouteResults? tracerouteResults;
+final Omittable<TracerouteResults?> tracerouteResults;
 
 final List<TracerouteResultsByColo>? tracerouteResultsByColo;
 
@@ -66,16 +66,16 @@ Map<String, dynamic> toJson() { return {
   'description': description,
   'enabled': enabled,
   'host': host,
-  if (httpResults != null) 'httpResults': httpResults?.toJson(),
+  if (httpResults.isPresent) 'httpResults': httpResults.value?.toJson(),
   if (httpResultsByColo != null) 'httpResultsByColo': httpResultsByColo?.map((e) => e.toJson()).toList(),
   'id': id.toJson(),
   'interval': interval,
   'kind': kind.toJson(),
   'method': ?method,
   'name': name,
-  if (targetPolicies != null) 'target_policies': targetPolicies?.map((e) => e.toJson()).toList(),
+  if (targetPolicies.isPresent) 'target_policies': targetPolicies.value?.map((e) => e.toJson()).toList(),
   'targeted': ?targeted,
-  if (tracerouteResults != null) 'tracerouteResults': tracerouteResults?.toJson(),
+  if (tracerouteResults.isPresent) 'tracerouteResults': tracerouteResults.value?.toJson(),
   if (tracerouteResultsByColo != null) 'tracerouteResultsByColo': tracerouteResultsByColo?.map((e) => e.toJson()).toList(),
   'updated': updated,
 }; } 
@@ -88,21 +88,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated') && json['updated'] is String; } 
-Tests copyWith({String? created, String? description, bool? enabled, String? host, HttpResults? Function()? httpResults, List<HttpResultsByColo>? Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, String? Function()? method, String? name, List<TargetPolicies>? Function()? targetPolicies, bool? Function()? targeted, TracerouteResults? Function()? tracerouteResults, List<TracerouteResultsByColo>? Function()? tracerouteResultsByColo, String? updated, }) { return Tests(
+Tests copyWith({String? created, String? description, bool? enabled, String? host, Omittable<HttpResults?>? httpResults, List<HttpResultsByColo>? Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, String? Function()? method, String? name, Omittable<List<TargetPolicies>?>? targetPolicies, bool? Function()? targeted, Omittable<TracerouteResults?>? tracerouteResults, List<TracerouteResultsByColo>? Function()? tracerouteResultsByColo, String? updated, }) { return Tests(
   created: created ?? this.created,
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   host: host ?? this.host,
-  httpResults: httpResults != null ? httpResults() : this.httpResults,
+  httpResults: httpResults ?? this.httpResults,
   httpResultsByColo: httpResultsByColo != null ? httpResultsByColo() : this.httpResultsByColo,
   id: id ?? this.id,
   interval: interval ?? this.interval,
   kind: kind ?? this.kind,
   method: method != null ? method() : this.method,
   name: name ?? this.name,
-  targetPolicies: targetPolicies != null ? targetPolicies() : this.targetPolicies,
+  targetPolicies: targetPolicies ?? this.targetPolicies,
   targeted: targeted != null ? targeted() : this.targeted,
-  tracerouteResults: tracerouteResults != null ? tracerouteResults() : this.tracerouteResults,
+  tracerouteResults: tracerouteResults ?? this.tracerouteResults,
   tracerouteResultsByColo: tracerouteResultsByColo != null ? tracerouteResultsByColo() : this.tracerouteResultsByColo,
   updated: updated ?? this.updated,
 ); } 
@@ -119,13 +119,14 @@ Tests copyWith({String? created, String? description, bool? enabled, String? hos
           kind == other.kind &&
           method == other.method &&
           name == other.name &&
-          listEquals(targetPolicies, other.targetPolicies) &&
+          targetPolicies.isPresent == other.targetPolicies.isPresent &&
+          listEquals(targetPolicies.value, other.targetPolicies.value) &&
           targeted == other.targeted &&
           tracerouteResults == other.tracerouteResults &&
           listEquals(tracerouteResultsByColo, other.tracerouteResultsByColo) &&
           updated == other.updated;
 
-@override int get hashCode => Object.hash(created, description, enabled, host, httpResults, Object.hashAll(httpResultsByColo ?? const []), id, interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted, tracerouteResults, Object.hashAll(tracerouteResultsByColo ?? const []), updated);
+@override int get hashCode => Object.hash(created, description, enabled, host, httpResults, Object.hashAll(httpResultsByColo ?? const []), id, interval, kind, method, name, Object.hashAll(targetPolicies.value ?? const []), targeted, tracerouteResults, Object.hashAll(tracerouteResultsByColo ?? const []), updated);
 
 @override String toString() => 'Tests(\n  created: $created,\n  description: $description,\n  enabled: $enabled,\n  host: $host,\n  httpResults: $httpResults,\n  httpResultsByColo: $httpResultsByColo,\n  id: $id,\n  interval: $interval,\n  kind: $kind,\n  method: $method,\n  name: $name,\n  targetPolicies: $targetPolicies,\n  targeted: $targeted,\n  tracerouteResults: $tracerouteResults,\n  tracerouteResultsByColo: $tracerouteResultsByColo,\n  updated: $updated,\n)';
 

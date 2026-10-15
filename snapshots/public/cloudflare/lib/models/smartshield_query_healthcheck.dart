@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SmartshieldQueryHealthcheck
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_address.dart';import 'package:pub_cloudflare/models/smartshield_check_regions2.dart';import 'package:pub_cloudflare/models/smartshield_consecutive_fails.dart';import 'package:pub_cloudflare/models/smartshield_consecutive_successes.dart';import 'package:pub_cloudflare/models/smartshield_description.dart';import 'package:pub_cloudflare/models/smartshield_http_config.dart';import 'package:pub_cloudflare/models/smartshield_interval.dart';import 'package:pub_cloudflare/models/smartshield_name.dart';import 'package:pub_cloudflare/models/smartshield_retries.dart';import 'package:pub_cloudflare/models/smartshield_suspended.dart';import 'package:pub_cloudflare/models/smartshield_tcp_config.dart';import 'package:pub_cloudflare/models/smartshield_timeout.dart';import 'package:pub_cloudflare/models/smartshield_type.dart';@immutable final class SmartshieldQueryHealthcheck {const SmartshieldQueryHealthcheck({required this.address, required this.name, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig, this.interval, this.retries, this.suspended, this.tcpConfig, this.timeout, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_address.dart';import 'package:pub_cloudflare/models/smartshield_check_regions2.dart';import 'package:pub_cloudflare/models/smartshield_consecutive_fails.dart';import 'package:pub_cloudflare/models/smartshield_consecutive_successes.dart';import 'package:pub_cloudflare/models/smartshield_description.dart';import 'package:pub_cloudflare/models/smartshield_http_config.dart';import 'package:pub_cloudflare/models/smartshield_interval.dart';import 'package:pub_cloudflare/models/smartshield_name.dart';import 'package:pub_cloudflare/models/smartshield_retries.dart';import 'package:pub_cloudflare/models/smartshield_suspended.dart';import 'package:pub_cloudflare/models/smartshield_tcp_config.dart';import 'package:pub_cloudflare/models/smartshield_timeout.dart';import 'package:pub_cloudflare/models/smartshield_type.dart';@immutable final class SmartshieldQueryHealthcheck {const SmartshieldQueryHealthcheck({required this.address, required this.name, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig, this.interval, this.retries, this.suspended, this.tcpConfig, this.timeout, this.type, });
 
 factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) { return SmartshieldQueryHealthcheck(
   address: SmartshieldAddress.fromJson(json['address'] as String),
-  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList(),
+  checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => SmartshieldCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? SmartshieldConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? SmartshieldConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   description: json['description'] != null ? SmartshieldDescription.fromJson(json['description'] as String) : null,
@@ -23,7 +23,7 @@ factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) { return
 final SmartshieldAddress address;
 
 /// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
-final List<SmartshieldCheckRegions2>? checkRegions;
+final Omittable<List<SmartshieldCheckRegions2>?> checkRegions;
 
 /// The number of consecutive fails required from a health check before changing the health to unhealthy.
 final SmartshieldConsecutiveFails? consecutiveFails;
@@ -54,7 +54,7 @@ final SmartshieldType? type;
 
 Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
-  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
   if (consecutiveSuccesses != null) 'consecutive_successes': consecutiveSuccesses?.toJson(),
   if (description != null) 'description': description?.toJson(),
@@ -69,9 +69,9 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name'); } 
-SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, List<SmartshieldCheckRegions2>? Function()? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldDescription? Function()? description, SmartshieldHttpConfig? Function()? httpConfig, SmartshieldInterval? Function()? interval, SmartshieldName? name, SmartshieldRetries? Function()? retries, SmartshieldSuspended? Function()? suspended, SmartshieldTcpConfig? Function()? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldQueryHealthcheck(
+SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldDescription? Function()? description, SmartshieldHttpConfig? Function()? httpConfig, SmartshieldInterval? Function()? interval, SmartshieldName? name, SmartshieldRetries? Function()? retries, SmartshieldSuspended? Function()? suspended, SmartshieldTcpConfig? Function()? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldQueryHealthcheck(
   address: address ?? this.address,
-  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+  checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
   consecutiveSuccesses: consecutiveSuccesses != null ? consecutiveSuccesses() : this.consecutiveSuccesses,
   description: description != null ? description() : this.description,
@@ -87,7 +87,8 @@ SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, List<Smartshi
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldQueryHealthcheck &&
           address == other.address &&
-          listEquals(checkRegions, other.checkRegions) &&
+          checkRegions.isPresent == other.checkRegions.isPresent &&
+          listEquals(checkRegions.value, other.checkRegions.value) &&
           consecutiveFails == other.consecutiveFails &&
           consecutiveSuccesses == other.consecutiveSuccesses &&
           description == other.description &&
@@ -100,7 +101,7 @@ SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, List<Smartshi
           timeout == other.timeout &&
           type == other.type;
 
-@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type);
+@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type);
 
 @override String toString() => 'SmartshieldQueryHealthcheck(\n  address: $address,\n  checkRegions: $checkRegions,\n  consecutiveFails: $consecutiveFails,\n  consecutiveSuccesses: $consecutiveSuccesses,\n  description: $description,\n  httpConfig: $httpConfig,\n  interval: $interval,\n  name: $name,\n  retries: $retries,\n  suspended: $suspended,\n  tcpConfig: $tcpConfig,\n  timeout: $timeout,\n  type: $type,\n)';
 

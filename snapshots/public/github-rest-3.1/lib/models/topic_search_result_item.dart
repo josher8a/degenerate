@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TopicSearchResultItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/topic_search_result_item/aliases.dart';import 'package:pub_github_rest_3_1/models/topic_search_result_item/related.dart';/// Topic Search Result Item
-@immutable final class TopicSearchResultItem {const TopicSearchResultItem({required this.name, required this.displayName, required this.shortDescription, required this.description, required this.createdBy, required this.released, required this.createdAt, required this.updatedAt, required this.featured, required this.curated, required this.score, this.repositoryCount, this.logoUrl, this.textMatches, this.related, this.aliases, });
+@immutable final class TopicSearchResultItem {const TopicSearchResultItem({required this.name, required this.displayName, required this.shortDescription, required this.description, required this.createdBy, required this.released, required this.createdAt, required this.updatedAt, required this.featured, required this.curated, required this.score, this.repositoryCount = const Omittable.absent(), this.logoUrl = const Omittable.absent(), this.textMatches, this.related = const Omittable.absent(), this.aliases = const Omittable.absent(), });
 
 factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return TopicSearchResultItem(
   name: json['name'] as String,
@@ -16,11 +16,11 @@ factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return Topic
   featured: json['featured'] as bool,
   curated: json['curated'] as bool,
   score: (json['score'] as num).toDouble(),
-  repositoryCount: json['repository_count'] != null ? (json['repository_count'] as num).toInt() : null,
-  logoUrl: json['logo_url'] != null ? Uri.parse(json['logo_url'] as String) : null,
+  repositoryCount: json.containsKey('repository_count') ? Omittable(json['repository_count'] != null ? (json['repository_count'] as num).toInt() : null) : const Omittable.absent(),
+  logoUrl: json.containsKey('logo_url') ? Omittable(json['logo_url'] != null ? Uri.parse(json['logo_url'] as String) : null) : const Omittable.absent(),
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-  related: (json['related'] as List<dynamic>?)?.map((e) => Related.fromJson(e as Map<String, dynamic>)).toList(),
-  aliases: (json['aliases'] as List<dynamic>?)?.map((e) => Aliases.fromJson(e as Map<String, dynamic>)).toList(),
+  related: json.containsKey('related') ? Omittable((json['related'] as List<dynamic>?)?.map((e) => Related.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  aliases: json.containsKey('aliases') ? Omittable((json['aliases'] as List<dynamic>?)?.map((e) => Aliases.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }
 
 final String name;
@@ -45,15 +45,15 @@ final bool curated;
 
 final double score;
 
-final int? repositoryCount;
+final Omittable<int?> repositoryCount;
 
-final Uri? logoUrl;
+final Omittable<Uri?> logoUrl;
 
 final List<SearchResultTextMatches2>? textMatches;
 
-final List<Related>? related;
+final Omittable<List<Related>?> related;
 
-final List<Aliases>? aliases;
+final Omittable<List<Aliases>?> aliases;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -67,24 +67,24 @@ Map<String, dynamic> toJson() { return {
   'featured': featured,
   'curated': curated,
   'score': score,
-  'repository_count': ?repositoryCount,
-  if (logoUrl != null) 'logo_url': logoUrl?.toString(),
+  if (repositoryCount.isPresent) 'repository_count': repositoryCount.value,
+  if (logoUrl.isPresent) 'logo_url': logoUrl.value?.toString(),
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
-  if (related != null) 'related': related?.map((e) => e.toJson()).toList(),
-  if (aliases != null) 'aliases': aliases?.map((e) => e.toJson()).toList(),
+  if (related.isPresent) 'related': related.value?.map((e) => e.toJson()).toList(),
+  if (aliases.isPresent) 'aliases': aliases.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('short_description') && json['short_description'] is String &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('created_by') && json['created_by'] is String &&
-      json.containsKey('released') && json['released'] is String &&
+      json.containsKey('display_name') && (json['display_name'] == null || json['display_name'] is String) &&
+      json.containsKey('short_description') && (json['short_description'] == null || json['short_description'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('created_by') && (json['created_by'] == null || json['created_by'] is String) &&
+      json.containsKey('released') && (json['released'] == null || json['released'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('featured') && json['featured'] is bool &&
       json.containsKey('curated') && json['curated'] is bool &&
       json.containsKey('score') && json['score'] is num; } 
-TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, int? Function()? repositoryCount, Uri? Function()? logoUrl, List<SearchResultTextMatches2>? Function()? textMatches, List<Related>? Function()? related, List<Aliases>? Function()? aliases, }) { return TopicSearchResultItem(
+TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, Omittable<int?>? repositoryCount, Omittable<Uri?>? logoUrl, List<SearchResultTextMatches2>? Function()? textMatches, Omittable<List<Related>?>? related, Omittable<List<Aliases>?>? aliases, }) { return TopicSearchResultItem(
   name: name ?? this.name,
   displayName: displayName != null ? displayName() : this.displayName,
   shortDescription: shortDescription != null ? shortDescription() : this.shortDescription,
@@ -96,11 +96,11 @@ TopicSearchResultItem copyWith({String? name, String? Function()? displayName, S
   featured: featured ?? this.featured,
   curated: curated ?? this.curated,
   score: score ?? this.score,
-  repositoryCount: repositoryCount != null ? repositoryCount() : this.repositoryCount,
-  logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,
+  repositoryCount: repositoryCount ?? this.repositoryCount,
+  logoUrl: logoUrl ?? this.logoUrl,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
-  related: related != null ? related() : this.related,
-  aliases: aliases != null ? aliases() : this.aliases,
+  related: related ?? this.related,
+  aliases: aliases ?? this.aliases,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TopicSearchResultItem &&
@@ -118,10 +118,12 @@ TopicSearchResultItem copyWith({String? name, String? Function()? displayName, S
           repositoryCount == other.repositoryCount &&
           logoUrl == other.logoUrl &&
           listEquals(textMatches, other.textMatches) &&
-          listEquals(related, other.related) &&
-          listEquals(aliases, other.aliases);
+          related.isPresent == other.related.isPresent &&
+          listEquals(related.value, other.related.value) &&
+          aliases.isPresent == other.aliases.isPresent &&
+          listEquals(aliases.value, other.aliases.value);
 
-@override int get hashCode => Object.hash(name, displayName, shortDescription, description, createdBy, released, createdAt, updatedAt, featured, curated, score, repositoryCount, logoUrl, Object.hashAll(textMatches ?? const []), Object.hashAll(related ?? const []), Object.hashAll(aliases ?? const []));
+@override int get hashCode => Object.hash(name, displayName, shortDescription, description, createdBy, released, createdAt, updatedAt, featured, curated, score, repositoryCount, logoUrl, Object.hashAll(textMatches ?? const []), Object.hashAll(related.value ?? const []), Object.hashAll(aliases.value ?? const []));
 
 @override String toString() => 'TopicSearchResultItem(\n  name: $name,\n  displayName: $displayName,\n  shortDescription: $shortDescription,\n  description: $description,\n  createdBy: $createdBy,\n  released: $released,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  featured: $featured,\n  curated: $curated,\n  score: $score,\n  repositoryCount: $repositoryCount,\n  logoUrl: $logoUrl,\n  textMatches: $textMatches,\n  related: $related,\n  aliases: $aliases,\n)';
 

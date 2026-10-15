@@ -228,14 +228,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
  }
 /// Organization roles
-@immutable final class OrganizationRole {const OrganizationRole({required this.id, required this.name, required this.permissions, required this.organization, required this.createdAt, required this.updatedAt, this.description, this.baseRole, this.source, });
+@immutable final class OrganizationRole {const OrganizationRole({required this.id, required this.name, required this.permissions, required this.organization, required this.createdAt, required this.updatedAt, this.description = const Omittable.absent(), this.baseRole = const Omittable.absent(), this.source = const Omittable.absent(), });
 
 factory OrganizationRole.fromJson(Map<String, dynamic> json) { return OrganizationRole(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
-  description: json['description'] as String?,
-  baseRole: json['base_role'] != null ? BaseRole.fromJson(json['base_role'] as String) : null,
-  source: json['source'] != null ? OrganizationRoleSource.fromJson(json['source'] as String) : null,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  baseRole: json.containsKey('base_role') ? Omittable(json['base_role'] != null ? BaseRole.fromJson(json['base_role'] as String) : null) : const Omittable.absent(),
+  source: json.containsKey('source') ? Omittable(json['source'] != null ? OrganizationRoleSource.fromJson(json['source'] as String) : null) : const Omittable.absent(),
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
   organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -249,13 +249,13 @@ final int id;
 final String name;
 
 /// A short description about who this role is for or what permissions it grants.
-final String? description;
+final Omittable<String?> description;
 
 /// The system role from which this role inherits permissions.
-final BaseRole? baseRole;
+final Omittable<BaseRole?> baseRole;
 
 /// Source answers the question, "where did this role come from?"
-final OrganizationRoleSource? source;
+final Omittable<OrganizationRoleSource?> source;
 
 /// A list of permissions included in this role.
 final List<String> permissions;
@@ -271,9 +271,9 @@ final DateTime updatedAt;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'name': name,
-  'description': ?description,
-  if (baseRole != null) 'base_role': baseRole?.toJson(),
-  if (source != null) 'source': source?.toJson(),
+  if (description.isPresent) 'description': description.value,
+  if (baseRole.isPresent) 'base_role': baseRole.value?.toJson(),
+  if (source.isPresent) 'source': source.value?.toJson(),
   'permissions': permissions,
   'organization': organization?.toJson(),
   'created_at': createdAt.toIso8601String(),
@@ -285,12 +285,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('organization') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrganizationRole copyWith({int? id, String? name, String? Function()? description, BaseRole? Function()? baseRole, OrganizationRoleSource? Function()? source, List<String>? permissions, SimpleUser? Function()? organization, DateTime? createdAt, DateTime? updatedAt, }) { return OrganizationRole(
+OrganizationRole copyWith({int? id, String? name, Omittable<String?>? description, Omittable<BaseRole?>? baseRole, Omittable<OrganizationRoleSource?>? source, List<String>? permissions, SimpleUser? Function()? organization, DateTime? createdAt, DateTime? updatedAt, }) { return OrganizationRole(
   id: id ?? this.id,
   name: name ?? this.name,
-  description: description != null ? description() : this.description,
-  baseRole: baseRole != null ? baseRole() : this.baseRole,
-  source: source != null ? source() : this.source,
+  description: description ?? this.description,
+  baseRole: baseRole ?? this.baseRole,
+  source: source ?? this.source,
   permissions: permissions ?? this.permissions,
   organization: organization != null ? organization() : this.organization,
   createdAt: createdAt ?? this.createdAt,

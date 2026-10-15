@@ -149,13 +149,13 @@ factory RealtimeConversationItem.functionCall({required String name, required St
 factory RealtimeConversationItem.functionCallOutput({required String callId, required String output, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputResourceStatus? status, }) { return RealtimeConversationItemFunctionCallOutput$Variant(RealtimeConversationItemFunctionCallOutput(type: 'function_call_output', id: id, object: object, status: status, callId: callId, output: output)); }
 
 /// Build the `mcp_approval_response` variant.
-factory RealtimeConversationItem.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, String? reason, }) { return RealtimeConversationItemMcpApprovalResponse(RealtimeMcpApprovalResponse(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
+factory RealtimeConversationItem.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, Omittable<String?> reason = const Omittable.absent(), }) { return RealtimeConversationItemMcpApprovalResponse(RealtimeMcpApprovalResponse(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
 
 /// Build the `mcp_list_tools` variant.
 factory RealtimeConversationItem.mcpListTools({required String serverLabel, required List<McpListToolsTool> tools, String? id, }) { return RealtimeConversationItemMcpListTools(RealtimeMcpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools)); }
 
 /// Build the `mcp_call` variant.
-factory RealtimeConversationItem.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? approvalRequestId, String? output, RealtimeMcpToolCallError? error, }) { return RealtimeConversationItemMcpCall(RealtimeMcpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, approvalRequestId: approvalRequestId, output: output, error: error)); }
+factory RealtimeConversationItem.mcpCall({required String id, required String serverLabel, required String name, required String arguments, Omittable<String?> approvalRequestId = const Omittable.absent(), Omittable<String?> output = const Omittable.absent(), Omittable<RealtimeMcpToolCallError?> error = const Omittable.absent(), }) { return RealtimeConversationItemMcpCall(RealtimeMcpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, approvalRequestId: approvalRequestId, output: output, error: error)); }
 
 /// Build the `mcp_approval_request` variant.
 factory RealtimeConversationItem.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return RealtimeConversationItemMcpApprovalRequest(RealtimeMcpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
@@ -271,7 +271,7 @@ final RealtimeMcpApprovalResponse realtimeMcpApprovalResponse;
 
 @override Map<String, dynamic> toJson() => {...realtimeMcpApprovalResponse.toJson(), 'type': type.toJson()};
 
-RealtimeConversationItemMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return RealtimeConversationItemMcpApprovalResponse(realtimeMcpApprovalResponse.copyWith(
+RealtimeConversationItemMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) { return RealtimeConversationItemMcpApprovalResponse(realtimeMcpApprovalResponse.copyWith(
   id: id,
   approvalRequestId: approvalRequestId,
   approve: approve,
@@ -322,7 +322,7 @@ final RealtimeMcpToolCall realtimeMcpToolCall;
 
 @override Map<String, dynamic> toJson() => {...realtimeMcpToolCall.toJson(), 'type': type.toJson()};
 
-RealtimeConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? approvalRequestId, String? Function()? output, RealtimeMcpToolCallError? Function()? error, }) { return RealtimeConversationItemMcpCall(realtimeMcpToolCall.copyWith(
+RealtimeConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? approvalRequestId, Omittable<String?>? output, Omittable<RealtimeMcpToolCallError?>? error, }) { return RealtimeConversationItemMcpCall(realtimeMcpToolCall.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,

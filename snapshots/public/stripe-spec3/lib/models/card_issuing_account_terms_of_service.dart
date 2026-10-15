@@ -2,32 +2,32 @@
 // Source: #/components/schemas/CardIssuingAccountTermsOfService
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class CardIssuingAccountTermsOfService {const CardIssuingAccountTermsOfService({this.date, this.ip, this.userAgent, });
+@immutable final class CardIssuingAccountTermsOfService {const CardIssuingAccountTermsOfService({this.date = const Omittable.absent(), this.ip = const Omittable.absent(), this.userAgent, });
 
 factory CardIssuingAccountTermsOfService.fromJson(Map<String, dynamic> json) { return CardIssuingAccountTermsOfService(
-  date: json['date'] != null ? (json['date'] as num).toInt() : null,
-  ip: json['ip'] as String?,
+  date: json.containsKey('date') ? Omittable(json['date'] != null ? (json['date'] as num).toInt() : null) : const Omittable.absent(),
+  ip: json.containsKey('ip') ? Omittable(json['ip'] as String?) : const Omittable.absent(),
   userAgent: json['user_agent'] as String?,
 ); }
 
 /// The Unix timestamp marking when the account representative accepted the service agreement.
-final int? date;
+final Omittable<int?> date;
 
 /// The IP address from which the account representative accepted the service agreement.
-final String? ip;
+final Omittable<String?> ip;
 
 /// The user agent of the browser from which the account representative accepted the service agreement.
 final String? userAgent;
 
 Map<String, dynamic> toJson() { return {
-  'date': ?date,
-  'ip': ?ip,
+  if (date.isPresent) 'date': date.value,
+  if (ip.isPresent) 'ip': ip.value,
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final ip$ = ip;
+final ip$ = ip.value;
 if (ip$ != null) {
   if (ip$.runes.length > 5000) { errors.add('ip: length must be <= 5000'); }
 }
@@ -36,9 +36,9 @@ if (userAgent$ != null) {
   if (userAgent$.runes.length > 5000) { errors.add('userAgent: length must be <= 5000'); }
 }
 return errors; } 
-CardIssuingAccountTermsOfService copyWith({int? Function()? date, String? Function()? ip, String? Function()? userAgent, }) { return CardIssuingAccountTermsOfService(
-  date: date != null ? date() : this.date,
-  ip: ip != null ? ip() : this.ip,
+CardIssuingAccountTermsOfService copyWith({Omittable<int?>? date, Omittable<String?>? ip, String? Function()? userAgent, }) { return CardIssuingAccountTermsOfService(
+  date: date ?? this.date,
+  ip: ip ?? this.ip,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

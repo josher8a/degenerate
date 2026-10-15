@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersWorker
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/observability.dart';import 'package:pub_cloudflare/models/workers_worker/references.dart';import 'package:pub_cloudflare/models/workers_worker/subdomain.dart';import 'package:pub_cloudflare/models/workers_worker/tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn, this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/observability.dart';import 'package:pub_cloudflare/models/workers_worker/references.dart';import 'package:pub_cloudflare/models/workers_worker/subdomain.dart';import 'package:pub_cloudflare/models/workers_worker/tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn = const Omittable.absent(), this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
 
 factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker(
   createdOn: DateTime.parse(json['created_on'] as String),
-  deployedOn: json['deployed_on'] != null ? DateTime.parse(json['deployed_on'] as String) : null,
+  deployedOn: json.containsKey('deployed_on') ? Omittable(json['deployed_on'] != null ? DateTime.parse(json['deployed_on'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
   logpush: json['logpush'] as bool,
   name: json['name'] as String,
@@ -21,7 +21,7 @@ factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker
 final DateTime createdOn;
 
 /// When the Worker's most recent deployment was created. `null` if the Worker has never been deployed.
-final DateTime? deployedOn;
+final Omittable<DateTime?> deployedOn;
 
 /// Immutable ID of the Worker.
 /// 
@@ -58,7 +58,7 @@ final DateTime updatedOn;
 
 Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toIso8601String(),
-  if (deployedOn != null) 'deployed_on': deployedOn?.toIso8601String(),
+  if (deployedOn.isPresent) 'deployed_on': deployedOn.value?.toIso8601String(),
   'id': id,
   'logpush': logpush,
   'name': name,
@@ -84,9 +84,9 @@ List<String> validate() { final errors = <String>[];
 if (!RegExp(r'^[a-z0-9_][a-z0-9-_]*$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-z0-9_][a-z0-9-_]*$'); }
 if (tags.length > 8) { errors.add('tags: must have <= 8 items'); }
 return errors; } 
-WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, String? id, bool? logpush, String? name, Observability? observability, References? references, Subdomain? subdomain, List<String>? tags, List<TailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
+WorkersWorker copyWith({DateTime? createdOn, Omittable<DateTime?>? deployedOn, String? id, bool? logpush, String? name, Observability? observability, References? references, Subdomain? subdomain, List<String>? tags, List<TailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
   createdOn: createdOn ?? this.createdOn,
-  deployedOn: deployedOn != null ? deployedOn() : this.deployedOn,
+  deployedOn: deployedOn ?? this.deployedOn,
   id: id ?? this.id,
   logpush: logpush ?? this.logpush,
   name: name ?? this.name,

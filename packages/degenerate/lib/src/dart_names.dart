@@ -98,6 +98,10 @@ const dartCoreTypeNames = <String>{
   'Never',
 };
 
+/// Runtime types referenced by generated code and exported by client barrels.
+/// Schema names must not shadow these identifiers.
+const runtimeTypeNames = <String>{'Omittable'};
+
 /// Names that would shadow identifiers used inside generated enum/class bodies.
 ///
 /// These include constructor parameters (`json`, `value`), static members
@@ -351,7 +355,9 @@ String deduplicateName(String name, Set<String> existing) {
 String uniqueTypeName(String rawName, Set<String> usedNames) {
   final pascal = toPascalCase(rawName);
   final sanitized = sanitizeDartName(pascal);
-  final candidate = dartCoreTypeNames.contains(sanitized)
+  // Avoid shadowing core and runtime types used in generated code.
+  final candidate = dartCoreTypeNames.contains(sanitized) ||
+          runtimeTypeNames.contains(sanitized)
       ? '${sanitized}Model'
       : sanitized;
   final unique = deduplicateName(candidate, usedNames);
@@ -498,3 +504,29 @@ const _latinToAscii = <int, String>{
   0xFD: 'y',
   0xFF: 'y',
 };
+
+// Characters that are neither identifier characters nor word separators;
+// stripped from enum values before casing.
+final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
+// A leading +/- before a letter (not a digit) isn't handled by _splitWords
+// and would corrupt casing. Strip it before passing to toCamelCase.
+// Only matches at the start of the string to preserve interior hyphens
+// that serve as word separators (e.g. 'google-apps' → 'googleApps').
+final _leadingSignBeforeLetter = RegExp('^[+-](?=[a-zA-Z])');
+
+/// Convert an enum string value to a valid Dart enum constant name.
+String enumValueName(String value) {
+  // Strip characters that are invalid in identifiers and not recognized as
+  // word separators by _splitWords, so they don't interfere with casing.
+  // e.g. "[DONE]" -> "DONE" -> toCamelCase -> "done"
+  // (not "[Done]" -> "Done").
+  var cleaned = value.replaceAll(_nonIdentChars, '');
+  cleaned = cleaned.replaceFirst(_leadingSignBeforeLetter, '');
+  var name = toCamelCase(cleaned);
+  name = sanitizeFieldName(name);
+  // Also escape enum-internal reserved names (value, values, json, etc.)
+  if (enumReservedNames.contains(name)) {
+    name = '\$$name';
+  }
+  return name;
+}

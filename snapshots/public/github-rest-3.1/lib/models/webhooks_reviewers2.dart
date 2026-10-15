@@ -53,24 +53,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class WebhooksReviewers2 {const WebhooksReviewers2({this.reviewer, this.type, });
+@immutable final class WebhooksReviewers2 {const WebhooksReviewers2({this.reviewer = const Omittable.absent(), this.type, });
 
 factory WebhooksReviewers2.fromJson(Map<String, dynamic> json) { return WebhooksReviewers2(
-  reviewer: json['reviewer'] != null ? WebhooksReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,
+  reviewer: json.containsKey('reviewer') ? Omittable(json['reviewer'] != null ? WebhooksReviewersReviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: json['type'] != null ? WebhooksReviewersType.fromJson(json['type'] as String) : null,
 ); }
 
-final WebhooksReviewersReviewer? reviewer;
+final Omittable<WebhooksReviewersReviewer?> reviewer;
 
 final WebhooksReviewersType? type;
 
 Map<String, dynamic> toJson() { return {
-  if (reviewer != null) 'reviewer': reviewer?.toJson(),
+  if (reviewer.isPresent) 'reviewer': reviewer.value?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewer', 'type'}.contains(key)); } 
-WebhooksReviewers2 copyWith({WebhooksReviewersReviewer? Function()? reviewer, WebhooksReviewersType? Function()? type, }) { return WebhooksReviewers2(
-  reviewer: reviewer != null ? reviewer() : this.reviewer,
+WebhooksReviewers2 copyWith({Omittable<WebhooksReviewersReviewer?>? reviewer, WebhooksReviewersType? Function()? type, }) { return WebhooksReviewers2(
+  reviewer: reviewer ?? this.reviewer,
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

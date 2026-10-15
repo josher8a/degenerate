@@ -53,25 +53,25 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class Block {const Block({required this.action, this.message, });
+@immutable final class Block {const Block({required this.action, this.message = const Omittable.absent(), });
 
 factory Block.fromJson(Map<String, dynamic> json) { return Block(
   action: BlockAction.fromJson(json['action'] as String),
-  message: json['message'] as String?,
+  message: json.containsKey('message') ? Omittable(json['message'] as String?) : const Omittable.absent(),
 ); }
 
 final BlockAction action;
 
-final String? message;
+final Omittable<String?> message;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
-  'message': ?message,
+  if (message.isPresent) 'message': message.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
-Block copyWith({BlockAction? action, String? Function()? message, }) { return Block(
+Block copyWith({BlockAction? action, Omittable<String?>? message, }) { return Block(
   action: action ?? this.action,
-  message: message != null ? message() : this.message,
+  message: message ?? this.message,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Block &&

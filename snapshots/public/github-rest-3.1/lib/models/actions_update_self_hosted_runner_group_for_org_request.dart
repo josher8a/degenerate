@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActionsUpdateSelfHostedRunnerGroupForOrgRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsUpdateSelfHostedRunnerGroupForOrgRequest {const ActionsUpdateSelfHostedRunnerGroupForOrgRequest({required this.name, this.visibility, this.allowsPublicRepositories = false, this.restrictedToWorkflows = false, this.selectedWorkflows, this.networkConfigurationId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsUpdateSelfHostedRunnerGroupForOrgRequest {const ActionsUpdateSelfHostedRunnerGroupForOrgRequest({required this.name, this.visibility, this.allowsPublicRepositories = false, this.restrictedToWorkflows = false, this.selectedWorkflows, this.networkConfigurationId = const Omittable.absent(), });
 
 factory ActionsUpdateSelfHostedRunnerGroupForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateSelfHostedRunnerGroupForOrgRequest(
   name: json['name'] as String,
@@ -9,7 +9,7 @@ factory ActionsUpdateSelfHostedRunnerGroupForOrgRequest.fromJson(Map<String, dyn
   allowsPublicRepositories: json.containsKey('allows_public_repositories') ? json['allows_public_repositories'] as bool : false,
   restrictedToWorkflows: json.containsKey('restricted_to_workflows') ? json['restricted_to_workflows'] as bool : false,
   selectedWorkflows: (json['selected_workflows'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  networkConfigurationId: json['network_configuration_id'] as String?,
+  networkConfigurationId: json.containsKey('network_configuration_id') ? Omittable(json['network_configuration_id'] as String?) : const Omittable.absent(),
 ); }
 
 /// Name of the runner group.
@@ -28,7 +28,7 @@ final bool restrictedToWorkflows;
 final List<String>? selectedWorkflows;
 
 /// The identifier of a hosted compute network configuration.
-final String? networkConfigurationId;
+final Omittable<String?> networkConfigurationId;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -36,16 +36,16 @@ Map<String, dynamic> toJson() { return {
   'allows_public_repositories': allowsPublicRepositories,
   'restricted_to_workflows': restrictedToWorkflows,
   'selected_workflows': ?selectedWorkflows,
-  'network_configuration_id': ?networkConfigurationId,
+  if (networkConfigurationId.isPresent) 'network_configuration_id': networkConfigurationId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ActionsUpdateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateOrUpdateOrgSecretRequestVisibility? Function()? visibility, bool Function()? allowsPublicRepositories, bool Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, String? Function()? networkConfigurationId, }) { return ActionsUpdateSelfHostedRunnerGroupForOrgRequest(
+ActionsUpdateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsCreateOrUpdateOrgSecretRequestVisibility? Function()? visibility, bool Function()? allowsPublicRepositories, bool Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, Omittable<String?>? networkConfigurationId, }) { return ActionsUpdateSelfHostedRunnerGroupForOrgRequest(
   name: name ?? this.name,
   visibility: visibility != null ? visibility() : this.visibility,
   allowsPublicRepositories: allowsPublicRepositories != null ? allowsPublicRepositories() : this.allowsPublicRepositories,
   restrictedToWorkflows: restrictedToWorkflows != null ? restrictedToWorkflows() : this.restrictedToWorkflows,
   selectedWorkflows: selectedWorkflows != null ? selectedWorkflows() : this.selectedWorkflows,
-  networkConfigurationId: networkConfigurationId != null ? networkConfigurationId() : this.networkConfigurationId,
+  networkConfigurationId: networkConfigurationId ?? this.networkConfigurationId,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsUpdateSelfHostedRunnerGroupForOrgRequest &&

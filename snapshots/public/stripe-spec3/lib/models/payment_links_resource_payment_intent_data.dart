@@ -85,76 +85,76 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
  }
 /// 
-@immutable final class PaymentLinksResourcePaymentIntentData {const PaymentLinksResourcePaymentIntentData({required this.metadata, this.captureMethod, this.description, this.setupFutureUsage, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
+@immutable final class PaymentLinksResourcePaymentIntentData {const PaymentLinksResourcePaymentIntentData({required this.metadata, this.captureMethod = const Omittable.absent(), this.description = const Omittable.absent(), this.setupFutureUsage = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.statementDescriptorSuffix = const Omittable.absent(), this.transferGroup = const Omittable.absent(), });
 
 factory PaymentLinksResourcePaymentIntentData.fromJson(Map<String, dynamic> json) { return PaymentLinksResourcePaymentIntentData(
-  captureMethod: json['capture_method'] != null ? PaymentLinksResourcePaymentIntentDataCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  description: json['description'] as String?,
+  captureMethod: json.containsKey('capture_method') ? Omittable(json['capture_method'] != null ? PaymentLinksResourcePaymentIntentDataCaptureMethod.fromJson(json['capture_method'] as String) : null) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  setupFutureUsage: json['setup_future_usage'] != null ? ConfirmationTokenSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  statementDescriptor: json['statement_descriptor'] as String?,
-  statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferGroup: json['transfer_group'] as String?,
+  setupFutureUsage: json.containsKey('setup_future_usage') ? Omittable(json['setup_future_usage'] != null ? ConfirmationTokenSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null) : const Omittable.absent(),
+  statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
+  statementDescriptorSuffix: json.containsKey('statement_descriptor_suffix') ? Omittable(json['statement_descriptor_suffix'] as String?) : const Omittable.absent(),
+  transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
 ); }
 
 /// Indicates when the funds will be captured from the customer's account.
-final PaymentLinksResourcePaymentIntentDataCaptureMethod? captureMethod;
+final Omittable<PaymentLinksResourcePaymentIntentDataCaptureMethod?> captureMethod;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that will set metadata on [Payment Intents](https://docs.stripe.com/api/payment_intents) generated from this payment link.
 final Map<String,String> metadata;
 
 /// Indicates that you intend to make future payments with the payment method collected during checkout.
-final ConfirmationTokenSetupFutureUsage? setupFutureUsage;
+final Omittable<ConfirmationTokenSetupFutureUsage?> setupFutureUsage;
 
 /// For a non-card payment, information about the charge that appears on the customer's statement when this payment succeeds in creating a charge.
-final String? statementDescriptor;
+final Omittable<String?> statementDescriptor;
 
 /// For a card payment, information about the charge that appears on the customer's statement when this payment succeeds in creating a charge. Concatenated with the account's statement descriptor prefix to form the complete statement descriptor.
-final String? statementDescriptorSuffix;
+final Omittable<String?> statementDescriptorSuffix;
 
 /// A string that identifies the resulting payment as part of a group. See the PaymentIntents [use case for connected accounts](https://docs.stripe.com/connect/separate-charges-and-transfers) for details.
-final String? transferGroup;
+final Omittable<String?> transferGroup;
 
 Map<String, dynamic> toJson() { return {
-  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-  'description': ?description,
+  if (captureMethod.isPresent) 'capture_method': captureMethod.value?.toJson(),
+  if (description.isPresent) 'description': description.value,
   'metadata': metadata,
-  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-  'statement_descriptor': ?statementDescriptor,
-  'statement_descriptor_suffix': ?statementDescriptorSuffix,
-  'transfer_group': ?transferGroup,
+  if (setupFutureUsage.isPresent) 'setup_future_usage': setupFutureUsage.value?.toJson(),
+  if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
+  if (statementDescriptorSuffix.isPresent) 'statement_descriptor_suffix': statementDescriptorSuffix.value,
+  if (transferGroup.isPresent) 'transfer_group': transferGroup.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final description$ = description;
+final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-final statementDescriptor$ = statementDescriptor;
+final statementDescriptor$ = statementDescriptor.value;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
-final statementDescriptorSuffix$ = statementDescriptorSuffix;
+final statementDescriptorSuffix$ = statementDescriptorSuffix.value;
 if (statementDescriptorSuffix$ != null) {
   if (statementDescriptorSuffix$.runes.length > 5000) { errors.add('statementDescriptorSuffix: length must be <= 5000'); }
 }
-final transferGroup$ = transferGroup;
+final transferGroup$ = transferGroup.value;
 if (transferGroup$ != null) {
   if (transferGroup$.runes.length > 5000) { errors.add('transferGroup: length must be <= 5000'); }
 }
 return errors; } 
-PaymentLinksResourcePaymentIntentData copyWith({PaymentLinksResourcePaymentIntentDataCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String,String>? metadata, ConfirmationTokenSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, String? Function()? transferGroup, }) { return PaymentLinksResourcePaymentIntentData(
-  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-  description: description != null ? description() : this.description,
+PaymentLinksResourcePaymentIntentData copyWith({Omittable<PaymentLinksResourcePaymentIntentDataCaptureMethod?>? captureMethod, Omittable<String?>? description, Map<String,String>? metadata, Omittable<ConfirmationTokenSetupFutureUsage?>? setupFutureUsage, Omittable<String?>? statementDescriptor, Omittable<String?>? statementDescriptorSuffix, Omittable<String?>? transferGroup, }) { return PaymentLinksResourcePaymentIntentData(
+  captureMethod: captureMethod ?? this.captureMethod,
+  description: description ?? this.description,
   metadata: metadata ?? this.metadata,
-  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-  statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
-  transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
+  setupFutureUsage: setupFutureUsage ?? this.setupFutureUsage,
+  statementDescriptor: statementDescriptor ?? this.statementDescriptor,
+  statementDescriptorSuffix: statementDescriptorSuffix ?? this.statementDescriptorSuffix,
+  transferGroup: transferGroup ?? this.transferGroup,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourcePaymentIntentData &&

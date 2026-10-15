@@ -250,11 +250,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion, this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting, this.setting, });
+@immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion = const Omittable.absent(), this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting = const Omittable.absent(), this.setting, });
 
 factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { return SecretScanningPatternOverride(
   tokenType: json['token_type'] as String?,
-  customPatternVersion: json['custom_pattern_version'] as String?,
+  customPatternVersion: json.containsKey('custom_pattern_version') ? Omittable(json['custom_pattern_version'] as String?) : const Omittable.absent(),
   slug: json['slug'] as String?,
   displayName: json['display_name'] as String?,
   alertTotal: json['alert_total'] != null ? (json['alert_total'] as num).toInt() : null,
@@ -263,7 +263,7 @@ factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { retu
   falsePositiveRate: json['false_positive_rate'] != null ? (json['false_positive_rate'] as num).toInt() : null,
   bypassRate: json['bypass_rate'] != null ? (json['bypass_rate'] as num).toInt() : null,
   defaultSetting: json['default_setting'] != null ? DefaultSetting.fromJson(json['default_setting'] as String) : null,
-  enterpriseSetting: json['enterprise_setting'] != null ? EnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null,
+  enterpriseSetting: json.containsKey('enterprise_setting') ? Omittable(json['enterprise_setting'] != null ? EnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null) : const Omittable.absent(),
   setting: json['setting'] != null ? Setting.fromJson(json['setting'] as String) : null,
 ); }
 
@@ -271,7 +271,7 @@ factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { retu
 final String? tokenType;
 
 /// The version of this pattern if it's a custom pattern.
-final String? customPatternVersion;
+final Omittable<String?> customPatternVersion;
 
 /// The slug of the pattern.
 final String? slug;
@@ -298,14 +298,14 @@ final int? bypassRate;
 final DefaultSetting? defaultSetting;
 
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-final EnterpriseSetting? enterpriseSetting;
+final Omittable<EnterpriseSetting?> enterpriseSetting;
 
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
 final Setting? setting;
 
 Map<String, dynamic> toJson() { return {
   'token_type': ?tokenType,
-  'custom_pattern_version': ?customPatternVersion,
+  if (customPatternVersion.isPresent) 'custom_pattern_version': customPatternVersion.value,
   'slug': ?slug,
   'display_name': ?displayName,
   'alert_total': ?alertTotal,
@@ -314,13 +314,13 @@ Map<String, dynamic> toJson() { return {
   'false_positive_rate': ?falsePositiveRate,
   'bypass_rate': ?bypassRate,
   if (defaultSetting != null) 'default_setting': defaultSetting?.toJson(),
-  if (enterpriseSetting != null) 'enterprise_setting': enterpriseSetting?.toJson(),
+  if (enterpriseSetting.isPresent) 'enterprise_setting': enterpriseSetting.value?.toJson(),
   if (setting != null) 'setting': setting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'slug', 'display_name', 'alert_total', 'alert_total_percentage', 'false_positives', 'false_positive_rate', 'bypass_rate', 'default_setting', 'enterprise_setting', 'setting'}.contains(key)); } 
-SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? Function()? customPatternVersion, String? Function()? slug, String? Function()? displayName, int? Function()? alertTotal, int? Function()? alertTotalPercentage, int? Function()? falsePositives, int? Function()? falsePositiveRate, int? Function()? bypassRate, DefaultSetting? Function()? defaultSetting, EnterpriseSetting? Function()? enterpriseSetting, Setting? Function()? setting, }) { return SecretScanningPatternOverride(
+SecretScanningPatternOverride copyWith({String? Function()? tokenType, Omittable<String?>? customPatternVersion, String? Function()? slug, String? Function()? displayName, int? Function()? alertTotal, int? Function()? alertTotalPercentage, int? Function()? falsePositives, int? Function()? falsePositiveRate, int? Function()? bypassRate, DefaultSetting? Function()? defaultSetting, Omittable<EnterpriseSetting?>? enterpriseSetting, Setting? Function()? setting, }) { return SecretScanningPatternOverride(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
-  customPatternVersion: customPatternVersion != null ? customPatternVersion() : this.customPatternVersion,
+  customPatternVersion: customPatternVersion ?? this.customPatternVersion,
   slug: slug != null ? slug() : this.slug,
   displayName: displayName != null ? displayName() : this.displayName,
   alertTotal: alertTotal != null ? alertTotal() : this.alertTotal,
@@ -329,7 +329,7 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? F
   falsePositiveRate: falsePositiveRate != null ? falsePositiveRate() : this.falsePositiveRate,
   bypassRate: bypassRate != null ? bypassRate() : this.bypassRate,
   defaultSetting: defaultSetting != null ? defaultSetting() : this.defaultSetting,
-  enterpriseSetting: enterpriseSetting != null ? enterpriseSetting() : this.enterpriseSetting,
+  enterpriseSetting: enterpriseSetting ?? this.enterpriseSetting,
   setting: setting != null ? setting() : this.setting,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

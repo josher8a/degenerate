@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateThreadAndRunRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/assistants_named_tool_choice.dart';import 'package:pub_openai/models/create_thread_and_run_request/create_thread_and_run_request_model.dart';import 'package:pub_openai/models/create_thread_request.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';import 'package:pub_openai/models/tool_choice_option.dart';import 'package:pub_openai/models/truncation_object.dart';@immutable final class CreateThreadAndRunRequest {const CreateThreadAndRunRequest({required this.assistantId, this.thread, this.model, this.instructions, this.tools, this.toolResources, this.metadata, this.temperature = 1.0, this.topP = 1.0, this.stream, this.maxPromptTokens, this.maxCompletionTokens, this.truncationStrategy, this.toolChoice, this.parallelToolCalls, this.responseFormat, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/assistants_named_tool_choice.dart';import 'package:pub_openai/models/create_thread_and_run_request/create_thread_and_run_request_model.dart';import 'package:pub_openai/models/create_thread_request.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';import 'package:pub_openai/models/tool_choice_option.dart';import 'package:pub_openai/models/truncation_object.dart';@immutable final class CreateThreadAndRunRequest {const CreateThreadAndRunRequest({required this.assistantId, this.thread, this.model = const Omittable.absent(), this.instructions = const Omittable.absent(), this.tools = const Omittable.absent(), this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = 1.0, this.topP = 1.0, this.stream = const Omittable.absent(), this.maxPromptTokens = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.truncationStrategy = const Omittable.absent(), this.toolChoice = const Omittable.absent(), this.parallelToolCalls, this.responseFormat = const Omittable.absent(), });
 
 factory CreateThreadAndRunRequest.fromJson(Map<String, dynamic> json) { return CreateThreadAndRunRequest(
   assistantId: json['assistant_id'] as String,
   thread: json['thread'] != null ? CreateThreadRequest.fromJson(json['thread'] as Map<String, dynamic>) : null,
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateThreadAndRunRequestModelVariant2.fromJson(v as String),) : null,
-  instructions: json['instructions'] as String?,
-  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
-  toolResources: json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  model: json.containsKey('model') ? Omittable(json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateThreadAndRunRequestModelVariant2.fromJson(v as String),) : null) : const Omittable.absent(),
+  instructions: json.containsKey('instructions') ? Omittable(json['instructions'] as String?) : const Omittable.absent(),
+  tools: json.containsKey('tools') ? Omittable((json['tools'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  toolResources: json.containsKey('tool_resources') ? Omittable(json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   temperature: json.containsKey('temperature') ? json['temperature'] != null ? (json['temperature'] as num).toDouble() : null : 1.0,
   topP: json.containsKey('top_p') ? json['top_p'] != null ? (json['top_p'] as num).toDouble() : null : 1.0,
-  stream: json['stream'] as bool?,
-  maxPromptTokens: json['max_prompt_tokens'] != null ? (json['max_prompt_tokens'] as num).toInt() : null,
-  maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
-  truncationStrategy: json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null,
-  toolChoice: json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null,
+  stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
+  maxPromptTokens: json.containsKey('max_prompt_tokens') ? Omittable(json['max_prompt_tokens'] != null ? (json['max_prompt_tokens'] as num).toInt() : null) : const Omittable.absent(),
+  maxCompletionTokens: json.containsKey('max_completion_tokens') ? Omittable(json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null) : const Omittable.absent(),
+  truncationStrategy: json.containsKey('truncation_strategy') ? Omittable(json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  toolChoice: json.containsKey('tool_choice') ? Omittable(json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   parallelToolCalls: json['parallel_tool_calls'] != null ? ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool) : null,
-  responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null,
+  responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
 ); }
 
 /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
@@ -30,19 +30,19 @@ final CreateThreadRequest? thread;
 /// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
 /// 
 /// Example: `'gpt-4o'`
-final CreateThreadAndRunRequestModel? model;
+final Omittable<CreateThreadAndRunRequestModel?> model;
 
 /// Override the default system message of the assistant. This is useful for modifying the behavior on a per-run basis.
-final String? instructions;
+final Omittable<String?> instructions;
 
 /// Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
-final List<AssistantObjectTools>? tools;
+final Omittable<List<AssistantObjectTools>?> tools;
 
 /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
-final AssistantObjectToolResources? toolResources;
+final Omittable<AssistantObjectToolResources?> toolResources;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// 
@@ -60,46 +60,46 @@ final double? topP;
 
 /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
 /// 
-final bool? stream;
+final Omittable<bool?> stream;
 
 /// The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
 /// 
-final int? maxPromptTokens;
+final Omittable<int?> maxPromptTokens;
 
 /// The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
 /// 
-final int? maxCompletionTokens;
+final Omittable<int?> maxCompletionTokens;
 
-final TruncationObject? truncationStrategy;
+final Omittable<TruncationObject?> truncationStrategy;
 
-final ToolChoiceOption? toolChoice;
+final Omittable<ToolChoiceOption?> toolChoice;
 
 final ParallelToolCalls? parallelToolCalls;
 
-final ResponseFormatOption? responseFormat;
+final Omittable<ResponseFormatOption?> responseFormat;
 
 Map<String, dynamic> toJson() { return {
   'assistant_id': assistantId,
   if (thread != null) 'thread': thread?.toJson(),
-  if (model != null) 'model': model?.toJson(),
-  'instructions': ?instructions,
-  if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
-  if (toolResources != null) 'tool_resources': toolResources?.toJson(),
-  'metadata': ?metadata,
+  if (model.isPresent) 'model': model.value?.toJson(),
+  if (instructions.isPresent) 'instructions': instructions.value,
+  if (tools.isPresent) 'tools': tools.value?.map((e) => e.toJson()).toList(),
+  if (toolResources.isPresent) 'tool_resources': toolResources.value?.toJson(),
+  if (metadata.isPresent) 'metadata': metadata.value,
   'temperature': ?temperature,
   'top_p': ?topP,
-  'stream': ?stream,
-  'max_prompt_tokens': ?maxPromptTokens,
-  'max_completion_tokens': ?maxCompletionTokens,
-  if (truncationStrategy != null) 'truncation_strategy': truncationStrategy?.toJson(),
-  if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
+  if (stream.isPresent) 'stream': stream.value,
+  if (maxPromptTokens.isPresent) 'max_prompt_tokens': maxPromptTokens.value,
+  if (maxCompletionTokens.isPresent) 'max_completion_tokens': maxCompletionTokens.value,
+  if (truncationStrategy.isPresent) 'truncation_strategy': truncationStrategy.value?.toJson(),
+  if (toolChoice.isPresent) 'tool_choice': toolChoice.value?.toJson(),
   if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls?.toJson(),
-  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('assistant_id') && json['assistant_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final tools$ = tools;
+final tools$ = tools.value;
 if (tools$ != null) {
   if (tools$.length > 20) { errors.add('tools: must have <= 20 items'); }
 }
@@ -113,32 +113,32 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
-final maxPromptTokens$ = maxPromptTokens;
+final maxPromptTokens$ = maxPromptTokens.value;
 if (maxPromptTokens$ != null) {
   if (maxPromptTokens$ < 256) { errors.add('maxPromptTokens: must be >= 256'); }
 }
-final maxCompletionTokens$ = maxCompletionTokens;
+final maxCompletionTokens$ = maxCompletionTokens.value;
 if (maxCompletionTokens$ != null) {
   if (maxCompletionTokens$ < 256) { errors.add('maxCompletionTokens: must be >= 256'); }
 }
 return errors; } 
-CreateThreadAndRunRequest copyWith({String? assistantId, CreateThreadRequest? Function()? thread, CreateThreadAndRunRequestModel? Function()? model, String? Function()? instructions, List<AssistantObjectTools>? Function()? tools, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, bool? Function()? stream, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return CreateThreadAndRunRequest(
+CreateThreadAndRunRequest copyWith({String? assistantId, CreateThreadRequest? Function()? thread, Omittable<CreateThreadAndRunRequestModel?>? model, Omittable<String?>? instructions, Omittable<List<AssistantObjectTools>?>? tools, Omittable<AssistantObjectToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, double? Function()? temperature, double? Function()? topP, Omittable<bool?>? stream, Omittable<int?>? maxPromptTokens, Omittable<int?>? maxCompletionTokens, Omittable<TruncationObject?>? truncationStrategy, Omittable<ToolChoiceOption?>? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, Omittable<ResponseFormatOption?>? responseFormat, }) { return CreateThreadAndRunRequest(
   assistantId: assistantId ?? this.assistantId,
   thread: thread != null ? thread() : this.thread,
-  model: model != null ? model() : this.model,
-  instructions: instructions != null ? instructions() : this.instructions,
-  tools: tools != null ? tools() : this.tools,
-  toolResources: toolResources != null ? toolResources() : this.toolResources,
-  metadata: metadata != null ? metadata() : this.metadata,
+  model: model ?? this.model,
+  instructions: instructions ?? this.instructions,
+  tools: tools ?? this.tools,
+  toolResources: toolResources ?? this.toolResources,
+  metadata: metadata ?? this.metadata,
   temperature: temperature != null ? temperature() : this.temperature,
   topP: topP != null ? topP() : this.topP,
-  stream: stream != null ? stream() : this.stream,
-  maxPromptTokens: maxPromptTokens != null ? maxPromptTokens() : this.maxPromptTokens,
-  maxCompletionTokens: maxCompletionTokens != null ? maxCompletionTokens() : this.maxCompletionTokens,
-  truncationStrategy: truncationStrategy != null ? truncationStrategy() : this.truncationStrategy,
-  toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
+  stream: stream ?? this.stream,
+  maxPromptTokens: maxPromptTokens ?? this.maxPromptTokens,
+  maxCompletionTokens: maxCompletionTokens ?? this.maxCompletionTokens,
+  truncationStrategy: truncationStrategy ?? this.truncationStrategy,
+  toolChoice: toolChoice ?? this.toolChoice,
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
-  responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
+  responseFormat: responseFormat ?? this.responseFormat,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateThreadAndRunRequest &&
@@ -146,7 +146,8 @@ CreateThreadAndRunRequest copyWith({String? assistantId, CreateThreadRequest? Fu
           thread == other.thread &&
           model == other.model &&
           instructions == other.instructions &&
-          listEquals(tools, other.tools) &&
+          tools.isPresent == other.tools.isPresent &&
+          listEquals(tools.value, other.tools.value) &&
           toolResources == other.toolResources &&
           metadata == other.metadata &&
           temperature == other.temperature &&
@@ -159,7 +160,7 @@ CreateThreadAndRunRequest copyWith({String? assistantId, CreateThreadRequest? Fu
           parallelToolCalls == other.parallelToolCalls &&
           responseFormat == other.responseFormat;
 
-@override int get hashCode => Object.hash(assistantId, thread, model, instructions, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, stream, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat);
+@override int get hashCode => Object.hash(assistantId, thread, model, instructions, Object.hashAll(tools.value ?? const []), toolResources, metadata, temperature, topP, stream, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat);
 
 @override String toString() => 'CreateThreadAndRunRequest(\n  assistantId: $assistantId,\n  thread: $thread,\n  model: $model,\n  instructions: $instructions,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  stream: $stream,\n  maxPromptTokens: $maxPromptTokens,\n  maxCompletionTokens: $maxCompletionTokens,\n  truncationStrategy: $truncationStrategy,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n  responseFormat: $responseFormat,\n)';
 

@@ -49,7 +49,7 @@ factory DeleteWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `10003` variant.
-factory DeleteWorkerResponse400Errors.$10003({required String message}) { return DeleteWorkerResponse400Errors10003(WorkersErrorMissingParam(code: '10003', message: message)); }
+factory DeleteWorkerResponse400Errors.$10003({required String message}) { return DeleteWorkerResponse400Errors10003(WorkersErrorMissingParam(code: WorkersErrorMissingParamCode.fromJson(10003), message: message)); }
 
 /// The discriminator value identifying this variant.
 DeleteWorkerResponse400ErrorsCode get code;

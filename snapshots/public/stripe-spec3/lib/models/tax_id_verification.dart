@@ -100,44 +100,44 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
  }
 /// 
-@immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress, this.verifiedName, });
+@immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
 factory TaxIdVerification.fromJson(Map<String, dynamic> json) { return TaxIdVerification(
   status: TaxIdVerificationStatus.fromJson(json['status'] as String),
-  verifiedAddress: json['verified_address'] as String?,
-  verifiedName: json['verified_name'] as String?,
+  verifiedAddress: json.containsKey('verified_address') ? Omittable(json['verified_address'] as String?) : const Omittable.absent(),
+  verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
 ); }
 
 /// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
 final TaxIdVerificationStatus status;
 
 /// Verified address.
-final String? verifiedAddress;
+final Omittable<String?> verifiedAddress;
 
 /// Verified name.
-final String? verifiedName;
+final Omittable<String?> verifiedName;
 
 Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
-  'verified_address': ?verifiedAddress,
-  'verified_name': ?verifiedName,
+  if (verifiedAddress.isPresent) 'verified_address': verifiedAddress.value,
+  if (verifiedName.isPresent) 'verified_name': verifiedName.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final verifiedAddress$ = verifiedAddress;
+final verifiedAddress$ = verifiedAddress.value;
 if (verifiedAddress$ != null) {
   if (verifiedAddress$.runes.length > 5000) { errors.add('verifiedAddress: length must be <= 5000'); }
 }
-final verifiedName$ = verifiedName;
+final verifiedName$ = verifiedName.value;
 if (verifiedName$ != null) {
   if (verifiedName$.runes.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
 return errors; } 
-TaxIdVerification copyWith({TaxIdVerificationStatus? status, String? Function()? verifiedAddress, String? Function()? verifiedName, }) { return TaxIdVerification(
+TaxIdVerification copyWith({TaxIdVerificationStatus? status, Omittable<String?>? verifiedAddress, Omittable<String?>? verifiedName, }) { return TaxIdVerification(
   status: status ?? this.status,
-  verifiedAddress: verifiedAddress != null ? verifiedAddress() : this.verifiedAddress,
-  verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
+  verifiedAddress: verifiedAddress ?? this.verifiedAddress,
+  verifiedName: verifiedName ?? this.verifiedName,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxIdVerification &&

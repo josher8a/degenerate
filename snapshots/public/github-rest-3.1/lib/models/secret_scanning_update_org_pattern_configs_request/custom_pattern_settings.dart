@@ -69,11 +69,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CustomPatternSettings {const CustomPatternSettings({this.tokenType, this.customPatternVersion, this.pushProtectionSetting, });
+@immutable final class CustomPatternSettings {const CustomPatternSettings({this.tokenType, this.customPatternVersion = const Omittable.absent(), this.pushProtectionSetting, });
 
 factory CustomPatternSettings.fromJson(Map<String, dynamic> json) { return CustomPatternSettings(
   tokenType: json['token_type'] as String?,
-  customPatternVersion: json['custom_pattern_version'] != null ? SecretScanningRowVersion.fromJson(json['custom_pattern_version'] as String) : null,
+  customPatternVersion: json.containsKey('custom_pattern_version') ? Omittable(json['custom_pattern_version'] != null ? SecretScanningRowVersion.fromJson(json['custom_pattern_version'] as String) : null) : const Omittable.absent(),
   pushProtectionSetting: json['push_protection_setting'] != null ? CustomPatternSettingsPushProtectionSetting.fromJson(json['push_protection_setting'] as String) : null,
 ); }
 
@@ -81,20 +81,20 @@ factory CustomPatternSettings.fromJson(Map<String, dynamic> json) { return Custo
 final String? tokenType;
 
 /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
-final SecretScanningRowVersion? customPatternVersion;
+final Omittable<SecretScanningRowVersion?> customPatternVersion;
 
 /// Push protection setting to set for the pattern.
 final CustomPatternSettingsPushProtectionSetting? pushProtectionSetting;
 
 Map<String, dynamic> toJson() { return {
   'token_type': ?tokenType,
-  if (customPatternVersion != null) 'custom_pattern_version': customPatternVersion?.toJson(),
+  if (customPatternVersion.isPresent) 'custom_pattern_version': customPatternVersion.value?.toJson(),
   if (pushProtectionSetting != null) 'push_protection_setting': pushProtectionSetting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'push_protection_setting'}.contains(key)); } 
-CustomPatternSettings copyWith({String? Function()? tokenType, SecretScanningRowVersion? Function()? customPatternVersion, CustomPatternSettingsPushProtectionSetting? Function()? pushProtectionSetting, }) { return CustomPatternSettings(
+CustomPatternSettings copyWith({String? Function()? tokenType, Omittable<SecretScanningRowVersion?>? customPatternVersion, CustomPatternSettingsPushProtectionSetting? Function()? pushProtectionSetting, }) { return CustomPatternSettings(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
-  customPatternVersion: customPatternVersion != null ? customPatternVersion() : this.customPatternVersion,
+  customPatternVersion: customPatternVersion ?? this.customPatternVersion,
   pushProtectionSetting: pushProtectionSetting != null ? pushProtectionSetting() : this.pushProtectionSetting,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

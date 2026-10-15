@@ -2,15 +2,15 @@
 // Source: #/components/schemas/CheckoutKonbiniPaymentMethodOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
-@immutable final class CheckoutKonbiniPaymentMethodOptions {const CheckoutKonbiniPaymentMethodOptions({this.expiresAfterDays, this.setupFutureUsage, });
+@immutable final class CheckoutKonbiniPaymentMethodOptions {const CheckoutKonbiniPaymentMethodOptions({this.expiresAfterDays = const Omittable.absent(), this.setupFutureUsage, });
 
 factory CheckoutKonbiniPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutKonbiniPaymentMethodOptions(
-  expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,
+  expiresAfterDays: json.containsKey('expires_after_days') ? Omittable(json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// The number of calendar days (between 1 and 60) after which Konbini payment instructions will expire. For example, if a PaymentIntent is confirmed with Konbini and `expires_after_days` set to 2 on Monday JST, the instructions will expire on Wednesday 23:59:59 JST.
-final int? expiresAfterDays;
+final Omittable<int?> expiresAfterDays;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -22,12 +22,12 @@ final int? expiresAfterDays;
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
-  'expires_after_days': ?expiresAfterDays,
+  if (expiresAfterDays.isPresent) 'expires_after_days': expiresAfterDays.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after_days', 'setup_future_usage'}.contains(key)); } 
-CheckoutKonbiniPaymentMethodOptions copyWith({int? Function()? expiresAfterDays, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutKonbiniPaymentMethodOptions(
-  expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
+CheckoutKonbiniPaymentMethodOptions copyWith({Omittable<int?>? expiresAfterDays, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutKonbiniPaymentMethodOptions(
+  expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

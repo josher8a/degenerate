@@ -116,7 +116,7 @@ final VideoSize? size;
 Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
   'prompt': prompt,
-  if (inputReference != null) 'input_reference': base64Encode(inputReference!),
+  if (inputReference != null) 'input_reference': switch (inputReference) { final bytes? => base64Encode(bytes), _ => null },
   if (imageReference != null) 'image_reference': imageReference?.toJson(),
   if (seconds != null) 'seconds': seconds?.toJson(),
   if (size != null) 'size': size?.toJson(),
@@ -139,12 +139,12 @@ CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8Li
       other is CreateVideoBody &&
           model == other.model &&
           prompt == other.prompt &&
-          inputReference == other.inputReference &&
+          listEquals(inputReference, other.inputReference) &&
           imageReference == other.imageReference &&
           seconds == other.seconds &&
           size == other.size;
 
-@override int get hashCode => Object.hash(model, prompt, inputReference, imageReference, seconds, size);
+@override int get hashCode => Object.hash(model, prompt, Object.hashAll(inputReference ?? const []), imageReference, seconds, size);
 
 @override String toString() => 'CreateVideoBody(model: $model, prompt: $prompt, inputReference: $inputReference, imageReference: $imageReference, seconds: $seconds, size: $size)';
 

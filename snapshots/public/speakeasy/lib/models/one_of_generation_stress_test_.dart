@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'any': any,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('oneOfSameType') &&
-      json.containsKey('oneOfFromArrayOfTypes') && json['oneOfFromArrayOfTypes'] is String &&
+      json.containsKey('oneOfFromArrayOfTypes') && (json['oneOfFromArrayOfTypes'] == null || json['oneOfFromArrayOfTypes'] is String) &&
       json.containsKey('nullableAny') &&
       json.containsKey('any'); } 
 OneOfGenerationStressTest copyWith({OneOfSameType? oneOfSameType, String? Function()? oneOfFromArrayOfTypes, dynamic Function()? nullableAny, dynamic Function()? any, }) { return OneOfGenerationStressTest(

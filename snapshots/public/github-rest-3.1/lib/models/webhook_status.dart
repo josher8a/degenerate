@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookStatus
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repos_create_commit_status_request/repos_create_commit_status_request_state.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_status/branches.dart';import 'package:pub_github_rest_3_1/models/webhook_status/webhook_status_commit.dart';@immutable final class WebhookStatus {const WebhookStatus({required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, required this.id, required this.name, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, this.avatarUrl, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repos_create_commit_status_request/repos_create_commit_status_request_state.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_status/branches.dart';import 'package:pub_github_rest_3_1/models/webhook_status/webhook_status_commit.dart';@immutable final class WebhookStatus {const WebhookStatus({required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, required this.id, required this.name, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, this.avatarUrl = const Omittable.absent(), this.enterprise, this.installation, this.organization, });
 
 factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus(
-  avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
+  avatarUrl: json.containsKey('avatar_url') ? Omittable(json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null) : const Omittable.absent(),
   branches: (json['branches'] as List<dynamic>).map((e) => Branches.fromJson(e as Map<String, dynamic>)).toList(),
   commit: WebhookStatusCommit.fromJson(json['commit'] as Map<String, dynamic>),
   context: json['context'] as String,
@@ -23,7 +23,7 @@ factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus
   updatedAt: json['updated_at'] as String,
 ); }
 
-final Uri? avatarUrl;
+final Omittable<Uri?> avatarUrl;
 
 /// An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
 final List<Branches> branches;
@@ -64,7 +64,7 @@ final String? targetUrl;
 final String updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
+  if (avatarUrl.isPresent) 'avatar_url': avatarUrl.value?.toString(),
   'branches': branches.map((e) => e.toJson()).toList(),
   'commit': commit.toJson(),
   'context': context,
@@ -86,17 +86,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
       json.containsKey('commit') &&
       json.containsKey('context') && json['context'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('state') &&
-      json.containsKey('target_url') && json['target_url'] is String &&
+      json.containsKey('target_url') && (json['target_url'] == null || json['target_url'] is String) &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookStatus copyWith({Uri? Function()? avatarUrl, List<Branches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, String? name, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, ReposCreateCommitStatusRequestState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
-  avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
+WebhookStatus copyWith({Omittable<Uri?>? avatarUrl, List<Branches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, String? name, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, ReposCreateCommitStatusRequestState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
+  avatarUrl: avatarUrl ?? this.avatarUrl,
   branches: branches ?? this.branches,
   commit: commit ?? this.commit,
   context: context ?? this.context,

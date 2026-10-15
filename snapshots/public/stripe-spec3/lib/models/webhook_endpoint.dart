@@ -8,13 +8,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Most users configure webhooks from [the dashboard](https://dashboard.stripe.com/webhooks), which provides a user interface for registering and testing your webhook endpoints.
 /// 
 /// Related guide: [Setting up webhooks](https://docs.stripe.com/webhooks/configure)
-@immutable final class WebhookEndpoint {const WebhookEndpoint({required this.created, required this.enabledEvents, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.url, this.apiVersion, this.application, this.description, this.secret, });
+@immutable final class WebhookEndpoint {const WebhookEndpoint({required this.created, required this.enabledEvents, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.url, this.apiVersion = const Omittable.absent(), this.application = const Omittable.absent(), this.description = const Omittable.absent(), this.secret, });
 
 factory WebhookEndpoint.fromJson(Map<String, dynamic> json) { return WebhookEndpoint(
-  apiVersion: json['api_version'] as String?,
-  application: json['application'] as String?,
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  application: json.containsKey('application') ? Omittable(json['application'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabledEvents: (json['enabled_events'] as List<dynamic>).map((e) => e as String).toList(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -26,16 +26,16 @@ factory WebhookEndpoint.fromJson(Map<String, dynamic> json) { return WebhookEndp
 ); }
 
 /// The API version events are rendered as for this webhook endpoint.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// The ID of the associated Connect application.
-final String? application;
+final Omittable<String?> application;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
 
 /// An optional description of what the webhook is used for.
-final String? description;
+final Omittable<String?> description;
 
 /// The list of events to enable for this endpoint. `['*']` indicates that all events are enabled, except those that require explicit selection.
 final List<String> enabledEvents;
@@ -62,10 +62,10 @@ final String status;
 final String url;
 
 Map<String, dynamic> toJson() { return {
-  'api_version': ?apiVersion,
-  'application': ?application,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (application.isPresent) 'application': application.value,
   'created': created,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'enabled_events': enabledEvents,
   'id': id,
   'livemode': livemode,
@@ -85,15 +85,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final apiVersion$ = apiVersion;
+final apiVersion$ = apiVersion.value;
 if (apiVersion$ != null) {
   if (apiVersion$.runes.length > 5000) { errors.add('apiVersion: length must be <= 5000'); }
 }
-final application$ = application;
+final application$ = application.value;
 if (application$ != null) {
   if (application$.runes.length > 5000) { errors.add('application: length must be <= 5000'); }
 }
-final description$ = description;
+final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
@@ -105,11 +105,11 @@ if (secret$ != null) {
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
-WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? application, int? created, String? Function()? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, DeletedWebhookEndpointObject? object, String? Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  application: application != null ? application() : this.application,
+WebhookEndpoint copyWith({Omittable<String?>? apiVersion, Omittable<String?>? application, int? created, Omittable<String?>? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, DeletedWebhookEndpointObject? object, String? Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
+  apiVersion: apiVersion ?? this.apiVersion,
+  application: application ?? this.application,
   created: created ?? this.created,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   enabledEvents: enabledEvents ?? this.enabledEvents,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

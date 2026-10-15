@@ -133,7 +133,7 @@ factory ChatCompletionRequestMessage.system({required ChatCompletionRequestSyste
 factory ChatCompletionRequestMessage.user({required ChatCompletionRequestUserMessageContent content, String? name, }) { return ChatCompletionRequestMessageUser(ChatCompletionRequestUserMessage(role: 'user', content: content, name: name)); }
 
 /// Build the `assistant` variant.
-factory ChatCompletionRequestMessage.assistant({ChatCompletionRequestAssistantMessageContent? content, String? refusal, String? name, ChatCompletionRequestAssistantMessageAudio? audio, List<ChatCompletionMessageToolCalls2>? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? functionCall, }) { return ChatCompletionRequestMessageAssistant(ChatCompletionRequestAssistantMessage(role: 'assistant', content: content, refusal: refusal, name: name, audio: audio, toolCalls: toolCalls, functionCall: functionCall)); }
+factory ChatCompletionRequestMessage.assistant({Omittable<ChatCompletionRequestAssistantMessageContent?> content = const Omittable.absent(), Omittable<String?> refusal = const Omittable.absent(), String? name, Omittable<ChatCompletionRequestAssistantMessageAudio?> audio = const Omittable.absent(), List<ChatCompletionMessageToolCalls2>? toolCalls, Omittable<ChatCompletionRequestAssistantMessageFunctionCall?> functionCall = const Omittable.absent(), }) { return ChatCompletionRequestMessageAssistant(ChatCompletionRequestAssistantMessage(role: 'assistant', content: content, refusal: refusal, name: name, audio: audio, toolCalls: toolCalls, functionCall: functionCall)); }
 
 /// Build the `tool` variant.
 factory ChatCompletionRequestMessage.tool({required ChatCompletionRequestToolMessageContent content, required String toolCallId, }) { return ChatCompletionRequestMessageTool(ChatCompletionRequestToolMessage(role: 'tool', content: content, toolCallId: toolCallId)); }
@@ -233,7 +233,7 @@ final ChatCompletionRequestAssistantMessage chatCompletionRequestAssistantMessag
 
 @override Map<String, dynamic> toJson() => {...chatCompletionRequestAssistantMessage.toJson(), 'role': role.toJson()};
 
-ChatCompletionRequestMessageAssistant copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, String? Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, }) { return ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage.copyWith(
+ChatCompletionRequestMessageAssistant copyWith({Omittable<ChatCompletionRequestAssistantMessageContent?>? content, Omittable<String?>? refusal, String? Function()? name, Omittable<ChatCompletionRequestAssistantMessageAudio?>? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, Omittable<ChatCompletionRequestAssistantMessageFunctionCall?>? functionCall, }) { return ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage.copyWith(
   content: content,
   refusal: refusal,
   name: name,

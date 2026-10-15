@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityBatchBlockedSendersRequest (inline: Puts)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityBatchBlockedSendersRequestPuts {const EmailSecurityBatchBlockedSendersRequestPuts({required this.isRegex, required this.pattern, required this.patternType, required this.id, this.comments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityBatchBlockedSendersRequestPuts {const EmailSecurityBatchBlockedSendersRequestPuts({required this.isRegex, required this.pattern, required this.patternType, required this.id, this.comments = const Omittable.absent(), });
 
 factory EmailSecurityBatchBlockedSendersRequestPuts.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchBlockedSendersRequestPuts(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
   id: EmailSecurityBlockedSenderId.fromJson(json['id'] as num),
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 final bool isRegex;
 
@@ -23,7 +23,7 @@ final EmailSecurityPatternType? patternType;
 final EmailSecurityBlockedSenderId id;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
   'pattern_type': patternType?.toJson(),
@@ -35,15 +35,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
       json.containsKey('id'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final comments$ = comments;
+final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 return errors; } 
-EmailSecurityBatchBlockedSendersRequestPuts copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, EmailSecurityBlockedSenderId? id, }) { return EmailSecurityBatchBlockedSendersRequestPuts(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityBatchBlockedSendersRequestPuts copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, EmailSecurityBlockedSenderId? id, }) { return EmailSecurityBatchBlockedSendersRequestPuts(
+  comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,

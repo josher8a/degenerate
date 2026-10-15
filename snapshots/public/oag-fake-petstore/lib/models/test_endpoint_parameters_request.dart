@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'string': ?string,
   'pattern_without_delimiter': patternWithoutDelimiter,
   'byte': base64Encode(byte),
-  if (binary != null) 'binary': base64Encode(binary!),
+  if (binary != null) 'binary': switch (binary) { final bytes? => base64Encode(bytes), _ => null },
   'date': ?date,
   if (dateTime != null) 'dateTime': dateTime?.toIso8601String(),
   'password': ?password,
@@ -139,14 +139,14 @@ TestEndpointParametersRequest copyWith({int? Function()? integer, int? Function(
           $double == other.$double &&
           string == other.string &&
           patternWithoutDelimiter == other.patternWithoutDelimiter &&
-          byte == other.byte &&
-          binary == other.binary &&
+          listEquals(byte, other.byte) &&
+          listEquals(binary, other.binary) &&
           date == other.date &&
           dateTime == other.dateTime &&
           password == other.password &&
           callback == other.callback;
 
-@override int get hashCode => Object.hash(integer, int32, int64, number, float, $double, string, patternWithoutDelimiter, byte, binary, date, dateTime, password, callback);
+@override int get hashCode => Object.hash(integer, int32, int64, number, float, $double, string, patternWithoutDelimiter, Object.hashAll(byte), Object.hashAll(binary ?? const []), date, dateTime, password, callback);
 
 @override String toString() => 'TestEndpointParametersRequest(\n  integer: $integer,\n  int32: $int32,\n  int64: $int64,\n  number: $number,\n  float: $float,\n  \$double: ${$double},\n  string: $string,\n  patternWithoutDelimiter: $patternWithoutDelimiter,\n  byte: $byte,\n  binary: $binary,\n  date: $date,\n  dateTime: $dateTime,\n  password: $password,\n  callback: $callback,\n)';
 

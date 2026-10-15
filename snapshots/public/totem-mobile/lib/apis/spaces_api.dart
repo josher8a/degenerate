@@ -2,6 +2,7 @@
 // Source: tag "SpacesApi" (13 operations)
 
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/mobile_space_detail_schema.dart';
 import 'package:pub_totem_mobile/models/paged_mobile_space_detail_schema.dart';

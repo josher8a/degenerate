@@ -2,18 +2,18 @@
 // Source: #/components/schemas/WebhookCodeScanningAlertAppearedInBranch (inline: Alert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_dismissed_comment.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/alert_dismissed_reason.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/dismissed_by.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_state.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_tool.dart';/// The code scanning alert involved in the event.
-@immutable final class WebhookCodeScanningAlertAppearedInBranchAlert {const WebhookCodeScanningAlertAppearedInBranchAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment, this.fixedAt, this.mostRecentInstance, });
+@immutable final class WebhookCodeScanningAlertAppearedInBranchAlert {const WebhookCodeScanningAlertAppearedInBranchAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment = const Omittable.absent(), this.fixedAt = const Omittable.absent(), this.mostRecentInstance = const Omittable.absent(), });
 
 factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: json['dismissed_at'] != null ? DateTime.parse(json['dismissed_at'] as String) : null,
   dismissedBy: json['dismissed_by'] != null ? DismissedBy.fromJson(json['dismissed_by'] as Map<String, dynamic>) : null,
-  dismissedComment: json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null,
+  dismissedComment: json.containsKey('dismissed_comment') ? Omittable(json['dismissed_comment'] != null ? CodeScanningAlertDismissedComment.fromJson(json['dismissed_comment'] as String) : null) : const Omittable.absent(),
   dismissedReason: json['dismissed_reason'] != null ? AlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null,
-  fixedAt: json['fixed_at'],
+  fixedAt: json.containsKey('fixed_at') ? Omittable(json['fixed_at']) : const Omittable.absent(),
   htmlUrl: Uri.parse(json['html_url'] as String),
-  mostRecentInstance: json['most_recent_instance'] != null ? MostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null,
+  mostRecentInstance: json.containsKey('most_recent_instance') ? Omittable(json['most_recent_instance'] != null ? MostRecentInstance.fromJson(json['most_recent_instance'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   number: (json['number'] as num).toInt(),
   rule: WebhookCodeScanningAlertAppearedInBranchAlertRule.fromJson(json['rule'] as Map<String, dynamic>),
   state: json['state'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertState.fromJson(json['state'] as String) : null,
@@ -32,18 +32,18 @@ final DateTime? dismissedAt;
 final DismissedBy? dismissedBy;
 
 /// The dismissal comment associated with the dismissal of the alert.
-final CodeScanningAlertDismissedComment? dismissedComment;
+final Omittable<CodeScanningAlertDismissedComment?> dismissedComment;
 
 /// The reason for dismissing or closing the alert.
 final AlertDismissedReason? dismissedReason;
 
 /// The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
-final dynamic fixedAt;
+final Omittable<dynamic> fixedAt;
 
 /// The GitHub URL of the alert resource.
 final Uri htmlUrl;
 
-final MostRecentInstance? mostRecentInstance;
+final Omittable<MostRecentInstance?> mostRecentInstance;
 
 /// The code scanning alert number.
 final int number;
@@ -62,11 +62,11 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'dismissed_at': dismissedAt?.toIso8601String(),
   'dismissed_by': dismissedBy?.toJson(),
-  if (dismissedComment != null) 'dismissed_comment': dismissedComment?.toJson(),
+  if (dismissedComment.isPresent) 'dismissed_comment': dismissedComment.value?.toJson(),
   'dismissed_reason': dismissedReason?.toJson(),
-  'fixed_at': ?fixedAt,
+  if (fixedAt.isPresent) 'fixed_at': fixedAt.value,
   'html_url': htmlUrl.toString(),
-  if (mostRecentInstance != null) 'most_recent_instance': mostRecentInstance?.toJson(),
+  if (mostRecentInstance.isPresent) 'most_recent_instance': mostRecentInstance.value?.toJson(),
   'number': number,
   'rule': rule.toJson(),
   'state': state?.toJson(),
@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('dismissed_at') && json['dismissed_at'] is String &&
+      json.containsKey('dismissed_at') && (json['dismissed_at'] == null || json['dismissed_at'] is String) &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -83,16 +83,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, DismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, AlertDismissedReason? Function()? dismissedReason, dynamic Function()? fixedAt, Uri? htmlUrl, MostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertAppearedInBranchAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertAppearedInBranchAlert(
+WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, DismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, AlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<MostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertAppearedInBranchAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertAppearedInBranchAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
   dismissedBy: dismissedBy != null ? dismissedBy() : this.dismissedBy,
-  dismissedComment: dismissedComment != null ? dismissedComment() : this.dismissedComment,
+  dismissedComment: dismissedComment ?? this.dismissedComment,
   dismissedReason: dismissedReason != null ? dismissedReason() : this.dismissedReason,
-  fixedAt: fixedAt != null ? fixedAt() : this.fixedAt,
+  fixedAt: fixedAt ?? this.fixedAt,
   htmlUrl: htmlUrl ?? this.htmlUrl,
-  mostRecentInstance: mostRecentInstance != null ? mostRecentInstance() : this.mostRecentInstance,
+  mostRecentInstance: mostRecentInstance ?? this.mostRecentInstance,
   number: number ?? this.number,
   rule: rule ?? this.rule,
   state: state != null ? state() : this.state,

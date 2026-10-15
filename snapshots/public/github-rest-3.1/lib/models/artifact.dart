@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Artifact
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact/artifact_workflow_run.dart';/// An artifact
-@immutable final class Artifact {const Artifact({required this.id, required this.nodeId, required this.name, required this.sizeInBytes, required this.url, required this.archiveDownloadUrl, required this.expired, required this.createdAt, required this.expiresAt, required this.updatedAt, this.digest, this.workflowRun, });
+@immutable final class Artifact {const Artifact({required this.id, required this.nodeId, required this.name, required this.sizeInBytes, required this.url, required this.archiveDownloadUrl, required this.expired, required this.createdAt, required this.expiresAt, required this.updatedAt, this.digest = const Omittable.absent(), this.workflowRun = const Omittable.absent(), });
 
 factory Artifact.fromJson(Map<String, dynamic> json) { return Artifact(
   id: (json['id'] as num).toInt(),
@@ -15,8 +15,8 @@ factory Artifact.fromJson(Map<String, dynamic> json) { return Artifact(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   expiresAt: json['expires_at'] != null ? DateTime.parse(json['expires_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  digest: json['digest'] as String?,
-  workflowRun: json['workflow_run'] != null ? ArtifactWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
+  digest: json.containsKey('digest') ? Omittable(json['digest'] as String?) : const Omittable.absent(),
+  workflowRun: json.containsKey('workflow_run') ? Omittable(json['workflow_run'] != null ? ArtifactWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final int id;
@@ -43,9 +43,9 @@ final DateTime? expiresAt;
 final DateTime? updatedAt;
 
 /// The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.
-final String? digest;
+final Omittable<String?> digest;
 
-final ArtifactWorkflowRun? workflowRun;
+final Omittable<ArtifactWorkflowRun?> workflowRun;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -58,8 +58,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt?.toIso8601String(),
   'expires_at': expiresAt?.toIso8601String(),
   'updated_at': updatedAt?.toIso8601String(),
-  'digest': ?digest,
-  if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
+  if (digest.isPresent) 'digest': digest.value,
+  if (workflowRun.isPresent) 'workflow_run': workflowRun.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -68,10 +68,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('archive_download_url') && json['archive_download_url'] is String &&
       json.containsKey('expired') && json['expired'] is bool &&
-      json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, String? url, String? archiveDownloadUrl, bool? expired, DateTime? Function()? createdAt, DateTime? Function()? expiresAt, DateTime? Function()? updatedAt, String? Function()? digest, ArtifactWorkflowRun? Function()? workflowRun, }) { return Artifact(
+      json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String) &&
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
+Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, String? url, String? archiveDownloadUrl, bool? expired, DateTime? Function()? createdAt, DateTime? Function()? expiresAt, DateTime? Function()? updatedAt, Omittable<String?>? digest, Omittable<ArtifactWorkflowRun?>? workflowRun, }) { return Artifact(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -82,8 +82,8 @@ Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, Stri
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  digest: digest != null ? digest() : this.digest,
-  workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
+  digest: digest ?? this.digest,
+  workflowRun: workflowRun ?? this.workflowRun,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Artifact &&

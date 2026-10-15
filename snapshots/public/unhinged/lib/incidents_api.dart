@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 export 'package:degenerate_runtime/degenerate_runtime.dart';
+
 export 'apis/incidents_api.dart';
 export 'models/errors/list_incidents_v2draft_error.dart';
 export 'models/n3_incident.dart';

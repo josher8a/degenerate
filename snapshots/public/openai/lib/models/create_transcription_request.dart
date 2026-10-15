@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W 
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream, this.chunkingStrategy, this.knownSpeakerNames, this.knownSpeakerReferences, });
+@immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream = const Omittable.absent(), this.chunkingStrategy = const Omittable.absent(), this.knownSpeakerNames, this.knownSpeakerReferences, });
 
 factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateTranscriptionRequest(
   file: base64Decode(json['file'] as String),
@@ -260,8 +260,8 @@ factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return 
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.0,
   include: (json['include'] as List<dynamic>?)?.map((e) => TranscriptionInclude.fromJson(e as String)).toList(),
   timestampGranularities: (json['timestamp_granularities'] as List<dynamic>?)?.map((e) => TimestampGranularities.fromJson(e as String)).toList(),
-  stream: json['stream'] as bool?,
-  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null,
+  stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
+  chunkingStrategy: json.containsKey('chunking_strategy') ? Omittable(json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => ChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   knownSpeakerNames: (json['known_speaker_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   knownSpeakerReferences: (json['known_speaker_references'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
@@ -312,10 +312,10 @@ final List<TimestampGranularities>? timestampGranularities;
 /// 
 /// Note: Streaming is not supported for the `whisper-1` model and will be ignored.
 /// 
-final bool? stream;
+final Omittable<bool?> stream;
 
 /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. Required when using `gpt-4o-transcribe-diarize` for inputs longer than 30 seconds.
-final CreateTranscriptionRequestChunkingStrategy? chunkingStrategy;
+final Omittable<CreateTranscriptionRequestChunkingStrategy?> chunkingStrategy;
 
 /// Optional list of speaker names that correspond to the audio samples provided in `known_speaker_references[]`. Each entry should be a short identifier (for example `customer` or `agent`). Up to 4 speakers are supported.
 /// 
@@ -334,8 +334,8 @@ Map<String, dynamic> toJson() { return {
   'temperature': temperature,
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
   if (timestampGranularities != null) 'timestamp_granularities': timestampGranularities?.map((e) => e.toJson()).toList(),
-  'stream': ?stream,
-  if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
+  if (stream.isPresent) 'stream': stream.value,
+  if (chunkingStrategy.isPresent) 'chunking_strategy': chunkingStrategy.value?.toJson(),
   'known_speaker_names': ?knownSpeakerNames,
   'known_speaker_references': ?knownSpeakerReferences,
 }; } 
@@ -352,7 +352,7 @@ if (knownSpeakerReferences$ != null) {
   if (knownSpeakerReferences$.length > 4) { errors.add('knownSpeakerReferences: must have <= 4 items'); }
 }
 return errors; } 
-CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, bool? Function()? stream, CreateTranscriptionRequestChunkingStrategy? Function()? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
+CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, Omittable<bool?>? stream, Omittable<CreateTranscriptionRequestChunkingStrategy?>? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   language: language != null ? language() : this.language,
@@ -361,14 +361,14 @@ CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? m
   temperature: temperature != null ? temperature() : this.temperature,
   include: include != null ? include() : this.include,
   timestampGranularities: timestampGranularities != null ? timestampGranularities() : this.timestampGranularities,
-  stream: stream != null ? stream() : this.stream,
-  chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
+  stream: stream ?? this.stream,
+  chunkingStrategy: chunkingStrategy ?? this.chunkingStrategy,
   knownSpeakerNames: knownSpeakerNames != null ? knownSpeakerNames() : this.knownSpeakerNames,
   knownSpeakerReferences: knownSpeakerReferences != null ? knownSpeakerReferences() : this.knownSpeakerReferences,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranscriptionRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           model == other.model &&
           language == other.language &&
           prompt == other.prompt &&
@@ -381,7 +381,7 @@ CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? m
           listEquals(knownSpeakerNames, other.knownSpeakerNames) &&
           listEquals(knownSpeakerReferences, other.knownSpeakerReferences);
 
-@override int get hashCode => Object.hash(file, model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const []));
+@override int get hashCode => Object.hash(Object.hashAll(file), model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const []));
 
 @override String toString() => 'CreateTranscriptionRequest(\n  file: $file,\n  model: $model,\n  language: $language,\n  prompt: $prompt,\n  responseFormat: $responseFormat,\n  temperature: $temperature,\n  include: $include,\n  timestampGranularities: $timestampGranularities,\n  stream: $stream,\n  chunkingStrategy: $chunkingStrategy,\n  knownSpeakerNames: $knownSpeakerNames,\n  knownSpeakerReferences: $knownSpeakerReferences,\n)';
 

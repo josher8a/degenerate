@@ -24,10 +24,10 @@ Map<String, dynamic> toJson() { return {
   'start': start.toIso8601String(),
   'success': success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('error') &&
       json.containsKey('start') && json['start'] is String &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool); } 
 Attempts copyWith({DateTime? Function()? end, ResultError? Function()? error, DateTime? start, bool? Function()? success, }) { return Attempts(
   end: end != null ? end() : this.end,
   error: error != null ? error() : this.error,

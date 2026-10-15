@@ -2,28 +2,28 @@
 // Source: #/components/schemas/PortalFlowsAfterCompletionHostedConfirmation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PortalFlowsAfterCompletionHostedConfirmation {const PortalFlowsAfterCompletionHostedConfirmation({this.customMessage});
+@immutable final class PortalFlowsAfterCompletionHostedConfirmation {const PortalFlowsAfterCompletionHostedConfirmation({this.customMessage = const Omittable.absent()});
 
 factory PortalFlowsAfterCompletionHostedConfirmation.fromJson(Map<String, dynamic> json) { return PortalFlowsAfterCompletionHostedConfirmation(
-  customMessage: json['custom_message'] as String?,
+  customMessage: json.containsKey('custom_message') ? Omittable(json['custom_message'] as String?) : const Omittable.absent(),
 ); }
 
 /// A custom message to display to the customer after the flow is completed.
-final String? customMessage;
+final Omittable<String?> customMessage;
 
 Map<String, dynamic> toJson() { return {
-  'custom_message': ?customMessage,
+  if (customMessage.isPresent) 'custom_message': customMessage.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_message'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final customMessage$ = customMessage;
+final customMessage$ = customMessage.value;
 if (customMessage$ != null) {
   if (customMessage$.runes.length > 5000) { errors.add('customMessage: length must be <= 5000'); }
 }
 return errors; } 
-PortalFlowsAfterCompletionHostedConfirmation copyWith({String? Function()? customMessage}) { return PortalFlowsAfterCompletionHostedConfirmation(
-  customMessage: customMessage != null ? customMessage() : this.customMessage,
+PortalFlowsAfterCompletionHostedConfirmation copyWith({Omittable<String?>? customMessage}) { return PortalFlowsAfterCompletionHostedConfirmation(
+  customMessage: customMessage ?? this.customMessage,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsAfterCompletionHostedConfirmation &&

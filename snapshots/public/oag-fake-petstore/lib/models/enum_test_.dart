@@ -545,14 +545,14 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $11, W F
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class EnumTest {const EnumTest({required this.enumStringRequired, this.enumString, this.enumInteger, this.enumNumber, this.outerEnum, this.outerEnumInteger, this.outerEnumDefaultValue, this.outerEnumIntegerDefaultValue, });
+@immutable final class EnumTest {const EnumTest({required this.enumStringRequired, this.enumString, this.enumInteger, this.enumNumber, this.outerEnum = const Omittable.absent(), this.outerEnumInteger, this.outerEnumDefaultValue, this.outerEnumIntegerDefaultValue, });
 
 factory EnumTest.fromJson(Map<String, dynamic> json) { return EnumTest(
   enumString: json['enum_string'] != null ? EnumString.fromJson(json['enum_string'] as String) : null,
   enumStringRequired: EnumStringRequired.fromJson(json['enum_string_required'] as String),
   enumInteger: json['enum_integer'] != null ? EnumInteger.fromJson((json['enum_integer'] as num).toInt()) : null,
   enumNumber: json['enum_number'] != null ? EnumNumber.fromJson((json['enum_number'] as num).toDouble()) : null,
-  outerEnum: json['outerEnum'] != null ? OuterEnum.fromJson(json['outerEnum'] as String) : null,
+  outerEnum: json.containsKey('outerEnum') ? Omittable(json['outerEnum'] != null ? OuterEnum.fromJson(json['outerEnum'] as String) : null) : const Omittable.absent(),
   outerEnumInteger: json['outerEnumInteger'] != null ? OuterEnumInteger.fromJson((json['outerEnumInteger'] as num).toInt()) : null,
   outerEnumDefaultValue: json['outerEnumDefaultValue'] != null ? OuterEnumDefaultValue.fromJson(json['outerEnumDefaultValue'] as String) : null,
   outerEnumIntegerDefaultValue: json['outerEnumIntegerDefaultValue'] != null ? OuterEnumIntegerDefaultValue.fromJson((json['outerEnumIntegerDefaultValue'] as num).toInt()) : null,
@@ -566,7 +566,7 @@ final EnumInteger? enumInteger;
 
 final EnumNumber? enumNumber;
 
-final OuterEnum? outerEnum;
+final Omittable<OuterEnum?> outerEnum;
 
 final OuterEnumInteger? outerEnumInteger;
 
@@ -579,18 +579,18 @@ Map<String, dynamic> toJson() { return {
   'enum_string_required': enumStringRequired.toJson(),
   if (enumInteger != null) 'enum_integer': enumInteger?.toJson(),
   if (enumNumber != null) 'enum_number': enumNumber?.toJson(),
-  if (outerEnum != null) 'outerEnum': outerEnum?.toJson(),
+  if (outerEnum.isPresent) 'outerEnum': outerEnum.value?.toJson(),
   if (outerEnumInteger != null) 'outerEnumInteger': outerEnumInteger?.toJson(),
   if (outerEnumDefaultValue != null) 'outerEnumDefaultValue': outerEnumDefaultValue?.toJson(),
   if (outerEnumIntegerDefaultValue != null) 'outerEnumIntegerDefaultValue': outerEnumIntegerDefaultValue?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enum_string_required'); } 
-EnumTest copyWith({EnumString? Function()? enumString, EnumStringRequired? enumStringRequired, EnumInteger? Function()? enumInteger, EnumNumber? Function()? enumNumber, OuterEnum? Function()? outerEnum, OuterEnumInteger? Function()? outerEnumInteger, OuterEnumDefaultValue? Function()? outerEnumDefaultValue, OuterEnumIntegerDefaultValue? Function()? outerEnumIntegerDefaultValue, }) { return EnumTest(
+EnumTest copyWith({EnumString? Function()? enumString, EnumStringRequired? enumStringRequired, EnumInteger? Function()? enumInteger, EnumNumber? Function()? enumNumber, Omittable<OuterEnum?>? outerEnum, OuterEnumInteger? Function()? outerEnumInteger, OuterEnumDefaultValue? Function()? outerEnumDefaultValue, OuterEnumIntegerDefaultValue? Function()? outerEnumIntegerDefaultValue, }) { return EnumTest(
   enumString: enumString != null ? enumString() : this.enumString,
   enumStringRequired: enumStringRequired ?? this.enumStringRequired,
   enumInteger: enumInteger != null ? enumInteger() : this.enumInteger,
   enumNumber: enumNumber != null ? enumNumber() : this.enumNumber,
-  outerEnum: outerEnum != null ? outerEnum() : this.outerEnum,
+  outerEnum: outerEnum ?? this.outerEnum,
   outerEnumInteger: outerEnumInteger != null ? outerEnumInteger() : this.outerEnumInteger,
   outerEnumDefaultValue: outerEnumDefaultValue != null ? outerEnumDefaultValue() : this.outerEnumDefaultValue,
   outerEnumIntegerDefaultValue: outerEnumIntegerDefaultValue != null ? outerEnumIntegerDefaultValue() : this.outerEnumIntegerDefaultValue,

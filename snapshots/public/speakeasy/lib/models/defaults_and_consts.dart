@@ -487,7 +487,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('norma
       json.containsKey('constStrSQuotes') && json['constStrSQuotes'] is String &&
       json.containsKey('constStrBackticks') && json['constStrBackticks'] is String &&
       json.containsKey('constStrBrackets') && json['constStrBrackets'] is String &&
-      json.containsKey('constStrNull') && json['constStrNull'] is String &&
+      json.containsKey('constStrNull') && (json['constStrNull'] == null || json['constStrNull'] is String) &&
       json.containsKey('constInt') && json['constInt'] is num &&
       json.containsKey('constNum') && json['constNum'] is num &&
       json.containsKey('constBool') && json['constBool'] is bool &&
@@ -502,7 +502,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('norma
       json.containsKey('defaultStr') && json['defaultStr'] is String &&
       json.containsKey('defaultStrDQuotes') && json['defaultStrDQuotes'] is String &&
       json.containsKey('defaultStrSQuotes') && json['defaultStrSQuotes'] is String &&
-      json.containsKey('defaultStrNullable') && json['defaultStrNullable'] is String &&
+      json.containsKey('defaultStrNullable') && (json['defaultStrNullable'] == null || json['defaultStrNullable'] is String) &&
       json.containsKey('defaultInt') && json['defaultInt'] is num &&
       json.containsKey('defaultNum') && json['defaultNum'] is num &&
       json.containsKey('defaultBool') && json['defaultBool'] is bool &&

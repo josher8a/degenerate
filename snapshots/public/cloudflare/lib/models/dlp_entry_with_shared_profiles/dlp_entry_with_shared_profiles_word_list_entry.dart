@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEntryWithSharedProfiles (inline: WordListEntry)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/dlp_entry_profile.dart';import 'package:pub_cloudflare/models/word_list_entry/word_list_entry_type.dart';@immutable final class DlpEntryWithSharedProfilesWordListEntry {const DlpEntryWithSharedProfilesWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, required this.type, required this.profiles, this.profileId, this.uploadStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/dlp_entry_profile.dart';import 'package:pub_cloudflare/models/word_list_entry/word_list_entry_type.dart';@immutable final class DlpEntryWithSharedProfilesWordListEntry {const DlpEntryWithSharedProfilesWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, required this.type, required this.profiles, this.profileId = const Omittable.absent(), this.uploadStatus, });
 
 factory DlpEntryWithSharedProfilesWordListEntry.fromJson(Map<String, dynamic> json) { return DlpEntryWithSharedProfilesWordListEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   name: json['name'] as String,
-  profileId: json['profile_id'] as String?,
+  profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   wordList: json['word_list'],
   type: WordListEntryType.fromJson(json['type'] as String),
@@ -24,7 +24,7 @@ final String id;
 
 final String name;
 
-final String? profileId;
+final Omittable<String?> profileId;
 
 final DateTime updatedAt;
 
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   'id': id,
   'name': name,
-  'profile_id': ?profileId,
+  if (profileId.isPresent) 'profile_id': profileId.value,
   'updated_at': updatedAt.toIso8601String(),
   'word_list': wordList,
   'type': type.toJson(),
@@ -56,12 +56,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('word_list') &&
       json.containsKey('type') && json['type'] == 'word_list' &&
       json.containsKey('profiles'); } 
-DlpEntryWithSharedProfilesWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, String? Function()? profileId, DateTime? updatedAt, dynamic Function()? wordList, WordListEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) { return DlpEntryWithSharedProfilesWordListEntry(
+DlpEntryWithSharedProfilesWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, WordListEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) { return DlpEntryWithSharedProfilesWordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   name: name ?? this.name,
-  profileId: profileId != null ? profileId() : this.profileId,
+  profileId: profileId ?? this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
   wordList: wordList != null ? wordList() : this.wordList,
   type: type ?? this.type,

@@ -2,124 +2,125 @@
 // Source: #/components/schemas/AccountBusinessProfile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_annual_revenue.dart';import 'package:pub_stripe_spec3/models/account_business_profile/minority_owned_business_designation.dart';import 'package:pub_stripe_spec3/models/account_monthly_estimated_revenue.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
-@immutable final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
+@immutable final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue = const Omittable.absent(), this.estimatedWorkerCount = const Omittable.absent(), this.mcc = const Omittable.absent(), this.minorityOwnedBusinessDesignation = const Omittable.absent(), this.monthlyEstimatedRevenue, this.name = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.supportAddress = const Omittable.absent(), this.supportEmail = const Omittable.absent(), this.supportPhone = const Omittable.absent(), this.supportUrl = const Omittable.absent(), this.url = const Omittable.absent(), });
 
 factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile(
-  annualRevenue: json['annual_revenue'] != null ? AccountAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
-  estimatedWorkerCount: json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null,
-  mcc: json['mcc'] as String?,
-  minorityOwnedBusinessDesignation: (json['minority_owned_business_designation'] as List<dynamic>?)?.map((e) => MinorityOwnedBusinessDesignation.fromJson(e as String)).toList(),
+  annualRevenue: json.containsKey('annual_revenue') ? Omittable(json['annual_revenue'] != null ? AccountAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  estimatedWorkerCount: json.containsKey('estimated_worker_count') ? Omittable(json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null) : const Omittable.absent(),
+  mcc: json.containsKey('mcc') ? Omittable(json['mcc'] as String?) : const Omittable.absent(),
+  minorityOwnedBusinessDesignation: json.containsKey('minority_owned_business_designation') ? Omittable((json['minority_owned_business_designation'] as List<dynamic>?)?.map((e) => MinorityOwnedBusinessDesignation.fromJson(e as String)).toList()) : const Omittable.absent(),
   monthlyEstimatedRevenue: json['monthly_estimated_revenue'] != null ? AccountMonthlyEstimatedRevenue.fromJson(json['monthly_estimated_revenue'] as Map<String, dynamic>) : null,
-  name: json['name'] as String?,
-  productDescription: json['product_description'] as String?,
-  supportAddress: json['support_address'] != null ? Address.fromJson(json['support_address'] as Map<String, dynamic>) : null,
-  supportEmail: json['support_email'] as String?,
-  supportPhone: json['support_phone'] as String?,
-  supportUrl: json['support_url'] as String?,
-  url: json['url'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  productDescription: json.containsKey('product_description') ? Omittable(json['product_description'] as String?) : const Omittable.absent(),
+  supportAddress: json.containsKey('support_address') ? Omittable(json['support_address'] != null ? Address.fromJson(json['support_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  supportEmail: json.containsKey('support_email') ? Omittable(json['support_email'] as String?) : const Omittable.absent(),
+  supportPhone: json.containsKey('support_phone') ? Omittable(json['support_phone'] as String?) : const Omittable.absent(),
+  supportUrl: json.containsKey('support_url') ? Omittable(json['support_url'] as String?) : const Omittable.absent(),
+  url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
 ); }
 
 /// The applicant's gross annual revenue for its preceding fiscal year.
-final AccountAnnualRevenue? annualRevenue;
+final Omittable<AccountAnnualRevenue?> annualRevenue;
 
 /// An estimated upper bound of employees, contractors, vendors, etc. currently working for the business.
-final int? estimatedWorkerCount;
+final Omittable<int?> estimatedWorkerCount;
 
 /// [The merchant category code for the account](/connect/setting-mcc). MCCs are used to classify businesses based on the goods or services they provide.
-final String? mcc;
+final Omittable<String?> mcc;
 
 /// Whether the business is a minority-owned, women-owned, and/or LGBTQI+ -owned business.
-final List<MinorityOwnedBusinessDesignation>? minorityOwnedBusinessDesignation;
+final Omittable<List<MinorityOwnedBusinessDesignation>?> minorityOwnedBusinessDesignation;
 
 final AccountMonthlyEstimatedRevenue? monthlyEstimatedRevenue;
 
 /// The customer-facing business name.
-final String? name;
+final Omittable<String?> name;
 
 /// Internal-only description of the product sold or service provided by the business. It's used by Stripe for risk and underwriting purposes.
-final String? productDescription;
+final Omittable<String?> productDescription;
 
 /// A publicly available mailing address for sending support issues to.
-final Address? supportAddress;
+final Omittable<Address?> supportAddress;
 
 /// A publicly available email address for sending support issues to.
-final String? supportEmail;
+final Omittable<String?> supportEmail;
 
 /// A publicly available phone number to call with support issues.
-final String? supportPhone;
+final Omittable<String?> supportPhone;
 
 /// A publicly available website for handling support issues.
-final String? supportUrl;
+final Omittable<String?> supportUrl;
 
 /// The business's publicly available website.
-final String? url;
+final Omittable<String?> url;
 
 Map<String, dynamic> toJson() { return {
-  if (annualRevenue != null) 'annual_revenue': annualRevenue?.toJson(),
-  'estimated_worker_count': ?estimatedWorkerCount,
-  'mcc': ?mcc,
-  if (minorityOwnedBusinessDesignation != null) 'minority_owned_business_designation': minorityOwnedBusinessDesignation?.map((e) => e.toJson()).toList(),
+  if (annualRevenue.isPresent) 'annual_revenue': annualRevenue.value?.toJson(),
+  if (estimatedWorkerCount.isPresent) 'estimated_worker_count': estimatedWorkerCount.value,
+  if (mcc.isPresent) 'mcc': mcc.value,
+  if (minorityOwnedBusinessDesignation.isPresent) 'minority_owned_business_designation': minorityOwnedBusinessDesignation.value?.map((e) => e.toJson()).toList(),
   if (monthlyEstimatedRevenue != null) 'monthly_estimated_revenue': monthlyEstimatedRevenue?.toJson(),
-  'name': ?name,
-  'product_description': ?productDescription,
-  if (supportAddress != null) 'support_address': supportAddress?.toJson(),
-  'support_email': ?supportEmail,
-  'support_phone': ?supportPhone,
-  'support_url': ?supportUrl,
-  'url': ?url,
+  if (name.isPresent) 'name': name.value,
+  if (productDescription.isPresent) 'product_description': productDescription.value,
+  if (supportAddress.isPresent) 'support_address': supportAddress.value?.toJson(),
+  if (supportEmail.isPresent) 'support_email': supportEmail.value,
+  if (supportPhone.isPresent) 'support_phone': supportPhone.value,
+  if (supportUrl.isPresent) 'support_url': supportUrl.value,
+  if (url.isPresent) 'url': url.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final mcc$ = mcc;
+final mcc$ = mcc.value;
 if (mcc$ != null) {
   if (mcc$.runes.length > 5000) { errors.add('mcc: length must be <= 5000'); }
 }
-final name$ = name;
+final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-final productDescription$ = productDescription;
+final productDescription$ = productDescription.value;
 if (productDescription$ != null) {
   if (productDescription$.runes.length > 40000) { errors.add('productDescription: length must be <= 40000'); }
 }
-final supportEmail$ = supportEmail;
+final supportEmail$ = supportEmail.value;
 if (supportEmail$ != null) {
   if (supportEmail$.runes.length > 5000) { errors.add('supportEmail: length must be <= 5000'); }
 }
-final supportPhone$ = supportPhone;
+final supportPhone$ = supportPhone.value;
 if (supportPhone$ != null) {
   if (supportPhone$.runes.length > 5000) { errors.add('supportPhone: length must be <= 5000'); }
 }
-final supportUrl$ = supportUrl;
+final supportUrl$ = supportUrl.value;
 if (supportUrl$ != null) {
   if (supportUrl$.runes.length > 5000) { errors.add('supportUrl: length must be <= 5000'); }
 }
-final url$ = url;
+final url$ = url.value;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
-AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<MinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, Address? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
-  annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
-  estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,
-  mcc: mcc != null ? mcc() : this.mcc,
-  minorityOwnedBusinessDesignation: minorityOwnedBusinessDesignation != null ? minorityOwnedBusinessDesignation() : this.minorityOwnedBusinessDesignation,
+AccountBusinessProfile copyWith({Omittable<AccountAnnualRevenue?>? annualRevenue, Omittable<int?>? estimatedWorkerCount, Omittable<String?>? mcc, Omittable<List<MinorityOwnedBusinessDesignation>?>? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, Omittable<String?>? name, Omittable<String?>? productDescription, Omittable<Address?>? supportAddress, Omittable<String?>? supportEmail, Omittable<String?>? supportPhone, Omittable<String?>? supportUrl, Omittable<String?>? url, }) { return AccountBusinessProfile(
+  annualRevenue: annualRevenue ?? this.annualRevenue,
+  estimatedWorkerCount: estimatedWorkerCount ?? this.estimatedWorkerCount,
+  mcc: mcc ?? this.mcc,
+  minorityOwnedBusinessDesignation: minorityOwnedBusinessDesignation ?? this.minorityOwnedBusinessDesignation,
   monthlyEstimatedRevenue: monthlyEstimatedRevenue != null ? monthlyEstimatedRevenue() : this.monthlyEstimatedRevenue,
-  name: name != null ? name() : this.name,
-  productDescription: productDescription != null ? productDescription() : this.productDescription,
-  supportAddress: supportAddress != null ? supportAddress() : this.supportAddress,
-  supportEmail: supportEmail != null ? supportEmail() : this.supportEmail,
-  supportPhone: supportPhone != null ? supportPhone() : this.supportPhone,
-  supportUrl: supportUrl != null ? supportUrl() : this.supportUrl,
-  url: url != null ? url() : this.url,
+  name: name ?? this.name,
+  productDescription: productDescription ?? this.productDescription,
+  supportAddress: supportAddress ?? this.supportAddress,
+  supportEmail: supportEmail ?? this.supportEmail,
+  supportPhone: supportPhone ?? this.supportPhone,
+  supportUrl: supportUrl ?? this.supportUrl,
+  url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountBusinessProfile &&
           annualRevenue == other.annualRevenue &&
           estimatedWorkerCount == other.estimatedWorkerCount &&
           mcc == other.mcc &&
-          listEquals(minorityOwnedBusinessDesignation, other.minorityOwnedBusinessDesignation) &&
+          minorityOwnedBusinessDesignation.isPresent == other.minorityOwnedBusinessDesignation.isPresent &&
+          listEquals(minorityOwnedBusinessDesignation.value, other.minorityOwnedBusinessDesignation.value) &&
           monthlyEstimatedRevenue == other.monthlyEstimatedRevenue &&
           name == other.name &&
           productDescription == other.productDescription &&
@@ -129,7 +130,7 @@ AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue
           supportUrl == other.supportUrl &&
           url == other.url;
 
-@override int get hashCode => Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url);
+@override int get hashCode => Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation.value ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url);
 
 @override String toString() => 'AccountBusinessProfile(\n  annualRevenue: $annualRevenue,\n  estimatedWorkerCount: $estimatedWorkerCount,\n  mcc: $mcc,\n  minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation,\n  monthlyEstimatedRevenue: $monthlyEstimatedRevenue,\n  name: $name,\n  productDescription: $productDescription,\n  supportAddress: $supportAddress,\n  supportEmail: $supportEmail,\n  supportPhone: $supportPhone,\n  supportUrl: $supportUrl,\n  url: $url,\n)';
 

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateAccountRulesetRuleRequest (inline: RulesetsSetCacheTagsRule)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/add_cache_tags_expression.dart';import 'package:pub_cloudflare/models/add_cache_tags_values.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/position_variant1.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/position_variant2.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/position_variant3.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_position.dart';import 'package:pub_cloudflare/models/remove_cache_tags_expression.dart';import 'package:pub_cloudflare/models/remove_cache_tags_values.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_tags_rule/rulesets_set_cache_tags_rule_action_parameters.dart';import 'package:pub_cloudflare/models/set_cache_tags_expression.dart';import 'package:pub_cloudflare/models/set_cache_tags_values.dart';@immutable final class CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule {const CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule({required this.lastUpdated, required this.version, this.action, this.actionParameters, this.categories, this.description, this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, this.position, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/add_cache_tags_expression.dart';import 'package:pub_cloudflare/models/add_cache_tags_values.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/position_variant1.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/position_variant2.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/position_variant3.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request/rulesets_block_rule_position.dart';import 'package:pub_cloudflare/models/remove_cache_tags_expression.dart';import 'package:pub_cloudflare/models/remove_cache_tags_values.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_tags_rule/rulesets_set_cache_tags_rule_action_parameters.dart';import 'package:pub_cloudflare/models/set_cache_tags_expression.dart';import 'package:pub_cloudflare/models/set_cache_tags_values.dart';@immutable final class CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule {const CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule({required this.lastUpdated, required this.version, this.action = const Omittable.absent(), this.actionParameters, this.categories, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, this.position, });
 
 factory CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule.fromJson(Map<String, dynamic> json) { return CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule(
-  action: json['action'],
+  action: json.containsKey('action') ? Omittable(json['action']) : const Omittable.absent(),
   actionParameters: json['action_parameters'] != null ? OneOf6.parse(json['action_parameters'], fromA: (v) => AddCacheTagsValues.fromJson(v as Map<String, dynamic>), fromB: (v) => AddCacheTagsExpression.fromJson(v as Map<String, dynamic>), fromC: (v) => RemoveCacheTagsValues.fromJson(v as Map<String, dynamic>), fromD: (v) => RemoveCacheTagsExpression.fromJson(v as Map<String, dynamic>), fromE: (v) => SetCacheTagsValues.fromJson(v as Map<String, dynamic>), fromF: (v) => SetCacheTagsExpression.fromJson(v as Map<String, dynamic>),) : null,
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
-  description: json['description'],
+  description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
   exposedCredentialCheck: json['exposed_credential_check'] != null ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>) : null,
   expression: json['expression'] as String?,
@@ -20,7 +20,7 @@ factory CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule.fromJson(Map<Str
   position: json['position'] != null ? OneOf3.parse(json['position'], fromA: (v) => PositionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => PositionVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => PositionVariant3.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
-final dynamic action;
+final Omittable<dynamic> action;
 
 final RulesetsSetCacheTagsRuleActionParameters? actionParameters;
 
@@ -28,7 +28,7 @@ final RulesetsSetCacheTagsRuleActionParameters? actionParameters;
 final List<RulesetsRuleCategory>? categories;
 
 /// Example: `'Modify the cache tags associated with the response.'`
-final dynamic description;
+final Omittable<dynamic> description;
 
 /// Whether the rule should be executed.
 final RulesetsRuleEnabled? enabled;
@@ -65,10 +65,10 @@ final String version;
 final RulesetsBlockRulePosition? position;
 
 Map<String, dynamic> toJson() { return {
-  'action': ?action,
+  if (action.isPresent) 'action': action.value,
   if (actionParameters != null) 'action_parameters': actionParameters?.toJson(),
   if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (exposedCredentialCheck != null) 'exposed_credential_check': exposedCredentialCheck?.toJson(),
   'expression': ?expression,
@@ -99,11 +99,11 @@ if (ref$ != null) {
 }
 if (!RegExp(r'^[0-9]+$').hasMatch(version)) { errors.add(r'version: must match pattern ^[0-9]+$'); }
 return errors; } 
-CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule copyWith({dynamic Function()? action, RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, dynamic Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule(
-  action: action != null ? action() : this.action,
+CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule copyWith({Omittable<dynamic>? action, RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, RulesetsBlockRulePosition? Function()? position, }) { return CreateAccountRulesetRuleRequestRulesetsSetCacheTagsRule(
+  action: action ?? this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   categories: categories != null ? categories() : this.categories,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   exposedCredentialCheck: exposedCredentialCheck != null ? exposedCredentialCheck() : this.exposedCredentialCheck,
   expression: expression != null ? expression() : this.expression,

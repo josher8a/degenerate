@@ -79,7 +79,7 @@ factory FunctionShellToolParamEnvironment.fromJson(Map<String, dynamic> json) { 
 }; }
 
 /// Build the `container_auto` variant.
-factory FunctionShellToolParamEnvironment.containerAuto({List<String>? fileIds, ContainerMemoryLimit? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy, List<Skills>? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(ContainerAutoParam(fileIds: fileIds, memoryLimit: memoryLimit, networkPolicy: networkPolicy, skills: skills)); }
+factory FunctionShellToolParamEnvironment.containerAuto({List<String>? fileIds, Omittable<ContainerMemoryLimit?> memoryLimit = const Omittable.absent(), AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy, List<Skills>? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(ContainerAutoParam(fileIds: fileIds, memoryLimit: memoryLimit, networkPolicy: networkPolicy, skills: skills)); }
 
 /// Build the `local` variant.
 factory FunctionShellToolParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellToolParamEnvironmentLocal(LocalEnvironmentParam(skills: skills)); }
@@ -110,7 +110,7 @@ final ContainerAutoParam containerAutoParam;
 
 @override Map<String, dynamic> toJson() => {...containerAutoParam.toJson(), 'type': type.toJson()};
 
-FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam.copyWith(
+FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String>? Function()? fileIds, Omittable<ContainerMemoryLimit?>? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam.copyWith(
   fileIds: fileIds,
   memoryLimit: memoryLimit,
   networkPolicy: networkPolicy,

@@ -51,6 +51,7 @@ const runtimeExportedNames = <String>{
   'Handler',
   'Interceptor',
   'LoggingInterceptor',
+  'Omittable',
   'OneOf2',
   'OneOf3',
   'OneOf4',
@@ -109,6 +110,7 @@ final class FileEmitter {
     bool emitRoundtripFixtures = false,
     Map<String, DiscUnionMetadata> unionMetadata = const {},
     List<String> barrelHide = const [],
+    OmittableMode omittable = OmittableMode.nullableOnly,
   }) {
     final files = <String, String>{};
 
@@ -133,6 +135,7 @@ final class FileEmitter {
       typeRegistryMap,
       unionMetadata: unionMetadata,
       constDiscriminators: analyzeConstDiscriminators(types, typeRegistryMap),
+      omittable: omittable,
     );
 
     final inlining = _computeInlining(types, apis, typeToFile);

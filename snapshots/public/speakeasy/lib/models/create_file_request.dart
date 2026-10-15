@@ -10,7 +10,7 @@ factory CreateFileRequest.fromJson(Map<String, dynamic> json) { return CreateFil
 final Uint8List? file;
 
 Map<String, dynamic> toJson() { return {
-  if (file != null) 'file': base64Encode(file!),
+  if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file'}.contains(key)); } 
 CreateFileRequest copyWith({Uint8List? Function()? file}) { return CreateFileRequest(
@@ -18,9 +18,9 @@ CreateFileRequest copyWith({Uint8List? Function()? file}) { return CreateFileReq
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateFileRequest &&
-          file == other.file;
+          listEquals(file, other.file);
 
-@override int get hashCode => file.hashCode;
+@override int get hashCode => Object.hashAll(file ?? const []);
 
 @override String toString() => 'CreateFileRequest(file: $file)';
 

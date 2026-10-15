@@ -120,29 +120,29 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? promptTo
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class PromptTopic {const PromptTopic({required this.topicType, required this.type, this.description, });
+@immutable final class PromptTopic {const PromptTopic({required this.topicType, required this.type, this.description = const Omittable.absent(), });
 
 factory PromptTopic.fromJson(Map<String, dynamic> json) { return PromptTopic(
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   topicType: DlpPromptTopicType.fromJson(json['topic_type'] as String),
   type: PromptTopicType.fromJson(json['type'] as String),
 ); }
 
-final String? description;
+final Omittable<String?> description;
 
 final DlpPromptTopicType topicType;
 
 final PromptTopicType type;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'topic_type': topicType.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('topic_type') &&
       json.containsKey('type'); } 
-PromptTopic copyWith({String? Function()? description, DlpPromptTopicType? topicType, PromptTopicType? type, }) { return PromptTopic(
-  description: description != null ? description() : this.description,
+PromptTopic copyWith({Omittable<String?>? description, DlpPromptTopicType? topicType, PromptTopicType? type, }) { return PromptTopic(
+  description: description ?? this.description,
   topicType: topicType ?? this.topicType,
   type: type ?? this.type,
 ); } 

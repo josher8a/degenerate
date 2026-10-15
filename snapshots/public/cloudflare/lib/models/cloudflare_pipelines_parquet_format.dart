@@ -113,32 +113,32 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? uncompre
 @override int get hashCode => value.hashCode;
 
  }
-@immutable final class CloudflarePipelinesParquetFormat {const CloudflarePipelinesParquetFormat({this.compression, this.rowGroupBytes, });
+@immutable final class CloudflarePipelinesParquetFormat {const CloudflarePipelinesParquetFormat({this.compression, this.rowGroupBytes = const Omittable.absent(), });
 
 factory CloudflarePipelinesParquetFormat.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesParquetFormat(
   compression: json['compression'] != null ? CloudflarePipelinesParquetCompression.fromJson(json['compression'] as String) : null,
-  rowGroupBytes: json['row_group_bytes'] != null ? (json['row_group_bytes'] as num).toInt() : null,
+  rowGroupBytes: json.containsKey('row_group_bytes') ? Omittable(json['row_group_bytes'] != null ? (json['row_group_bytes'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 final CloudflarePipelinesParquetCompression? compression;
 
-final int? rowGroupBytes;
+final Omittable<int?> rowGroupBytes;
 
 Map<String, dynamic> toJson() { return {
   if (compression != null) 'compression': compression?.toJson(),
-  'row_group_bytes': ?rowGroupBytes,
+  if (rowGroupBytes.isPresent) 'row_group_bytes': rowGroupBytes.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compression', 'row_group_bytes'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final rowGroupBytes$ = rowGroupBytes;
+final rowGroupBytes$ = rowGroupBytes.value;
 if (rowGroupBytes$ != null) {
   if (rowGroupBytes$ < 0) { errors.add('rowGroupBytes: must be >= 0'); }
 }
 return errors; } 
-CloudflarePipelinesParquetFormat copyWith({CloudflarePipelinesParquetCompression? Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesParquetFormat(
+CloudflarePipelinesParquetFormat copyWith({CloudflarePipelinesParquetCompression? Function()? compression, Omittable<int?>? rowGroupBytes, }) { return CloudflarePipelinesParquetFormat(
   compression: compression != null ? compression() : this.compression,
-  rowGroupBytes: rowGroupBytes != null ? rowGroupBytes() : this.rowGroupBytes,
+  rowGroupBytes: rowGroupBytes ?? this.rowGroupBytes,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesParquetFormat &&

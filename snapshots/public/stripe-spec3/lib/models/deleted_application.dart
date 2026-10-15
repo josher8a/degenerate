@@ -2,12 +2,12 @@
 // Source: #/components/schemas/DeletedApplication
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application/application_object.dart';/// 
-@immutable final class DeletedApplication {const DeletedApplication({required this.deleted, required this.id, required this.object, this.name, });
+@immutable final class DeletedApplication {const DeletedApplication({required this.deleted, required this.id, required this.object, this.name = const Omittable.absent(), });
 
 factory DeletedApplication.fromJson(Map<String, dynamic> json) { return DeletedApplication(
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: ApplicationObject.fromJson(json['object'] as String),
 ); }
 
@@ -18,7 +18,7 @@ final bool deleted;
 final String id;
 
 /// The name of the application.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final ApplicationObject object;
@@ -26,7 +26,7 @@ final ApplicationObject object;
 Map<String, dynamic> toJson() { return {
   'deleted': deleted,
   'id': id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
@@ -35,15 +35,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final name$ = name;
+final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
-DeletedApplication copyWith({bool? deleted, String? id, String? Function()? name, ApplicationObject? object, }) { return DeletedApplication(
+DeletedApplication copyWith({bool? deleted, String? id, Omittable<String?>? name, ApplicationObject? object, }) { return DeletedApplication(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   object: object ?? this.object,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -2,28 +2,28 @@
 // Source: #/components/schemas/TerminalReaderReaderResourceText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about text being collected using a reader
-@immutable final class TerminalReaderReaderResourceText {const TerminalReaderReaderResourceText({this.value});
+@immutable final class TerminalReaderReaderResourceText {const TerminalReaderReaderResourceText({this.value = const Omittable.absent()});
 
 factory TerminalReaderReaderResourceText.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceText(
-  value: json['value'] as String?,
+  value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
 ); }
 
 /// The collected text value
-final String? value;
+final Omittable<String?> value;
 
 Map<String, dynamic> toJson() { return {
-  'value': ?value,
+  if (value.isPresent) 'value': value.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final value$ = value;
+final value$ = value.value;
 if (value$ != null) {
   if (value$.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
 }
 return errors; } 
-TerminalReaderReaderResourceText copyWith({String? Function()? value}) { return TerminalReaderReaderResourceText(
-  value: value != null ? value() : this.value,
+TerminalReaderReaderResourceText copyWith({Omittable<String?>? value}) { return TerminalReaderReaderResourceText(
+  value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceText &&

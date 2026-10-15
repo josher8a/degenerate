@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse (inline: Data)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData({this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData({this.disabled, this.id, this.ingestServer, this.meetingId = const Omittable.absent(), this.name, this.playbackUrl, this.status, this.streamKey, });
 
 factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(Map<String, dynamic> json) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
   disabled: json['disabled'] as bool?,
   id: json['id'] as String?,
   ingestServer: json['ingest_server'] as String?,
-  meetingId: json['meeting_id'] as String?,
+  meetingId: json.containsKey('meeting_id') ? Omittable(json['meeting_id'] as String?) : const Omittable.absent(),
   name: json['name'] as String?,
   playbackUrl: json['playback_url'] as String?,
   status: json['status'] != null ? RealtimekitLivestreamBaseStatus.fromJson(json['status'] as String) : null,
@@ -23,7 +23,7 @@ final String? id;
 /// The server URL to which the RTMP encoder should send the video and audio data.
 final String? ingestServer;
 
-final String? meetingId;
+final Omittable<String?> meetingId;
 
 final String? name;
 
@@ -39,18 +39,18 @@ Map<String, dynamic> toJson() { return {
   'disabled': ?disabled,
   'id': ?id,
   'ingest_server': ?ingestServer,
-  'meeting_id': ?meetingId,
+  if (meetingId.isPresent) 'meeting_id': meetingId.value,
   'name': ?name,
   'playback_url': ?playbackUrl,
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key'}.contains(key)); } 
-PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, String? Function()? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, }) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
+PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, Omittable<String?>? meetingId, String? Function()? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, }) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
   ingestServer: ingestServer != null ? ingestServer() : this.ingestServer,
-  meetingId: meetingId != null ? meetingId() : this.meetingId,
+  meetingId: meetingId ?? this.meetingId,
   name: name != null ? name() : this.name,
   playbackUrl: playbackUrl != null ? playbackUrl() : this.playbackUrl,
   status: status != null ? status() : this.status,

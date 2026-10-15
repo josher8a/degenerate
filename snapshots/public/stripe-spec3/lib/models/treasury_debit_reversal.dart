@@ -206,16 +206,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
  }
 /// You can reverse some [ReceivedDebits](https://api.stripe.com#received_debits) depending on their network and source flow. Reversing a ReceivedDebit leads to the creation of a new object known as a DebitReversal.
-@immutable final class TreasuryDebitReversal {const TreasuryDebitReversal({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedDebit, required this.status, required this.statusTransitions, this.financialAccount, this.hostedRegulatoryReceiptUrl, this.linkedFlows, this.transaction, });
+@immutable final class TreasuryDebitReversal {const TreasuryDebitReversal({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedDebit, required this.status, required this.statusTransitions, this.financialAccount = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.linkedFlows = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
 factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return TreasuryDebitReversal(
   amount: (json['amount'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  financialAccount: json['financial_account'] as String?,
-  hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
+  financialAccount: json.containsKey('financial_account') ? Omittable(json['financial_account'] as String?) : const Omittable.absent(),
+  hostedRegulatoryReceiptUrl: json.containsKey('hosted_regulatory_receipt_url') ? Omittable(json['hosted_regulatory_receipt_url'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
-  linkedFlows: json['linked_flows'] != null ? TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>) : null,
+  linkedFlows: json.containsKey('linked_flows') ? Omittable(json['linked_flows'] != null ? TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   network: TreasuryDebitReversalNetwork.fromJson(json['network'] as String),
@@ -223,7 +223,7 @@ factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return Treas
   receivedDebit: json['received_debit'] as String,
   status: TreasuryDebitReversalStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryReceivedDebitsResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in cents) transferred.
@@ -236,16 +236,16 @@ final int created;
 final String currency;
 
 /// The FinancialAccount to reverse funds from.
-final String? financialAccount;
+final Omittable<String?> financialAccount;
 
 /// A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses.
-final String? hostedRegulatoryReceiptUrl;
+final Omittable<String?> hostedRegulatoryReceiptUrl;
 
 /// Unique identifier for the object.
 final String id;
 
 /// Other flows linked to a DebitReversal.
-final TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? linkedFlows;
+final Omittable<TreasuryReceivedDebitsResourceDebitReversalLinkedFlows?> linkedFlows;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -268,16 +268,16 @@ final TreasuryDebitReversalStatus status;
 final TreasuryReceivedDebitsResourceStatusTransitions statusTransitions;
 
 /// The Transaction associated with this object.
-final TreasuryCreditReversalTransaction? transaction;
+final Omittable<TreasuryCreditReversalTransaction?> transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
   'created': created,
   'currency': currency,
-  'financial_account': ?financialAccount,
-  'hosted_regulatory_receipt_url': ?hostedRegulatoryReceiptUrl,
+  if (financialAccount.isPresent) 'financial_account': financialAccount.value,
+  if (hostedRegulatoryReceiptUrl.isPresent) 'hosted_regulatory_receipt_url': hostedRegulatoryReceiptUrl.value,
   'id': id,
-  if (linkedFlows != null) 'linked_flows': linkedFlows?.toJson(),
+  if (linkedFlows.isPresent) 'linked_flows': linkedFlows.value?.toJson(),
   'livemode': livemode,
   'metadata': metadata,
   'network': network.toJson(),
@@ -285,7 +285,7 @@ Map<String, dynamic> toJson() { return {
   'received_debit': receivedDebit,
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
-  if (transaction != null) 'transaction': transaction?.toJson(),
+  if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
@@ -300,25 +300,25 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final financialAccount$ = financialAccount;
+final financialAccount$ = financialAccount.value;
 if (financialAccount$ != null) {
   if (financialAccount$.runes.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 }
-final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
+final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl.value;
 if (hostedRegulatoryReceiptUrl$ != null) {
   if (hostedRegulatoryReceiptUrl$.runes.length > 5000) { errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (receivedDebit.runes.length > 5000) { errors.add('receivedDebit: length must be <= 5000'); }
 return errors; } 
-TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? Function()? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryDebitReversal(
+TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, Omittable<String?>? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, Omittable<TreasuryReceivedDebitsResourceDebitReversalLinkedFlows?>? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) { return TreasuryDebitReversal(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
-  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl != null ? hostedRegulatoryReceiptUrl() : this.hostedRegulatoryReceiptUrl,
+  financialAccount: financialAccount ?? this.financialAccount,
+  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl ?? this.hostedRegulatoryReceiptUrl,
   id: id ?? this.id,
-  linkedFlows: linkedFlows != null ? linkedFlows() : this.linkedFlows,
+  linkedFlows: linkedFlows ?? this.linkedFlows,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   network: network ?? this.network,
@@ -326,7 +326,7 @@ TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, Str
   receivedDebit: receivedDebit ?? this.receivedDebit,
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
-  transaction: transaction != null ? transaction() : this.transaction,
+  transaction: transaction ?? this.transaction,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryDebitReversal &&

@@ -153,17 +153,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
  }
 /// A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.
-@immutable final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, this.cardLogo, this.carrierText, this.lookupKey, this.name, });
+@immutable final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, this.cardLogo = const Omittable.absent(), this.carrierText = const Omittable.absent(), this.lookupKey = const Omittable.absent(), this.name = const Omittable.absent(), });
 
 factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesign(
-  cardLogo: json['card_logo'] != null ? OneOf2.parse(json['card_logo'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
-  carrierText: json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null,
+  cardLogo: json.containsKey('card_logo') ? Omittable(json['card_logo'] != null ? OneOf2.parse(json['card_logo'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  carrierText: json.containsKey('carrier_text') ? Omittable(json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  lookupKey: json['lookup_key'] as String?,
+  lookupKey: json.containsKey('lookup_key') ? Omittable(json['lookup_key'] as String?) : const Omittable.absent(),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: IssuingPersonalizationDesignObject.fromJson(json['object'] as String),
   physicalBundle: OneOf2.parse(json['physical_bundle'], fromA: (v) => v as String, fromB: (v) => IssuingPhysicalBundle.fromJson(v as Map<String, dynamic>),),
   preferences: IssuingPersonalizationDesignPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
@@ -172,10 +172,10 @@ factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// The file for the card logo to use with physical bundles that support card logos. Must have a `purpose` value of `issuing_logo`.
-final IssuingPersonalizationDesignCardLogo? cardLogo;
+final Omittable<IssuingPersonalizationDesignCardLogo?> cardLogo;
 
 /// Hash containing carrier text, for use with physical bundles that support carrier text.
-final IssuingPersonalizationDesignCarrierText? carrierText;
+final Omittable<IssuingPersonalizationDesignCarrierText?> carrierText;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -187,13 +187,13 @@ final String id;
 final bool livemode;
 
 /// A lookup key used to retrieve personalization designs dynamically from a static string. This may be up to 200 characters.
-final String? lookupKey;
+final Omittable<String?> lookupKey;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
 final Map<String,String> metadata;
 
 /// Friendly display name.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final IssuingPersonalizationDesignObject object;
@@ -209,14 +209,14 @@ final IssuingPersonalizationDesignRejectionReasons rejectionReasons;
 final IssuingPersonalizationDesignStatus status;
 
 Map<String, dynamic> toJson() { return {
-  if (cardLogo != null) 'card_logo': cardLogo?.toJson(),
-  if (carrierText != null) 'carrier_text': carrierText?.toJson(),
+  if (cardLogo.isPresent) 'card_logo': cardLogo.value?.toJson(),
+  if (carrierText.isPresent) 'carrier_text': carrierText.value?.toJson(),
   'created': created,
   'id': id,
   'livemode': livemode,
-  'lookup_key': ?lookupKey,
+  if (lookupKey.isPresent) 'lookup_key': lookupKey.value,
   'metadata': metadata,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
   'physical_bundle': physicalBundle.toJson(),
   'preferences': preferences.toJson(),
@@ -235,24 +235,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-final lookupKey$ = lookupKey;
+final lookupKey$ = lookupKey.value;
 if (lookupKey$ != null) {
   if (lookupKey$.runes.length > 5000) { errors.add('lookupKey: length must be <= 5000'); }
 }
-final name$ = name;
+final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
-IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Function()? cardLogo, IssuingPersonalizationDesignCarrierText? Function()? carrierText, int? created, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? name, IssuingPersonalizationDesignObject? object, PhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
-  cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
-  carrierText: carrierText != null ? carrierText() : this.carrierText,
+IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCardLogo?>? cardLogo, Omittable<IssuingPersonalizationDesignCarrierText?>? carrierText, int? created, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? name, IssuingPersonalizationDesignObject? object, PhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
+  cardLogo: cardLogo ?? this.cardLogo,
+  carrierText: carrierText ?? this.carrierText,
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  lookupKey: lookupKey != null ? lookupKey() : this.lookupKey,
+  lookupKey: lookupKey ?? this.lookupKey,
   metadata: metadata ?? this.metadata,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   object: object ?? this.object,
   physicalBundle: physicalBundle ?? this.physicalBundle,
   preferences: preferences ?? this.preferences,

@@ -13,10 +13,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "pattern_type": "EMAIL"
 /// }
 /// ```
-@immutable final class EmailSecurityCreateBlockedSenderResponseResult {const EmailSecurityCreateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments, });
+@immutable final class EmailSecurityCreateBlockedSenderResponseResult {const EmailSecurityCreateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), });
 
 factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSenderResponseResult(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
@@ -25,7 +25,7 @@ factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dyna
   lastModified: DateTime.parse(json['last_modified'] as String),
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 final bool isRegex;
 
@@ -41,7 +41,7 @@ final EmailSecurityBlockedSenderId id;
 final DateTime lastModified;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
   'pattern_type': patternType?.toJson(),
@@ -57,15 +57,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
       json.containsKey('last_modified') && json['last_modified'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-final comments$ = comments;
+final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 return errors; } 
-EmailSecurityCreateBlockedSenderResponseResult copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) { return EmailSecurityCreateBlockedSenderResponseResult(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityCreateBlockedSenderResponseResult copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) { return EmailSecurityCreateBlockedSenderResponseResult(
+  comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,

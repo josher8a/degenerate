@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'vector_string': vectorString,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num &&
-      json.containsKey('vector_string') && json['vector_string'] is String; } 
+      json.containsKey('vector_string') && (json['vector_string'] == null || json['vector_string'] is String); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 if (score < 0) { errors.add('score: must be >= 0'); }
